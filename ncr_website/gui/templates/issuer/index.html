@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load template_tags %}
+{% block content %}
+
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-item nav-link active" data-toggle="tab" href="#summary" title="General information about the issuer.">About issuer</a>
+    </li>
+    {% if not gui_controls.rating.add_new_rating %}
+      <li class="nav-item">
+          <a class="nav-item nav-link" data-toggle="tab" href="#score" title="Manage the currently ongoing rating job.">Rating job</a>
+      </li>
+    {% endif %}
+    {% if data.issuer.financial_statement %}
+      <li class="nav-item">
+          <a class="nav-item nav-link" data-toggle="tab" href="#financials" title="Financial data for the issuer.">Financials</a>
+      </li>
+    {% endif %}
+    <li>
+      <a class="nav-item nav-link" data-toggle="tab" href="#issues" role="tab" title="Add and edit issues. Propose and edit ratings for securities issued inbetween of rating committees.">Issues</a>
+    </li>
+    <li>
+      <a class="nav-item nav-link" data-toggle="tab" href="#rating_history" role="tab" title="Show all historical rating decisions and download previous rating committee packages.">Rating history</a>
+    </li>
+
+    {% if not global_variables.auth.groups|in_list:"Commercial" %}
+      <li>
+        <a class="nav-item nav-link" data-toggle="tab" href="#documents" role="tab" title="Upload and download documents.">Documents</a>
+      </li>
+    {% endif %}
+
+    <li>
+      <a class="nav-item nav-link" data-toggle="tab" href="#contact_list" role="tab" title="Add, edit and delete contacts.">Contact list</a>
+    </li>
+    <li>
+      <a class="nav-item nav-link" data-toggle="tab" href="#logs" role="tab" title="Show a log book for this issuer.">Log book</a>
+    </li>
+
+    {% if gui_controls.rating.add_new_rating and auth.issuer.rating_job.edit and data.issuer.data.is_onboarded %}
+      <li class="nav-item ml-auto button" title="Create a new rating job.">
+        <a class="nav-item nav-link fm-create"
+           data-toggle="tab"
+           href="{% url 'rating_decision_new' issuer_pk=issuer.id %}"
+           role="tab"
+           data-fm-head="Start new rating job"
+           data-fm-callback="reload">
+          <i class="fas fa-plus-circle"></i>
+
+          New rating job
+        </a>
+      </li>
+    {% endif %}
+
+    {% if global_variables.auth.groups|in_list:"Compliance" and global_variables.environment == 'DEV' %}
+
+      <li class="nav-item dropdown" title="Reports and other information for the Compliance function.">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Compliance</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="{% url 'issuer_insider_list' id=issuer.id %}" target="_blank">Insider list</a>
+        </div>
+      </li>
+
+    {% endif %}
+
+
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active tab-content-container" id="summary">
+    {% include "issuer/summary.html" %}
+  </div>
+  {% if data.issuer.financial_statement %}
+    <div class="tab-pane tab-content-container" id="financials">
+      {% include "issuer/financials/index.html" %}
+    </div>
+  {% endif %}
+  <div class="tab-pane tab-content-container" id="score">
+    {% if data.issuer.rating_job.rating_decision and auth.issuer.rating_job.view %}
+      {% include "issuer/rating_job/index.html" %}
+    {% else %}
+      {% include "card_access_denied.html" %}
+    {% endif %}
+  </div>
+  <div class="tab-pane" id="issues">
+    {% include "issuer/issue/issues_list.html" %}
+  </div>
+  <div class="tab-pane" id="rating_history">
+    {% include "issuer/rating_history.html" %}
+  </div>
+  <div class="tab-pane" id="contact_list">
+    {% include "issuer/contact_list.html" %}
+  </div>
+  <div class="tab-pane" id="logs">
+    {% include "issuer/event_list.html" %}
+  </div>
+  <div class="tab-pane" id="documents">
+    {% include "issuer/file_manager.html" %}
+  </div>
+
+
+</div>
+
+{% endblock %}

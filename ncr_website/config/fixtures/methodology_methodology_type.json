@@ -1,0 +1,23 @@
+[
+   {
+      "fields":{
+         "name":"Corporate"
+      },
+      "model":"methodology.methodologycategory",
+      "pk":1
+   },
+   {
+      "fields":{
+         "name":"Financial"
+      },
+      "model":"methodology.methodologycategory",
+      "pk":2
+   },
+   {
+      "fields":{
+         "name":"Rating principles"
+      },
+      "model":"methodology.methodologycategory",
+      "pk":3
+   }
+]

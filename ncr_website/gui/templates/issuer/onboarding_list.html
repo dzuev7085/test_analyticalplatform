@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load template_tags %}
+
+{% block content %}
+
+<table class="table table-striped table-sm">
+    <thead>
+        <tr>
+            <th>Issuer</th>
+            {% if global_variables.auth.groups|in_list:"Chief rating officer" %}
+              <th>Methodology</th>
+              <th>Industry</th>
+              <th>Client services</th>
+              <th>Primary analyst</th>
+              <th>Secondary analyst</th>
+            {% endif %}
+
+            {% if global_variables.auth.groups|in_list:"Commercial" %}
+              <th>Methodology</th>
+              <th>Client services</th>
+              <th>Engagement letter status</th>
+            {% endif %}
+        </tr>
+    </thead>
+    <tbody>
+      {% for object in object_list %}
+          <tr>
+            <td>
+              {{ object.issuer.legal_name }}
+            </td>
+
+            {% if global_variables.auth.groups|in_list:"Chief rating officer" %}
+
+              <td>
+                {{ object.issuer.issuer_type|default:'Not decided' }}
+              </td>
+
+              <td>
+                  <a href="{% url 'issuer_gics_update' issuer_pk=object.issuer.pk %}"
+                     class="fm-update"
+                     data-fm-head="Update sector"
+                     data-fm-callback="reload"
+                     data-fm-target="#object-{{ object.issuer.pk }}">
+
+                    {{ object.issuer.gics_sub_industry.industry.industry_group.sector.name|default:'<em>Not set</em>' }}
+                    <i class="far fa-edit"></i>
+                  </a>
+
+              </td>
+
+              <td>
+                {{ object.issuer.relationship_manager.get_full_name }}
+              </td>
+
+              <td>
+                <a href="{% url 'issuer_primary_analyst_update' analyst_pk=object.issuer.analyst.pk %}"
+                   class="fm-update "
+                   data-fm-head="Update analysts"
+                   data-fm-callback="reload"
+                   data-fm-target="#object-{{ object.issuer.analyst.pk }}">
+                  {{ object.issuer.analyst.primary_analyst.get_full_name|default:'<i>Not assigned</i>' }}
+                  <i class="far fa-edit"></i>
+                </a>
+              </td>
+
+              <td>
+                <a href="{% url 'issuer_primary_analyst_update' analyst_pk=object.issuer.analyst.pk %}"
+                   class="fm-update "
+                   data-fm-head="Update analysts"
+                   data-fm-callback="reload"
+                   data-fm-target="#object-{{ object.issuer.analyst.pk }}">
+                  {{ object.issuer.analyst.secondary_analyst.get_full_name|default:'<i>Not assigned</i>' }}
+                  <i class="far fa-edit"></i>
+                </a>
+              </td>
+
+            {% endif %}
+
+            {% if global_variables.auth.groups|in_list:"Commercial" %}
+
+              <td>
+                  <a href="{% url 'issuer_update_field' issuer_pk=object.issuer.id field='issuer_type' %}"
+                    class="fm-update"
+                    data-fm-head="Choose methodology"
+                    data-fm-callback="reload"
+                    data-fm-target="#object-{{ object.issuer.id }}">
+
+                    {{ object.issuer.issuer_type|default:'Not decided' }}
+
+                  <i class="far fa-edit"></i>
+                </a>
+              </td>
+
+
+              <td>
+                  <a href="{% url 'issuer_client_services_update' issuer_pk=object.issuer.pk %}"
+                     class="fm-update"
+                     data-fm-head="Choose client service manager"
+                     data-fm-callback="reload"
+                     data-fm-target="#object-{{ object.issuer.pk }}">
+                    {{ object.issuer.relationship_manager.get_full_name }}
+                    <i class="far fa-edit"></i>
+                  </a>
+              </td>
+
+              <td>
+                  <a href="{% url 'issuer_pending_engagement_letter_update' onboardingprocess_pk=object.pk %}"
+                     class="fm-update "
+                     data-fm-head="Update engagement letter status"
+                     data-fm-callback="reload"
+                     data-fm-target="#object-{{ object.pk }}">
+                    Edit
+                    <i class="far fa-edit"></i>
+                  </a>
+              </td>
+
+
+            {% endif %}
+
+          </tr>
+      {% empty %}
+        <td colspan="7">No issuers on list.</td>
+      {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

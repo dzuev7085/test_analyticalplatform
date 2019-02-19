@@ -1,0 +1,249 @@
+[
+   {
+      "fields":{
+        "name": "Operating environment",
+        "factor": 1,
+        "sort_order": 1
+      },
+      "model":"rating_process.internalscoredatasubfactor",
+      "pk":1
+   },
+   {
+      "fields":{
+        "name": "Market position",
+        "factor": 1,
+        "sort_order": 2
+      },
+      "model":"rating_process.internalscoredatasubfactor",
+      "pk":2
+   },
+   {
+      "fields":{
+        "name": "Operating efficiency",
+        "factor": 1,
+        "sort_order": 4
+      },
+      "model":"rating_process.internalscoredatasubfactor",
+      "pk":3
+   },
+   {
+      "fields":{
+        "name": "Size and diversification",
+        "factor": 1,
+        "sort_order": 10
+      },
+      "model":"rating_process.internalscoredatasubfactor",
+      "pk":4
+   },
+   {
+      "fields":{
+        "name": "Financial risk assessment",
+        "factor": 2
+      },
+      "model":"rating_process.internalscoredatasubfactor",
+      "pk":5
+   },
+   {
+      "fields":{
+        "name": "Liquidity",
+        "factor": 3
+      },
+      "model":"rating_process.internalscoredatasubfactor",
+      "pk":6
+   },
+   {
+      "fields":{
+        "name": "ESG",
+        "factor": 3
+      },
+      "model":"rating_process.internalscoredatasubfactor",
+      "pk":7
+   },
+   {
+      "fields":{
+        "name": "Peer comparison",
+        "factor": 3
+      },
+      "model":"rating_process.internalscoredatasubfactor",
+      "pk":8
+   },
+   {
+      "fields":{
+        "name": "Ownership support",
+        "factor": 4
+      },
+      "model":"rating_process.internalscoredatasubfactor",
+      "pk":9
+   },
+   {
+      "fields":{
+        "name": "Market position, size and diversification",
+        "factor": 1,
+        "sort_order": 2
+      },
+      "model":"rating_process.internalscoredatasubfactor",
+      "pk":10
+   },
+   {
+      "fields":{
+        "name": "Portfolio assessment",
+        "factor": 1,
+        "sort_order": 3
+      },
+      "model":"rating_process.internalscoredatasubfactor",
+      "pk":11
+   },
+   {
+      "fields":{
+        "name": "National factors",
+        "factor": 5,
+        "sort_order": 1
+      },
+      "model":"rating_process.internalscoredatasubfactor",
+      "pk":12
+   },
+   {
+      "fields":{
+        "name": "Regional, cross border, sector",
+        "factor": 5,
+        "sort_order": 2
+      },
+      "model":"rating_process.internalscoredatasubfactor",
+      "pk":13
+   },
+   {
+      "fields":{
+        "name": "Capital",
+        "factor": 6,
+        "sort_order": 1
+      },
+      "model":"rating_process.internalscoredatasubfactor",
+      "pk":14
+   },
+   {
+      "fields":{
+        "name": "Funding and liquidity",
+        "factor": 6,
+        "sort_order": 2
+      },
+      "model":"rating_process.internalscoredatasubfactor",
+      "pk":15
+   },
+   {
+      "fields":{
+        "name": "Risk governance",
+        "factor": 6,
+        "sort_order": 3
+      },
+      "model":"rating_process.internalscoredatasubfactor",
+      "pk":16
+   },
+   {
+      "fields":{
+        "name": "Credit risk",
+        "factor": 6,
+        "sort_order": 4
+      },
+      "model":"rating_process.internalscoredatasubfactor",
+      "pk":17
+   },
+   {
+      "fields":{
+        "name": "Market risk",
+        "factor": 6,
+        "sort_order": 5
+      },
+      "model":"rating_process.internalscoredatasubfactor",
+      "pk":18
+   },
+   {
+      "fields":{
+        "name": "Other risks",
+        "factor": 6,
+        "sort_order": 6
+      },
+      "model":"rating_process.internalscoredatasubfactor",
+      "pk":19
+   },
+   {
+      "fields":{
+        "name": "Market position",
+        "factor": 7,
+        "sort_order": 1
+      },
+      "model":"rating_process.internalscoredatasubfactor",
+      "pk":20
+   },
+   {
+      "fields":{
+        "name": "Earnings",
+        "factor": 8,
+        "sort_order": 1
+      },
+      "model":"rating_process.internalscoredatasubfactor",
+      "pk":21
+   },
+   {
+      "fields":{
+        "name": "Loss performance",
+        "factor": 8,
+        "sort_order": 2
+      },
+      "model":"rating_process.internalscoredatasubfactor",
+      "pk":22
+   },
+   {
+      "fields":{
+        "name": "Transitions",
+        "factor": 3,
+        "sort_order": 2
+      },
+      "model":"rating_process.internalscoredatasubfactor",
+      "pk":23
+   },
+   {
+      "fields":{
+        "name": "Borderline assessments",
+        "factor": 3,
+        "sort_order": 3
+      },
+      "model":"rating_process.internalscoredatasubfactor",
+      "pk":24
+   },
+   {
+      "fields":{
+        "name": "Material credit enhancement",
+        "factor": 4,
+        "sort_order": 2
+      },
+      "model":"rating_process.internalscoredatasubfactor",
+      "pk":25
+   },
+   {
+      "fields":{
+        "name": "Rating caps",
+        "factor": 4,
+        "sort_order": 3
+      },
+      "model":"rating_process.internalscoredatasubfactor",
+      "pk":26
+   },
+   {
+      "fields":{
+        "name": "Ratio analysis",
+        "factor": 2,
+        "sort_order": 1
+      },
+      "model":"rating_process.internalscoredatasubfactor",
+      "pk":27
+   },
+   {
+      "fields":{
+        "name": "Risk appetite",
+        "factor": 2,
+        "sort_order": 2
+      },
+      "model":"rating_process.internalscoredatasubfactor",
+      "pk":28
+   }
+]

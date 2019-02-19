@@ -1,0 +1,266 @@
+[
+   {
+      "model":"static_database_table.gicsindustrygroup",
+      "pk":1,
+      "fields":{
+         "valid_to":null,
+         "name":"Energy",
+         "code":1010,
+         "valid_from":"2016-09-01",
+         "sector_id": 1
+      }
+   },
+   {
+      "model":"static_database_table.gicsindustrygroup",
+      "pk":2,
+      "fields":{
+         "valid_to":null,
+         "name":"Materials",
+         "code":1510,
+         "valid_from":"2016-09-01",
+         "sector_id": 2
+      }
+   },
+   {
+      "model":"static_database_table.gicsindustrygroup",
+      "pk":3,
+      "fields":{
+         "valid_to":null,
+         "name":"Capital Goods",
+         "code":2010,
+         "valid_from":"2016-09-01",
+         "sector_id": 3
+      }
+   },
+   {
+      "model":"static_database_table.gicsindustrygroup",
+      "pk":4,
+      "fields":{
+         "valid_to":null,
+         "name":"Commercial & Professional Services",
+         "code":2020,
+         "valid_from":"2016-09-01",
+         "sector_id": 3
+      }
+   },
+   {
+      "model":"static_database_table.gicsindustrygroup",
+      "pk":5,
+      "fields":{
+         "valid_to":null,
+         "name":"Transportation",
+         "code":2030,
+         "valid_from":"2016-09-01",
+         "sector_id": 3
+      }
+   },
+   {
+      "model":"static_database_table.gicsindustrygroup",
+      "pk":6,
+      "fields":{
+         "valid_to":null,
+         "name":"Automobiles & Components",
+         "code":2510,
+         "valid_from":"2016-09-01",
+         "sector_id": 4
+      }
+   },
+   {
+      "model":"static_database_table.gicsindustrygroup",
+      "pk":7,
+      "fields":{
+         "valid_to":null,
+         "name":"Consumer Durables & Apparel",
+         "code":2520,
+         "valid_from":"2016-09-01",
+         "sector_id": 4
+      }
+   },
+   {
+      "model":"static_database_table.gicsindustrygroup",
+      "pk":8,
+      "fields":{
+         "valid_to":null,
+         "name":"Consumer Services",
+         "code":2530,
+         "valid_from":"2016-09-01",
+         "sector_id": 4
+      }
+   },
+   {
+      "model":"static_database_table.gicsindustrygroup",
+      "pk":9,
+      "fields":{
+         "valid_to":null,
+         "name":"Media",
+         "code":2540,
+         "valid_from":"2016-09-01",
+         "sector_id": 4
+      }
+   },
+   {
+      "model":"static_database_table.gicsindustrygroup",
+      "pk":10,
+      "fields":{
+         "valid_to":null,
+         "name":"Retailing",
+         "code":2550,
+         "valid_from":"2016-09-01",
+         "sector_id": 4
+      }
+   },
+   {
+      "model":"static_database_table.gicsindustrygroup",
+      "pk":11,
+      "fields":{
+         "valid_to":null,
+         "name":"Food & Staples Retailing",
+         "code":3010,
+         "valid_from":"2016-09-01",
+         "sector_id": 5
+      }
+   },
+   {
+      "model":"static_database_table.gicsindustrygroup",
+      "pk":12,
+      "fields":{
+         "valid_to":null,
+         "name":"Food, Beverage & Tobacco",
+         "code":3020,
+         "valid_from":"2016-09-01",
+         "sector_id": 5
+      }
+   },
+   {
+      "model":"static_database_table.gicsindustrygroup",
+      "pk":13,
+      "fields":{
+         "valid_to":null,
+         "name":"Household & Personal Products",
+         "code":3030,
+         "valid_from":"2016-09-01",
+         "sector_id": 5
+      }
+   },
+   {
+      "model":"static_database_table.gicsindustrygroup",
+      "pk":14,
+      "fields":{
+         "valid_to":null,
+         "name":"Health Care Equipment & Services",
+         "code":3510,
+         "valid_from":"2016-09-01",
+         "sector_id": 6
+      }
+   },
+   {
+      "model":"static_database_table.gicsindustrygroup",
+      "pk":15,
+      "fields":{
+         "valid_to":null,
+         "name":"Pharmaceuticals, Biotechnology & Life Sciences",
+         "code":3520,
+         "valid_from":"2016-09-01",
+         "sector_id": 6
+      }
+   },
+   {
+      "model":"static_database_table.gicsindustrygroup",
+      "pk":16,
+      "fields":{
+         "valid_to":null,
+         "name":"Banks",
+         "code":4010,
+         "valid_from":"2016-09-01",
+         "sector_id": 7
+      }
+   },
+   {
+      "model":"static_database_table.gicsindustrygroup",
+      "pk":17,
+      "fields":{
+         "valid_to":null,
+         "name":"Diversified Financials",
+         "code":4020,
+         "valid_from":"2016-09-01",
+         "sector_id": 7
+      }
+   },
+   {
+      "model":"static_database_table.gicsindustrygroup",
+      "pk":18,
+      "fields":{
+         "valid_to":null,
+         "name":"Insurance",
+         "code":4030,
+         "valid_from":"2016-09-01",
+         "sector_id": 7
+      }
+   },
+   {
+      "model":"static_database_table.gicsindustrygroup",
+      "pk":19,
+      "fields":{
+         "valid_to":null,
+         "name":"Software & Services",
+         "code":4510,
+         "valid_from":"2016-09-01",
+         "sector_id": 8
+      }
+   },
+   {
+      "model":"static_database_table.gicsindustrygroup",
+      "pk":20,
+      "fields":{
+         "valid_to":null,
+         "name":"Technology Hardware & Equipment",
+         "code":4520,
+         "valid_from":"2016-09-01",
+         "sector_id": 8
+      }
+   },
+   {
+      "model":"static_database_table.gicsindustrygroup",
+      "pk":21,
+      "fields":{
+         "valid_to":null,
+         "name":"Semiconductors & Semiconductor Equipment",
+         "code":4530,
+         "valid_from":"2016-09-01",
+         "sector_id": 8
+      }
+   },
+   {
+      "model":"static_database_table.gicsindustrygroup",
+      "pk":22,
+      "fields":{
+         "valid_to":null,
+         "name":"Telecommunication Services",
+         "code":5010,
+         "valid_from":"2016-09-01",
+         "sector_id": 9
+      }
+   },
+   {
+      "model":"static_database_table.gicsindustrygroup",
+      "pk":23,
+      "fields":{
+         "valid_to":null,
+         "name":"Utilities",
+         "code":5510,
+         "valid_from":"2016-09-01",
+         "sector_id": 10
+      }
+   },
+   {
+      "model":"static_database_table.gicsindustrygroup",
+      "pk":24,
+      "fields":{
+         "valid_to":null,
+         "name":"Real Estate",
+         "code":6010,
+         "valid_from":"2016-09-01",
+         "sector_id": 11
+      }
+   }
+]

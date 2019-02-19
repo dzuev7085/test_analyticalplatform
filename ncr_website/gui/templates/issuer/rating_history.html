@@ -1,0 +1,45 @@
+{% load template_tags %}
+
+<table class="table table-striped table-sm">
+    <thead>
+        <tr>
+            <th>Published date</th>
+            <th>Long-term rating</th>
+            <th>Outlook</th>
+            <th>Short-term rating</th>
+            <th>Primary analyst</th>
+            <th>Secondary analyst</th>
+            <th>Downloads</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in data.issuer.rating_history %}
+            <tr>
+                <td>{{ row.date_time_published|date:"Y-m-d" }}</td>
+                <td>{{ row.get_decided_lt_display }}</td>
+                <td>{{ row.get_decided_lt_outlook_display }}</td>
+                <td>{{ row.get_decided_st_display }}</td>
+                <td>{{ row.primary_analyst.get_full_name }}</td>
+                <td>{{ row.secondary_analyst.get_full_name|default:'' }}</td>
+                <td>
+                {% if not global_variables.auth.groups|in_list:"Commercial" %}
+                  <a href="{% url 'issuer_rating_job_committee_package' rating_decision_id=row.id %}" role="tab" data-toggle="tooltip" title="Download full committee pack" target="_blank">
+                    <i class="fas fa-book"></i>
+                  </a>
+                {% endif %}
+
+                {% if global_variables.auth.groups|in_list:"Compliance" %}
+                  <a href="{% url 'rating_decision_view' pk=data.issuer.data.id rating_decision_pk=row.id %}" target="_blank" role="tab" data-toggle="tooltip" title="Look at rating job" target="_blank">
+                    <i class="fas fa-eye"></i>
+                  </a>
+                {% endif %}
+
+                </td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="100%">This issuer does not have a rating history.</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

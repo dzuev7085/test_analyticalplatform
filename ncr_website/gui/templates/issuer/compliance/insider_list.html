@@ -1,0 +1,297 @@
+{% load staticfiles %}
+{% load template_tags %}
+<html lang="en-GB">
+<html>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+        <title>Nordic Credit Rating - Insider list for {{ issuer.data.legal_name }}</title>
+
+        <link rel="stylesheet" href="{% static 'css/styleguide.css' %}">
+        <style type="text/css">
+
+        /***********************************************************
+        * Fonts
+        ***********************************************************/
+
+        @font-face {
+          font-family: 'Activ Grotesk';
+          src: url("data:application/x-font-ttf;charset=utf-8;base64,{% static_file2base64 'font/aktiv_grotesk.ttf' %}");
+          font-weight: normal;
+          font-style: normal;
+        }
+
+        @font-face {
+          font-family: 'Header';
+          src: url("data:application/x-font-ttf;charset=utf-8;base64,{% static_file2base64 'font/aktiv_grotesk_bold.ttf' %}");
+          font-weight: 700;
+          font-style: normal;
+        }
+
+        @font-face {
+          font-family: 'Subheader';
+          src: url("data:application/x-font-ttf;charset=utf-8;base64,{% static_file2base64 'font/aktiv_grotesk_medium.ttf' %}");
+          font-weight: 700;
+          font-style: normal;
+        }
+
+        @font-face {
+          font-family: 'Bodytext';
+          src: url("data:application/x-font-otf;charset=utf-8;base64,{% static_file2base64 'font/notoserif_regular.ttf' %}");
+          font-weight: normal;
+          font-style: normal;
+        }
+
+
+        /***********************************************************
+           * General Page Style
+         ***********************************************************/
+         @page {
+           size: A4 landscape;
+
+           margin: 0mm 0mm 0mm 0mm;
+
+           @bottom-right {
+              margin: 0 7mm 15mm 0;
+              content: counter(page) "/" counter(pages);
+              font-size: 9pt;
+              text-align: right;
+              color: #000000;
+              z-index: 10;
+           }
+
+         }
+
+          .blue_header {
+            position: relative;
+            top: 0;
+            left: 0;
+
+            background-color: #0D2E54;
+            height: 33mm;
+            width: 100%;
+          }
+
+          .blue_logo {
+            position: absolute;
+            top: 8mm;
+            left: 20mm;
+            z-index: 100;
+          }
+
+          .blue_header_2 {
+            position: absolute;
+            top: 10mm;
+            right: 20mm;
+            text-align: right;
+          }
+
+
+          .gray_footer {
+            position: absolute;
+
+            font-family: 'Bodytext';
+            background-color: #eff0f1;
+            top: 278mm;
+            left: 0mm;
+            height: 19mm;
+            width: 100%;
+            z-index: -1;
+          }
+
+
+          .company_title {
+            position: absolute;
+            top: 6mm;
+            left: 7mm;
+            font-family: 'Bodytext';
+            color: #0D2E54;
+            font-size: 16pt;
+          }
+
+          .company_misc {
+            position: absolute;
+            top: 6mm;
+            right: 15mm;
+          }
+
+          .the_content{
+            position: absolute;
+            left: 7mm;
+            top: 40mm;
+            width: 280mm;
+            text-align:justify;
+            text-justify: inter-word;
+          }
+
+
+        /***********************************************************
+           * General Page Style
+         ***********************************************************/
+        header{
+          font-family: 'Header';
+          color: #0D2E54;
+          font-size: 16pt;
+          text-transform: uppercase;
+        }
+
+        subheader{
+          font-family: 'Subheader';
+          color: #0D2E54;
+          font-size: 10.5pt;
+          text-transform: uppercase;
+        }
+
+        subheader_drivers{
+          font-family: 'Subheader';
+          color: #0D2E54;
+          font-size: 9.5pt;
+          text-transform: uppercase;
+        }
+
+        other_blue{
+          font-family: 'Bodytext';
+          color: #0D2E54;
+          font-size: 9pt;
+        }
+
+        other_white{
+          font-family: 'Bodytext';
+          color: #FFFFFF;
+          font-size: 9pt;
+        }
+
+        p{
+          text-align: justify;
+          text-justify: inter-word;
+          font-family: 'Bodytext';
+          display: block;
+          margin-top: 0.2em;
+          margin-bottom: 1.1em;
+          color: #0000000;
+          font-size: 10pt;
+        }
+
+        ul {
+          padding: 15px;
+          text-align: justify;
+          text-justify: inter-word;
+          font-family: 'Bodytext';
+          margin-top: -1em;
+          margin-bottom: -0.2em;
+          color: #0000000;
+          font-size: 10pt;
+        }
+
+
+
+
+.ncrtable {
+  text-align: left;
+  border: 0;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.ncrtable a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.ncrtable td, ncrtable th {
+  padding: 5px 20px;
+  border-bottom: 1px solid #eff0f1;
+}
+
+.ncrtable th {
+  background-color: #0d2e54;
+  color: #fff;
+  font-family: 'Activ Grotesk';
+  font-weight: 500;
+  padding: 5px 20px;
+}
+
+.ncrtable tr {
+  font-family: 'Activ Grotesk';
+  font-weight: 500;
+}
+
+
+
+        </style>
+
+    </head>
+    <body>
+
+      <div class="blue_header">
+        <div class="blue_logo">
+          <img src="data:image/png;base64, {% static_file2base64 'image/ncr_logo_rgb_300ppi.png' %}" height="18mm" width="18mm">
+        </div>
+        <div class="blue_header_2">
+          <other_white style="text-transform: uppercase;">Insider list</other_white>
+        </div>
+      </div>
+
+      <div class="content">
+
+        <div class="the_content">
+          <subheader>Insider list for {{ issuer.data.legal_name }}</subheader>
+          <br><br>
+
+          <table border="0" cellpadding="0" cellspading="0" class="ncrtable">
+            <thead>
+              <th style="text-align: left;">
+                Company
+              </th>
+              <th style="text-align: left;">
+                Name
+              </th>
+              <th style="text-align: right; width:30mm;">
+                Added
+              </th>
+              <th style="text-align: left;">
+                Reason
+              </th>
+              <th style="text-align: right;">
+                Removed
+              </th>
+              <th style="text-align: left;">
+                Reason
+              </th>
+            </thead>
+            <tbody>
+            {% for row in issuer.insider_log %}
+              <tr>
+                {% if row.ncr_employee %}
+                  <td>Nordic Credit Rating AS</td>
+                {% else %}
+                  <td>{{ row.insider.company }}</td>
+                {% endif %}
+
+                {% if row.ncr_employee %}
+                  <td>{{ row.ncr_employee.get_full_name }}</td>
+                {% else %}
+                  <td>{{ row.insider.first_name }} {{ row.insider.last_name }}</td>
+                {% endif %}
+
+                <td align="right">{{ row.date_added|date:'Y-m-d H:i' }}</td>
+                <td>{{ row.addition_reason }}</td>
+                <td align="right">{{ row.date_removed|date:'Y-m-d H:i' }}</td>
+                <td>{{ row.removal_reason }}</td>
+
+              </tr>
+            {% empty %}
+              <tr>
+                <td colspan="100%">No insiders added</td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+      <div class="gray_footer"></div>
+
+    </body>
+</html>

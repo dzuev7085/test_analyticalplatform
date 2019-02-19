@@ -1,0 +1,65 @@
+{% load template_tags %}
+{% load staticfiles %}
+
+<style>
+
+.blue_sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-color: #0D2E54;
+  width: 260px;
+  height: 100%;
+}
+
+.blue_logo {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 100;
+}
+
+.form_area {
+  position: absolute;
+  top: 24px;
+  left: 300px;
+
+  background-color: #FFFFFF;
+
+}
+
+</style>
+
+
+
+<html>
+    <head>
+      {% include "page_head.html" %}
+    </head>
+    <body>
+      <div id="preloader">
+        <div id="status" style="background-image: url({% static 'image/preloader.gif' %});">&nbsp;</div>
+      </div>
+
+       <div class="blue_sidebar">
+        <div class="blue_logo">
+          <img src="data:image/png;base64, {% static_file2base64 'image/ncr_logo_rgb_300ppi.png' %}" height="150" width="150">
+        </div>
+       </div>
+
+       <div class="form_area">
+         <span class="header">Log into the Analytical Platform web app v{{ global_variables.version.code }}</span>
+         <br><br>
+
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <br><br>
+          <button type="submit">Login</button>
+        </form>
+
+       </div>
+
+    </body>
+</html>

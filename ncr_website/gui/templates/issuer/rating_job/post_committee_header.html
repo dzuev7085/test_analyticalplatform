@@ -1,0 +1,71 @@
+{% load template_tags %}
+
+<div class="row">
+  <div class="col-8">
+    <!-- Column 1 -->
+
+    <div class="card-body">
+      <h5 class="card-title">
+        Post-committee comments:
+
+        {% if allow_edit and auth.issuer.rating_job.edit %}
+          <a href="{% url 'rating_decision_update_field' rating_decision_pk=data.issuer.rating_job.rating_decision.id field='committee_comments' %}"
+           class="fm-create"
+           data-fm-head="Add committee comments"
+           data-fm-callback="reload">
+
+          <i class="fas fa-edit"></i>
+          </a>
+
+        {% endif %}
+
+      </h5>
+
+      <p class="card-text">
+        <div style="text-align:justify; text-justify: inter-word;">
+          {{ data.issuer.rating_job.rating_decision.committee_comments|default:'<em>No comment provided.</em>'|safe }}
+        </div>
+      </p>
+    </div>
+
+  </div>
+
+  <div class="col-4">
+    <!-- Column 3 -->
+
+    <div class="card-body">
+      <h5 class="card-title">
+        Editing data:
+      </h5>
+
+      <p class="card-text">
+        Editor: {{ data.issuer.rating_job.editors.member.get_full_name|default:'<em>No editor appointed.</em>' }}
+        <br>
+      </p>
+
+      Don't forget to copy the unedited document to the editor's folder.
+      </p>
+
+      {% if not data.issuer.rating_job.editors.member.get_full_name and allow_edit and auth.issuer.rating_job.edit %}
+        <a href="{% url 'issuer_rating_job_editor_add' rating_decision_pk=data.issuer.rating_job.rating_decision.id %}"
+         class="fm-create"
+         data-fm-head="Add editor"
+         data-fm-callback="reload">
+
+          Add editor
+        <i class="fas fa-edit"></i>
+        </a>
+        <br>
+      {% endif %}
+
+    </div>
+
+    {% if data.issuer.rating_job.rating_decision.get_process_step_display == 'post_committee' %}
+      {% include "issuer/rating_job/document_card.html" %}
+    {% endif %}
+
+  </div>
+
+</div>
+
+<br>

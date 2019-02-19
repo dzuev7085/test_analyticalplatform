@@ -1,0 +1,95 @@
+{% load template_tags %}
+
+<!-- Adjustment factor -->
+<tr>
+  <th width="180px" align="left">
+    {{ data.issuer.rating_job.subscores.adjustment_factor.0.subfactor.factor }}
+  </th>
+  <th align="left">Subfactor</th>
+  <th>&nbsp;</th>
+
+  <th class="table-th-right" align="right">Existing</th>
+
+  <th class="table-th-right" align="right">Recommended</th>
+
+  {% if show_final_score %}
+    <th class="table-th-right" align="right">Final</th>
+  {% endif %}
+
+  {% if allow_edit and auth.issuer.rating_job.edit %}
+    <th>&nbsp;</th>
+  {% endif %}
+
+</tr>
+
+{% for object in data.issuer.rating_job.subscores.adjustment_factor %}
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+      {{ object.subfactor.name }}
+    </td>
+    <td>&nbsp;</td>
+
+    <td align="right">
+      {% get_subscore data.issuer.rating_job.existing.scores object.subfactor.id 'decided_notch_adjustment' as adjustment %}
+
+      {{ adjustment | format_plus_minus }}
+    </td>
+
+    <td align="right">
+      {{ object.proposed_notch_adjustment | format_plus_minus }}
+    </td>
+
+    {% if show_final_score %}
+      <td align="right">
+        {{ object.decided_notch_adjustment | format_plus_minus }}
+      </td>
+    {% endif %}
+
+    {% if allow_edit and auth.issuer.rating_job.edit %}
+      <td align="right">
+
+        <a href="{% url 'rating_score_adjustment_update' subscore_pk=object.id decided=is_recommended %}"
+           class="fm-update"
+           data-fm-head="Edit {{ object.subfactor.name }}"
+           data-fm-callback="reload"
+           data-fm-target="#object-{{ object.id }}">
+          <i class="fas fa-edit"></i>
+        </a>
+
+      </td>
+
+    {% endif %}
+
+  </tr>
+{% endfor %}
+
+<tr class="tr-topline" style="background-color: #FFFFFF; border-top-style: solid;border-color:#000000; border-width: 1px;">
+  <td colspan="2">Total adjustment</td>
+  <td>&nbsp;</td>
+
+  <td align="right">
+    {% if data.issuer.rating_job.existing.calc_rating.issuer_rating %}
+      {{ data.issuer.rating_job.existing.calc_rating.adjustment_factor.total | format_plus_minus }}
+    {% else %}
+      n/a
+    {% endif %}
+  </td>
+
+  <td align="right">
+    {{ data.issuer.rating_job.proposed_rating.adjustment_factor.total | format_plus_minus }}
+  </td>
+
+  {% if show_final_score %}
+    <td align="right">
+      {{ data.issuer.rating_job.decided_rating.adjustment_factor.total | format_plus_minus }}
+    </td>
+  {% endif %}
+
+  {% if allow_edit and auth.issuer.rating_job.edit %}
+    <td>&nbsp;</td>
+  {% endif %}
+
+</tr>

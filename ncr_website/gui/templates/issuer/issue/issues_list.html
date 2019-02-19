@@ -1,0 +1,158 @@
+{% load template_tags %}
+<!-- This page is also being used in the committee pack template. -->
+
+<table class="ncrtable" style="font-size: 12px;">
+  <thead>
+      <tr class="tr-bottom">
+          <th align="left">Status</th>
+          <th align="left">Seniority</th>
+          <th align="left">Program</th>
+          <th align="left">ISIN</th>
+          <th align="left">Name</th>
+          <th align="left">Ticker</th>
+          <th align="right" class="table-th-right">Settlement</th>
+          <th align="right" class="table-th-right">Maturity</th>
+          <th align="right" class="table-th-right">Currency</th>
+          <th align="right" class="table-th-right">Amount (mn)</th>
+
+          {% if gui.issuer.issues.show_existing %}
+            <th align="right" class="table-th-right">Existing rating</th>
+            <th align="right" class="table-th-right">Decision date</th>
+          {% endif %}
+
+          {% if rating_controller.columns.allow_edit and global_variables.auth.groups|in_list:"Analyst" %}
+            <th align="right" class="table-th-right">
+              <a href="{% url 'issuer_issue_add' issuer_pk=issuer.id %}"
+                 class="fm-create"
+                 data-fm-head="Add issue"
+                 data-fm-callback="reload" title="Add new issue to the list">
+                <i class="fas fa-plus-circle"></i>
+                Add issue
+              </a>
+            </th>
+          {% endif %}
+      </tr>
+  </thead>
+
+  <tbody>
+    {% for issue in data.issuer.issues %}
+      <tr>
+        <td align="left" valign="top">
+          {% ifchanged issue.status %}{{ issue.status }}{% endifchanged %}
+        </td>
+        <td align="left" valign="top">
+          {% ifchanged issue.status and issue.seniority_lvl %}{{ issue.seniority_lvl }}{% endifchanged %}
+        </td>
+        <td align="left" valign="top">
+          {% ifchanged issue.status and issue.seniority_lvl and issue.program_name %}{{ issue.program_name }}{% endifchanged %}
+        </td>
+        <td align="left" valign="top">
+          {{ issue.isin }}
+        </td>
+        <td align="left" valign="top">
+          {{ issue.name|default:'' }}
+        </td>
+        <td align="left" valign="top">
+          {{ issue.ticker|default:'' }}
+        </td>
+        <td align="right" valign="top" style="white-space: nowrap;">
+          {{ issue.disbursement|date:'Y-m-d' }}
+        </td>
+        <td align="right" valign="top" style="white-space: nowrap;">
+          {{ issue.maturity|date:'Y-m-d' }}
+        </td>
+        <td align="right" valign="top">
+          {{ issue.ccy }}
+        </td>
+        <td align="right" valign="top">
+          {{ issue.amount|format_mn|default:'' }}
+        </td>
+
+        {% if gui.issuer.issues.show_existing %}
+          <td align="right" valign="top">
+            {% if issue.status == 'Live' %}
+
+              {% if issue.is_current == True %}
+
+                <!-- This rating has been decided -->
+                {{ issue.decided_lt | return_long_term_rating }}
+
+              {% elif issue.decided_lt == None and data.issuer.current_rating and issue.in_progress == None and issue.current_issue_decision %}
+
+                <a href="{% url 'issuer_rating_job_add_issue_decision' issue_pk=issue.id rating_decision_pk=data.issuer.current_rating.id %}"
+                   class="fm-create"
+                   data-fm-head="Propose issue rating"
+                   data-fm-callback="reload"
+                   data-fm-target="#object-{{ issue.id }}" title="Click here to initiate a rating job for this issue">
+
+                  {{ issue.decided_lt | return_long_term_rating }}
+                </a>
+
+              {% elif issue.in_progress == 1 %}
+
+                [<a href="{% url 'issuer_rating_job_edit_issue_decision' issue_decision_pk=issue.in_progress_id %}"
+                   class="fm-update"
+                   data-fm-head="Edit proposed issue rating"
+                   data-fm-callback="reload"
+                   data-fm-target="#object-{{ issue.in_progress_id }}">
+
+                  {{ issue.in_progress_decided_lt | return_long_term_rating }}
+                </a>]
+
+              {% elif issue.in_progress == 2 %}
+
+                [<a href="#" data-toggle="tooltip" title="The proposed rating is pending approval">{{ issue.in_progress_decided_lt | return_long_term_rating }}</a>]
+
+              {% elif issue.issue.current_issue_decision == None %}
+
+                <a href="#" data-toggle="tooltip" title="The rating committee has not made a decision for this seniority level.">
+                  <i class="fas fa-question-circle"></i>
+                </a>
+
+              {% endif %}
+
+
+            {% else %}
+
+              {{ issue.decided_lt | return_long_term_rating }}
+
+            {% endif %}
+          </td>
+        {% endif %}
+
+        {% if gui.issuer.issues.show_existing %}
+          <td align="right">
+              {{ issue.date_time_committee|date:'Y-m-d' }}
+          </td>
+        {% endif %}
+
+        {% if rating_controller.columns.allow_edit and global_variables.auth.groups|in_list:"Analyst" %}
+
+          <td align="right">
+            {% if issue.status != 'Matured' %}
+              <a href="{% url 'issuer_issue_edit' issue_pk=issue.id %}"
+                 class="fm-update"
+                 data-fm-head="Edit issue"
+                 data-fm-callback="reload"
+                 data-fm-target="#object-{{ issue.id }}">
+                <i class="fas fa-edit"></i>
+                Edit
+              </a>
+          {% else %}
+              &nbsp;
+          {% endif %}
+          </td>
+        {% endif %}
+
+      </tr>
+
+
+    {% empty %}
+      <tr>
+        <td colspan="100%">You have not yet added any issues for this issuer.</td>
+      </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+

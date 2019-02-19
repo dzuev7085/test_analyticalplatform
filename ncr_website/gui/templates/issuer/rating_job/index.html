@@ -1,0 +1,290 @@
+{% load template_tags %}
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+     $('.confirm').click(function() {
+       return confirm('When you click OK, the people on the contact list get the report as an attachment.');
+     });
+
+          $('a.prevent_doubleclick').on("click",
+            function(event)
+            {
+              var addressValue = $(this).attr("href");
+
+              $('a.prevent_doubleclick').prop('onclick',null);
+              $('a.prevent_doubleclick').addClass('disabled');
+
+              window.location.replace(addressValue);
+
+            });
+  });
+
+</script>
+
+
+
+ <ul class="nav nav-tabs">
+
+  <li class="nav-item-small nav-link">
+    <a class="nav-item" data-toggle="tab" href="#setup_step_1" role="tab">Setup</a>
+  </li>
+
+  {% if gui_controls.progress_bar.setup_done %}
+    <li class="nav-item-small nav-link">
+      <a class="nav-item" data-toggle="tab" href="#setup_step_2" role="tab">Pre-committee</a>
+    </li>
+   {% endif %}
+
+  {% if gui_controls.progress_bar.pre_committee_done %}
+    <li class="nav-item-small nav-link">
+      <a class="nav-item" data-toggle="tab" href="#setup_step_3" role="tab">Recommendation</a>
+    </li>
+   {% endif %}
+
+  {% if gui_controls.progress_bar.analytical_phase_done %}
+    <li class="nav-item-small nav-link">
+      <a class="nav-item" data-toggle="tab" href="#setup_step_4" role="tab">Post committee</a>
+    </li>
+   {% endif %}
+
+  {% if gui_controls.progress_bar.post_committee_done %}
+    <li class="nav-item-small nav-link">
+      <a class="nav-item" data-toggle="tab" href="#setup_step_5" role="tab">Editing</a>
+    </li>
+   {% endif %}
+
+  {% if gui_controls.progress_bar.editing_done %}
+    <li class="nav-item-small nav-link">
+      <a class="nav-item" data-toggle="tab" href="#setup_step_6" role="tab">Issuer confirmation</a>
+    </li>
+   {% endif %}
+
+  {% if gui_controls.progress_bar.issuer_confirmation_done %}
+    <li class="nav-item-small nav-link">
+      <a class="nav-item" data-toggle="tab" href="#setup_step_7" role="tab">Analyst approval</a>
+    </li>
+   {% endif %}
+
+  {% if gui_controls.progress_bar.analyst_final_approval_done %}
+    <li class="nav-item-small nav-link">
+      <a class="nav-item" data-toggle="tab" href="#setup_step_8" role="tab">Chair approval</a>
+    </li>
+   {% endif %}
+
+  {% if gui_controls.progress_bar.chair_final_approval_done %}
+    <li class="nav-item-small nav-link">
+      <a class="nav-item" data-toggle="tab" href="#setup_step_9" role="tab">Finalize rating job</a>
+    </li>
+   {% endif %}
+
+  {% if gui_controls.progress_bar.pre_committee_done %}
+    <li class="nav-item-small nav-link">
+      <a class="nav-item" href="{% url 'issuer_rating_job_committee_package' rating_decision_id=data.issuer.rating_job.rating_decision.id %}" role="tab" data-toggle="tooltip" title="Committee Package" target="_blank">
+        <i class="fas fa-book"></i>
+        Committee Pack
+      </a>
+    </li>
+   {% endif %}
+
+  {% if auth.issuer.rating_job.edit %}
+    <li class="nav-item ml-auto button">
+      {% if error_messages|length == 0 %}
+
+        {% with data.issuer.rating_job.rating_decision.get_process_step_display|add:"_done" as next_process_step %}
+          {% if data.issuer.rating_job.rating_decision.get_process_step_display == 'editor_phase' %}
+            <!--Adds an extra dialog box before something is sent to the issuer -->
+
+            <a class="nav-item nav-link confirm prevent_doubleclick" href="{% url 'rating_committee_pending_action' action=next_process_step rating_decision_pk=data.issuer.rating_job.rating_decision.id %}">
+          {% elif data.issuer.rating_job.rating_decision.get_process_step_display == 'pre_committee' and request.user != data.issuer.rating_job.rating_decision.chair %}
+            <a class="nav-item nav-link disabled" href="{% url 'rating_committee_pending_action' action=next_process_step rating_decision_pk=data.issuer.rating_job.rating_decision.id %}">
+          {% elif data.issuer.rating_job.rating_decision.get_process_step_display == 'chair_final_approval_phase' and request.user != data.issuer.rating_job.rating_decision.chair %}
+            <a class="nav-item nav-link disabled" href="{% url 'rating_committee_pending_action' action=next_process_step rating_decision_pk=data.issuer.rating_job.rating_decision.id %}">
+          {% else %}
+            <a class="nav-item nav-link prevent_doubleclick" href="{% url 'rating_committee_pending_action' action=next_process_step rating_decision_pk=data.issuer.rating_job.rating_decision.id %}">
+          {% endif %}
+        {% endwith %}
+
+          {% if data.issuer.rating_job.rating_decision.get_process_step_display == 'publishing_phase' %}
+            <i class="fas fa-flag"></i>
+            Finalize rating
+          {% elif data.issuer.rating_job.rating_decision.get_process_step_display == 'analytical_phase' %}
+            <i class="fas fa-forward"></i>
+            Submit to committee
+          {% else %}
+            <i class="fas fa-forward"></i>
+            Go to next step
+          {% endif %}
+      </a>
+
+      {% else %}
+        <a class="nav-item nav-link" href="#" data-toggle="tooltip"
+           title="{% for item in error_messages %}{{ item }}
+{% endfor %}">
+          <i class="fas fa-exclamation-triangle"></i>
+        </a>
+      {% endif %}
+    </li>
+  {% endif %}
+
+
+
+</ul>
+
+<div class="tab-content">
+
+  <div class="tab-pane subtab-content-container active" id="setup_step_1">
+    {% include "issuer/rating_job/setup_start.html" %}
+  </div>
+
+  <div class="tab-pane subtab-content-container" id="setup_step_2">
+    {% if data.issuer.rating_job.rating_decision.get_process_step_display == 'pre_committee' %}
+
+      {% with allow_edit=True %}
+        {% include "issuer/rating_job/pre_committee.html" %}
+      {% endwith %}
+
+    {% else %}
+
+      {% with allow_edit=False %}
+        {% include "issuer/rating_job/pre_committee.html" %}
+      {% endwith %}
+
+    {% endif %}
+
+  </div>
+
+  <div class="tab-pane subtab-content-container" id="setup_step_3">
+
+    {% if data.issuer.rating_job.rating_decision.get_process_step_display == 'analytical_phase' %}
+
+      {% with allow_edit=True show_final_score=False %}
+          {% include "issuer/rating_job/analytical_phase.html" %}
+      {% endwith %}
+
+    {% else %}
+
+      {% with allow_edit=False show_final_score=False %}
+          {% include "issuer/rating_job/analytical_phase.html" %}
+      {% endwith %}
+
+    {% endif %}
+
+  </div>
+
+  <div class="tab-pane subtab-content-container" id="setup_step_4">
+
+    {% if data.issuer.rating_job.rating_decision.get_process_step_display == 'post_committee' %}
+
+      {% with allow_edit=True show_final_score=True %}
+          {% include "issuer/rating_job/post_committee.html" %}
+      {% endwith %}
+
+    {% else %}
+
+      {% with allow_edit=False show_final_score=True %}
+          {% include "issuer/rating_job/post_committee.html" %}
+      {% endwith %}
+
+    {% endif %}
+
+  </div>
+
+
+  <div class="tab-pane subtab-content-container" id="setup_step_5">
+
+
+    {% if data.issuer.rating_job.rating_decision.get_process_step_display == 'editor_phase' %}
+
+      {% with allow_edit=True %}
+        {% include "issuer/rating_job/editor_phase.html" %}
+      {% endwith %}
+
+    {% else %}
+
+      {% with allow_edit=False %}
+        {% include "issuer/rating_job/editor_phase.html" %}
+      {% endwith %}
+
+    {% endif %}
+
+  </div>
+
+
+  <div class="tab-pane subtab-content-container" id="setup_step_6">
+
+    {% if data.issuer.rating_job.rating_decision.get_process_step_display == 'issuer_confirmation_phase' %}
+
+      {% with allow_edit=True %}
+        {% include "issuer/rating_job/issuer_confirmation_phase.html" %}
+      {% endwith %}
+
+    {% else %}
+
+      {% with allow_edit=False %}
+        {% include "issuer/rating_job/issuer_confirmation_phase.html" %}
+      {% endwith %}
+
+    {% endif %}
+
+  </div>
+
+  <div class="tab-pane subtab-content-container" id="setup_step_7">
+
+    {% if data.issuer.rating_job.rating_decision.get_process_step_display == 'analyst_final_approval_phase' %}
+
+      {% with allow_edit=True %}
+        {% include "issuer/rating_job/analyst_approval_phase.html" %}
+      {% endwith %}
+
+    {% else %}
+
+      {% with allow_edit=False %}
+        {% include "issuer/rating_job/analyst_approval_phase.html" %}
+      {% endwith %}
+
+    {% endif %}
+
+  </div>
+
+  <div class="tab-pane subtab-content-container" id="setup_step_8">
+
+    {% if data.issuer.rating_job.rating_decision.get_process_step_display == 'chair_final_approval_phase' %}
+
+      {% with allow_edit=True %}
+        {% include "issuer/rating_job/chair_approval_phase.html" %}
+      {% endwith %}
+
+    {% else %}
+
+      {% with allow_edit=False %}
+        {% include "issuer/rating_job/chair_approval_phase.html" %}
+      {% endwith %}
+
+    {% endif %}
+
+  </div>
+
+  <div class="tab-pane subtab-content-container" id="setup_step_9">
+
+
+    {% if data.issuer.rating_job.rating_decision.get_process_step_display == 'publishing_phase' %}
+
+      {% with allow_edit=True %}
+        {% include "issuer/rating_job/publishing_phase.html" %}
+      {% endwith %}
+
+    {% else %}
+
+      {% with allow_edit=False %}
+        {% include "issuer/rating_job/publishing_phase.html" %}
+      {% endwith %}
+
+    {% endif %}
+
+  </div>
+
+
+</div>
+
+

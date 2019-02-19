@@ -1,0 +1,88 @@
+.ncrtable {
+  text-align: left;
+  border: 0;
+  border-collapse: collapse;
+  font-size: 12px;
+  font-family: 'Aktiv Grotesk';
+}
+
+.ncrtable a {
+  color: inherit;
+  text-decoration: inherit;
+  border-bottom: 1px dashed #00897B;
+}
+
+.ncrtable td, ncrtable th {
+  border-bottom: 1px solid #eff0f1;
+}
+/*
+.ncrtable td:last-child, ncrtable th:last-child {
+  text-align: center;
+}
+*/
+.ncrtable td img {
+  vertical-align: middle;
+}
+.ncrtable th {
+  padding: 6px 10px 3px 20px;
+  background-color: #0d2e54;
+  color: #fff;
+  font-weight: 500;
+}
+.ncrtable td {
+  padding: 6px 10px 3px 20px;
+  vertical-align: top;
+}
+
+.ncrtable.all-left td:last-child, ncrtable.all-left th:last-child {
+  text-align: left;
+}
+.ncrtable.last-right td:last-child, ncrtable.last-right th:last-child {
+  text-align: right;
+}
+
+.subtotal {
+  border-width: 0;
+  color: #0d2e54;
+  font-weight: bold;
+  border-top: 2px solid #0d2e54;
+}
+
+.chart_cell {
+  background-color: #FFFFFF;
+  color: #000000;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.small_row {
+  font-size: 10px;
+}
+
+.header {
+  font-family: 'Header';
+  font-size: 12pt;
+  text-transform: uppercase;
+  color: #0d2e54;
+}
+
+.subheader {
+  font-family: 'Aktiv Grotesk';
+  font-size: 10.5pt;
+  text-transform: uppercase;
+  color: #0d2e54;
+}
+
+.body {
+  font-family: 'Body';
+  font-size: 8.5pt;
+  text-align: justify;
+  text-justify: inter-word;
+  margin-top: 0.2em;
+  margin-bottom: 1.1em;
+  display: block;
+}
+
+.pageBreak {
+  page-break-before: always;
+}

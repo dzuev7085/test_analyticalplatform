@@ -1,0 +1,83 @@
+{% if gui_controls.progress_bar.enable %}
+  <div class="job-progress-bar-container">
+    {% if not gui_controls.progress_bar.ongoing_surveillance %}
+      <div>
+
+        <div class="job-progress-bar-div" style="width:11.1%;background-color:#00897B;color:#FFFFFF;">
+          Setup
+        </div>
+
+        {% if gui_controls.progress_bar.setup_done %}
+          <div class="job-progress-bar-div" style="width:11.1%;background-color:#00897B;color:#FFFFFF;">
+        {% else %}
+          <div class="job-progress-bar-div" style="width:11.1%;">
+        {% endif %}
+          Pre-committee
+        </div>
+
+        {% if gui_controls.progress_bar.pre_committee_done %}
+          <div class="job-progress-bar-div" style="width:11.1%;background-color:#00897B;color:#FFFFFF;">
+        {% else %}
+          <div class="job-progress-bar-div" style="width:11.1%;">
+        {% endif %}
+          Analytical phase
+        </div>
+
+        {% if gui_controls.progress_bar.analytical_phase_done %}
+          <div class="job-progress-bar-div" style="width:11.1%;background-color:#00897B;color:#FFFFFF;">
+        {% else %}
+          <div class="job-progress-bar-div" style="width:11.1%;">
+        {% endif %}
+          Post-committee
+        </div>
+
+        {% if gui_controls.progress_bar.post_committee_done %}
+          <div class="job-progress-bar-div" style="width:11.1%;background-color:#00897B;color:#FFFFFF;">
+        {% else %}
+          <div class="job-progress-bar-div" style="width:11.1%;">
+        {% endif %}
+          Editing
+        </div>
+
+        {% if gui_controls.progress_bar.editing_done %}
+          <div class="job-progress-bar-div" style="width:11.1%;background-color:#00897B;color:#FFFFFF;">
+        {% else %}
+          <div class="job-progress-bar-div" style="width:11.1%;">
+        {% endif %}
+          Issuer confirmation
+        </div>
+
+        {% if gui_controls.progress_bar.issuer_confirmation_done %}
+          <div class="job-progress-bar-div" style="width:11.1%;background-color:#00897B;color:#FFFFFF;">
+        {% else %}
+          <div class="job-progress-bar-div" style="width:11.1%;">
+        {% endif %}
+          Analyst final approval
+        </div>
+
+        {% if gui_controls.progress_bar.analyst_final_approval_done %}
+          <div class="job-progress-bar-div" style="width:11.1%;background-color:#00897B;color:#FFFFFF;">
+        {% else %}
+          <div class="job-progress-bar-div" style="width:11.1%;">
+        {% endif %}
+          Chair final approval
+        </div>
+
+        {% if gui_controls.progress_bar.chair_final_approval_done %}
+          <div class="job-progress-bar-div" style="width:11.2%;background-color:#00897B;color:#FFFFFF;">
+        {% else %}
+          <div class="job-progress-bar-div" style="width:11.2%;">
+        {% endif %}
+          Finalize rating job
+        </div>
+
+
+      </div>
+
+    {% else %}
+      <div class="job-progress-bar-div" style="width:100%;background-color:#00897B;color:#FFFFFF;"">
+        Ongoing surveillance
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

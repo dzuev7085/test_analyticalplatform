@@ -1,0 +1,101 @@
+[
+   {
+      "fields":{
+         "stage":3,
+         "is_enabled":true,
+         "question":"The chair conducted a review at the start of the committee to ensure that there were no conflicts of interest?"
+      },
+      "model":"rating_process.question",
+      "pk":1
+   },
+   {
+      "fields":{
+         "stage":3,
+         "is_enabled":true,
+         "question":"The committee decision reflected the issuers fundamental credit quality?"
+      },
+      "model":"rating_process.question",
+      "pk":2
+   },
+   {
+      "fields":{
+         "stage":3,
+         "is_enabled":true,
+         "question":"The final version of the report reflects the issuer's credit quality and, as the analyst, you take full responsibility for the text and the graphical content?"
+      },
+      "model":"rating_process.question",
+      "pk":3
+   },
+   {
+      "fields":{
+         "stage":3,
+         "is_enabled":true,
+         "question":"All relevant documents have been stored correctly on approved storage media?"
+      },
+      "model":"rating_process.question",
+      "pk":4
+   },
+   {
+      "fields":{
+         "stage":4,
+         "is_enabled":true,
+         "question":"There were no conflicts of interest between the analyst, voters, and the issuer?"
+      },
+      "model":"rating_process.question",
+      "pk":5
+   },
+   {
+      "fields":{
+         "stage":4,
+         "is_enabled":true,
+         "question":"The analytical committee material was sufficient to form a rating decision?"
+      },
+      "model":"rating_process.question",
+      "pk":6
+   },
+   {
+      "fields":{
+         "stage":4,
+         "is_enabled":true,
+         "question":"The public report reflects the committee decision and is focused on the credit story?"
+      },
+      "model":"rating_process.question",
+      "pk":7
+   },
+   {
+      "fields":{
+         "stage":4,
+         "is_enabled":true,
+         "question":"The committee conclusions adequately reflect the committee discussions?"
+      },
+      "model":"rating_process.question",
+      "pk":8
+   },
+   {
+      "fields":{
+         "stage":4,
+         "is_enabled":true,
+         "question":"The final ratings of issuers and issues correctly reflect the committee outcome?"
+      },
+      "model":"rating_process.question",
+      "pk":9
+   },
+   {
+      "fields":{
+         "stage":2,
+         "is_enabled":false,
+         "question":"Do we have sufficient resources to take on this assignment?"
+      },
+      "model":"rating_process.question",
+      "pk":11
+   },
+   {
+      "fields":{
+         "stage":5,
+         "is_enabled":true,
+         "question":"Have you verified that the information in all previous steps are correct?"
+      },
+      "model":"rating_process.question",
+      "pk":12
+   }
+]

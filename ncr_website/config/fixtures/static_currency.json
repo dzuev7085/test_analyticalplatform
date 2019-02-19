@@ -1,0 +1,1624 @@
+[
+{
+      "model":"static_database_table.currency",
+      "pk":1,
+      "fields":{
+         "name":"ADB Unit of Account",
+         "currency_code_alpha_3":"XUA",
+         "currency_code_alpha_3_currency_code":965
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":2,
+      "fields":{
+         "name":"Afghani",
+         "currency_code_alpha_3":"AFN",
+         "currency_code_alpha_3_currency_code":971
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":3,
+      "fields":{
+         "name":"Algerian Dinar",
+         "currency_code_alpha_3":"DZD",
+         "currency_code_alpha_3_currency_code":12
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":4,
+      "fields":{
+         "name":"Argentine Peso",
+         "currency_code_alpha_3":"ARS",
+         "currency_code_alpha_3_currency_code":32
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":5,
+      "fields":{
+         "name":"Armenian Dram",
+         "currency_code_alpha_3":"AMD",
+         "currency_code_alpha_3_currency_code":51
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":6,
+      "fields":{
+         "name":"Aruban Florin",
+         "currency_code_alpha_3":"AWG",
+         "currency_code_alpha_3_currency_code":533
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":7,
+      "fields":{
+         "name":"Australian Dollar",
+         "currency_code_alpha_3":"AUD",
+         "currency_code_alpha_3_currency_code":36
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":8,
+      "fields":{
+         "name":"Azerbaijan Manat",
+         "currency_code_alpha_3":"AZN",
+         "currency_code_alpha_3_currency_code":944
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":9,
+      "fields":{
+         "name":"Bahamian Dollar",
+         "currency_code_alpha_3":"BSD",
+         "currency_code_alpha_3_currency_code":44
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":10,
+      "fields":{
+         "name":"Bahraini Dinar",
+         "currency_code_alpha_3":"BHD",
+         "currency_code_alpha_3_currency_code":48
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":11,
+      "fields":{
+         "name":"Baht",
+         "currency_code_alpha_3":"THB",
+         "currency_code_alpha_3_currency_code":764
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":12,
+      "fields":{
+         "name":"Balboa",
+         "currency_code_alpha_3":"PAB",
+         "currency_code_alpha_3_currency_code":590
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":13,
+      "fields":{
+         "name":"Barbados Dollar",
+         "currency_code_alpha_3":"BBD",
+         "currency_code_alpha_3_currency_code":52
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":14,
+      "fields":{
+         "name":"Belarusian Ruble",
+         "currency_code_alpha_3":"BYN",
+         "currency_code_alpha_3_currency_code":933
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":15,
+      "fields":{
+         "name":"Belize Dollar",
+         "currency_code_alpha_3":"BZD",
+         "currency_code_alpha_3_currency_code":84
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":16,
+      "fields":{
+         "name":"Bermudian Dollar",
+         "currency_code_alpha_3":"BMD",
+         "currency_code_alpha_3_currency_code":60
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":17,
+      "fields":{
+         "name":"Bolívar",
+         "currency_code_alpha_3":"VEF",
+         "currency_code_alpha_3_currency_code":937
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":18,
+      "fields":{
+         "name":"Bolívar Soberano",
+         "currency_code_alpha_3":"VES",
+         "currency_code_alpha_3_currency_code":928
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":19,
+      "fields":{
+         "name":"Boliviano",
+         "currency_code_alpha_3":"BOB",
+         "currency_code_alpha_3_currency_code":68
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":20,
+      "fields":{
+         "name":"Bond Markets Unit European Composite Unit (EURCO)",
+         "currency_code_alpha_3":"XBA",
+         "currency_code_alpha_3_currency_code":955
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":21,
+      "fields":{
+         "name":"Bond Markets Unit European Monetary Unit (E.M.U.-6)",
+         "currency_code_alpha_3":"XBB",
+         "currency_code_alpha_3_currency_code":956
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":22,
+      "fields":{
+         "name":"Bond Markets Unit European Unit of Account 17 (E.U.A.-17)",
+         "currency_code_alpha_3":"XBD",
+         "currency_code_alpha_3_currency_code":958
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":23,
+      "fields":{
+         "name":"Bond Markets Unit European Unit of Account 9 (E.U.A.-9)",
+         "currency_code_alpha_3":"XBC",
+         "currency_code_alpha_3_currency_code":957
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":24,
+      "fields":{
+         "name":"Brazilian Real",
+         "currency_code_alpha_3":"BRL",
+         "currency_code_alpha_3_currency_code":986
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":25,
+      "fields":{
+         "name":"Brunei Dollar",
+         "currency_code_alpha_3":"BND",
+         "currency_code_alpha_3_currency_code":96
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":26,
+      "fields":{
+         "name":"Bulgarian Lev",
+         "currency_code_alpha_3":"BGN",
+         "currency_code_alpha_3_currency_code":975
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":27,
+      "fields":{
+         "name":"Burundi Franc",
+         "currency_code_alpha_3":"BIF",
+         "currency_code_alpha_3_currency_code":108
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":28,
+      "fields":{
+         "name":"Cabo Verde Escudo",
+         "currency_code_alpha_3":"CVE",
+         "currency_code_alpha_3_currency_code":132
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":29,
+      "fields":{
+         "name":"Canadian Dollar",
+         "currency_code_alpha_3":"CAD",
+         "currency_code_alpha_3_currency_code":124
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":30,
+      "fields":{
+         "name":"Cayman Islands Dollar",
+         "currency_code_alpha_3":"KYD",
+         "currency_code_alpha_3_currency_code":136
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":31,
+      "fields":{
+         "name":"CFA Franc BCEAO",
+         "currency_code_alpha_3":"XOF",
+         "currency_code_alpha_3_currency_code":952
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":32,
+      "fields":{
+         "name":"CFA Franc BEAC",
+         "currency_code_alpha_3":"XAF",
+         "currency_code_alpha_3_currency_code":950
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":33,
+      "fields":{
+         "name":"CFP Franc",
+         "currency_code_alpha_3":"XPF",
+         "currency_code_alpha_3_currency_code":953
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":34,
+      "fields":{
+         "name":"Chilean Peso",
+         "currency_code_alpha_3":"CLP",
+         "currency_code_alpha_3_currency_code":152
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":35,
+      "fields":{
+         "name":"Codes specifically reserved for testing purposes",
+         "currency_code_alpha_3":"XTS",
+         "currency_code_alpha_3_currency_code":963
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":36,
+      "fields":{
+         "name":"Colombian Peso",
+         "currency_code_alpha_3":"COP",
+         "currency_code_alpha_3_currency_code":170
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":37,
+      "fields":{
+         "name":"Comorian Franc ",
+         "currency_code_alpha_3":"KMF",
+         "currency_code_alpha_3_currency_code":174
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":38,
+      "fields":{
+         "name":"Congolese Franc",
+         "currency_code_alpha_3":"CDF",
+         "currency_code_alpha_3_currency_code":976
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":39,
+      "fields":{
+         "name":"Convertible Mark",
+         "currency_code_alpha_3":"BAM",
+         "currency_code_alpha_3_currency_code":977
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":40,
+      "fields":{
+         "name":"Cordoba Oro",
+         "currency_code_alpha_3":"NIO",
+         "currency_code_alpha_3_currency_code":558
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":41,
+      "fields":{
+         "name":"Costa Rican Colon",
+         "currency_code_alpha_3":"CRC",
+         "currency_code_alpha_3_currency_code":188
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":42,
+      "fields":{
+         "name":"Cuban Peso",
+         "currency_code_alpha_3":"CUP",
+         "currency_code_alpha_3_currency_code":192
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":43,
+      "fields":{
+         "name":"Czech Koruna",
+         "currency_code_alpha_3":"CZK",
+         "currency_code_alpha_3_currency_code":203
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":44,
+      "fields":{
+         "name":"Dalasi",
+         "currency_code_alpha_3":"GMD",
+         "currency_code_alpha_3_currency_code":270
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":45,
+      "fields":{
+         "name":"Danish Krone",
+         "currency_code_alpha_3":"DKK",
+         "currency_code_alpha_3_currency_code":208
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":46,
+      "fields":{
+         "name":"Denar",
+         "currency_code_alpha_3":"MKD",
+         "currency_code_alpha_3_currency_code":807
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":47,
+      "fields":{
+         "name":"Djibouti Franc",
+         "currency_code_alpha_3":"DJF",
+         "currency_code_alpha_3_currency_code":262
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":48,
+      "fields":{
+         "name":"Dobra",
+         "currency_code_alpha_3":"STN",
+         "currency_code_alpha_3_currency_code":930
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":49,
+      "fields":{
+         "name":"Dominican Peso",
+         "currency_code_alpha_3":"DOP",
+         "currency_code_alpha_3_currency_code":214
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":50,
+      "fields":{
+         "name":"Dong",
+         "currency_code_alpha_3":"VND",
+         "currency_code_alpha_3_currency_code":704
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":51,
+      "fields":{
+         "name":"East Caribbean Dollar",
+         "currency_code_alpha_3":"XCD",
+         "currency_code_alpha_3_currency_code":951
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":52,
+      "fields":{
+         "name":"Egyptian Pound",
+         "currency_code_alpha_3":"EGP",
+         "currency_code_alpha_3_currency_code":818
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":53,
+      "fields":{
+         "name":"El Salvador Colon",
+         "currency_code_alpha_3":"SVC",
+         "currency_code_alpha_3_currency_code":222
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":54,
+      "fields":{
+         "name":"Ethiopian Birr",
+         "currency_code_alpha_3":"ETB",
+         "currency_code_alpha_3_currency_code":230
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":55,
+      "fields":{
+         "name":"Euro",
+         "currency_code_alpha_3":"EUR",
+         "currency_code_alpha_3_currency_code":978
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":56,
+      "fields":{
+         "name":"Falkland Islands Pound",
+         "currency_code_alpha_3":"FKP",
+         "currency_code_alpha_3_currency_code":238
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":57,
+      "fields":{
+         "name":"Fiji Dollar",
+         "currency_code_alpha_3":"FJD",
+         "currency_code_alpha_3_currency_code":242
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":58,
+      "fields":{
+         "name":"Forint",
+         "currency_code_alpha_3":"HUF",
+         "currency_code_alpha_3_currency_code":348
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":59,
+      "fields":{
+         "name":"Ghana Cedi",
+         "currency_code_alpha_3":"GHS",
+         "currency_code_alpha_3_currency_code":936
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":60,
+      "fields":{
+         "name":"Gibraltar Pound",
+         "currency_code_alpha_3":"GIP",
+         "currency_code_alpha_3_currency_code":292
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":61,
+      "fields":{
+         "name":"Gold",
+         "currency_code_alpha_3":"XAU",
+         "currency_code_alpha_3_currency_code":959
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":62,
+      "fields":{
+         "name":"Gourde",
+         "currency_code_alpha_3":"HTG",
+         "currency_code_alpha_3_currency_code":332
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":63,
+      "fields":{
+         "name":"Guarani",
+         "currency_code_alpha_3":"PYG",
+         "currency_code_alpha_3_currency_code":600
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":64,
+      "fields":{
+         "name":"Guinean Franc",
+         "currency_code_alpha_3":"GNF",
+         "currency_code_alpha_3_currency_code":324
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":65,
+      "fields":{
+         "name":"Guyana Dollar",
+         "currency_code_alpha_3":"GYD",
+         "currency_code_alpha_3_currency_code":328
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":66,
+      "fields":{
+         "name":"Hong Kong Dollar",
+         "currency_code_alpha_3":"HKD",
+         "currency_code_alpha_3_currency_code":344
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":67,
+      "fields":{
+         "name":"Hryvnia",
+         "currency_code_alpha_3":"UAH",
+         "currency_code_alpha_3_currency_code":980
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":68,
+      "fields":{
+         "name":"Iceland Krona",
+         "currency_code_alpha_3":"ISK",
+         "currency_code_alpha_3_currency_code":352
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":69,
+      "fields":{
+         "name":"Indian Rupee",
+         "currency_code_alpha_3":"INR",
+         "currency_code_alpha_3_currency_code":356
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":70,
+      "fields":{
+         "name":"Iranian Rial",
+         "currency_code_alpha_3":"IRR",
+         "currency_code_alpha_3_currency_code":364
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":71,
+      "fields":{
+         "name":"Iraqi Dinar",
+         "currency_code_alpha_3":"IQD",
+         "currency_code_alpha_3_currency_code":368
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":72,
+      "fields":{
+         "name":"Jamaican Dollar",
+         "currency_code_alpha_3":"JMD",
+         "currency_code_alpha_3_currency_code":388
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":73,
+      "fields":{
+         "name":"Jordanian Dinar",
+         "currency_code_alpha_3":"JOD",
+         "currency_code_alpha_3_currency_code":400
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":74,
+      "fields":{
+         "name":"Kenyan Shilling",
+         "currency_code_alpha_3":"KES",
+         "currency_code_alpha_3_currency_code":404
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":75,
+      "fields":{
+         "name":"Kina",
+         "currency_code_alpha_3":"PGK",
+         "currency_code_alpha_3_currency_code":598
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":76,
+      "fields":{
+         "name":"Kuna",
+         "currency_code_alpha_3":"HRK",
+         "currency_code_alpha_3_currency_code":191
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":77,
+      "fields":{
+         "name":"Kuwaiti Dinar",
+         "currency_code_alpha_3":"KWD",
+         "currency_code_alpha_3_currency_code":414
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":78,
+      "fields":{
+         "name":"Kwanza",
+         "currency_code_alpha_3":"AOA",
+         "currency_code_alpha_3_currency_code":973
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":79,
+      "fields":{
+         "name":"Kyat",
+         "currency_code_alpha_3":"MMK",
+         "currency_code_alpha_3_currency_code":104
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":80,
+      "fields":{
+         "name":"Lao Kip",
+         "currency_code_alpha_3":"LAK",
+         "currency_code_alpha_3_currency_code":418
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":81,
+      "fields":{
+         "name":"Lari",
+         "currency_code_alpha_3":"GEL",
+         "currency_code_alpha_3_currency_code":981
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":82,
+      "fields":{
+         "name":"Lebanese Pound",
+         "currency_code_alpha_3":"LBP",
+         "currency_code_alpha_3_currency_code":422
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":83,
+      "fields":{
+         "name":"Lek",
+         "currency_code_alpha_3":"ALL",
+         "currency_code_alpha_3_currency_code":8
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":84,
+      "fields":{
+         "name":"Lempira",
+         "currency_code_alpha_3":"HNL",
+         "currency_code_alpha_3_currency_code":340
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":85,
+      "fields":{
+         "name":"Leone",
+         "currency_code_alpha_3":"SLL",
+         "currency_code_alpha_3_currency_code":694
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":86,
+      "fields":{
+         "name":"Liberian Dollar",
+         "currency_code_alpha_3":"LRD",
+         "currency_code_alpha_3_currency_code":430
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":87,
+      "fields":{
+         "name":"Libyan Dinar",
+         "currency_code_alpha_3":"LYD",
+         "currency_code_alpha_3_currency_code":434
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":88,
+      "fields":{
+         "name":"Lilangeni",
+         "currency_code_alpha_3":"SZL",
+         "currency_code_alpha_3_currency_code":748
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":89,
+      "fields":{
+         "name":"Loti",
+         "currency_code_alpha_3":"LSL",
+         "currency_code_alpha_3_currency_code":426
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":90,
+      "fields":{
+         "name":"Malagasy Ariary",
+         "currency_code_alpha_3":"MGA",
+         "currency_code_alpha_3_currency_code":969
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":91,
+      "fields":{
+         "name":"Malawi Kwacha",
+         "currency_code_alpha_3":"MWK",
+         "currency_code_alpha_3_currency_code":454
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":92,
+      "fields":{
+         "name":"Malaysian Ringgit",
+         "currency_code_alpha_3":"MYR",
+         "currency_code_alpha_3_currency_code":458
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":93,
+      "fields":{
+         "name":"Mauritius Rupee",
+         "currency_code_alpha_3":"MUR",
+         "currency_code_alpha_3_currency_code":480
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":94,
+      "fields":{
+         "name":"Mexican Peso",
+         "currency_code_alpha_3":"MXN",
+         "currency_code_alpha_3_currency_code":484
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":95,
+      "fields":{
+         "name":"Mexican Unidad de Inversion (UDI)",
+         "currency_code_alpha_3":"MXV",
+         "currency_code_alpha_3_currency_code":979
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":96,
+      "fields":{
+         "name":"Moldovan Leu",
+         "currency_code_alpha_3":"MDL",
+         "currency_code_alpha_3_currency_code":498
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":97,
+      "fields":{
+         "name":"Moroccan Dirham",
+         "currency_code_alpha_3":"MAD",
+         "currency_code_alpha_3_currency_code":504
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":98,
+      "fields":{
+         "name":"Mozambique Metical",
+         "currency_code_alpha_3":"MZN",
+         "currency_code_alpha_3_currency_code":943
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":99,
+      "fields":{
+         "name":"Mvdol",
+         "currency_code_alpha_3":"BOV",
+         "currency_code_alpha_3_currency_code":984
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":100,
+      "fields":{
+         "name":"Naira",
+         "currency_code_alpha_3":"NGN",
+         "currency_code_alpha_3_currency_code":566
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":101,
+      "fields":{
+         "name":"Nakfa",
+         "currency_code_alpha_3":"ERN",
+         "currency_code_alpha_3_currency_code":232
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":102,
+      "fields":{
+         "name":"Namibia Dollar",
+         "currency_code_alpha_3":"NAD",
+         "currency_code_alpha_3_currency_code":516
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":103,
+      "fields":{
+         "name":"Nepalese Rupee",
+         "currency_code_alpha_3":"NPR",
+         "currency_code_alpha_3_currency_code":524
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":104,
+      "fields":{
+         "name":"Netherlands Antillean Guilder",
+         "currency_code_alpha_3":"ANG",
+         "currency_code_alpha_3_currency_code":532
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":105,
+      "fields":{
+         "name":"New Israeli Sheqel",
+         "currency_code_alpha_3":"ILS",
+         "currency_code_alpha_3_currency_code":376
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":106,
+      "fields":{
+         "name":"New Taiwan Dollar",
+         "currency_code_alpha_3":"TWD",
+         "currency_code_alpha_3_currency_code":901
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":107,
+      "fields":{
+         "name":"New Zealand Dollar",
+         "currency_code_alpha_3":"NZD",
+         "currency_code_alpha_3_currency_code":554
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":108,
+      "fields":{
+         "name":"Ngultrum",
+         "currency_code_alpha_3":"BTN",
+         "currency_code_alpha_3_currency_code":64
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":109,
+      "fields":{
+         "name":"No universal currency",
+         "currency_code_alpha_3":" ",
+         "currency_code_alpha_3_currency_code": false
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":110,
+      "fields":{
+         "name":"North Korean Won",
+         "currency_code_alpha_3":"KPW",
+         "currency_code_alpha_3_currency_code":408
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":111,
+      "fields":{
+         "name":"Norwegian Krone",
+         "currency_code_alpha_3":"NOK",
+         "currency_code_alpha_3_currency_code":578
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":112,
+      "fields":{
+         "name":"Ouguiya",
+         "currency_code_alpha_3":"MRU",
+         "currency_code_alpha_3_currency_code":929
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":113,
+      "fields":{
+         "name":"Pa’anga",
+         "currency_code_alpha_3":"TOP",
+         "currency_code_alpha_3_currency_code":776
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":114,
+      "fields":{
+         "name":"Pakistan Rupee",
+         "currency_code_alpha_3":"PKR",
+         "currency_code_alpha_3_currency_code":586
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":115,
+      "fields":{
+         "name":"Palladium",
+         "currency_code_alpha_3":"XPD",
+         "currency_code_alpha_3_currency_code":964
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":116,
+      "fields":{
+         "name":"Pataca",
+         "currency_code_alpha_3":"MOP",
+         "currency_code_alpha_3_currency_code":446
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":117,
+      "fields":{
+         "name":"Peso Convertible",
+         "currency_code_alpha_3":"CUC",
+         "currency_code_alpha_3_currency_code":931
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":118,
+      "fields":{
+         "name":"Peso Uruguayo",
+         "currency_code_alpha_3":"UYU",
+         "currency_code_alpha_3_currency_code":858
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":119,
+      "fields":{
+         "name":"Philippine Piso",
+         "currency_code_alpha_3":"PHP",
+         "currency_code_alpha_3_currency_code":608
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":120,
+      "fields":{
+         "name":"Platinum",
+         "currency_code_alpha_3":"XPT",
+         "currency_code_alpha_3_currency_code":962
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":121,
+      "fields":{
+         "name":"Pound Sterling",
+         "currency_code_alpha_3":"GBP",
+         "currency_code_alpha_3_currency_code":826
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":122,
+      "fields":{
+         "name":"Pula",
+         "currency_code_alpha_3":"BWP",
+         "currency_code_alpha_3_currency_code":72
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":123,
+      "fields":{
+         "name":"Qatari Rial",
+         "currency_code_alpha_3":"QAR",
+         "currency_code_alpha_3_currency_code":634
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":124,
+      "fields":{
+         "name":"Quetzal",
+         "currency_code_alpha_3":"GTQ",
+         "currency_code_alpha_3_currency_code":320
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":125,
+      "fields":{
+         "name":"Rand",
+         "currency_code_alpha_3":"ZAR",
+         "currency_code_alpha_3_currency_code":710
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":126,
+      "fields":{
+         "name":"Rial Omani",
+         "currency_code_alpha_3":"OMR",
+         "currency_code_alpha_3_currency_code":512
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":127,
+      "fields":{
+         "name":"Riel",
+         "currency_code_alpha_3":"KHR",
+         "currency_code_alpha_3_currency_code":116
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":128,
+      "fields":{
+         "name":"Romanian Leu",
+         "currency_code_alpha_3":"RON",
+         "currency_code_alpha_3_currency_code":946
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":129,
+      "fields":{
+         "name":"Rufiyaa",
+         "currency_code_alpha_3":"MVR",
+         "currency_code_alpha_3_currency_code":462
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":130,
+      "fields":{
+         "name":"Rupiah",
+         "currency_code_alpha_3":"IDR",
+         "currency_code_alpha_3_currency_code":360
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":131,
+      "fields":{
+         "name":"Russian Ruble",
+         "currency_code_alpha_3":"RUB",
+         "currency_code_alpha_3_currency_code":643
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":132,
+      "fields":{
+         "name":"Rwanda Franc",
+         "currency_code_alpha_3":"RWF",
+         "currency_code_alpha_3_currency_code":646
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":133,
+      "fields":{
+         "name":"Saint Helena Pound",
+         "currency_code_alpha_3":"SHP",
+         "currency_code_alpha_3_currency_code":654
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":134,
+      "fields":{
+         "name":"Saudi Riyal",
+         "currency_code_alpha_3":"SAR",
+         "currency_code_alpha_3_currency_code":682
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":135,
+      "fields":{
+         "name":"SDR (Special Drawing Right)",
+         "currency_code_alpha_3":"XDR",
+         "currency_code_alpha_3_currency_code":960
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":136,
+      "fields":{
+         "name":"Serbian Dinar",
+         "currency_code_alpha_3":"RSD",
+         "currency_code_alpha_3_currency_code":941
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":137,
+      "fields":{
+         "name":"Seychelles Rupee",
+         "currency_code_alpha_3":"SCR",
+         "currency_code_alpha_3_currency_code":690
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":138,
+      "fields":{
+         "name":"Silver",
+         "currency_code_alpha_3":"XAG",
+         "currency_code_alpha_3_currency_code":961
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":139,
+      "fields":{
+         "name":"Singapore Dollar",
+         "currency_code_alpha_3":"SGD",
+         "currency_code_alpha_3_currency_code":702
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":140,
+      "fields":{
+         "name":"Sol",
+         "currency_code_alpha_3":"PEN",
+         "currency_code_alpha_3_currency_code":604
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":141,
+      "fields":{
+         "name":"Solomon Islands Dollar",
+         "currency_code_alpha_3":"SBD",
+         "currency_code_alpha_3_currency_code":90
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":142,
+      "fields":{
+         "name":"Som",
+         "currency_code_alpha_3":"KGS",
+         "currency_code_alpha_3_currency_code":417
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":143,
+      "fields":{
+         "name":"Somali Shilling",
+         "currency_code_alpha_3":"SOS",
+         "currency_code_alpha_3_currency_code":706
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":144,
+      "fields":{
+         "name":"Somoni",
+         "currency_code_alpha_3":"TJS",
+         "currency_code_alpha_3_currency_code":972
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":145,
+      "fields":{
+         "name":"South Sudanese Pound",
+         "currency_code_alpha_3":"SSP",
+         "currency_code_alpha_3_currency_code":728
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":146,
+      "fields":{
+         "name":"Sri Lanka Rupee",
+         "currency_code_alpha_3":"LKR",
+         "currency_code_alpha_3_currency_code":144
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":147,
+      "fields":{
+         "name":"Sucre",
+         "currency_code_alpha_3":"XSU",
+         "currency_code_alpha_3_currency_code":994
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":148,
+      "fields":{
+         "name":"Sudanese Pound",
+         "currency_code_alpha_3":"SDG",
+         "currency_code_alpha_3_currency_code":938
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":149,
+      "fields":{
+         "name":"Surinam Dollar",
+         "currency_code_alpha_3":"SRD",
+         "currency_code_alpha_3_currency_code":968
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":150,
+      "fields":{
+         "name":"Swedish Krona",
+         "currency_code_alpha_3":"SEK",
+         "currency_code_alpha_3_currency_code":752
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":151,
+      "fields":{
+         "name":"Swiss Franc",
+         "currency_code_alpha_3":"CHF",
+         "currency_code_alpha_3_currency_code":756
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":152,
+      "fields":{
+         "name":"Syrian Pound",
+         "currency_code_alpha_3":"SYP",
+         "currency_code_alpha_3_currency_code":760
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":153,
+      "fields":{
+         "name":"Taka",
+         "currency_code_alpha_3":"BDT",
+         "currency_code_alpha_3_currency_code":50
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":154,
+      "fields":{
+         "name":"Tala",
+         "currency_code_alpha_3":"WST",
+         "currency_code_alpha_3_currency_code":882
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":155,
+      "fields":{
+         "name":"Tanzanian Shilling",
+         "currency_code_alpha_3":"TZS",
+         "currency_code_alpha_3_currency_code":834
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":156,
+      "fields":{
+         "name":"Tenge",
+         "currency_code_alpha_3":"KZT",
+         "currency_code_alpha_3_currency_code":398
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":157,
+      "fields":{
+         "name":"The codes assigned for transactions where no currency is involved",
+         "currency_code_alpha_3":"XXX",
+         "currency_code_alpha_3_currency_code":999
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":158,
+      "fields":{
+         "name":"Trinidad and Tobago Dollar",
+         "currency_code_alpha_3":"TTD",
+         "currency_code_alpha_3_currency_code":780
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":159,
+      "fields":{
+         "name":"Tugrik",
+         "currency_code_alpha_3":"MNT",
+         "currency_code_alpha_3_currency_code":496
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":160,
+      "fields":{
+         "name":"Tunisian Dinar",
+         "currency_code_alpha_3":"TND",
+         "currency_code_alpha_3_currency_code":788
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":161,
+      "fields":{
+         "name":"Turkish Lira",
+         "currency_code_alpha_3":"TRY",
+         "currency_code_alpha_3_currency_code":949
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":162,
+      "fields":{
+         "name":"Turkmenistan New Manat",
+         "currency_code_alpha_3":"TMT",
+         "currency_code_alpha_3_currency_code":934
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":163,
+      "fields":{
+         "name":"UAE Dirham",
+         "currency_code_alpha_3":"AED",
+         "currency_code_alpha_3_currency_code":784
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":164,
+      "fields":{
+         "name":"Uganda Shilling",
+         "currency_code_alpha_3":"UGX",
+         "currency_code_alpha_3_currency_code":800
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":165,
+      "fields":{
+         "name":"Unidad de Fomento",
+         "currency_code_alpha_3":"CLF",
+         "currency_code_alpha_3_currency_code":990
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":166,
+      "fields":{
+         "name":"Unidad de Valor Real",
+         "currency_code_alpha_3":"COU",
+         "currency_code_alpha_3_currency_code":970
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":167,
+      "fields":{
+         "name":"Uruguay Peso en Unidades Indexadas (UI)",
+         "currency_code_alpha_3":"UYI",
+         "currency_code_alpha_3_currency_code":940
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":168,
+      "fields":{
+         "name":"US Dollar",
+         "currency_code_alpha_3":"USD",
+         "currency_code_alpha_3_currency_code":840
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":169,
+      "fields":{
+         "name":"US Dollar (Next day)",
+         "currency_code_alpha_3":"USN",
+         "currency_code_alpha_3_currency_code":997
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":170,
+      "fields":{
+         "name":"Uzbekistan Sum",
+         "currency_code_alpha_3":"UZS",
+         "currency_code_alpha_3_currency_code":860
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":171,
+      "fields":{
+         "name":"Vatu",
+         "currency_code_alpha_3":"VUV",
+         "currency_code_alpha_3_currency_code":548
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":172,
+      "fields":{
+         "name":"WIR Euro",
+         "currency_code_alpha_3":"CHE",
+         "currency_code_alpha_3_currency_code":947
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":173,
+      "fields":{
+         "name":"WIR Franc",
+         "currency_code_alpha_3":"CHW",
+         "currency_code_alpha_3_currency_code":948
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":174,
+      "fields":{
+         "name":"Won",
+         "currency_code_alpha_3":"KRW",
+         "currency_code_alpha_3_currency_code":410
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":175,
+      "fields":{
+         "name":"Yemeni Rial",
+         "currency_code_alpha_3":"YER",
+         "currency_code_alpha_3_currency_code":886
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":176,
+      "fields":{
+         "name":"Yen",
+         "currency_code_alpha_3":"JPY",
+         "currency_code_alpha_3_currency_code":392
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":177,
+      "fields":{
+         "name":"Yuan Renminbi",
+         "currency_code_alpha_3":"CNY",
+         "currency_code_alpha_3_currency_code":156
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":178,
+      "fields":{
+         "name":"Zambian Kwacha",
+         "currency_code_alpha_3":"ZMW",
+         "currency_code_alpha_3_currency_code":967
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":179,
+      "fields":{
+         "name":"Zimbabwe Dollar",
+         "currency_code_alpha_3":"ZWL",
+         "currency_code_alpha_3_currency_code":932
+      }
+   },
+{
+      "model":"static_database_table.currency",
+      "pk":180,
+      "fields":{
+         "name":"Zloty",
+         "currency_code_alpha_3":"PLN",
+         "currency_code_alpha_3_currency_code":985
+      }
+   }
+
+
+]

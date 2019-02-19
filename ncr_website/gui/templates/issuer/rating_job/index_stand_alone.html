@@ -1,0 +1,17 @@
+{% load template_tags %}
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    {% include "page_head.html" %}
+
+</head>
+<body>
+    <div id="preloader">
+      <div id="status" style="background-image: url({% static 'image/preloader.gif' %});">&nbsp;</div>
+    </div>
+
+    {% include "issuer/rating_job/index.html" %}
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+ENVIRONMENT_MODE=DEV
+FAKE_DB_SETUP=1
+DEBUG=on
+SECRET_KEY=ek%9e6xz4m6xd(hknp9oq6-8q31fswszk&_oat-ad-)afe+av2
+DATABASE_URL=psql://runner:abc123@postgres:5432/django
+DB_HOST=postgres
+DB_USER=runner
+DB_PASSWORD=abc123
+DB_PORT=5432
+SUPERUSER_USER=admin
+SUPERUSER_PASSWORD=1234
+SUPERUSER_EMAIL=a@host.com

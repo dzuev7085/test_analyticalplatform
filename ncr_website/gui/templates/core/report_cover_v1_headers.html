@@ -1,0 +1,157 @@
+{% load template_tags %}
+<style type="text/css" media="print">
+  /***********************************************************
+     * Header for first page
+   ***********************************************************/
+  div.firstHeader {
+    position: running(headerIdentifier);
+
+    top: 0;
+    left: 0;
+  }
+
+  div.firstHeaderRow1 {
+    background-color: {{ style.top_color }};
+    height: 33mm;
+    width: 100%;
+  }
+
+  .firstHeaderRow1Logo {
+    position: relative;
+    top: 8mm;
+    left: 20mm;
+    z-index: 100;
+  }
+
+  .firstHeaderRow1Text {
+    position: relative;
+    top: -10mm;
+    right: 20mm;
+    text-align: right;
+    color: white;
+    font-family: 'Aktiv Grotesk';
+    font-size: 9pt;
+    text-transform: uppercase;
+  }
+
+  div.firstHeaderRow2 {
+    position: relative;
+
+    background-color: #eff0f1;
+    height: 24mm;
+    width: 100%;
+  }
+
+  .firstHeaderRow2CompanyTitle {
+    position: relative;
+    top: 6mm;
+    left: 7mm;
+    font-family: 'Header';
+    color: #0D2E54;
+    font-size: 16pt;
+    text-transform: uppercase;
+  }
+
+  .gray_header_right{
+    font-family: 'Aktiv Grotesk';
+    color: #0D2E54;
+    font-size: 9pt;
+  }
+
+  .company_misc {
+    position: relative;
+    top: -3px;
+    left: 630px;
+  }
+
+
+  /***********************************************************
+     * Header for content pages
+   ***********************************************************/
+  div.contentHeader {
+    position: running(headerIdentifier);
+
+    top: 0;
+    left: 0;
+
+    background-color: {{ style.top_color }};
+    height: 12mm;
+    width: 100%;
+  }
+
+  .contentHeaderLogo {
+    position: relative;
+    top: 13px;
+    left: 20mm;
+    z-index: 100;
+  }
+
+  .contentHeaderText {
+    position: relative;
+    top: 0px;
+    right: 20mm;
+    text-align: right;
+    color: white;
+    font-family: 'Aktiv Grotesk';
+    font-size: 9pt;
+    text-transform: uppercase;
+  }
+
+</style>
+
+<div class="firstHeader">
+
+  <div class="firstHeaderRow1">
+
+    <div class="firstHeaderRow1Logo">
+      <img src="data:image/png;base64, {% static_file2base64 'image/ncr_logo_rgb_300ppi.png' %}" height="18mm" width="18mm">
+    </div>
+
+    <div class="firstHeaderRow1Text">
+      {{ content.top_header }}
+    </div>
+
+  </div>
+
+  <div class="firstHeaderRow2">
+    <div class="firstHeaderRow2CompanyTitle">
+      {{ content.issuer.data.legal_name }}
+    </div>
+
+    <div class="company_misc">
+      <table border="0" cellpadding="0" cellspacing="0" class="gray_header_right">
+        <tr>
+          <td>
+            &nbsp;
+          </td>
+          <td style="width: 15mm;">&nbsp;</td>
+          <td align="right">
+            {{ content.report_date }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            &nbsp;
+          </td>
+          <td>&nbsp;</td>
+          <td align="right">
+              &nbsp;
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<div class="contentHeader">
+
+  <div class="contentHeaderLogo">
+    <img src="data:image/png;base64, {% static_file2base64 'image/nrc_wordmark_avatar.svg' %}" height="18" width="144">
+  </div>
+
+  <div class="contentHeaderText">
+    {{ content.top_header }}
+  </div>
+
+</div>

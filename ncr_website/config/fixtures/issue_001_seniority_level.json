@@ -1,0 +1,26 @@
+[
+   {
+      "fields":{
+         "name":"SEU",
+         "description": "In case the rated issuer debt or the issue belongs to the senior unsecured debt category."
+      },
+      "model":"issue.senioritylevel",
+      "pk":1
+   },
+   {
+      "fields":{
+         "name":"SEO",
+         "description": "In case the rated issuer or the issue belongs to a senior debt category other than SEU."
+      },
+      "model":"issue.senioritylevel",
+      "pk":2
+   },
+   {
+      "fields":{
+         "name":"SB",
+         "description": "In case the issuer debt or the issue belongs to a subordinated debt category."
+      },
+      "model":"issue.senioritylevel",
+      "pk":3
+   }
+]

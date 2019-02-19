@@ -1,0 +1,18 @@
+[
+   {
+      "fields":{
+         "date_creation":"2018-09-07T18:52:42.835Z",
+         "email":"name@host.com",
+         "first_name":"Pa",
+         "last_name":"L",
+         "phone_number":"+46708000000",
+         "contact_type":1,
+         "role":"Role",
+         "company":"Test Company",
+         "date_deletion":null,
+         "issuer":1
+      },
+      "model":"issuer.insiderlist",
+      "pk":1
+   }
+]

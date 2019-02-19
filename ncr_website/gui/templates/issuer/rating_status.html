@@ -1,0 +1,30 @@
+{% if gui_controls.rating_status.enable %}
+
+  {% load humanize %}
+  {% load template_tags %}
+
+  {% if data.issuer.current_rating.decided_lt %}
+
+    <div class="rating-status-container">
+      <div class="rating-status-div" style="width:50%;">
+        Existing rating:
+
+        '{{ data.issuer.current_rating.get_decided_lt_display }}'
+        /
+        {{ data.issuer.current_rating.get_decided_lt_outlook_display }}
+        /
+        {{ data.issuer.current_rating.get_decided_st_display }}
+
+      </div>
+
+      <div class="rating-status-div" style="width:50%;">
+        The rating was last published
+
+        {{ data.issuer.current_rating.date_time_published|date:'Y-m-d'|default:'N/A' }}
+      </div>
+
+    </div>
+
+  {% endif %}
+
+{% endif %}

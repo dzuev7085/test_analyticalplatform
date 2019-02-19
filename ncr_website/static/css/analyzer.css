@@ -1,0 +1,497 @@
+{% load template_tags %}
+
+body {
+  overflow: hidden;
+}
+
+/* Preloader */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  /* change if the mask should have another color then white */
+  z-index: 9999;
+  /* makes sure it stays on top */
+}
+
+#status {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  /* centers the loading animation horizontally one the screen */
+  top: 50%;
+  /* centers the loading animation vertically one the screen */
+
+  /* path to your loading animation */
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: -100px 0 0 -100px;
+  /* is width and height divided by two */
+}
+
+
+/* Divs to build page structure */
+.sidebar-container {
+  width: 155;
+  font-size: 10pt;
+
+  top: 0;
+  left: 0;
+
+  position: fixed;
+  bottom: 0;
+  padding: 0px;
+  padding-left: 0;
+  padding-top: 0;
+
+  z-index: 1000;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  border-right: 1px solid #eee;
+}
+
+/* level 1*/
+.sidebar-container .list-group .collapse .list-group-item  {
+  padding-left: 35px;
+}
+
+/* level 2*/
+.sidebar-container .list-group .collapse > .collapse .list-group-item {
+  padding-left: 50px;
+}
+
+/* level 3*/
+.sidebar-container .list-group .collapse > .collapse > .collapse .list-group-item {
+  padding-left: 50px;
+}
+
+
+.contentbox-container {
+  width: 1750;
+
+  top: 0;
+  left: 155;
+
+  position: absolute;
+  padding: 0px 0px 0px 0px;
+}
+
+.topnav-container {
+  position: relative;
+  width: 100%;
+  height: 35px;
+
+  background-color: #105C92;
+  top: 0;
+  left: 0;
+  margin-top: 0;
+  padding: 10px 5px 4px 15px;
+}
+
+.job-progress-bar-container {
+  width: 100%;
+  height: 22px;
+
+  position: relative;
+
+  top: 0;
+  left: 0;
+  margin-top: 0;
+  padding: 0px 0px 0px 0px;
+}
+
+.job-progress-bar-div {
+  position: relative;
+  height: 100%;
+  font-size: 10pt;
+
+  float: left;
+  text-align: center;
+  vertical-align: middle;
+  top: 0;
+  left: 0;
+  margin-top: 0;
+  padding: 0px 0px 0px 0px;
+
+  border-color: #FFFFFF;
+  border-top: 4px solid;
+  border-left: 4px solid;
+  border-right: 4px solid;
+  border-bottom: 0px solid;
+  border-color: #FFFFFF;
+
+  border-radius: 40px;
+
+
+}
+
+.rating-status-container {
+  width: 100%;
+  height: 28px;
+
+  position: relative;
+
+  top: 0;
+  left: 0;
+  margin-top: 0;
+  padding: 0px 0px 0px 0px;
+}
+
+.messages-container {
+  width: 100%;
+  height: 25px;
+
+  position: relative;
+  background-color: #F4511E;
+  color: #FFFFFF;
+  font-family: 'Activ Grotesk';
+  font-size: 14px;
+
+  top: 0;
+  left: 0;
+  margin-top: 0;
+  padding: 4px 0px 0px 0px;
+}
+
+.rating-status-div {
+  position: relative;
+  height: 100%;
+  font-size: 10pt;
+  color: #FFFFFF;
+  background-color: #438FC5;
+
+  float: left;
+  text-align: center;
+  vertical-align: middle;
+  top: 0;
+  left: 0;
+  margin-top: 0;
+  padding: 0px 0px 0px 0px;
+
+  border-radius: 40px;
+
+  border-top: 4px solid;
+  border-left: 4px solid;
+  border-right: 4px solid;
+  border-bottom: 2px solid;
+  border-color: #FFFFFF;
+
+}
+
+
+.content-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  background-color: #FFFFFF;
+  top: 0;
+  left: 0;
+  margin-top: 0;
+  padding: 25px 25px 0px 30px;
+  overflow: auto;
+}
+
+.footer-container {
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  background-color: #f5f5f5;
+  line-height: 20px; /* Vertically center the text there */
+}
+
+.tab-content-container {
+  text-align: left;
+  vertical-align: top;
+/*  border-style: solid;
+  border-width: 0.5px;*/
+}
+
+.subtab-content-container {
+  text-align: left;
+  vertical-align: top;
+  top: 0;
+  left: 0;
+  padding: 25px 25px 0px 30px;
+/*  border-style: solid;
+  border-width: 0.5px;*/
+}
+
+
+
+/* Font sizes */
+.topnav-container h3, .topnav-container h3 a, .topnav-container h3 a:visited, .topnav-container h3 a:active {
+  color: #ffffff;
+  font-size: 10pt;
+  text-decoration: none;
+}
+
+
+
+/* Page header */
+    .page-header {
+        background-color: #105C92;
+        top: 0;
+        left: 180;
+        margin-top: 0;
+        padding: 10px 5px 4px 15px;
+        z-index: 100;
+    }
+
+    .page-header-process {
+        background-color: #105C92;
+        top: 38;
+        left: 180;
+        margin-top: 0;
+        padding: 10px 5px 4px 15px;
+        z-index: 100;
+    }
+
+
+    .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+        color: #ffffff;
+        font-size: 16pt;
+        text-decoration: none;
+    }
+
+    .page-header h3, .page-header h3 a, .page-header h3 a:visited, .page-header h3 a:active {
+        color: #ffffff;
+        font-size: 10pt;
+        text-decoration: none;
+    }
+
+/* Navigation tabs */
+    .nav-container {
+        background-color: #ffffff;
+        top: 90;
+        left: 200;
+        z-index: 1000;
+    }
+
+    .nav-item {
+        font-size: 11pt;
+        text-align: left;
+    }
+
+    .nav-item button {
+      display: inline-block;
+      font-weight: 400;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      user-select: none;
+      border: 1px solid transparent;
+      line-height: 0.5;
+      color: #FFFFFF;
+      padding: .375rem .75rem;
+      font-size: 1rem;
+      border-radius: .25rem;
+      transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+
+    .nav-link {
+      display: block;
+      padding: 0.5rem 0.55rem;
+    }
+
+    .nav-item-small {
+        font-size: 9pt;
+        text-align: left;
+    }
+
+    .tab-pane {
+        text-align: left;
+    }
+
+    .maintab-content {
+        position: relative;
+        left: 10;
+        top: 18;
+        padding: 0px 0px 0px 0px;
+        z-index: 0;
+    }
+
+
+    .subtab-content {
+        position: relative;
+        top: 10;
+        left: 18;
+        width: 100%;
+        padding: 0px 0px 0px 0px;
+    }
+
+
+
+/* Analyzer */
+    .analyzer-contentbox {
+        padding: 0px 0px 0px 0px;
+        position: absolute;
+        top: 51;
+        left: 194;
+        width: 1750;
+    }
+
+/* other */
+.card {
+    padding: 0px 0px 0px 0px;
+    position: absolute;
+    border: 0px;
+    top: 147;
+    width: 1750;
+    left: 218;
+}
+
+.card-title {
+  font-size: 16px;
+}
+
+.card-body {
+  font-size: 14px;
+}
+
+
+h1, h2, h3, h4 {
+    font-family: 'Cabin', cursive;
+}
+
+
+/* Row/col related */
+.row {
+    font-family: 'Cabin';
+    border-radius: 0;
+    border: 1px;
+    border-color: #000000;
+}
+
+.col-md-4 {
+    text-align: left;
+}
+
+
+/* Form related */
+textarea {
+    outline: none;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+
+
+/* Table */
+.table {
+    font-family: 'Cabin';
+    font-size: 14px;
+    color: #000000;
+    line-height: 1.4;
+}
+
+.table th {
+  font-size: 13px;
+  border-top: 0px;
+}
+
+.table tr {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.table td {
+  border-top: 0px;
+}
+
+.table tbody tr:nth-child(odd) {
+   background-color: #F3F3F3;
+}
+
+
+/* Rating summary */
+
+.rating-summary {
+}
+
+.table-rating-summary {
+    font-family: 'Cabin';
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: center;
+    width: 100%;
+}
+
+.table-rating-summary thead {
+    vertical-align: text-bottom;
+    padding: 9px;
+}
+
+.table-th-right {
+    text-align: right;
+}
+
+.table-th-center {
+    text-align: center;
+}
+
+/*
+.table-rating-summary th td {
+    padding: 9px;
+}
+*/
+
+/* Footer stuff */
+.footer {
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  background-color: #f5f5f5;
+  line-height: 20px; /* Vertically center the text there */
+}
+
+.dev-environment {
+    background-color: #e54848;
+    color: #ffffff;
+    font-size: 8pt;
+    text-align: center;
+}
+
+.uat-environment {
+    background-color: #e54848;
+    color: #ffffff;
+    font-size: 8pt;
+    text-align: center;
+}
+
+
+
+
+/*
+ * Modal
+ */
+
+/* These properties make the modal dialog auto adjust size to its contents */
+.modal-dialog{
+    position: relative;
+    display: table; /* This is important */
+    overflow-y: auto;
+    overflow-x: auto;
+    width: auto;
+    min-width: 300px;
+}
+
+/* This makes the datepicker show up in a modal */
+.datepicker {
+  z-index: 3000 !important; /* has to be larger than 1050 */
+}
+
+a.disabled {
+   pointer-events: none;
+   cursor: default;
+}
+
+.red-tooltip {background-color: #f00;}

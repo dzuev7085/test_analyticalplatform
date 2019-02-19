@@ -1,0 +1,23 @@
+[
+   {
+      "fields":{
+         "name":"1: Public"
+      },
+      "model":"upload.securityclass",
+      "pk":1
+   },
+   {
+      "fields":{
+         "name":"2: NCR internal"
+      },
+      "model":"upload.securityclass",
+      "pk":2
+   },
+   {
+      "fields":{
+         "name":"4: Strictly confidential"
+      },
+      "model":"upload.securityclass",
+      "pk":4
+   }
+]

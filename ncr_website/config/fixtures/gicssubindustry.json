@@ -1,0 +1,1886 @@
+[
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":1,
+    "fields":{
+      "valid_to":null,
+      "industry_id":1,
+      "name":"Oil & Gas Drilling",
+      "code":10101010,
+      "description":"Drilling contractors or owners of drilling rigs that contract their services for drilling wells",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":2,
+    "fields":{
+      "valid_to":null,
+      "industry_id":1,
+      "name":"Oil & Gas Equipment & Services",
+      "code":10101020,
+      "description":"Manufacturers of equipment, including drilling rigs and equipment, and providers of supplies and services to companies involved in the drilling, evaluation and completion of oil and gas wells.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":3,
+    "fields":{
+      "valid_to":null,
+      "industry_id":2,
+      "name":"Integrated Oil & Gas",
+      "code":10102010,
+      "description":"Integrated oil companies engaged in the exploration & production of oil and gas, as well as at least one other significant activity in either refining, marketing and transportation, or chemicals.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":4,
+    "fields":{
+      "valid_to":null,
+      "industry_id":2,
+      "name":"Oil & Gas Exploration & Production",
+      "code":10102020,
+      "description":"Companies engaged in the exploration and production of oil and gas not classified elsewhere.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":5,
+    "fields":{
+      "valid_to":null,
+      "industry_id":2,
+      "name":"Oil & Gas Refining & Marketing",
+      "code":10102030,
+      "description":"Companies engaged in the refining and marketing of oil, gas and/or refined products not classified in the Integrated Oil & Gas or Independent Power Producers & Energy Traders Sub-Industries.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":6,
+    "fields":{
+      "valid_to":null,
+      "industry_id":2,
+      "name":"Oil & Gas Storage & Transportation",
+      "code":10102040,
+      "description":"Companies engaged in the storage and/or transportation of oil, gas and/or refined products. Includes diversified midstream natural gas companies facing competitive markets, oil and refined product pipelines, coal slurry pipelines and oil & gas shipping companies.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":7,
+    "fields":{
+      "valid_to":null,
+      "industry_id":2,
+      "name":"Coal & Consumable Fuels",
+      "code":10102050,
+      "description":"Companies primarily involved in the production and mining of coal, related products and other consumable fuels related to the generation of energy.  Excludes companies primarily producing gases classified in the Industrial Gases sub-industry and companies primarily mining for metallurgical (coking) coal used for steel production.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":8,
+    "fields":{
+      "valid_to":null,
+      "industry_id":3,
+      "name":"Commodity Chemicals",
+      "code":15101010,
+      "description":"Companies that primarily produce industrial chemicals and basic chemicals. Including but not limited to plastics, synthetic fibers, films, commodity-based paints & pigments, explosives and petrochemicals. Excludes chemical companies classified in the Diversified Chemicals, Fertilizers & Agricultural Chemicals, Industrial Gases, or Specialty Chemicals Sub-Industries.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":9,
+    "fields":{
+      "valid_to":null,
+      "industry_id":3,
+      "name":"Diversified Chemicals",
+      "code":15101020,
+      "description":"Manufacturers of a diversified range of chemical products not classified in the Industrial Gases, Commodity Chemicals, Specialty Chemicals or Fertilizers & Agricultural Chemicals Sub-Industries.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":10,
+    "fields":{
+      "valid_to":null,
+      "industry_id":3,
+      "name":"Fertilizers & Agricultural Chemicals",
+      "code":15101030,
+      "description":"Producers of fertilizers, pesticides, potash or other agriculture-related chemicals not classified elsewhere.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":11,
+    "fields":{
+      "valid_to":null,
+      "industry_id":3,
+      "name":"Industrial Gases",
+      "code":15101040,
+      "description":"Manufacturers of industrial gases.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":12,
+    "fields":{
+      "valid_to":null,
+      "industry_id":3,
+      "name":"Specialty Chemicals",
+      "code":15101050,
+      "description":"Companies that primarily produce high value-added chemicals used in the manufacture of a wide variety of products, including but not limited to fine chemicals, additives, advanced polymers, adhesives, sealants and specialty paints, pigments and coatings.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":13,
+    "fields":{
+      "valid_to":null,
+      "industry_id":4,
+      "name":"Construction Materials",
+      "code":15102010,
+      "description":"Manufacturers of construction materials including sand, clay, gypsum, lime, aggregates, cement, concrete and bricks. Other finished or semi-finished building materials are classified  in the Building Products Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":14,
+    "fields":{
+      "valid_to":null,
+      "industry_id":5,
+      "name":"Metal & Glass Containers",
+      "code":15103010,
+      "description":"Manufacturers of metal, glass or plastic containers. Includes corks and caps.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":15,
+    "fields":{
+      "valid_to":null,
+      "industry_id":5,
+      "name":"Paper Packaging",
+      "code":15103020,
+      "description":"Manufacturers of paper and cardboard containers and packaging.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":16,
+    "fields":{
+      "valid_to":null,
+      "industry_id":6,
+      "name":"Aluminum",
+      "code":15104010,
+      "description":"Producers of aluminum and related products, including companies that mine or process bauxite and companies that recycle aluminum to produce finished or semi-finished products. Excludes companies that primarily produce aluminum building materials classified in the Building Products Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":17,
+    "fields":{
+      "valid_to":null,
+      "industry_id":6,
+      "name":"Diversified Metals & Mining",
+      "code":15104020,
+      "description":"Companies engaged in the diversified production or extraction of metals and minerals not classified elsewhere. Including, but not limited to, nonferrous metal mining (except bauxite), salt and borate mining, phosphate rock mining, and diversified mining operations. Excludes iron ore mining, classified in the Steel Sub-Industry, bauxite mining, classified in the Aluminum Sub-Industry, and coal mining, classified in either the Steel or Coal & Consumable Fuels Sub-Industries.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":18,
+    "fields":{
+      "valid_to":null,
+      "industry_id":6,
+      "name":"Copper",
+      "code":15104025,
+      "description":"Companies involved primarily in copper ore mining.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":19,
+    "fields":{
+      "valid_to":null,
+      "industry_id":6,
+      "name":"Gold",
+      "code":15104030,
+      "description":"Producers of gold and related products, including companies that mine or process gold and the South African finance houses which primarily invest in, but do not operate, gold mines.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":20,
+    "fields":{
+      "valid_to":null,
+      "industry_id":6,
+      "name":"Precious Metals & Minerals",
+      "code":15104040,
+      "description":"Companies mining precious metals and minerals not classified in the Gold Sub-Industry. Includes companies primarily mining platinum.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":21,
+    "fields":{
+      "valid_to":null,
+      "industry_id":6,
+      "name":"Silver",
+      "code":15104045,
+      "description":"Companies primarily mining silver. Excludes companies classified in the Gold or Precious Metals & Minerals Sub-Industries.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":22,
+    "fields":{
+      "valid_to":null,
+      "industry_id":6,
+      "name":"Steel",
+      "code":15104050,
+      "description":"Producers of iron and steel and related products, including metallurgical (coking) coal mining used for steel production.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":23,
+    "fields":{
+      "valid_to":null,
+      "industry_id":7,
+      "name":"Forest Products",
+      "code":15105010,
+      "description":"Manufacturers of timber and related wood products. Includes lumber for the building industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":24,
+    "fields":{
+      "valid_to":null,
+      "industry_id":7,
+      "name":"Paper Products",
+      "code":15105020,
+      "description":"Manufacturers of all grades of paper. Excludes companies specializing in paper packaging classified in the Paper Packaging Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":25,
+    "fields":{
+      "valid_to":null,
+      "industry_id":8,
+      "name":"Aerospace & Defense",
+      "code":20101010,
+      "description":"Manufacturers of civil or military aerospace and defense equipment, parts or products. Includes defense electronics and space equipment.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":26,
+    "fields":{
+      "valid_to":null,
+      "industry_id":9,
+      "name":"Building Products",
+      "code":20102010,
+      "description":"Manufacturers of building components and home improvement products and equipment. Excludes lumber and plywood classified under Forest Products and cement and other materials classified in the Construction Materials Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":27,
+    "fields":{
+      "valid_to":null,
+      "industry_id":10,
+      "name":"Construction & Engineering",
+      "code":20103010,
+      "description":"Companies engaged in primarily non-residential construction. Includes civil engineering companies and large-scale contractors. Excludes companies classified in the Homebuilding Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":28,
+    "fields":{
+      "valid_to":null,
+      "industry_id":11,
+      "name":"Electrical Components & Equipment",
+      "code":20104010,
+      "description":"Companies that produce electric cables and wires, electrical components or equipment not classified in the Heavy Electrical Equipment Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":29,
+    "fields":{
+      "valid_to":null,
+      "industry_id":11,
+      "name":"Heavy Electrical Equipment",
+      "code":20104020,
+      "description":"Manufacturers of power-generating equipment and other heavy electrical equipment, including power turbines, heavy electrical machinery intended for fixed-use and large electrical systems. Excludes cables and wires, classified in the Electrical Components & Equipment Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":30,
+    "fields":{
+      "valid_to":null,
+      "industry_id":12,
+      "name":"Industrial Conglomerates",
+      "code":20105010,
+      "description":"Diversified industrial companies with business activities in three or more sectors, none of which contributes a majority of revenues. Stakes held are predominantly of a controlling nature and stake holders maintain an operational interest in the running of the subsidiaries.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":31,
+    "fields":{
+      "valid_to":null,
+      "industry_id":13,
+      "name":"Construction Machinery & Heavy Trucks",
+      "code":20106010,
+      "description":"Manufacturers of heavy duty trucks, rolling machinery, earth-moving and construction equipment, and manufacturers of related parts. Includes non-military shipbuilding.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":32,
+    "fields":{
+      "valid_to":null,
+      "industry_id":13,
+      "name":"Agricultural & Farm Machinery",
+      "code":20106015,
+      "description":"Companies manufacturing agricultural machinery, farm machinery, and their related parts. Includes machinery used for the production of crops and agricultural livestock, agricultural tractors, planting and fertilizing machinery, fertilizer and chemical application equipment, and grain dryers and blowers.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":33,
+    "fields":{
+      "valid_to":null,
+      "industry_id":13,
+      "name":"Industrial Machinery",
+      "code":20106020,
+      "description":"Manufacturers of industrial machinery and industrial components. Includes companies that manufacture presses, machine tools, compressors, pollution control equipment, elevators, escalators, insulators, pumps, roller bearings and other metal fabrications.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":34,
+    "fields":{
+      "valid_to":null,
+      "industry_id":14,
+      "name":"Trading Companies & Distributors",
+      "code":20107010,
+      "description":"Trading companies and other distributors of industrial equipment and products.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":35,
+    "fields":{
+      "valid_to":null,
+      "industry_id":15,
+      "name":"Commercial Printing",
+      "code":20201010,
+      "description":"Companies providing commercial printing services. Includes printers primarily serving the media industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":36,
+    "fields":{
+      "valid_to":null,
+      "industry_id":15,
+      "name":"Environmental & Facilities Services",
+      "code":20201050,
+      "description":"Companies providing environmental and facilities maintenance services. Includes waste management, facilities management and pollution control services.  Excludes large-scale water treatment systems classified in the Water Utilities Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":37,
+    "fields":{
+      "valid_to":null,
+      "industry_id":15,
+      "name":"Office Services & Supplies",
+      "code":20201060,
+      "description":"Providers of office services and manufacturers of office supplies and equipment not classified elsewhere.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":38,
+    "fields":{
+      "valid_to":null,
+      "industry_id":15,
+      "name":"Diversified Support Services",
+      "code":20201070,
+      "description":"Companies primarily providing labor oriented support services to businesses and governments.  Includes commercial cleaning services, dining & catering services, equipment repair services, industrial maintenance services, industrial auctioneers, storage & warehousing, transaction services, uniform rental services, and other business support services.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":39,
+    "fields":{
+      "valid_to":null,
+      "industry_id":15,
+      "name":"Security & Alarm Services",
+      "code":20201080,
+      "description":"Companies providing security and protection services to business and governments. Includes companies providing services such as correctional facilities, security & alarm services, armored transportation & guarding.  Excludes companies providing security software classified under the Systems Software Sub-Industry and home security services classified under the Specialized Consumer Services Sub-Industry. Also excludes companies manufacturing security system equipment classified under the Electronic Equipment & Instruments Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":40,
+    "fields":{
+      "valid_to":null,
+      "industry_id":16,
+      "name":"Human Resource & Employment Services",
+      "code":20202010,
+      "description":"Companies providing business support services relating to human capital management. Includes employment agencies, employee training, payroll & benefit support services, retirement support services and temporary agencies.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":41,
+    "fields":{
+      "valid_to":null,
+      "industry_id":16,
+      "name":"Research & Consulting Services",
+      "code":20202020,
+      "description":"Companies primarily providing research and consulting services to businesses and governments not classified elsewhere.  Includes companies involved in management consulting services, architectural design, business information or scientific research, marketing, and testing & certification services. Excludes companies providing information technology consulting services classified in the IT Consulting & Other Services Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":42,
+    "fields":{
+      "valid_to":null,
+      "industry_id":17,
+      "name":"Air Freight & Logistics",
+      "code":20301010,
+      "description":"Companies providing air freight transportation, courier and logistics services, including package and mail delivery and customs agents. Excludes those companies classified in the Airlines, Marine or Trucking Sub-Industries.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":43,
+    "fields":{
+      "valid_to":null,
+      "industry_id":18,
+      "name":"Airlines",
+      "code":20302010,
+      "description":"Companies providing primarily passenger air transportation.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":44,
+    "fields":{
+      "valid_to":null,
+      "industry_id":19,
+      "name":"Marine",
+      "code":20303010,
+      "description":"Companies providing goods or passenger maritime transportation. Excludes cruise-ships classified in the Hotels, Resorts & Cruise Lines Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":45,
+    "fields":{
+      "valid_to":null,
+      "industry_id":20,
+      "name":"Railroads",
+      "code":20304010,
+      "description":"Companies providing primarily goods and passenger rail  transportation.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":46,
+    "fields":{
+      "valid_to":null,
+      "industry_id":20,
+      "name":"Trucking",
+      "code":20304020,
+      "description":"Companies providing primarily goods and passenger land transportation. Includes vehicle rental and taxi companies.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":47,
+    "fields":{
+      "valid_to":null,
+      "industry_id":21,
+      "name":"Airport Services",
+      "code":20305010,
+      "description":"Operators of airports and companies providing related services.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":48,
+    "fields":{
+      "valid_to":null,
+      "industry_id":21,
+      "name":"Highways & Railtracks",
+      "code":20305020,
+      "description":"Owners and operators of roads, tunnels and railtracks.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":49,
+    "fields":{
+      "valid_to":null,
+      "industry_id":21,
+      "name":"Marine Ports & Services",
+      "code":20305030,
+      "description":"Owners and operators of marine ports and related services.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":50,
+    "fields":{
+      "valid_to":null,
+      "industry_id":22,
+      "name":"Auto Parts & Equipment",
+      "code":25101010,
+      "description":"Manufacturers of parts and accessories for  automobiles and motorcycles. Excludes companies classified in the Tires & Rubber Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":51,
+    "fields":{
+      "valid_to":null,
+      "industry_id":22,
+      "name":"Tires & Rubber",
+      "code":25101020,
+      "description":"Manufacturers of tires and rubber.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":52,
+    "fields":{
+      "valid_to":null,
+      "industry_id":23,
+      "name":"Automobile Manufacturers",
+      "code":25102010,
+      "description":"Companies that produce mainly passenger automobiles and light trucks. Excludes companies producing mainly motorcycles and three-wheelers classified in the Motorcycle Manufacturers Sub-Industry and heavy duty trucks classified in the Construction Machinery & Heavy Trucks Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":53,
+    "fields":{
+      "valid_to":null,
+      "industry_id":23,
+      "name":"Motorcycle Manufacturers",
+      "code":25102020,
+      "description":"Companies that produce motorcycles, scooters or three-wheelers. Excludes bicycles classified in the Leisure Products Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":54,
+    "fields":{
+      "valid_to":null,
+      "industry_id":24,
+      "name":"Consumer Electronics",
+      "code":25201010,
+      "description":"Manufacturers of consumer electronics products including TVs, home audio equipment, game consoles, digital cameras, and related products. Excludes personal home computer manufacturers classified in the Technology Hardware, Storage & Peripherals Sub-Industry, and electric household appliances classified in the Household Appliances Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":55,
+    "fields":{
+      "valid_to":null,
+      "industry_id":24,
+      "name":"Home Furnishings",
+      "code":25201020,
+      "description":"Manufacturers of soft home furnishings or furniture, including upholstery, carpets and wall-coverings.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":56,
+    "fields":{
+      "valid_to":null,
+      "industry_id":24,
+      "name":"Homebuilding",
+      "code":25201030,
+      "description":"Residential construction companies. Includes manufacturers of prefabricated houses and semi-fixed manufactured homes.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":57,
+    "fields":{
+      "valid_to":null,
+      "industry_id":24,
+      "name":"Household Appliances",
+      "code":25201040,
+      "description":"Manufacturers of electric household appliances and related products.  Includes manufacturers of power and hand tools, including garden improvement tools.  Excludes TVs and other audio and video products classified in the Consumer Electronics Sub-Industry and personal computers classified in the Technology Hardware, Storage & Peripherals Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":58,
+    "fields":{
+      "valid_to":null,
+      "industry_id":24,
+      "name":"Housewares & Specialties",
+      "code":25201050,
+      "description":"Manufacturers of durable household products, including cutlery, cookware, glassware, crystal, silverware, utensils, kitchenware and consumer specialties not classified elsewhere.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":59,
+    "fields":{
+      "valid_to":null,
+      "industry_id":25,
+      "name":"Leisure Products",
+      "code":25202010,
+      "description":"Manufacturers of leisure products and equipment including sports equipment, bicycles and toys.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":60,
+    "fields":{
+      "valid_to":null,
+      "industry_id":26,
+      "name":"Apparel, Accessories & Luxury Goods",
+      "code":25203010,
+      "description":"Manufacturers of apparel, accessories & luxury goods. Includes companies primarily producing designer handbags, wallets, luggage, jewelry and watches. Excludes shoes classified in the Footwear Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":61,
+    "fields":{
+      "valid_to":null,
+      "industry_id":26,
+      "name":"Footwear",
+      "code":25203020,
+      "description":"Manufacturers of footwear. Includes sport and leather shoes.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":62,
+    "fields":{
+      "valid_to":null,
+      "industry_id":26,
+      "name":"Textiles",
+      "code":25203030,
+      "description":"Manufacturers of textile and related products not classified in the Apparel, Accessories & Luxury Goods, Footwear or Home Furnishings Sub-Industries.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":63,
+    "fields":{
+      "valid_to":null,
+      "industry_id":27,
+      "name":"Casinos & Gaming",
+      "code":25301010,
+      "description":"Owners and operators of casinos and gaming facilities. Includes companies providing lottery and betting services.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":64,
+    "fields":{
+      "valid_to":null,
+      "industry_id":27,
+      "name":"Hotels, Resorts & Cruise Lines",
+      "code":25301020,
+      "description":"Owners and operators of hotels, resorts and cruise-ships. Includes travel agencies, tour operators and related services not classified elsewhere . Excludes casino-hotels classified in the Casinos & Gaming Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":65,
+    "fields":{
+      "valid_to":null,
+      "industry_id":27,
+      "name":"Leisure Facilities",
+      "code":25301030,
+      "description":"Owners and operators of leisure facilities, including sport and fitness centers, stadiums, golf courses and amusement parks not classified in the Movies & Entertainment Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":66,
+    "fields":{
+      "valid_to":null,
+      "industry_id":27,
+      "name":"Restaurants",
+      "code":25301040,
+      "description":"Owners and operators of restaurants, bars, pubs, fast-food or take-out facilities. Includes companies that provide food catering services.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":67,
+    "fields":{
+      "valid_to":null,
+      "industry_id":28,
+      "name":"Education Services",
+      "code":25302010,
+      "description":"Companies providing educational services, either on-line or through conventional teaching methods. Includes, private universities, correspondence teaching, providers of educational seminars, educational materials and technical education. Excludes companies providing employee education programs classified in the Human Resources & Employment Services Sub-Industry",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":68,
+    "fields":{
+      "valid_to":null,
+      "industry_id":28,
+      "name":"Specialized Consumer Services",
+      "code":25302020,
+      "description":"Companies providing consumer services not classified elsewhere.  Includes residential services, home security, legal services, personal services, renovation & interior design services, consumer auctions and wedding & funeral services.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":69,
+    "fields":{
+      "valid_to":null,
+      "industry_id":29,
+      "name":"Advertising",
+      "code":25401010,
+      "description":"Companies providing advertising, marketing or public relations services.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":70,
+    "fields":{
+      "valid_to":null,
+      "industry_id":29,
+      "name":"Broadcasting",
+      "code":25401020,
+      "description":"Owners and operators of television or radio broadcasting systems, including programming. Includes, radio and television broadcasting, radio networks, and radio stations.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":71,
+    "fields":{
+      "valid_to":null,
+      "industry_id":29,
+      "name":"Cable & Satellite",
+      "code":25401025,
+      "description":"Providers of cable or satellite television services. Includes cable networks and program distribution.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":72,
+    "fields":{
+      "valid_to":null,
+      "industry_id":29,
+      "name":"Movies & Entertainment",
+      "code":25401030,
+      "description":"Companies that engage in producing and selling entertainment products and services, including companies engaged in the production, distribution and screening of movies and television shows, producers and distributors of music, entertainment theaters and sports teams.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":73,
+    "fields":{
+      "valid_to":null,
+      "industry_id":29,
+      "name":"Publishing",
+      "code":25401040,
+      "description":"Publishers of newspapers, magazines and books, and providers of information in print or electronic formats.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":74,
+    "fields":{
+      "valid_to":null,
+      "industry_id":30,
+      "name":"Distributors",
+      "code":25501010,
+      "description":"Distributors and wholesalers of general merchandise not classified elsewhere. Includes vehicle distributors.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":75,
+    "fields":{
+      "valid_to":null,
+      "industry_id":31,
+      "name":"Internet & Direct Marketing Retail",
+      "code":25502020,
+      "description":"Companies  providing  retail  services  primarily  on  the Internet, through mail order, and TV home shopping retailers.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":76,
+    "fields":{
+      "valid_to":null,
+      "industry_id":32,
+      "name":"Department Stores",
+      "code":25503010,
+      "description":"Owners and operators of department stores.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":77,
+    "fields":{
+      "valid_to":null,
+      "industry_id":32,
+      "name":"General Merchandise Stores",
+      "code":25503020,
+      "description":"Owners and operators of stores offering diversified general merchandise. Excludes hypermarkets and large-scale super centers classified in the Hypermarkets & Super Centers Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":78,
+    "fields":{
+      "valid_to":null,
+      "industry_id":33,
+      "name":"Apparel Retail",
+      "code":25504010,
+      "description":"Retailers specialized mainly in apparel and accessories.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":79,
+    "fields":{
+      "valid_to":null,
+      "industry_id":33,
+      "name":"Computer & Electronics Retail",
+      "code":25504020,
+      "description":"Owners and operators of consumer electronics, computers, video and related products retail stores.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":80,
+    "fields":{
+      "valid_to":null,
+      "industry_id":33,
+      "name":"Home Improvement Retail",
+      "code":25504030,
+      "description":"Owners and operators of home and garden improvement retail stores. Includes stores offering building materials and supplies.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":81,
+    "fields":{
+      "valid_to":null,
+      "industry_id":33,
+      "name":"Specialty Stores",
+      "code":25504040,
+      "description":"Owners and operators of specialty retail stores not classified elsewhere. Includes jewelry stores, toy stores, office supply stores, health & vision care stores, and book & entertainment stores.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":82,
+    "fields":{
+      "valid_to":null,
+      "industry_id":33,
+      "name":"Automotive Retail",
+      "code":25504050,
+      "description":"Owners and operators of stores specializing in automotive retail.  Includes auto dealers, gas stations, and retailers of auto accessories, motorcycles & parts, automotive glass, and automotive equipment & parts.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":83,
+    "fields":{
+      "valid_to":null,
+      "industry_id":33,
+      "name":"Homefurnishing Retail",
+      "code":25504060,
+      "description":"Owners and operators of furniture and home furnishings retail stores.  Includes residential furniture, homefurnishings, housewares, and interior design.  Excludes home and garden improvement stores, classified in the Home Improvement Retail Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":84,
+    "fields":{
+      "valid_to":null,
+      "industry_id":34,
+      "name":"Drug Retail",
+      "code":30101010,
+      "description":"Owners and operators of primarily drug retail stores and pharmacies.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":85,
+    "fields":{
+      "valid_to":null,
+      "industry_id":34,
+      "name":"Food Distributors",
+      "code":30101020,
+      "description":"Distributors of food products to other companies and not directly to the consumer.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":86,
+    "fields":{
+      "valid_to":null,
+      "industry_id":34,
+      "name":"Food Retail",
+      "code":30101030,
+      "description":"Owners and operators of primarily food retail stores.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":87,
+    "fields":{
+      "valid_to":null,
+      "industry_id":34,
+      "name":"Hypermarkets & Super Centers",
+      "code":30101040,
+      "description":"Owners and operators of hypermarkets and super centers selling food and a wide-range of consumer staple products.  Excludes Food and Drug Retailers classified in the Food Retail and Drug Retail Sub-Industries, respectively.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":88,
+    "fields":{
+      "valid_to":null,
+      "industry_id":35,
+      "name":"Brewers",
+      "code":30201010,
+      "description":"Producers of beer and malt liquors. Includes breweries not classified in the Restaurants Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":89,
+    "fields":{
+      "valid_to":null,
+      "industry_id":35,
+      "name":"Distillers & Vintners",
+      "code":30201020,
+      "description":"Distillers, vintners and producers of alcoholic beverages not classified in the Brewers Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":90,
+    "fields":{
+      "valid_to":null,
+      "industry_id":35,
+      "name":"Soft Drinks",
+      "code":30201030,
+      "description":"Producers of non-alcoholic beverages including mineral waters. Excludes producers of milk classified in the Packaged Foods Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":91,
+    "fields":{
+      "valid_to":null,
+      "industry_id":36,
+      "name":"Agricultural Products",
+      "code":30202010,
+      "description":"Producers of agricultural products. Includes crop growers, owners of plantations and companies that produce and process foods but do not package and market them. Excludes companies classified in the Forest Products Sub-Industry and those that package and market the food products classified in the Packaged Foods Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":92,
+    "fields":{
+      "valid_to":null,
+      "industry_id":36,
+      "name":"Packaged Foods & Meats",
+      "code":30202030,
+      "description":"Producers of packaged foods including dairy products, fruit juices, meats, poultry, fish and pet foods.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":93,
+    "fields":{
+      "valid_to":null,
+      "industry_id":37,
+      "name":"Tobacco",
+      "code":30203010,
+      "description":"Manufacturers of cigarettes and other tobacco products.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":94,
+    "fields":{
+      "valid_to":null,
+      "industry_id":38,
+      "name":"Household Products",
+      "code":30301010,
+      "description":"Producers of non-durable household products, including detergents, soaps, diapers and other tissue and household paper products not classified in the Paper Products Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":95,
+    "fields":{
+      "valid_to":null,
+      "industry_id":39,
+      "name":"Personal Products",
+      "code":30302010,
+      "description":"Manufacturers of personal and beauty care products, including cosmetics and perfumes.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":96,
+    "fields":{
+      "valid_to":null,
+      "industry_id":40,
+      "name":"Health Care Equipment",
+      "code":35101010,
+      "description":"Manufacturers of health care equipment and devices. Includes medical instruments, drug delivery systems, cardiovascular & orthopedic devices, and diagnostic equipment.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":97,
+    "fields":{
+      "valid_to":null,
+      "industry_id":40,
+      "name":"Health Care Supplies",
+      "code":35101020,
+      "description":"Manufacturers of health care supplies and medical products not classified elsewhere. Includes eye care products, hospital supplies, and safety needle & syringe devices.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":98,
+    "fields":{
+      "valid_to":null,
+      "industry_id":41,
+      "name":"Health Care Distributors",
+      "code":35102010,
+      "description":"Distributors and wholesalers of health care products not classified elsewhere.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":99,
+    "fields":{
+      "valid_to":null,
+      "industry_id":41,
+      "name":"Health Care  Services",
+      "code":35102015,
+      "description":"Providers of patient health care services not classified elsewhere. Includes dialysis centers, lab testing services, and pharmacy management services. Also includes companies providing business support services to health care providers, such as clerical support services, collection agency services, staffing services and outsourced sales & marketing services",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":100,
+    "fields":{
+      "valid_to":null,
+      "industry_id":41,
+      "name":"Health Care Facilities",
+      "code":35102020,
+      "description":"Owners and operators of health care facilities, including hospitals, nursing homes, rehabilitation centers and animal hospitals.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":101,
+    "fields":{
+      "valid_to":null,
+      "industry_id":41,
+      "name":"Managed Health Care",
+      "code":35102030,
+      "description":"Owners and operators of Health Maintenance Organizations (HMOs) and other managed plans.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":102,
+    "fields":{
+      "valid_to":null,
+      "industry_id":42,
+      "name":"Health Care Technology",
+      "code":35103010,
+      "description":"Companies providing information technology services primarily to health care providers.  Includes companies providing application, systems and/or data processing software, internet-based tools, and IT consulting services to doctors, hospitals or businesses operating primarily in the Health Care Sector",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":103,
+    "fields":{
+      "valid_to":null,
+      "industry_id":43,
+      "name":"Biotechnology",
+      "code":35201010,
+      "description":"Companies primarily engaged in the research, development, manufacturing and/or marketing of products based on genetic analysis and genetic engineering.  Includes companies specializing in protein-based therapeutics to treat human diseases. Excludes companies manufacturing products using biotechnology but without a health care application.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":104,
+    "fields":{
+      "valid_to":null,
+      "industry_id":44,
+      "name":"Pharmaceuticals",
+      "code":35202010,
+      "description":"Companies engaged in the research, development or production of pharmaceuticals. Includes veterinary drugs.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":105,
+    "fields":{
+      "valid_to":null,
+      "industry_id":45,
+      "name":"Life Sciences Tools & Services",
+      "code":35203010,
+      "description":"Companies enabling the drug discovery, development and production continuum by providing analytical tools, instruments, consumables & supplies, clinical trial services and contract research services.  Includes firms primarily servicing the pharmaceutical and biotechnology industries.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":106,
+    "fields":{
+      "valid_to":null,
+      "industry_id":46,
+      "name":"Diversified Banks",
+      "code":40101010,
+      "description":"Large, geographically diverse banks with a national footprint whose revenues are derived primarily from conventional banking operations, have significant business activity in retail banking and small and medium corporate lending, and provide a diverse range of financial services.  Excludes banks classified in the Regional Banks and Thrifts & Mortgage Finance Sub-Industries. Also excludes investment banks classified in the Investment Banking & Brokerage Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":107,
+    "fields":{
+      "valid_to":null,
+      "industry_id":46,
+      "name":"Regional Banks",
+      "code":40101015,
+      "description":"Commercial banks whose businesses are derived primarily from conventional banking operations and have significant business activity in retail banking and small and medium corporate lending. Regional banks tend to operate in limited geographic regions. Excludes companies classified in the Diversified Banks and Thrifts & Mortgage Banks sub-industries. Also excludes investment banks classified in the Investment Banking & Brokerage Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":108,
+    "fields":{
+      "valid_to":null,
+      "industry_id":47,
+      "name":"Thrifts & Mortgage Finance",
+      "code":40102010,
+      "description":"Financial institutions providing mortgage and mortgage related services.  These include financial institutions whose assets are primarily mortgage related, savings & loans, mortgage lending institutions, building societies and companies providing insurance to mortgage banks.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":109,
+    "fields":{
+      "valid_to":null,
+      "industry_id":48,
+      "name":"Other Diversified Financial Services",
+      "code":40201020,
+      "description":"Providers of a diverse range of financial services and/or with some interest in a wide range of financial services including banking, insurance and capital markets, but with no dominant business line. Excludes companies classified in the Regional Banks and Diversified Banks Sub-Industries.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":110,
+    "fields":{
+      "valid_to":null,
+      "industry_id":48,
+      "name":"Multi-Sector Holdings",
+      "code":40201030,
+      "description":"A company with significantly diversified holdings across three or more sectors, none of which contributes a majority of profit and/or sales. Stakes held are predominantly of a non-controlling nature.  Includes diversified financial companies where stakes held are of a controlling nature. Excludes other diversified companies classified in the Industrials Conglomerates Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":111,
+    "fields":{
+      "valid_to":null,
+      "industry_id":48,
+      "name":"Specialized Finance",
+      "code":40201040,
+      "description":"Providers  of  specialized  financial  services  not  classified  elsewhere. Companies  in  this  sub-industry  derive  a  majority  of  revenue  from  one  specialized  line  of  business.  Includes,  but  not  limited  to,  commercial  financing  companies,  central  banks,  leasing  institutions, factoring services, and specialty boutiques. Excludes companies classified in the Financial Exchanges & Data sub-industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":112,
+    "fields":{
+      "valid_to":null,
+      "industry_id":49,
+      "name":"Consumer Finance",
+      "code":40202010,
+      "description":"Providers of consumer finance services, including personal credit, credit cards, lease financing, travel-related money services and pawn shops.  Excludes mortgage lenders classified in the Thrifts & Mortgage Finance Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":113,
+    "fields":{
+      "valid_to":null,
+      "industry_id":50,
+      "name":"Asset Management & Custody Banks",
+      "code":40203010,
+      "description":"Financial institutions primarily engaged in investment management and/or related custody and securities fee-based services. Includes companies operating mutual funds, closed-end funds and unit investment trusts.  Excludes banks and other financial institutions primarily involved in commercial lending, investment banking, brokerage and other specialized financial activities.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":114,
+    "fields":{
+      "valid_to":null,
+      "industry_id":50,
+      "name":"Investment Banking & Brokerage",
+      "code":40203020,
+      "description":"Financial institutions primarily engaged in investment banking & brokerage services, including equity and debt underwriting, mergers and acquisitions, securities lending and advisory services. Excludes banks and other financial institutions primarily involved in commercial lending, asset management and specialized financial activities.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":115,
+    "fields":{
+      "valid_to":null,
+      "industry_id":50,
+      "name":"Diversified Capital Markets",
+      "code":40203030,
+      "description":"Financial institutions primarily engaged in diversified capital markets activities, including a significant presence in at least two of the following area: large/major corporate lending, investment banking, brokerage and asset management. Excludes less diversified companies classified in the Asset Management & Custody Banks or Investment Banking & Brokerage sub-industries.  Also excludes companies classified in the Banks or Insurance industry groups or the Consumer Finance Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":116,
+    "fields":{
+      "valid_to":null,
+      "industry_id":50,
+      "name":"Financial Exchanges & Data",
+      "code":40203040,
+      "description":"Financial  exchanges  for  securities,  commodities,  derivatives and other financial instruments, and providers of financial decision support tools and products  including ratings agencies",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":117,
+    "fields":{
+      "valid_to":null,
+      "industry_id":51,
+      "name":"Mortgage REITs",
+      "code":40204010,
+      "description":"Companies or Trusts that service, originate, purchase and/or securitize residential and/or commercial mortgage loans.  Includes trusts that invest in mortgage-backed securities and other mortgage related assets.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":118,
+    "fields":{
+      "valid_to":null,
+      "industry_id":52,
+      "name":"Insurance Brokers",
+      "code":40301010,
+      "description":"Insurance and reinsurance brokerage firms.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":119,
+    "fields":{
+      "valid_to":null,
+      "industry_id":52,
+      "name":"Life & Health Insurance",
+      "code":40301020,
+      "description":"Companies providing primarily life, disability, indemnity or supplemental health insurance. Excludes managed care companies classified in the Managed Health Care Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":120,
+    "fields":{
+      "valid_to":null,
+      "industry_id":52,
+      "name":"Multi-line Insurance",
+      "code":40301030,
+      "description":"Insurance companies with diversified interests in life, health and property and casualty insurance.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":121,
+    "fields":{
+      "valid_to":null,
+      "industry_id":52,
+      "name":"Property & Casualty Insurance",
+      "code":40301040,
+      "description":"Companies providing primarily property and casualty insurance.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":122,
+    "fields":{
+      "valid_to":null,
+      "industry_id":52,
+      "name":"Reinsurance",
+      "code":40301050,
+      "description":"Companies providing primarily reinsurance.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":123,
+    "fields":{
+      "valid_to":null,
+      "industry_id":53,
+      "name":"Internet Software & Services",
+      "code":45101010,
+      "description":"Companies developing and marketing internet software and/or providing internet services including online databases and interactive services, as well as companies deriving a majority of their revenues from online advertising. Excludes companies classified in the Internet Retail Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":124,
+    "fields":{
+      "valid_to":null,
+      "industry_id":54,
+      "name":"IT Consulting & Other Services",
+      "code":45102010,
+      "description":"Providers of information technology and systems integration services not classified in the Data Processing & Outsourced Services or Internet Software & Services Sub-Industries.  Includes information technology consulting and information management services.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":125,
+    "fields":{
+      "valid_to":null,
+      "industry_id":54,
+      "name":"Data Processing & Outsourced Services",
+      "code":45102020,
+      "description":"Providers of commercial electronic data processing and/or business process outsourcing services.  Includes companies that provide services for back-office automation.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":126,
+    "fields":{
+      "valid_to":null,
+      "industry_id":55,
+      "name":"Application Software",
+      "code":45103010,
+      "description":"Companies engaged in developing and producing software designed for specialized applications for the business or consumer market. Includes enterprise and technical software. Excludes companies classified in the Home Entertainment Software Sub-Industry. Also excludes companies producing systems or database management software classified in the Systems Software Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":127,
+    "fields":{
+      "valid_to":null,
+      "industry_id":55,
+      "name":"Systems Software",
+      "code":45103020,
+      "description":"Companies engaged in developing and producing systems and database management software.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":128,
+    "fields":{
+      "valid_to":null,
+      "industry_id":55,
+      "name":"Home Entertainment Software",
+      "code":45103030,
+      "description":"Manufacturers of home entertainment software and educational software used primarily in the home.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":129,
+    "fields":{
+      "valid_to":null,
+      "industry_id":56,
+      "name":"Communications Equipment",
+      "code":45201020,
+      "description":"Manufacturers of communication equipment and products, including LANs, WANs, routers, telephones, switchboards and exchanges. Excludes cellular phone manufacturers classified in the Technology Hardware, Storage & Peripherals Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":130,
+    "fields":{
+      "valid_to":null,
+      "industry_id":57,
+      "name":"Technology Hardware, Storage & Peripherals",
+      "code":45202030,
+      "description":"Manufacturers of cellular phones, personal computers, servers, electronic computer components and peripherals. Includes data storage components, motherboards, audio and video cards, monitors, keyboards, printers, and other peripherals. Excludes semiconductors classified in the Semiconductors Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":131,
+    "fields":{
+      "valid_to":null,
+      "industry_id":58,
+      "name":"Electronic Equipment & Instruments",
+      "code":45203010,
+      "description":"Manufacturers of electronic equipment and instruments including analytical, electronic test and measurement instruments, scanner/barcode products, lasers, display screens, point-of-sales machines, and security system equipment.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":132,
+    "fields":{
+      "valid_to":null,
+      "industry_id":58,
+      "name":"Electronic Components",
+      "code":45203015,
+      "description":"Manufacturers of electronic components. Includes electronic components, connection devices, electron tubes, electronic capacitors and resistors, electronic coil, printed circuit board, transformer and other inductors, signal processing technology/components.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":133,
+    "fields":{
+      "valid_to":null,
+      "industry_id":58,
+      "name":"Electronic Manufacturing Services",
+      "code":45203020,
+      "description":"Producers of electronic equipment mainly for the OEM (Original Equipment Manufacturers) markets.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":134,
+    "fields":{
+      "valid_to":null,
+      "industry_id":58,
+      "name":"Technology Distributors",
+      "code":45203030,
+      "description":"Distributors of technology hardware and equipment. Includes distributors of communications equipment, computers & peripherals, semiconductors, and electronic equipment and components.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":135,
+    "fields":{
+      "valid_to":null,
+      "industry_id":59,
+      "name":"Semiconductor Equipment",
+      "code":45301010,
+      "description":"Manufacturers of semiconductor equipment, including manufacturers of the raw material and equipment used in the solar power industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":136,
+    "fields":{
+      "valid_to":null,
+      "industry_id":59,
+      "name":"Semiconductors",
+      "code":45301020,
+      "description":"Manufacturers of semiconductors and related products, including manufacturers of solar modules and cells.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":137,
+    "fields":{
+      "valid_to":null,
+      "industry_id":60,
+      "name":"Alternative Carriers",
+      "code":50101010,
+      "description":"Providers of communications and high-density data transmission services primarily through a high bandwidth/fiber-optic cable network.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":138,
+    "fields":{
+      "valid_to":null,
+      "industry_id":60,
+      "name":"Integrated Telecommunication Services",
+      "code":50101020,
+      "description":"Operators of primarily fixed-line telecommunications networks and companies providing both wireless and fixed-line telecommunications services not classified elsewhere.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":139,
+    "fields":{
+      "valid_to":null,
+      "industry_id":61,
+      "name":"Wireless Telecommunication Services",
+      "code":50102010,
+      "description":"Providers of primarily cellular or wireless telecommunication services, including paging services.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":140,
+    "fields":{
+      "valid_to":null,
+      "industry_id":62,
+      "name":"Electric Utilities",
+      "code":55101010,
+      "description":"Companies that produce or distribute electricity. Includes both nuclear and non-nuclear facilities.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":141,
+    "fields":{
+      "valid_to":null,
+      "industry_id":63,
+      "name":"Gas Utilities",
+      "code":55102010,
+      "description":"Companies whose main charter is to distribute and transmit natural and manufactured gas. Excludes companies primarily involved in gas exploration or production classified in the Oil & Gas Exploration & Production Sub-Industry.   Also excludes diversified midstream natural gas companies classified in the Oil & Gas Storage & Transportation Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":142,
+    "fields":{
+      "valid_to":null,
+      "industry_id":64,
+      "name":"Multi-Utilities",
+      "code":55103010,
+      "description":"Utility companies with significantly diversified activities in addition to core Electric Utility, Gas Utility and/or Water Utility operations.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":143,
+    "fields":{
+      "valid_to":null,
+      "industry_id":65,
+      "name":"Water Utilities",
+      "code":55104010,
+      "description":"Companies that purchase and redistribute water to the end-consumer. Includes large-scale water treatment systems.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":144,
+    "fields":{
+      "valid_to":null,
+      "industry_id":66,
+      "name":"Independent Power Producers & Energy Traders",
+      "code":55105010,
+      "description":"Companies that operate as Independent Power Producers (IPPs), Gas & Power Marketing & Trading Specialists and/or Integrated Energy Merchants. Excludes producers of electricity using renewable sources, such as solar power, hydropower, and wind power. Also excludes electric transmission companies and utility distribution companies classified in the Electric Utilities Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":145,
+    "fields":{
+      "valid_to":null,
+      "industry_id":66,
+      "name":"Renewable Electricity",
+      "code":55105020,
+      "description":"Companies that engage in the generation and distribution of electricity using renewable sources, including, but not limited to, companies that produce electricity using biomass, geothermal energy, solar energy, hydropower, and wind power. Excludes companies manufacturing capital equipment used to generate electricity using renewable sources, such as manufacturers of solar power systems, installers of photovoltaic cells,  and companies involved in the provision of technology, components, and services mainly to this market.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":146,
+    "fields":{
+      "valid_to":null,
+      "industry_id":67,
+      "name":"Diversified REITs",
+      "code":60101010,
+      "description":"A company or Trust with significantly diversified operations across two or more property types.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":147,
+    "fields":{
+      "valid_to":null,
+      "industry_id":67,
+      "name":"Industrial REITs",
+      "code":60101020,
+      "description":"Companies or Trusts engaged in the acquisition, development, ownership, leasing, management and operation of industrial properties. Includes companies operating industrial warehouses and distribution properties.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":148,
+    "fields":{
+      "valid_to":null,
+      "industry_id":67,
+      "name":"Hotel & Resort REITs",
+      "code":60101030,
+      "description":"Companies or Trusts engaged in the acquisition, development, ownership, leasing, management and operation of hotel and resort properties.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":149,
+    "fields":{
+      "valid_to":null,
+      "industry_id":67,
+      "name":"Office REITs",
+      "code":60101040,
+      "description":"Companies or Trusts engaged in the acquisition, development, ownership, leasing, management and operation of office properties.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":150,
+    "fields":{
+      "valid_to":null,
+      "industry_id":67,
+      "name":"Health Care REITs",
+      "code":60101050,
+      "description":"Companies or Trusts engaged in the acquisition, development, ownership, leasing, management and operation of properties serving the health care industry, including hospitals, nursing homes, and assisted living properties.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":151,
+    "fields":{
+      "valid_to":null,
+      "industry_id":67,
+      "name":"Residential REITs",
+      "code":60101060,
+      "description":"Companies or Trusts engaged in the acquisition, development, ownership, leasing, management and operation of residential properties including multifamily homes, apartments, manufactured homes and student housing properties",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":152,
+    "fields":{
+      "valid_to":null,
+      "industry_id":67,
+      "name":"Retail REITs",
+      "code":60101070,
+      "description":"Companies or Trusts engaged in the acquisition, development, ownership, leasing, management and operation of shopping malls, outlet malls, neighborhood and community shopping centers.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":153,
+    "fields":{
+      "valid_to":null,
+      "industry_id":67,
+      "name":"Specialized REITs",
+      "code":60101080,
+      "description":"Companies or Trusts engaged in the acquisition, development, ownership, leasing, management and operation of properties not classified elsewhere. Includes trusts that operate and invest in storage properties. It also includes REITs that do not generate a majority of their revenues and income from real estate rental and leasing operations.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":154,
+    "fields":{
+      "valid_to":null,
+      "industry_id":68,
+      "name":"Diversified Real Estate Activities",
+      "code":60102010,
+      "description":"Companies engaged in a diverse spectrum of real estate activities including real estate development & sales, real estate management, or real estate services, but with no dominant business line.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":155,
+    "fields":{
+      "valid_to":null,
+      "industry_id":68,
+      "name":"Real Estate Operating Companies",
+      "code":60102020,
+      "description":"Companies engaged in operating real estate properties for the purpose of leasing & management.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":156,
+    "fields":{
+      "valid_to":null,
+      "industry_id":68,
+      "name":"Real Estate Development",
+      "code":60102030,
+      "description":"Companies that develop real estate and sell the properties after development. Excludes companies classified in the Homebuilding Sub-Industry.",
+      "valid_from":"2016-09-01"
+    }
+  },
+  {
+    "model":"static_database_table.gicssubindustry",
+    "pk":157,
+    "fields":{
+      "valid_to":null,
+      "industry_id":68,
+      "name":"Real Estate Services",
+      "code":60102040,
+      "description":"Real estate service providers such as real estate agents, brokers & real estate appraisers.",
+      "valid_from":"2016-09-01"
+    }
+  }
+]

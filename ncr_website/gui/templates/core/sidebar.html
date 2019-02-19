@@ -1,0 +1,146 @@
+{% load template_tags %}
+
+<div class="list-group panel">
+
+    <a href="#user" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar-container" aria-expanded="false">
+      <i class="fas fa-user"></i>
+
+      <span class="hidden-sm-down">
+        {{ global_variables.auth.full_name }}
+      </span>
+    </a>
+
+    <div class="collapse" id="user">
+
+      <a href="{% url 'dashboard' %}" class="list-group-item" data-parent="#user">
+        <i class="fas fa-tachometer-alt"></i>
+        Dashboard
+      </a>
+
+      <a href="{% url 'change_password' %}" class="list-group-item" data-parent="#password">
+        <i class="fas fa-tachometer-alt"></i>
+        Change password
+      </a>
+
+
+    </div>
+
+    <a href="#companies" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar-container" aria-expanded="false">
+      <i class="fas fa-building"></i>
+
+      <span class="hidden-sm-down">
+        Companies
+      </span>
+    </a>
+
+    <div class="collapse" id="companies">
+      <a href="{{ issuers_create_url }}"
+         class="fm-create list-group-item"
+         data-fm-head="Add company"
+         data-fm-callback="reload"
+         data-parent="#onboarding">Add company</a>
+
+      <a href="{% url 'company_all' %}" class="list-group-item">
+        View all
+      </a>
+
+      <a href="{% url 'company_all_rating' %}" class="list-group-item">
+        View all with rating
+      </a>
+
+    </div>
+
+    <a href="#assesment" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar-container" aria-expanded="false">
+      <i class="fas fa-balance-scale"></i>
+
+      <span class="hidden-sm-down">
+        Credit Assessment
+      </span>
+    </a>
+
+    <div class="collapse" id="assesment">
+
+      <a href="#" class="list-group-item" onClick="open_window('{% url 'issuer_assessment_corporate_all' type=1 %}', '1850', '1000', 'no')">
+        Corporate, real estate and finco
+      </a>
+
+      <a href="#" class="list-group-item" onClick="open_window('{% url 'issuer_assessment_corporate_all' type=2 %}', '1850', '1000', 'no')">
+        Financials ex finco
+      </a>
+
+      <a href="{% url 'issuer_assessment_corporate_add' %}"
+         class="fm-create list-group-item"
+         data-fm-head="New credit assessment"
+         data-fm-callback="reload"
+         data-parent="#onboarding">New credit assessment</a>
+
+      <a href="{% url 'issuer_assessment_corporate_dl' %}" class="list-group-item" >
+        <i class="fas fa-file-excel"></i>
+        Download to Excel
+      </a>
+
+    </div>
+
+    <a href="#financial_data" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar-container" aria-expanded="false">
+      <i class="fas fa-th-list"></i>
+
+      <span class="hidden-sm-down">
+        Financial data
+      </span>
+    </a>
+    <div class="collapse" id="financial_data">
+      <a href="{% url 'company_all_financial_corporate' %}" class="list-group-item">
+        Corporates and real estate
+      </a>
+
+    </div>
+
+    <a href="#scores" class="list-group-item collapsed" data-toggle="collapse" data-parent="#companies" aria-expanded="false">
+      <i class="fas fa-table"></i>
+
+      <span class="hidden-sm-down">
+        Scores by issuer type
+      </span>
+    </a>
+
+    <div class="collapse" id="scores">
+      <a href="{% url 'sector_overview' issuer_type_pk=1 %}" class="list-group-item">
+        Corporates
+      </a>
+
+      <a href="{% url 'sector_overview' issuer_type_pk=2 %}" class="list-group-item">
+        Financials
+      </a>
+
+      <a href="{% url 'sector_overview' issuer_type_pk=3 %}" class="list-group-item">
+        Real estate
+      </a>
+
+    </div>
+
+    {% if not global_variables.auth.groups|in_list:"Commercial" %}
+
+      <a href="#toolbox" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar-container" aria-expanded="false">
+        <i class="fas fa-ambulance"></i>
+
+        <span class="hidden-sm-down">
+          Miscellaneous
+        </span>
+      </a>
+
+      <div class="collapse" id="toolbox">
+        <!-- Methodologies -->
+        <a href="{% url 'methodologies_list' %}" class="list-group-item" data-parent="#toolbox">
+          <i class="fas fa-book"></i>
+          Methodologies
+        </a>
+      </div>
+
+    {% endif %}
+
+    <a href="/logout/" class="list-group-item">
+      <i class="fas fa-sign-out-alt"></i>
+      Log out
+    </a>
+
+</div>

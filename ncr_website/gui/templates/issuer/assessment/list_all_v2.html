@@ -1,0 +1,1113 @@
+{% extends 'full_screen.html' %}
+{% load template_tags %}
+{% block content %}
+{% load staticfiles %}
+
+<style type="text/css">
+
+  .ncrtable tr:hover {background-color: #CFD8DC;}
+
+  #table_wrapper {
+    height: 940;
+    width: 1800;
+    overflow: auto;
+    margin: 0;
+  }
+
+  .custom_padding th {
+    padding: 9px 6px 2px 6px;
+  }
+
+  .custom_padding td {
+    padding: 4px 6px 2px 6px;
+  }
+
+  .empty_cell {
+    background: #FFFFFF !important;
+  }
+
+</style>
+
+
+<div id="table_wrapper" style="margin:0">
+  <table class="custom_padding ncrtable table-freeze-multi" style="border-collapse: separate; border-spacing: 1px;" border="0">
+
+      <thead>
+        <tr style="vertical-align: bottom; text-align: center; white-space: nowrap;">
+            <th class="empty_cell">&nbsp;</th>
+            <th class="empty_cell">&nbsp;</th>
+            <th class="empty_cell">&nbsp;</th>
+            <th class="empty_cell">&nbsp;</th>
+            <th class="empty_cell">&nbsp;</th>
+            <th class="empty_cell">&nbsp;</th>
+            <th class="empty_cell">&nbsp;</th>
+
+            <th class="empty_cell">&nbsp;</th>
+
+            {# corporate #}
+            {% if type == 1 or type == 3 %}
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+
+              <th class="empty_cell">&nbsp;</th>
+
+              <th colspan="7">Business risk assessment</th>
+              <th colspan="2">Financial risk assessment</th>
+              <th colspan="3">Adjustment factors</th>
+              <th>Support</th>
+
+            {% elif type == 2 %}
+
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+
+            {% endif %}
+
+        </tr>
+        <tr style="white-space: nowrap;">
+            <th colspan="7" style="background: #FFFFFF">&nbsp;</th>
+
+            <th class="empty_cell">&nbsp;</th>
+
+            {# corporate #}
+            {% if type == 1 or type == 3 %}
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th colspan="3" style="text-align: center">Issue seniority levels</th>
+
+              <th class="empty_cell">&nbsp;</th>
+
+              <th style="text-align: center;">Real estate / corporate</th>
+              <th colspan="3" style="text-align: center;">Real estate</th>
+              <th colspan="3" style="text-align: center;">Corporate</th>
+              <th colspan="7" style="text-align: center;">Real estate / corporate</th>
+            {% elif type == 2 %}
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+              <th class="empty_cell">&nbsp;</th>
+
+              <th colspan="4" style="text-align: center">Issue seniority levels</th>
+
+              <th class="empty_cell">&nbsp;</th>
+
+              <th colspan="3" style="text-align: center;">Operating<br>environment</th>
+              <th colspan="7" style="text-align: center;">Risk<br>appetite</th>
+              <th style="text-align: center;">Competitive<br>position</th>
+              <th colspan="2" style="text-align: center;">Performance<br>indicators</th>
+
+              <th colspan="3" style="text-align: center;">Adjustment factors</th>
+              <th colspan="3" style="text-align: center;">Support factors</th>
+
+            {% endif %}
+
+        </tr>
+        <tr style="vertical-align: bottom; white-space: nowrap;">
+            <th>Sector</th>
+            <th>Legal name</th>
+            <th style="text-align: right;">Country</th>
+            <th style="text-align: right;">Methodology</th>
+            <th style="text-align: right;">Status</th>
+            <th style="text-align: right;">Last updated</th>
+            <th style="text-align: right;">Initiated by</th>
+
+            <th class="empty_cell">&nbsp;</th>
+
+            {# corporate #}
+            {% if type == 1 or type == 3 %}
+              <th style="text-align: center;">Business risk</th>
+              <th style="text-align: center;">Financial risk</th>
+              <th style="text-align: center;">ICA</th>
+              <th style="text-align: center;">SACA</th>
+              <th style="text-align: center;"><span title="Assessments are denoted by small caps and ratings by large caps.">Issuer<br>assessment<br>or rating</span></th>
+
+              <!-- corporate -->
+              <th style="text-align: center;">Secured</th>
+              <th style="text-align: center;">Senior unsecured</th>
+              <th style="text-align: center;">Subordinated</th>
+
+              <th class="empty_cell">&nbsp;</th>
+
+              <th style="text-align: center;">Operating<br>environment</th>
+              <th style="text-align: center;">Market position,<br>size and diversification</th>
+              <th style="text-align: center;">Portfolio<br>assessment</th>
+              <th style="text-align: center;">Operating<br>efficiency</th>
+              <th style="text-align: center;">Market<br>position</th>
+              <th style="text-align: center;">Operating<br>efficiency</th>
+              <th style="text-align: center;">Size and<br>diversification</th>
+              <th style="text-align: center;">Ratio<br>analysis</th>
+              <th style="text-align: center;">Risk<br>appetite</th>
+              <th style="text-align: center;">Liquidity</th>
+              <th style="text-align: center;">Peer<br>comparison</th>
+              <th style="text-align: center;">ESG</th>
+              <th style="text-align: center;">Total</th>
+            {% elif type == 2 %}
+              <th style="text-align: center;">Operating<br>environment</th>
+              <th style="text-align: center;">Risk<br>appetite</th>
+              <th style="text-align: center;">Compatitive<br>position</th>
+              <th style="text-align: center;">Performance<br>indicators</th>
+              <th style="text-align: center;">ICA</th>
+              <th style="text-align: center;">SACA</th>
+              <th style="text-align: center;"><span title="Assessments are denoted by small caps and ratings by large caps.">Issuer<br>assessment<br>or rating</span></th>
+
+              <!-- FI -->
+              <th style="text-align: center;">Senior<br>unsecured</th>
+              <th style="text-align: center;">Senior<br>non-preferred</th>
+              <th style="text-align: center;">T2</th>
+              <th style="text-align: center;">AT1</th>
+
+              <th class="empty_cell">&nbsp;</th>
+
+              <th style="text-align: center;">National<br>factors</th>
+              <th style="text-align: center;">Regional<br>impact</th>
+              <th style="text-align: center;">Regional,<br>cross border,<br>sector</th>
+
+              <th style="text-align: center;">Capital</th>
+              <th style="text-align: center;">Funding<br>and liquidity</th>
+              <th style="text-align: center;">Risk<br>governance</th>
+              <th style="text-align: center;">Credit<br>risk</th>
+              <th style="text-align: center;">Credit<br>risk<br>impact</th>
+              <th style="text-align: center;">Market<br>risk</th>
+              <th style="text-align: center;">Other<br>risks</th>
+
+              <th style="text-align: center;">Total</th>
+
+              <th style="text-align: center;">Earnings</th>
+              <th style="text-align: center;">Loss<br>performance</th>
+
+              <th style="text-align: center;">Peer<br>comparison</th>
+              <th style="text-align: center;">Transitions</th>
+              <th style="text-align: center;">Borderline<br>assessments</th>
+              <th style="text-align: center;">Ownership</th>
+              <th style="text-align: center;">Material<br>credit<br>enhancement</th>
+              <th style="text-align: center;">Rating<br>caps</th>
+
+            {% endif %}
+        </tr>
+        <tr style="vertical-align: bottom; font-size: 8px; white-space: nowrap;">
+          <th style="text-align: left;" colspan="7">Impact</th>
+
+          <th class="empty_cell">&nbsp;</th>
+
+          {# corporate #}
+          {% if type == 1 or type == 3 %}
+            <th style="text-align: center;">50%</th>
+            <th style="text-align: center;">50%</th>
+            <th class="empty_cell">&nbsp;</th>
+            <th class="empty_cell">&nbsp;</th>
+            <th class="empty_cell">&nbsp;</th>
+            <th class="empty_cell">&nbsp;</th>
+            <th class="empty_cell">&nbsp;</th>
+            <th class="empty_cell">&nbsp;</th>
+            <th class="empty_cell">&nbsp;</th>
+
+            <th style="text-align: center;">20%</th>
+            <th style="text-align: center;">12.5%</th>
+            <th style="text-align: center;">12.5%</th>
+            <th style="text-align: center;">5%</th>
+            <th style="text-align: center;">10%</th>
+            <th style="text-align: center;">10%</th>
+            <th style="text-align: center;">10%</th>
+            <th style="text-align: center;">25%</th>
+            <th style="text-align: center;">25%</th>
+            <th colspan="4">&nbsp;</th>
+          {% elif type == 2 %}
+            <th style="text-align: center;">20%</th>
+            <th style="text-align: center;">50%</th>
+            <th style="text-align: center;">15%</th>
+            <th style="text-align: center;">15%</th>
+
+            <th class="empty_cell">&nbsp;</th>
+            <th class="empty_cell">&nbsp;</th>
+            <th class="empty_cell">&nbsp;</th>
+
+            <th class="empty_cell">&nbsp;</th>
+            <th class="empty_cell">&nbsp;</th>
+            <th class="empty_cell">&nbsp;</th>
+            <th class="empty_cell">&nbsp;</th>
+
+            <th class="empty_cell">&nbsp;</th>
+            <th class="empty_cell">&nbsp;</th>
+            <th class="empty_cell">&nbsp;</th>
+            <th class="empty_cell">&nbsp;</th>
+
+            <th style="text-align: center;">17.5%</th>
+            <th style="text-align: center;">15%%</th>
+
+            <th style="text-align: center;">5%</th>
+            <th class="empty_cell">&nbsp;</th>
+            <th class="empty_cell">&nbsp;</th>
+            <th class="empty_cell">&nbsp;</th>
+            <th style="text-align: center;">2.5%</th>
+            <th style="text-align: center;">15%</th>
+
+            <th style="text-align: center;">7.5%</th>
+            <th style="text-align: center;">7.5%</th>
+
+            <th class="empty_cell">&nbsp;</th>
+            <th class="empty_cell">&nbsp;</th>
+            <th class="empty_cell">&nbsp;</th>
+            <th class="empty_cell">&nbsp;</th>
+            <th class="empty_cell">&nbsp;</th>
+            <th class="empty_cell">&nbsp;</th>
+
+          {% endif %}
+
+        </tr>
+      </thead>
+
+      <tbody>
+          <tr><td style="border-style: none;">&nbsp;</td></tr>
+
+          {% for d in object_list %}
+
+            {% ifchanged d.issuer.internal_peer %}
+              {% if forloop.counter > 1 %}
+                <tr><td style="border-style: none;">&nbsp;</td></tr>
+              {% endif %}
+            {% endifchanged %}
+
+            <tr style="white-space: nowrap;">
+
+              {% ifchanged d.issuer.internal_peer %}
+                <td>
+                  {{ d.issuer.internal_peer|default:'Not assigned' }}
+                </td>
+              {% else %}
+                <td style="border-style: none;">&nbsp;</td>
+              {% endifchanged %}
+
+              <td>
+                <a href="{% url 'issuer_view' pk=d.issuer.id %}">{{ d.issuer.i_name }}</a>
+              </td>
+              <td align="right">
+                {{ d.issuer.ccy|default:'Not set' }}
+              </td>
+              <td align="right">
+                {% if d.issuer.i_id == 1 %}
+                  <span title="Corporate">C</span>
+                {% elif d.issuer.i_id == 2 %}
+                  <span title="Financial">FI</span>
+                {% elif d.issuer.i_id == 3 %}
+                  <span title="Real estate">RE</span>
+                {% endif %}
+              </td>
+
+                {% if d.issuer.progress_process_step == 1 %}
+                  <td align="right">
+                    In progress
+                  </td>
+                {% elif d.issuer.progress_process_step == 2 %}
+                  <td align="right" style="background: #F4511E; color: #FFFFFF;">
+                    Awaiting approval
+                  </td>
+                {% else %}
+                  <td align="right">
+                    {% if d.issuer.rating_id %}
+                      NCR rating
+                    {% else %}
+                      Approved
+                    {% endif %}
+                  </td>
+                {% endif %}
+
+                <td align="right">
+                  {% if d.issuer.current_date_time_approval and not d.issuer.progress_id and not d.issuer.rating_id %}
+                    <a href="{% url 'issuer_assessment_corporate_add_update' issuer_pk=d.issuer.id %}"
+                       class="fm-update card-link"
+                       data-fm-head="New updated credit assessment"
+                       data-fm-callback="reload"
+                       data-parent="#onboarding">
+                      {{ d.issuer.current_date_time_approval|date:'Y-m-d' }}
+                    </a>
+
+                  {% else %}
+                    {{ d.issuer.current_date_time_approval|date:'Y-m-d'|default:'n/a' }}
+                  {% endif %}
+                </td>
+
+              <td align="right">
+                <span title="{{ d.user_data.name }}">{{ d.user_data.short_name }}</span>
+              </td>
+
+              <td class="empty_cell">&nbsp;</td>
+
+              {# corporate #}
+              {% if type == 1 or type == 3 %}
+
+                <td align="center" style="background: #f3f3f3;">
+                  {% if d.calculated_rating.rating.business_risk_assessment.ira %}
+
+                    {{ d.calculated_rating.rating.business_risk_assessment.ira }}
+
+                  {% endif %}
+                </td>
+
+                <td align="center">
+                  {% if d.calculated_rating.rating.financial_risk_assessment.ira %}
+                    {{ d.calculated_rating.rating.financial_risk_assessment.ira }}
+                 {% endif %}
+                </td>
+
+                <td align="center" style="background: #f3f3f3;">
+                  <span title="{{ d.calculated_rating.indicative_credit_assessment_score | floatformat:3 }}">{{ d.calculated_rating.indicative_credit_assessment|default:'&nbsp;' }}</span>
+                </td>
+
+                <td align="center">
+                  {{ d.calculated_rating.stand_alone_credit_assessment|default:'&nbsp;' }}
+                </td>
+
+                <td align="center" style="background: #FFCCBC;">
+                  {% if d.misc.allow_edit %}
+
+                    <a href="{% url 'issuer_assessment_update' assessment_pk=d.issuer.progress_id %}"
+                       class="fm-update card-link"
+                       data-fm-callback="reload"
+                       data-fm-head="Edit rating assessment"
+                       data-fm-target="#object-{{ d.issuer.progress_id }}">
+                      {{ d.issuer.progress_assessment_lt|return_long_term_rating|lower|default:'nr' }}
+                    </a>
+
+                  {% else %}
+                    {% if d.issuer.rating_id %}
+
+                      {{ d.calculated_rating.issuer_rating }}
+
+                    {% elif not d.issuer.progress_id %}
+
+                      {{ d.calculated_rating.issuer_rating|lower }}
+
+                    {% else %}
+
+                      {{ d.issuer.progress_assessment_lt|return_long_term_rating|lower|default:'nr' }}
+
+                    {% endif %}
+                  {% endif %}
+                </td>
+
+                <td align="center">
+                  {% get_subscore d 'seniority_level' 'Covered' as x %}
+                  {{ x.score_display|default:'&nbsp;' }}
+                </td>
+
+                <td align="center" style="background: #f3f3f3;">
+                  {% get_subscore d 'seniority_level' 'Senior Unsecured' as x %}
+                  {{ x.score_display|default:'&nbsp;' }}
+                </td>
+
+                <td align="center">
+                  {% get_subscore d 'seniority_level' 'Subordinated' as x %}
+                  {{ x.score_display|default:'&nbsp;' }}
+                </td>
+
+                <td class="empty_cell">&nbsp;</td>
+
+                <td align="center" style="background: #f3f3f3;">
+                  {% get_subscore d 'score_data' 'Operating environment' as x %}
+
+                  {% if d.misc.allow_edit %}
+                    <a href="{% url 'issuer_assessment_peer_update' subfactor_id=x.id %}"
+                       class="fm-update card-link"
+                       data-fm-callback="reload"
+                       data-fm-head="Peer overview for {{ x.subfactor }}"
+                       data-fm-target="#object-{{ x.id }}">
+                      {{ x.score_display|default:'&nbsp;' }}
+                    </a>
+                  {% else %}
+                    {{ x.score_display|default:'&nbsp;' }}
+                  {% endif %}
+                </td>
+
+                <td align="center">
+                  {% get_subscore d 'score_data' 'Market position, size and diversification' as x %}
+
+                  {% if x.score_value > 0 %}
+                    {% if d.misc.allow_edit %}
+                      <a href="{% url 'issuer_assessment_peer_update' subfactor_id=x.id %}"
+                         class="fm-update card-link"
+                         data-fm-callback="reload"
+                         data-fm-head="Peer overview for {{ x.subfactor }}"
+                         data-fm-target="#object-{{ x.id }}">
+                        {{ x.score_display|default:'&nbsp;' }}
+                      </a>
+                    {% else %}
+                      {{ x.score_display|default:'&nbsp;' }}
+                    {% endif %}
+                  {% endif %}
+                </td>
+
+                <td align="center" style="background: #f3f3f3;">
+                  {% get_subscore d 'score_data' 'Portfolio assessment' as x %}
+
+                  {% if x.score_value > 0 %}
+                    {% if d.misc.allow_edit %}
+                      <a href="{% url 'issuer_assessment_peer_update' subfactor_id=x.id %}"
+                         class="fm-update card-link"
+                         data-fm-callback="reload"
+                         data-fm-head="Peer overview for {{ x.subfactor }}"
+                         data-fm-target="#object-{{ x.id }}">
+                        {{ x.score_display|default:'&nbsp;' }}
+                      </a>
+                    {% else %}
+                      {{ x.score_display|default:'&nbsp;' }}
+                    {% endif %}
+                  {% endif %}
+                </td>
+
+                <td align="center">
+                  {% get_subscore d 'score_data' 'Operating efficiency' as x %}
+
+                  {% if x.score_value > 0 and d.issuer.i_id == 3 %}
+                    {% if d.misc.allow_edit %}
+                      <a href="{% url 'issuer_assessment_peer_update' subfactor_id=x.id %}"
+                         class="fm-update card-link"
+                         data-fm-callback="reload"
+                         data-fm-head="Peer overview for {{ x.subfactor }}"
+                         data-fm-target="#object-{{ x.id }}">
+                        {{ x.score_display|default:'&nbsp;' }}
+                      </a>
+                    {% else %}
+                      {{ x.score_display|default:'&nbsp;' }}
+                    {% endif %}
+                  {% endif %}
+                </td>
+
+                <td align="center" style="background: #f3f3f3;">
+                  {% get_subscore d 'score_data' 'Market position' as x %}
+
+                  {% if x.score_display %}
+                    {% if x.score_value > 0 %}
+                      {% if d.misc.allow_edit %}
+                        <a href="{% url 'issuer_assessment_peer_update' subfactor_id=x.id %}"
+                           class="fm-update card-link"
+                           data-fm-callback="reload"
+                           data-fm-head="Peer overview for {{ x.subfactor }}"
+                           data-fm-target="#object-{{ x.id }}">
+                          {{ x.score_display|default:'&nbsp;' }}
+                        </a>
+                      {% else %}
+                        {{ x.score_display|default:'&nbsp;' }}
+                      {% endif %}
+                    {% endif %}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </td>
+
+                <td align="center">
+                  {% get_subscore d 'score_data' 'Operating efficiency' as x %}
+
+                  {% if x.score_display and d.issuer.i_id == 1 %}
+                    {% if x.score_value > 0 %}
+                      {% if d.misc.allow_edit %}
+                        <a href="{% url 'issuer_assessment_peer_update' subfactor_id=x.id %}"
+                           class="fm-update card-link"
+                           data-fm-callback="reload"
+                           data-fm-head="Peer overview for {{ x.subfactor }}"
+                           data-fm-target="#object-{{ x.id }}">
+                          {{ x.score_display|default:'&nbsp;' }}
+                        </a>
+                      {% else %}
+                        {{ x.score_display|default:'&nbsp;' }}
+                      {% endif %}
+
+                    {% endif %}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </td>
+
+                <td align="center" style="background: #f3f3f3;">
+                  {% get_subscore d 'score_data' 'Size and diversification' as x %}
+
+                  {% if x.score_display %}
+                    {% if x.score_value > 0 %}
+                      {% if d.misc.allow_edit %}
+                        <a href="{% url 'issuer_assessment_peer_update' subfactor_id=x.id %}"
+                           class="fm-update card-link"
+                           data-fm-callback="reload"
+                           data-fm-head="Peer overview for {{ x.subfactor }}"
+                           data-fm-target="#object-{{ x.id }}">
+                          {{ x.score_display|default:'&nbsp;' }}
+                        </a>
+                      {% else %}
+                        {{ x.score_display|default:'&nbsp;' }}
+                      {% endif %}
+                    {% endif %}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </td>
+
+                <td align="center">
+                  {% get_subscore d 'score_data' 'Ratio analysis' as x %}
+
+                  {% if x.score_display %}
+                    {% if x.score_value > 0 %}
+                      {% if d.misc.allow_edit %}
+                        <a href="{% url 'issuer_assessment_peer_update' subfactor_id=x.id %}"
+                           class="fm-update card-link"
+                           data-fm-callback="reload"
+                           data-fm-head="Peer overview for {{ x.subfactor }}"
+                           data-fm-target="#object-{{ x.id }}">
+                          {{ x.score_display|default:'&nbsp;' }}
+                        </a>
+                      {% else %}
+                        {{ x.score_display|default:'&nbsp;' }}
+                      {% endif %}
+                    {% endif %}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </td>
+
+                <td align="center" style="background: #f3f3f3;">
+                  {% get_subscore d 'score_data' 'Risk appetite' as x %}
+
+                  {% if x.score_display %}
+                    {% if x.score_value > 0 %}
+                      {% if d.misc.allow_edit %}
+                        <a href="{% url 'issuer_assessment_peer_update' subfactor_id=x.id %}"
+                           class="fm-update card-link"
+                           data-fm-callback="reload"
+                           data-fm-head="Peer overview for {{ x.subfactor }}"
+                           data-fm-target="#object-{{ x.id }}">
+                          {{ x.score_display|default:'&nbsp;' }}
+                        </a>
+                      {% else %}
+                        {{ x.score_display|default:'&nbsp;' }}
+                      {% endif %}
+                    {% endif %}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </td>
+
+                <td align="center">
+                  {% get_subscore d 'score_data' 'Liquidity' as x %}
+
+                  {% if x.adjustment_value %}
+                    {{ x.adjustment_value|default:'&nbsp;' }}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </td>
+
+                <td align="center" style="background: #f3f3f3;">
+                  {% get_subscore d 'score_data' 'Peer comparison' as x %}
+
+                  {% if x.adjustment_value %}
+                    {{ x.adjustment_value|default:'&nbsp;' }}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </td>
+
+                <td align="center">
+                  {% get_subscore d 'score_data' 'ESG' as x %}
+
+                  {% if x.adjustment_value %}
+                    {{ x.adjustment_value|default:'&nbsp;' }}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </td>
+
+                <td align="center" style="background: #f3f3f3;">
+                  {% get_subscore d 'score_data' 'Ownership support' as x %}
+
+                  {% if x.adjustment_value %}
+                    {{ x.adjustment_value|default:'&nbsp;' }}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </td>
+
+              {% elif type == 2 %}
+                <td align="center" style="background: #f3f3f3;">
+                  {% if d.calculated_rating.rating.operating_environment.ira %}
+                    {{ d.calculated_rating.rating.operating_environment.ira }}
+                  {% endif %}
+                </td>
+
+                <td align="center">
+                  {% if d.calculated_rating.rating.risk_appetite.ira %}
+                    {{ d.calculated_rating.rating.risk_appetite.ira }}
+                  {% endif %}
+                </td>
+
+                <td align="center" style="background: #f3f3f3;">
+                  {% if d.calculated_rating.rating.competitive_position.ira %}
+                    {{ d.calculated_rating.rating.competitive_position.ira }}
+                  {% endif %}
+                </td>
+
+                <td align="center">
+                  {% if d.calculated_rating.rating.performance_indicator.ira %}
+                    {{ d.calculated_rating.rating.performance_indicator.ira }}
+                  {% endif %}
+                </td>
+
+                <td align="center" style="background: #f3f3f3;">
+                  <span title="{{ d.calculated_rating.indicative_credit_assessment_score | floatformat:3 }}">{{ d.calculated_rating.indicative_credit_assessment|default:'&nbsp;' }}</span>
+                </td>
+
+                <td align="center">
+                  {{ d.calculated_rating.stand_alone_credit_assessment|default:'&nbsp;' }}
+                </td>
+
+                <td align="center" style="background: #FFCCBC;">
+                  {% if d.misc.allow_edit %}
+
+                    <a href="{% url 'issuer_assessment_update' assessment_pk=d.issuer.progress_id %}"
+                       class="fm-update card-link"
+                       data-fm-callback="reload"
+                       data-fm-head="Edit rating assessment"
+                       data-fm-target="#object-{{ d.issuer.progress_id }}" title="{{ d.calculated_rating.weight }}">
+                      {{ d.issuer.progress_assessment_lt|return_long_term_rating|lower|default:'nr' }}
+                    </a>
+
+                  {% else %}
+                    {% if d.issuer.rating_id %}
+
+                      {{ d.calculated_rating.issuer_rating }}
+
+                    {% elif not d.issuer.progress_id %}
+
+                      {{ d.calculated_rating.issuer_rating|lower }}
+
+                    {% else %}
+
+                      {{ d.issuer.progress_assessment_lt|return_long_term_rating|lower|default:'nr' }}
+
+                    {% endif %}
+                  {% endif %}
+                </td>
+
+                <td align="center" style="background: #f3f3f3;">
+                  {% get_subscore d 'seniority_level' 'Senior Unsecured' as x %}
+                  {{ x.score_display|default:'&nbsp;' }}
+                </td>
+
+                <td align="center">
+                  {% get_subscore d 'seniority_level' 'Senior non-preferred' as x %}
+                  {{ x.score_display|default:'&nbsp;' }}
+                </td>
+
+                <td align="center" style="background: #f3f3f3;">
+                  {% get_subscore d 'seniority_level' 'Subordinated' as x %}
+                  {{ x.score_display|default:'&nbsp;' }}
+                </td>
+
+                <td align="center">
+                  {% get_subscore d 'seniority_level' 'Additional Tier 1' as x %}
+                  {{ x.score_display|default:'&nbsp;' }}
+                </td>
+
+                <td class="empty_cell">&nbsp;</td>
+
+                <td align="center" style="background: #f3f3f3;">
+                  {% get_subscore d 'score_data' 'National factors' as x %}
+
+                  {% if x.score_display %}
+                    {% if x.score_value > 0 %}
+                      {% if d.misc.allow_edit %}
+                        <a href="{% url 'issuer_assessment_peer_update' subfactor_id=x.id %}"
+                           class="fm-update card-link"
+                           data-fm-callback="reload"
+                           data-fm-head="Peer overview for {{ x.subfactor }}"
+                           data-fm-target="#object-{{ x.id }}">
+                          {{ x.score_display|default:'&nbsp;' }}
+                        </a>
+                      {% else %}
+                        {{ x.score_display|default:'&nbsp;' }}
+                      {% endif %}
+                    {% endif %}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </td>
+
+                <td align="center">
+                  {% if x.weight %}
+                    {{ x.weight|format_percent:1|default:'&nbsp;' }}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </td>
+
+                <td align="center" style="background: #f3f3f3;">
+                  {% get_subscore d 'score_data' 'Regional, cross border, sector' as x %}
+
+                  {% if x.score_display %}
+                    {% if x.score_value > 0 %}
+                      {% if d.misc.allow_edit %}
+                        <a href="{% url 'issuer_assessment_peer_update' subfactor_id=x.id %}"
+                           class="fm-update card-link"
+                           data-fm-callback="reload"
+                           data-fm-head="Peer overview for {{ x.subfactor }}"
+                           data-fm-target="#object-{{ x.id }}">
+                          {{ x.score_display|default:'&nbsp;' }}
+                        </a>
+                      {% else %}
+                        {{ x.score_display|default:'&nbsp;' }}
+                      {% endif %}
+                    {% endif %}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </td>
+
+                <td align="center">
+                  {% get_subscore d 'score_data' 'Capital' as x %}
+
+                  {% if x.score_display %}
+                    {% if x.score_value > 0 %}
+                      {% if d.misc.allow_edit %}
+                        <a href="{% url 'issuer_assessment_peer_update' subfactor_id=x.id %}"
+                           class="fm-update card-link"
+                           data-fm-callback="reload"
+                           data-fm-head="Peer overview for {{ x.subfactor }}"
+                           data-fm-target="#object-{{ x.id }}">
+                          {{ x.score_display|default:'&nbsp;' }}
+                        </a>
+                      {% else %}
+                        {{ x.score_display|default:'&nbsp;' }}
+                      {% endif %}
+                    {% endif %}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </td>
+
+                <td align="center" style="background: #f3f3f3;">
+                  {% get_subscore d 'score_data' 'Funding and liquidity' as x %}
+
+                  {% if x.score_display %}
+                    {% if x.score_value > 0 %}
+                      {% if d.misc.allow_edit %}
+                        <a href="{% url 'issuer_assessment_peer_update' subfactor_id=x.id %}"
+                           class="fm-update card-link"
+                           data-fm-callback="reload"
+                           data-fm-head="Peer overview for {{ x.subfactor }}"
+                           data-fm-target="#object-{{ x.id }}">
+                          {{ x.score_display|default:'&nbsp;' }}
+                        </a>
+                      {% else %}
+                        {{ x.score_display|default:'&nbsp;' }}
+                      {% endif %}
+                    {% endif %}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </td>
+
+                <td align="center">
+                  {% get_subscore d 'score_data' 'Risk governance' as x %}
+
+                  {% if x.score_display %}
+                    {% if x.score_value > 0 %}
+                      {% if d.misc.allow_edit %}
+                        <a href="{% url 'issuer_assessment_peer_update' subfactor_id=x.id %}"
+                           class="fm-update card-link"
+                           data-fm-callback="reload"
+                           data-fm-head="Peer overview for {{ x.subfactor }}"
+                           data-fm-target="#object-{{ x.id }}">
+                          {{ x.score_display|default:'&nbsp;' }}
+                        </a>
+                      {% else %}
+                        {{ x.score_display|default:'&nbsp;' }}
+                      {% endif %}
+                    {% endif %}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </td>
+
+                <td align="center" style="background: #f3f3f3;">
+                  {% get_subscore d 'score_data' 'Credit risk' as x %}
+
+                  {% if x.score_display %}
+                    {% if x.score_value > 0 %}
+                      {% if d.misc.allow_edit %}
+                        <a href="{% url 'issuer_assessment_peer_update' subfactor_id=x.id %}"
+                           class="fm-update card-link"
+                           data-fm-callback="reload"
+                           data-fm-head="Peer overview for {{ x.subfactor }}"
+                           data-fm-target="#object-{{ x.id }}">
+                          {{ x.score_display|default:'&nbsp;' }}
+                        </a>
+                      {% else %}
+                        {{ x.score_display|default:'&nbsp;' }}
+                      {% endif %}
+                    {% endif %}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </td>
+
+                <td align="center">
+                  {% if x.weight %}
+                    {{ x.weight|format_percent:1|default:'&nbsp;' }}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </td>
+
+                <td align="center">
+                  {% get_subscore d 'score_data' 'Market risk' as x %}
+
+                  {% if x.score_display %}
+                    {% if x.score_value > 0 %}
+                      {% if d.misc.allow_edit %}
+                        <a href="{% url 'issuer_assessment_peer_update' subfactor_id=x.id %}"
+                           class="fm-update card-link"
+                           data-fm-callback="reload"
+                           data-fm-head="Peer overview for {{ x.subfactor }}"
+                           data-fm-target="#object-{{ x.id }}">
+                          {{ x.score_display|default:'&nbsp;' }}
+                        </a>
+                      {% else %}
+                        {{ x.score_display|default:'&nbsp;' }}
+                      {% endif %}
+                    {% endif %}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </td>
+
+
+                <td align="center" style="background: #f3f3f3;">
+                  {% get_subscore d 'score_data' 'Other risks' as x %}
+
+                  {% if x.score_display %}
+                    {% if x.score_value > 0 %}
+                      {% if d.misc.allow_edit %}
+                        <a href="{% url 'issuer_assessment_peer_update' subfactor_id=x.id %}"
+                           class="fm-update card-link"
+                           data-fm-callback="reload"
+                           data-fm-head="Peer overview for {{ x.subfactor }}"
+                           data-fm-target="#object-{{ x.id }}">
+                          {{ x.score_display|default:'&nbsp;' }}
+                        </a>
+                      {% else %}
+                        {{ x.score_display|default:'&nbsp;' }}
+                      {% endif %}
+                    {% endif %}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </td>
+
+                <td align="center">
+                  {% get_subscore d 'score_data' 'Market position' as x %}
+
+                  {% if x.score_display %}
+                    {% if x.score_value > 0 %}
+                      {% if d.misc.allow_edit %}
+                        <a href="{% url 'issuer_assessment_peer_update' subfactor_id=x.id %}"
+                           class="fm-update card-link"
+                           data-fm-callback="reload"
+                           data-fm-head="Peer overview for {{ x.subfactor }}"
+                           data-fm-target="#object-{{ x.id }}">
+                          {{ x.score_display|default:'&nbsp;' }}
+                        </a>
+                      {% else %}
+                        {{ x.score_display|default:'&nbsp;' }}
+                      {% endif %}
+                    {% endif %}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </td>
+
+                <td align="center" style="background: #f3f3f3;">
+                  {% get_subscore d 'score_data' 'Earnings' as x %}
+
+                  {% if x.score_display %}
+                    {% if x.score_value > 0 %}
+                      {% if d.misc.allow_edit %}
+                        <a href="{% url 'issuer_assessment_peer_update' subfactor_id=x.id %}"
+                           class="fm-update card-link"
+                           data-fm-callback="reload"
+                           data-fm-head="Peer overview for {{ x.subfactor }}"
+                           data-fm-target="#object-{{ x.id }}">
+                          {{ x.score_display|default:'&nbsp;' }}
+                        </a>
+                      {% else %}
+                        {{ x.score_display|default:'&nbsp;' }}
+                      {% endif %}
+                    {% endif %}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </td>
+
+                <td align="center">
+                  {% get_subscore d 'score_data' 'Loss performance' as x %}
+
+                  {% if x.score_display %}
+                    {% if x.score_value > 0 %}
+                      {% if d.misc.allow_edit %}
+                        <a href="{% url 'issuer_assessment_peer_update' subfactor_id=x.id %}"
+                           class="fm-update card-link"
+                           data-fm-callback="reload"
+                           data-fm-head="Peer overview for {{ x.subfactor }}"
+                           data-fm-target="#object-{{ x.id }}">
+                          {{ x.score_display|default:'&nbsp;' }}
+                        </a>
+                      {% else %}
+                        {{ x.score_display|default:'&nbsp;' }}
+                      {% endif %}
+                    {% endif %}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </td>
+
+                <td align="center" style="background: #f3f3f3;">
+                  {% get_subscore d 'score_data' 'Peer comparison' as x %}
+
+                  {% if x.score_display %}
+                    {% if x.score_value > 0 %}
+                      {% if d.misc.allow_edit %}
+                        <a href="{% url 'issuer_assessment_peer_update' subfactor_id=x.id %}"
+                           class="fm-update card-link"
+                           data-fm-callback="reload"
+                           data-fm-head="Peer overview for {{ x.subfactor }}"
+                           data-fm-target="#object-{{ x.id }}">
+                          {{ x.adjustment_value|default:'&nbsp;' }}
+                        </a>
+                      {% else %}
+                        {{ x.adjustment_value|default:'&nbsp;' }}
+                      {% endif %}
+                    {% endif %}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </td>
+
+                <td align="center">
+                  {% get_subscore d 'score_data' 'Transitions' as x %}
+
+                  {% if x.score_display %}
+                    {% if x.score_value > 0 %}
+                      {% if d.misc.allow_edit %}
+                        <a href="{% url 'issuer_assessment_peer_update' subfactor_id=x.id %}"
+                           class="fm-update card-link"
+                           data-fm-callback="reload"
+                           data-fm-head="Peer overview for {{ x.subfactor }}"
+                           data-fm-target="#object-{{ x.id }}">
+                          {{ x.adjustment_value|default:'&nbsp;' }}
+                        </a>
+                      {% else %}
+                        {{ x.adjustment_value|default:'&nbsp;' }}
+                      {% endif %}
+                    {% endif %}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </td>
+
+                <td align="center" style="background: #f3f3f3;">
+                  {% get_subscore d 'score_data' 'Borderline assessments' as x %}
+
+                  {% if x.adjustment_value %}
+                    {{ x.adjustment_value|default:'&nbsp;' }}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </td>
+
+                <td align="center">
+                  {% get_subscore d 'score_data' 'Ownership support' as x %}
+
+                  {% if x.adjustment_value %}
+                    {{ x.adjustment_value|default:'&nbsp;' }}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </td>
+
+                <td align="center" style="background: #f3f3f3;">
+                  {% get_subscore d 'score_data' 'Material credit enhancement' as x %}
+
+                  {% if x.adjustment_value %}
+                    {{ x.adjustment_value|default:'&nbsp;' }}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </td>
+
+                <td align="center">
+                  {% get_subscore d 'score_data' 'Rating caps' as x %}
+
+                  {% if x.adjustment_value %}
+                    {{ x.adjustment_value|default:'&nbsp;' }}
+                  {% else %}
+                    &nbsp;
+                  {% endif %}
+                </td>
+
+              {% endif %}
+            </tr>
+
+          {% empty %}
+            <tr>
+              <td colspan="100%">No issuers that can be assessed found.</td>
+            </tr>
+          {% endfor %}
+      </tbody>
+
+  </table>
+
+</div>
+
+<br>
+<br>
+<br>
+
+{% endblock %}

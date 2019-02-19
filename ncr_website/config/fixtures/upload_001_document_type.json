@@ -1,0 +1,128 @@
+[
+   {
+      "fields":{
+         "name":"Annual report"
+      },
+      "model":"upload.documenttype",
+      "pk":1
+   },
+   {
+      "fields":{
+         "name":"Quarterly report"
+      },
+      "model":"upload.documenttype",
+      "pk":2
+   },
+   {
+      "fields":{
+         "name":"Loan documentation"
+      },
+      "model":"upload.documenttype",
+      "pk":3
+   },
+   {
+      "fields":{
+         "name":"Email"
+      },
+      "model":"upload.documenttype",
+      "pk":4
+   },
+   {
+      "fields":{
+         "name":"Prospectus"
+      },
+      "model":"upload.documenttype",
+      "pk":5
+   },
+   {
+      "fields":{
+         "name":"Investor presentation"
+      },
+      "model":"upload.documenttype",
+      "pk":6
+   },
+   {
+      "fields":{
+         "name":"Other"
+      },
+      "model":"upload.documenttype",
+      "pk":7
+   },
+   {
+      "fields":{
+         "name":"Management meeting protocol"
+      },
+      "model":"upload.documenttype",
+      "pk":8
+   },
+   {
+      "fields":{
+         "name":"Call notes"
+      },
+      "model":"upload.documenttype",
+      "pk":9
+   },
+   {
+      "fields":{
+         "name":"External analysis sent to issuer"
+      },
+      "model":"upload.documenttype",
+      "pk":10
+   },
+   {
+      "fields":{
+         "name":"Internal analysis"
+      },
+      "model":"upload.documenttype",
+      "pk":11
+   },
+   {
+      "fields":{
+         "name":"Extra attachment #1"
+      },
+      "model":"upload.documenttype",
+      "pk":12
+   },
+   {
+      "fields":{
+         "name":"Extra attachment #2"
+      },
+      "model":"upload.documenttype",
+      "pk":13
+   },
+   {
+      "fields":{
+         "name":"Extra attachment #3"
+      },
+      "model":"upload.documenttype",
+      "pk":14
+   },
+   {
+      "fields":{
+         "name":"Published external report"
+      },
+      "model":"upload.documenttype",
+      "pk":15
+   },
+   {
+      "fields":{
+         "name":"Term sheet"
+      },
+      "model":"upload.documenttype",
+      "pk":16
+   },
+   {
+      "fields":{
+         "name":"Final terms"
+      },
+      "model":"upload.documenttype",
+      "pk":17
+   },
+   {
+      "fields":{
+         "name":"Program documentation"
+      },
+      "model":"upload.documenttype",
+      "pk":18
+   }
+]

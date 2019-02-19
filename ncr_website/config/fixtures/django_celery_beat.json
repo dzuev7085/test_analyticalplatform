@@ -1,0 +1,250 @@
+[
+  {
+    "model":"django_celery_beat.crontabschedule",
+    "fields":{
+      "day_of_week":"1-5",
+      "day_of_month":"*",
+      "month_of_year":"*",
+      "minute":"0",
+      "hour":"18",
+      "timezone": "UTC"
+    },
+    "pk":1
+  },
+  {
+    "model":"django_celery_beat.crontabschedule",
+    "fields":{
+      "day_of_week":"1-5",
+      "day_of_month":"*",
+      "month_of_year":"*",
+      "minute":"0",
+      "hour":"17",
+      "timezone": "UTC"
+    },
+    "pk":2
+  },
+  {
+    "model":"django_celery_beat.crontabschedule",
+    "fields":{
+      "day_of_week":"1",
+      "day_of_month":"*",
+      "month_of_year":"*",
+      "minute":"0",
+      "hour":"8",
+      "timezone": "UTC"
+    },
+    "pk":3
+  },
+  {
+    "model":"django_celery_beat.crontabschedule",
+    "fields":{
+      "day_of_week":"1-5",
+      "day_of_month":"*",
+      "month_of_year":"*",
+      "minute":"30",
+      "hour":"19",
+      "timezone": "UTC"
+    },
+    "pk":4
+  },
+  {
+    "model":"django_celery_beat.crontabschedule",
+    "fields":{
+      "day_of_week":"1-5",
+      "day_of_month":"*",
+      "month_of_year":"*",
+      "minute":"0",
+      "hour":"4",
+      "timezone": "UTC"
+    },
+    "pk":5
+  },
+  {
+    "model":"django_celery_beat.intervalschedule",
+    "fields":{
+      "every":"10",
+      "period":"minutes"
+    },
+    "pk":1
+  },
+
+  {
+    "model":"django_celery_beat.periodictask",
+    "fields":{
+      "last_run_at":null,
+      "kwargs":"{}",
+      "args":"[]",
+      "total_run_count":0,
+      "enabled":true,
+      "description":"",
+      "routing_key":null,
+      "queue":null,
+      "task": "integrations.bloomberg.tasks.send_to_bloomberg",
+      "solar":null,
+      "crontab":1,
+      "name":"Daily data batch sent to Bloomberg",
+      "expires":null,
+      "exchange":null,
+      "interval":null,
+      "date_changed":"2018-09-11T06:55:21.600Z"
+    },
+    "pk":1
+  },
+  {
+    "model":"django_celery_beat.periodictask",
+    "fields":{
+      "last_run_at":null,
+      "kwargs":"{}",
+      "args":"[]",
+      "total_run_count":0,
+      "enabled":true,
+      "description":"",
+      "routing_key":null,
+      "queue":null,
+      "task":"issue.tasks.mature_debt",
+      "solar":null,
+      "crontab":2,
+      "name":"Flag matured debt as matured",
+      "expires":null,
+      "exchange":null,
+      "interval":null,
+      "date_changed":"2018-09-25T09:33:00.600Z"
+    },
+    "pk":2
+  },
+  {
+    "model":"django_celery_beat.periodictask",
+    "fields":{
+      "last_run_at":null,
+      "kwargs":"{}",
+      "args":"[]",
+      "total_run_count":0,
+      "enabled":true,
+      "description":"",
+      "routing_key":null,
+      "queue":null,
+      "task":"integrations.esma.tasks.update_esma_qualitative",
+      "solar":null,
+      "crontab":3,
+      "name":"ESMA | weekly | qualitative rating data update",
+      "expires":null,
+      "exchange":null,
+      "interval":null,
+      "date_changed":"2018-09-25T09:33:00.600Z"
+    },
+    "pk":3
+  },
+  {
+    "model":"django_celery_beat.periodictask",
+    "fields":{
+      "last_run_at":null,
+      "kwargs":"{}",
+      "args":"[]",
+      "total_run_count":0,
+      "enabled":true,
+      "description":"",
+      "routing_key":null,
+      "queue":null,
+      "task":"integrations.esma.tasks.update_esma_quantitative",
+      "solar":null,
+      "crontab":4,
+      "name":"ESMA | daily | quantitative rating data update",
+      "expires":null,
+      "exchange":null,
+      "interval":null,
+      "date_changed":"2018-09-25T09:33:00.600Z"
+    },
+    "pk":4
+  },
+  {
+    "model":"django_celery_beat.periodictask",
+    "fields":{
+      "last_run_at":null,
+      "kwargs":"{}",
+      "args":"[]",
+      "total_run_count":0,
+      "enabled":true,
+      "routing_key":null,
+      "queue":null,
+      "task":"a_helper.static_database_table.tasks.refresh_static_data",
+      "solar":null,
+      "crontab":5,
+      "name":"Django | daily | static",
+      "description": "This task loads static data from the analytical platform into the data lake.",
+      "expires":null,
+      "exchange":null,
+      "interval":null,
+      "date_changed":"2018-12-19T09:33:00.600Z"
+    },
+    "pk":5
+  },
+  {
+    "model":"django_celery_beat.periodictask",
+    "fields":{
+      "last_run_at":null,
+      "kwargs":"{}",
+      "args":"[]",
+      "total_run_count":0,
+      "enabled":true,
+      "routing_key":null,
+      "queue":null,
+      "task":"integrations.database.datalake.tasks.populate_data_task",
+      "solar":null,
+      "crontab":null,
+      "name":"Django | daily | issuer",
+      "description": "This task loads issuer data analytical platform into the data lake.",
+      "expires":null,
+      "exchange":null,
+      "interval":1,
+      "start_time": "2018-12-21T06:00:20.000Z",
+      "date_changed":"2018-12-19T09:33:00.600Z"
+    },
+    "pk":6
+  },
+  {
+    "model":"django_celery_beat.periodictask",
+    "fields":{
+      "last_run_at":null,
+      "kwargs":"{}",
+      "args":"[]",
+      "total_run_count":0,
+      "enabled":true,
+      "routing_key":null,
+      "queue":null,
+      "task":"integrations.sveriges_riksbank.tasks.run_load_rates",
+      "solar":null,
+      "crontab":5,
+      "name":"Django | daily | integrations | Sveriges Riksbank",
+      "description": "This task loads data from Sveriges Riksbank.",
+      "expires":null,
+      "exchange":null,
+      "interval":null,
+      "start_time": null,
+      "date_changed":"2019-01-23T09:33:00.600Z"
+    },
+    "pk": 7
+  },
+  {
+    "model":"django_celery_beat.periodictask",
+    "fields":{
+      "last_run_at":null,
+      "kwargs":"{}",
+      "args":"[]",
+      "total_run_count":0,
+      "enabled":true,
+      "routing_key":null,
+      "queue":null,
+      "task":"integrations.norges_bank.tasks.run_load_fx",
+      "solar":null,
+      "crontab":5,
+      "name":"Django | daily | integrations | Norges Bank",
+      "description": "This task loads data from Norges Bank.",
+      "expires":null,
+      "exchange":null,
+      "interval":null,
+      "start_time": null,
+      "date_changed":"2019-01-23T09:33:00.600Z"
+    },
+    "pk": 8
+  }
+]

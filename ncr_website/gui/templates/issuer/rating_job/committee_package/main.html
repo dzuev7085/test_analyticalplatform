@@ -1,0 +1,367 @@
+{% extends 'issuer/rating_job/committee_package/base.html' %}
+{% load template_tags %}
+
+{% block content %}
+
+  <div class="page">
+
+    <table border="0" cellspacing="0" cellpadding="0" width="100%">
+
+      <tr>
+        <td style="width:100mm;height:13mm;" valign="top">
+          <div class="issuer-header">
+            {{ data.issuer.data.legal_name }}<br>
+          </div>
+          <div class="issuer-subheader">
+            {{ data.issuer.data.address.country.name }}, {{ data.issuer.data.gics_sub_industry.industry.industry_group.sector.name }}
+          </div>
+        </td>
+
+        <td style="width:7mm;">&nbsp;</td>
+
+        <td style="width:80mm;" valign="top" rowspan="2" align="center">
+
+          <!-- Analysts-->
+          <table border="0" cellspacing="0" cellpadding="0" class="pdf-table" width="100%">
+            <thead>
+              <tr class="tr-bottom">
+                <th align="left">
+                  Role
+                </th>
+                <th align="left">
+                  Name
+                </th>
+                <th align="left">
+                  Title
+                </th>
+              </tr>
+            </thead>
+            <tr>
+              <td>Primary analyst</td>
+              <td>{{ data.issuer.rating_job.rating_decision.primary_analyst.get_full_name }}</td>
+              <td>{{ data.issuer.rating_job.rating_decision.primary_analyst.profile.title }}</td>
+            </tr>
+            {% if data.issuer.rating_job.rating_decision.secondary_analyst %}
+              <tr>
+                <td>Secondary analyst</td>
+                <td>{{ data.issuer.rating_job.rating_decision.secondary_analyst.get_full_name }}</td>
+                <td>{{ data.issuer.rating_job.rating_decision.secondary_analyst.profile.title }}</td>
+              </tr>
+            {% endif %}
+          </table>
+
+          <br>
+
+          <!-- Methodologies used -->
+          <table border="0" cellspacing="0" cellpadding="0" class="pdf-table" width="340">
+
+            <thead>
+              <tr class="tr-bottom">
+                <th align="left">
+                  Methodology
+                </th>
+                <th align="right" class="table-th-right">
+                  Issued
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+
+              {% for object in methodology %}
+                <tr>
+                  <td>
+                    {{ object.methodology.category }}
+                  </td>
+                  <td align="right">
+                    {{ object.methodology.date_decision|date:'Y-m-d' }}
+                  </td>
+                 </tr>
+              {% endfor %}
+
+            </tbody>
+          </table>
+
+          <br>
+
+          <!-- Proposed and existing ratings-->
+          <table border="0" cellspacing="0" cellpadding="0" class="pdf-table" width="340">
+            <thead>
+              <tr class="tr-bottom">
+                <th align="left" width="120">Issuer ratings</th>
+                <th align="right" width="60">Existing</th>
+                <th align="right" width="100">Recommended</th>
+                <th align="right" width="60">Final</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Long-term rating</td>
+                <td align="right">
+                  {{ data.issuer.rating_job.rating_decision.previous_rating.get_decided_lt_display | default:'NR'}}
+
+                  {% if data.issuer.current_rating.is_preliminary %}
+                    (p)
+                  {% endif %}
+                </td>
+                <td align="right">
+                  {{ data.issuer.rating_job.rating_decision.get_proposed_lt_display | default:'NR'}}
+
+                  {% if data.issuer.rating_job.rating_decision.is_preliminary %}
+                    (p)
+                  {% endif %}
+
+                </td>
+                <td align="right">
+                  {% if rating_controller.show_final_score %}
+                    {{ data.issuer.rating_job.rating_decision.get_decided_lt_display | default:'NR'}}
+
+                    {% if data.issuer.rating_job.rating_decision.is_preliminary %}
+                      (p)
+                    {% endif %}
+
+                  {% else %}
+                    NR
+                  {% endif %}
+                </td>
+               </tr>
+
+              <tr>
+                <td valign="top">Outlook</td>
+                <td valign="top" align="right">
+                  {{ data.issuer.rating_job.rating_decision.previous_rating.get_decided_lt_outlook_display | default:'NR'}}
+                </td>
+                <td valign="top" align="right">
+                  {{ data.issuer.rating_job.rating_decision.get_proposed_lt_outlook_display | default:'NR'}}
+                </td>
+                <td valign="top" align="right">
+                  {{ data.issuer.rating_job.rating_decision.get_decided_lt_outlook_display | default:'NR'}}
+                </td>
+              </tr>
+
+              <tr>
+                <td>Short-term rating</td>
+                <td align="right">
+                  {{ data.issuer.rating_job.rating_decision.previous_rating.get_decided_st_display | default:'NR'}}
+                </td>
+                <td align="right">
+                  {{ data.issuer.rating_job.rating_decision.get_proposed_st_display | default:'NR'}}
+                </td>
+                <td align="right">
+                  {{ data.issuer.rating_job.rating_decision.get_decided_st_display | default:'NR'}}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <br>
+
+          <!-- Rated issues notching -->
+          <table border="0" cellspacing="0" cellpadding="0" class="pdf-table" width="340">
+
+            <thead>
+              <tr class="tr-bottom">
+                <th align="left" width="120">
+                  Issue rating
+                </th>
+                <th align="right" class="table-th-right" width="60">
+                  Existing
+                </th>
+                <th align="right" class="table-th-right" width="100">
+                  Recommended
+                </th>
+                <th align="right" class="table-th-right" width="60">
+                  Final
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+
+              {% for issue in data.issuer.rating_job.subscores.issue %}
+
+                {% existing_issue_rating issue.seniority data.issuer.rating_job.rating_decision.previous_rating as existing_issue_rating %}
+
+                <tr>
+                  <td>
+                    {{ issue.seniority }}
+                  </td>
+                  <td align="right">
+                    {{ existing_issue_rating.get_decided_lt_display|default:'NR' }}
+                  </td>
+                  <td align="right">
+                    {{ issue.get_proposed_lt_display }}
+                  </td>
+                  <td align="right">
+                    {{ issue.get_decided_lt_display|default:'NR' }}
+                  </td>
+                 </tr>
+              {% empty %}
+                <tr>
+                  <td colspan="5" align="left">No seniority levels added.</td>
+                </tr>
+              {% endfor %}
+
+            </tbody>
+          </table>
+
+          <br>
+
+          <!-- Table of committee members -->
+          <table border="0" cellspacing="0" cellpadding="0" class="pdf-table" width="340">
+            <thead>
+              <tr class="tr-bottom">
+                <th align="left" width="120">Role</th>
+                <th align="left" width="110">Name</th>
+                <th align="left" width="110">Title</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td valign="top">Chair</td>
+                  <td valign="top">{{ data.issuer.rating_job.rating_decision.chair.get_full_name|default:'<em>Not yet proposed</em>' }}</td>
+                  <td valign="top">{{ data.issuer.rating_job.rating_decision.chair.profile.title|default:'<em>Not yet proposed</em>' }}</td>
+                </tr>
+              {% for member in committee_members %}
+                <tr>
+                  <td valign="top">{{ member.role }}</td>
+                  <td valign="top">{{ member.member.get_full_name }}</td>
+                  <td valign="top">{{ member.member.profile.title }}</td>
+                </tr>
+              {% empty %}
+                <tr>
+                  <td colspan="3"><em>There are not yet any proposed members in this committe.</em></td>
+                </tr>
+              {% endfor %}
+
+            </tbody>
+          </table>
+
+          <br>
+
+          <!-- Table of historical ratings -->
+          <table border="0" cellspacing="0" cellpadding="0" class="pdf-table" width="340">
+            <thead>
+              <tr class="tr-bottom">
+                <th align="left">Date</th>
+                <th align="right">Long-term rating</th>
+                <th align="right">Outlook</th>
+                <th align="right">Short-term rating</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for i in data.issuer.rating_history %}
+                <tr>
+                  <td align="left">{{ i.date_time_published|date:'Y-m-d' }}</td>
+                  <td align="right">
+                    {{ i.get_decided_lt_display }}
+
+                    {% if i.is_preliminary %}
+                      (p)
+                    {% endif %}
+
+                  </td>
+                  <td align="right">{{ i.get_decided_lt_outlook_display }}</td>
+                  <td align="right">{{ i.get_decided_st_display }}</td>
+                </tr>
+              {% empty %}
+                <tr>
+                  <td colspan="4">No ratings have been issued.</td>
+                </tr>
+              {% endfor %}
+
+            </tbody>
+          </table>
+
+        </td>
+      </tr>
+
+      <tr>
+        <td valign="top">
+          <div class="text-header">
+            Issuer description
+          </div>
+          <div class="text-body">
+            {{ data.issuer.data.description | safe | default:'<em>No description of the issuer has been provided yet.</em>' }}
+          </div>
+
+          <br>
+
+          <div class="text-header">
+            Event
+          </div>
+          <div class="text-body">
+            {{ data.issuer.rating_job.rating_decision.event | safe | default:'<em>No event description has been provided yet.</em>' }}
+          </div>
+
+          <br>
+
+          <div class="text-header">
+            Recommendation rationale
+          </div>
+          <div class="text-body">
+            {{ data.issuer.rating_job.rating_decision.recommendation_rationale | safe | default:'<em>No rating rationale has been provided yet.</em>' }}
+          </div>
+
+          {% if data.issuer.rating_job.rating_decision.has_passed_committee_date %}
+            <br>
+
+            <div class="text-header">
+              Committee conclusion
+            </div>
+            <div class="text-body">
+              {{ data.issuer.rating_job.rating_decision.committee_comments | safe | default:'<em>The committee comments have not been filled in yet.</em>' }}
+            </div>
+          {% endif %}
+
+          {% if data.issuer.rating_job.rating_decision.previous_rating %}
+            <br>
+
+            <div class="text-header">
+              Conclusion from committee on {{ data.issuer.rating_job.rating_decision.previous_rating.date_time_committee|date:'Y-m-d' }}
+            </div>
+            <div class="text-body">
+              {{ data.issuer.rating_job.rating_decision.previous_rating.committee_comments | safe }}
+              <br>
+              <a href="{% url 'issuer_rating_job_committee_package' rating_decision_id=data.issuer.rating_job.rating_decision.previous_rating.id %}" target="_blank">Read whole committee package</a>
+            </div>
+          {% endif %}
+
+        </td>
+      </tr>
+
+    </table>
+
+  </div>
+
+  <div class="page">
+
+    {% if data.issuer.rating_job.rating_decision.has_passed_committee_date %}
+
+      {% with allow_edit=False show_final_score=True %}
+        {% include 'issuer/rating_job/corporate_score.html' %}
+      {% endwith %}
+
+    {% else %}
+
+      {% with allow_edit=False show_final_score=False %}
+        {% include 'issuer/rating_job/corporate_score.html' %}
+      {% endwith %}
+
+    {% endif %}
+
+    <br>
+
+    <hr>
+
+    <div class="text-header">
+      Committee member's own notes
+    </div>
+
+  </div>
+
+  <div class="page">
+
+    {% include 'issuer/issue/issues_list.html' %}
+
+  </div>
+
+{% endblock %}

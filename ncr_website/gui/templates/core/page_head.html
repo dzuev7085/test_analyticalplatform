@@ -1,0 +1,188 @@
+{% load template_tags %}
+{% load staticfiles %}
+
+<title>
+  {% if global_variables.environment == 'DEV' or global_variables.environment == 'UAT' %}
+    ***TEST***
+  {% endif %}
+
+  Nordic Credit Rating - Analytical Platform - v{{ global_variables.version.code }}
+</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/analyzer.css' %}">
+<link rel="stylesheet" href="{% static 'css/styleguide.css' %}">
+<link rel="stylesheet" href="{% static 'css/help_tip.css' %}">
+<link rel="stylesheet" href="{% static 'css/forms.css' %}">
+
+{% include "page_head_font.html" %}
+
+<!-- Font awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.16/af-2.2.2/b-1.5.1/b-colvis-1.5.1/b-html5-1.5.1/b-print-1.5.1/cr-1.4.1/fc-3.2.4/fh-3.1.3/kt-2.3.2/r-2.2.1/rg-1.0.2/rr-1.2.3/sc-1.4.4/sl-1.2.5/datatables.min.css"/>
+
+<script src="https://unpkg.com/popper.js@1.14.3/dist/umd/popper.min.js"></script>
+
+<!-- Load jquery first -->
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+<script type="text/javascript">
+function open_window(url, w, h, scrollbars)
+{
+  w = w || 1250;
+  h = h || 600;
+
+  // Fixes dual-screen position                         Most browsers      Firefox
+  var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : window.screenX;
+  var dualScreenTop = window.screenTop != undefined ? window.screenTop : window.screenY;
+
+  var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+  var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+  var systemZoom = width / window.screen.availWidth;
+  var left = (width - w) / 2 / systemZoom + dualScreenLeft
+  var top = (height - h) / 2 / systemZoom + dualScreenTop
+
+  var use_height = h // systemZoom
+  var use_width = w // systemZoom
+
+  var newWindow = window.open(url, '_blank', 'scrollbars=no, width=' + use_width + ', height=' + use_height + ', top=' + top + ', left=' + left);
+
+  // Puts focus on the newWindow
+  if (window.focus) newWindow.focus();
+
+}
+
+</script>
+
+
+<script type="text/javascript">
+  $(window).on('load', function() { // makes sure the whole site is loaded
+    $('#status').fadeOut(); // will first fade out the loading animation
+    $('#preloader').delay(30).fadeOut('slow'); // will fade out the white DIV that covers the website.
+    $('body').delay(30).css({'overflow':'visible'});
+  })
+
+  // In case of bug, move down to modal loader
+  $(function() {
+      $.fm({debug: false});
+  });
+
+  $(function() {
+
+    // This is an ugly workaround, but at least it will make
+    // navigation less annoying.
+
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+      history.pushState({}, '', e.target.hash);
+    });
+
+    var hash = document.location.hash;
+    var prefix = "tab_";
+    if (hash) {
+
+      if(hash=='#setup_step_1'){
+
+        $('.nav-tabs a[href="#score"]').tab('show');
+        $('.nav-tabs a[href="#setup_step_1"]').tab('show');
+
+      }else if(hash=='#setup_step_2'){
+
+        $('.nav-tabs a[href="#score"]').tab('show');
+        $('.nav-tabs a[href="#setup_step_2"]').tab('show');
+
+      }else if(hash=='#setup_step_3'){
+
+        $('.nav-tabs a[href="#score"]').tab('show');
+        $('.nav-tabs a[href="#setup_step_3"]').tab('show');
+
+      }else if(hash=='#setup_step_4'){
+
+        $('.nav-tabs a[href="#score"]').tab('show');
+        $('.nav-tabs a[href="#setup_step_4"]').tab('show');
+
+      }else if(hash=='#setup_step_5'){
+
+        $('.nav-tabs a[href="#score"]').tab('show');
+        $('.nav-tabs a[href="#setup_step_5"]').tab('show');
+
+      }else if(hash=='#setup_step_6'){
+
+        $('.nav-tabs a[href="#score"]').tab('show');
+        $('.nav-tabs a[href="#setup_step_6"]').tab('show');
+
+      }else if(hash=='#setup_step_7'){
+
+        $('.nav-tabs a[href="#score"]').tab('show');
+        $('.nav-tabs a[href="#setup_step_7"]').tab('show');
+
+      }else if(hash=='#setup_step_8'){
+
+        $('.nav-tabs a[href="#score"]').tab('show');
+        $('.nav-tabs a[href="#setup_step_8"]').tab('show');
+
+      }else if(hash=='#setup_step_9'){
+
+        $('.nav-tabs a[href="#score"]').tab('show');
+        $('.nav-tabs a[href="#setup_step_9"]').tab('show');
+
+      }else if (hash=='#score') {
+
+        $('.nav-tabs a[href="#score"]').tab('show');
+        $('.nav-tabs a[href="#setup_step_1"]').tab('show');
+
+      }else if (hash=='#credit_metrics') {
+
+        $('.nav-tabs a[href="#financials"]').tab('show');
+        $('.nav-tabs a[href="#credit_metrics"]').tab('show');
+
+      }else if (hash=='#historical') {
+
+        $('.nav-tabs a[href="#financials"]').tab('show');
+        $('.nav-tabs a[href="#historical"]').tab('show');
+
+      }else{
+
+        $('.nav-tabs a[href="' + hash.replace(prefix, "") + '"]').tab('show');
+
+      }
+
+
+    }
+
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.16/af-2.2.2/b-1.5.1/b-colvis-1.5.1/b-html5-1.5.1/b-print-1.5.1/cr-1.4.1/fc-3.2.4/fh-3.1.3/kt-2.3.2/r-2.2.1/rg-1.0.2/rr-1.2.3/sc-1.4.4/sl-1.2.5/datatables.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<!-- Custom version of js and css for Django-forms-->
+<script type="text/javascript" src="{% static 'js/fm.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/modal.css' %}">
+
+<link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+
+<!-- Datetime picker stuff -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap-datetimepicker.min.js' %}"></script>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="apple-touch-icon" sizes="180x180" href="{% static 'image/apple-touch-icon.png' %}">
+<link rel="icon" type="image/png" sizes="32x32" href="{% static 'image/favicon-16x16.png' %}">
+<link rel="icon" type="image/png" sizes="16x16" href="{% static 'image/favicon-32x32.png' %}">
+<link rel="mask-icon" href="{% static 'image/safari-pinned-tab.svg' %}" color="#5bbad5">
+<link rel="shortcut icon" href="{% static 'image/favicon.ico' %}">
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
+

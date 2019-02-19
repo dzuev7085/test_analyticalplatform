@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load template_tags %}
+
+{% block content %}
+
+<table class="table table-striped table-sm">
+    <thead>
+        <tr>
+            <th>Methodology</th>
+            <th>Last updated</th>
+            <th>Uploaded by</th>
+            <th>Download</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+      {% for object in object_list %}
+          <tr>
+              <td>
+                {{ object.category }}
+              </td>
+              <td>
+                {{ object.date_decision|date:'Y-m-d' }}
+              </td>
+              <td>
+                {{ object.uploaded_by.get_full_name }}
+              </td>
+              <td>
+                <a href="{% url 'methodologies_download' file_id=object.id %}" target="_blank">Link</a>
+              </td>
+              <td>
+                <a href="{% url 'methodologies_detail' category_id=object.category.id %}">View</a>
+              </td>
+          </tr>
+      {% empty %}
+        <td colspan="5">No methodologies uploaded.</td>
+      {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+
+<ul class="nav nav-tabs">
+
+  <li class="nav-item-small nav-link">
+    <a class="nav-item" data-toggle="tab" href="#credit_metrics" role="tab">Key metrics</a>
+  </li>
+
+
+  <li class="nav-item-small nav-link">
+    <a class="nav-item" data-toggle="tab" href="#historical" role="tab">Historical statements</a>
+  </li>
+
+</ul>
+
+<div class="tab-content">
+
+  <div class="tab-pane subtab-content-container active" id="credit_metrics">
+    {% include "issuer/financials/key_metrics.html" %}
+  </div>
+
+  <div class="tab-pane subtab-content-container" id="historical">
+    {% include "issuer/financials/historical.html" %}
+  </div>
+
+</div>
+

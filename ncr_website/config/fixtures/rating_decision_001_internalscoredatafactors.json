@@ -1,0 +1,58 @@
+[
+   {
+      "fields":{
+        "name": "Business risk"
+      },
+      "model":"rating_process.internalscoredatafactor",
+      "pk":1
+   },
+   {
+      "fields":{
+        "name": "Financial risk"
+      },
+      "model":"rating_process.internalscoredatafactor",
+      "pk":2
+   },
+   {
+      "fields":{
+        "name": "Adjustment factors"
+      },
+      "model":"rating_process.internalscoredatafactor",
+      "pk":3
+   },
+   {
+      "fields":{
+        "name": "Support factors"
+      },
+      "model":"rating_process.internalscoredatafactor",
+      "pk":4
+   },
+   {
+      "fields":{
+        "name": "Operating environment"
+      },
+      "model":"rating_process.internalscoredatafactor",
+      "pk":5
+   },
+   {
+      "fields":{
+        "name": "Risk appetite"
+      },
+      "model":"rating_process.internalscoredatafactor",
+      "pk":6
+   },
+   {
+      "fields":{
+        "name": "Competitive position"
+      },
+      "model":"rating_process.internalscoredatafactor",
+      "pk":7
+   },
+   {
+      "fields":{
+        "name": "Performance indicators"
+      },
+      "model":"rating_process.internalscoredatafactor",
+      "pk":8
+   }
+]

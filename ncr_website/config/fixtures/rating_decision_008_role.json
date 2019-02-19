@@ -1,0 +1,24 @@
+[
+   {
+      "fields":{
+         "role_name":"Voter"
+      },
+      "model":"rating_process.role",
+      "pk":1
+   },
+   {
+      "fields":{
+         "role_name":"Observer"
+      },
+      "model":"rating_process.role",
+      "pk":2
+   },
+   {
+      "fields":{
+         "role_name":"Editor"
+      },
+      "model":"rating_process.role",
+      "pk":3
+   }
+
+]

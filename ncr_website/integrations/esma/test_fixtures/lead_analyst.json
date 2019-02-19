@@ -1,0 +1,11 @@
+[
+  {
+    "pk":1,
+    "fields":{
+      "profile_id":1,
+      "start_date": "2018-05-10",
+      "end_date": "2099-12-31"
+    },
+    "model":"user_profile.leadanalyst"
+  }
+]

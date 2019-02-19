@@ -1,0 +1,73 @@
+{% load template_tags %}
+
+<div class="row">
+  <div class="col">
+    <!-- Column 1 -->
+
+    <div class="card-body">
+      <h5 class="card-title">
+        Event:
+
+      {% if allow_edit and auth.issuer.rating_job.edit %}
+        <a href="{% url 'rating_decision_update_field' rating_decision_pk=data.issuer.rating_job.rating_decision.id field='event' %}"
+         class="fm-update"
+         data-fm-head="Edit event behind rating"
+         data-fm-callback="reload"
+         data-fm-target="#object-{{ data.issuer.rating_job.rating_decision.id }}">
+
+          <i class="fas fa-edit"></i>
+        </a>
+      {% endif %}
+
+      </h5>
+
+      <p class="card-text">
+        <div style="text-align:justify; text-justify: inter-word;">
+              {{ data.issuer.rating_job.rating_decision.event | safe | default:'<em>No event added yet.</em>' }}
+        </div>
+      </p>
+
+    </div>
+  </div>
+
+  <div class="col">
+    <!-- Column 2 -->
+
+    <div class="card-body">
+      <h5 class="card-title">
+        Recommendation rationale:
+
+      {% if allow_edit and auth.issuer.rating_job.edit %}
+        <a href="{% url 'rating_decision_update_field' rating_decision_pk=data.issuer.rating_job.rating_decision.id field='recommendation_rationale' %}"
+          class="fm-update"
+          data-fm-head="Update recommendation rationale"
+          data-fm-callback="reload"
+          data-fm-target="#object-{{ data.issuer.rating_job.rating_decision.id }}">
+
+          <i class="fas fa-edit"></i>
+        </a>
+      {% endif %}
+
+      </h5>
+      <p class="card-text">
+        <div style="text-align:justify; text-justify: inter-word;">
+          {{ data.issuer.rating_job.rating_decision.recommendation_rationale | safe | default:'<em>No rationale added yet.</em>' }}
+        </div>
+      </p>
+    </div>
+
+
+  </div>
+
+  <div class="col">
+    <!-- Column 3 -->
+
+    {% if data.issuer.rating_job.rating_decision.get_process_step_display == 'analytical_phase' %}
+      {% include "issuer/rating_job/document_card.html" %}
+    {% endif %}
+
+
+  </div>
+</div>
+
+<br>

@@ -1,0 +1,65 @@
+image: python:3.5.2
+services:
+  - postgres:latest
+
+variables:
+  TIMEZONE: "Europe/Stockholm"
+  POSTGRES_DB: dummy
+  POSTGRES_USER: runner
+  POSTGRES_PASSWORD: ""
+
+before_script:
+  - apt-get update
+
+  - apt-get update
+  - apt-get install -y enchant postgresql postgresql-client libpq-dev libxml2-dev libxslt-dev libkrb5-dev build-essential libssl-dev libffi-dev python-dev git
+  - pip3 install --upgrade pip
+  - pip3 install -r requirements_test.txt
+
+  # All of this is to enable pulling data from our private repos
+  # Install ssh-agent if not already installed, it is required by Docker.
+  # (change apt-get to yum if you use a CentOS-based image)
+  - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+
+  # Run ssh-agent (inside the build environment)
+  - eval $(ssh-agent -s)
+
+  # Add the SSH key stored in SSH_PRIVATE_KEY variable to the agent store
+  - ssh-add <(echo "$SSH_PRIVATE_KEY" | base64 -d)
+
+  # For Docker builds disable host key checking. Be aware that by adding that
+  # you are suspectible to man-in-the-middle attacks.
+  # WARNING: Use this only with the Docker executor, if you use it with shell
+  # you will overwrite your user's SSH config.
+  - mkdir -p ~/.ssh
+
+  - ssh-keyscan -H 'github.com' >> ~/.ssh/known_hosts
+  - ssh-keyscan github.com | sort -u - ~/.ssh/known_hosts -o ~/.ssh/known_hosts
+
+  - '[[ -f /.dockerinit ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+stages:
+  - lint_strict
+#  - lint_lax # disable until this stage has been fixed
+  - validation
+
+flake:
+  stage: lint_strict
+  script:
+    - find -name '*.py' -not -path "./.tox/*" -not -path "./.git/*" -not -path "./venv/*" -not -path "./*/__docs/*" -not -path "./*/tests/*" -not -path "./*/migrations/*" -not -path "./*/dev_uat_tools/*" | xargs flake8 | tee devops/flake8.log
+
+#pylint_django:
+#  stage: lint_lax
+#  script:
+#    - pip3 install -r requirements.txt
+#    - find -name '*.py' -not -path "./venv/*" -not -path "./*/__docs/*" -not -path "./*/tests/*" -not -path "./ncr_utils/*" -not -path "./database/*" -not -path ".*/.tox/*" -not -path "./*/migrations/*" -not -path "./*/dev_uat_tools/*" | xargs pylint --rcfile devops/pylintrc --load-plugins pylint_django | tee devops/pylint_django.log || exit 0
+#    - find -name '*.py' -not -path "./venv/*" -not -path "./*/__docs/*" -not -path "./*/tests/*" -not -path "./ncr_website/*" -not -path ".*/.tox/*" -not -path "./*/migrations/*" -not -path "./*/dev_uat_tools/*" | xargs pylint --rcfile devops/pylintrc | tee devops/pylint_other.log || exit 0
+
+unittest:
+  stage: validation
+  script:
+  - export ENV_FILE="devops/gitlab_env"
+  - pip3 install -r requirements.txt
+  - devops/dbsetup.sh
+  - cd devops && ./runtest.sh
+  - cd .. && coverage report -m | grep -v 100%

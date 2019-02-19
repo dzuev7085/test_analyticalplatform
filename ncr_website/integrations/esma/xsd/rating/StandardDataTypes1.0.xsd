@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 sp1 (http://www.altova.com) by mneye (European Securities and Markets Authority (ESMA)) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:simpleType name="AlphanumericType">
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:pattern value="[0-9A-Za-z]+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="UpperAlphanumericType">
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:pattern value="[0-9A-Z]+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="UpperAlphaType">
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:pattern value="[A-Z]+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BooleanType">
+		<xs:restriction base="xs:boolean">
+			<xs:whiteSpace value="collapse"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DecimalType">
+		<xs:annotation>
+			<xs:documentation>Format: Max 19(d) and max 5 decimals numbers. 
+				Restriction not to allow negative values </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="19"/>
+			<xs:fractionDigits value="5"/>
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AIIExchangeCodeType">
+		<xs:annotation>
+			<xs:documentation> ISO 10383 MIC - Format 4(x) </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="MICCodeType"/>
+	</xs:simpleType>
+	<xs:simpleType name="ISINInstrumentIdentificationType">
+		<xs:annotation>
+			<xs:documentation> ISO 6166 ISIN. Format: 2(a)9(x)1(n) </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:pattern value="[A-Z]{2}([A-Z]|[0-9]){9}[0-9]"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TimeOffsetType">
+		<xs:annotation>
+			<xs:documentation>"Time offset" : ISO 8601 Time Zone Offset Format:SHH max 12 h</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:pattern value="[-|+](0[0-9]|1[0-2])"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CountryCodeType">
+		<xs:annotation>
+			<xs:documentation>ISO 31666 Country Code alpha-2</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="UpperAlphaType">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MICCodeType">
+		<xs:annotation>
+			<xs:documentation>The ISO 10383 MIC code represents the unique identification code of the market, It is a fixed 4 characters code allocated and maintained by the ISO registration authority (SWIFT) and is populated from the MIC homepage.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="UpperAlphanumericType">
+			<xs:length value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BICCodeType">
+		<xs:annotation>
+			<xs:documentation>"BIC" : the ISO 9362 BIC code of the entity.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="UpperAlphanumericType">
+			<xs:length value="11"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LEICodeType">
+		<xs:annotation>
+			<xs:documentation>"BIC" : the ISO 9362 BIC code of the entity.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="UpperAlphanumericType">
+			<xs:length value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CFICodeType">
+		<xs:annotation>
+			<xs:documentation>"CFI" : the mandatory ISO CFI code, only populated with codes admitted for IRD database instruments.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="UpperAlphaType">
+			<xs:length value="6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CurrencyCodeType">
+		<xs:annotation>
+			<xs:documentation>"Currency code" : the ISO 4217 currency code,  Pre-euro currencies are populated by the CESR Secretariat and others from SWIFT Directory.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="UpperAlphaType">
+			<xs:length value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CountryNameType">
+		<xs:annotation>
+			<xs:documentation>"Country name" : the ISO country name, maximum of 70 characters.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="70"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CurrencyNameType">
+		<xs:annotation>
+			<xs:documentation>"Currency name" : the ISO 4217 currency name,  Pre-euro currencies are populated by the CESR Secretariat. 70 characters maximum and others from SWIFT Directory.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="70"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TradingVenueCodeXOFFType">
+		<xs:annotation>
+			<xs:documentation>XOFF: Off the Market</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:pattern value="XOFF"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

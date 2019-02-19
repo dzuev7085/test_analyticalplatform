@@ -1,0 +1,47 @@
+{% load template_tags %}
+{% load staticfiles %}
+<html>
+  <head>
+    <title>Nordic Credit Rating</title>
+    <style>
+
+      /***********************************************************
+      * Fonts
+      ***********************************************************/
+
+      @font-face {
+        font-family: 'Activ Grotesk';
+        src: url("data:application/x-font-ttf;charset=utf-8;base64,{% static_file2base64 'font/aktiv_grotesk.ttf' %}");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'Header';
+        src: url("data:application/x-font-ttf;charset=utf-8;base64,{% static_file2base64 'font/aktiv_grotesk_bold.ttf' %}");
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'Subheader';
+        src: url("data:application/x-font-ttf;charset=utf-8;base64,{% static_file2base64 'font/aktiv_grotesk_medium.ttf' %}");
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'Bodytext';
+        src: url("data:application/x-font-otf;charset=utf-8;base64,{% static_file2base64 'font/notoserif_regular.ttf' %}");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div style="width:1200;height:500">
+    {{ graph|safe }}
+    </div>
+  </body>
+</html>

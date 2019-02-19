@@ -1,0 +1,185 @@
+[
+   {
+      "fields":{
+         "description":"Issuer added"
+      },
+      "model":"issuer.eventtype",
+      "pk":1
+   },
+   {
+      "fields":{
+         "description":"Engagement letter signed"
+      },
+      "model":"issuer.eventtype",
+      "pk":2
+   },
+   {
+      "fields":{
+         "description":"Issuer assigned to CRO"
+      },
+      "model":"issuer.eventtype",
+      "pk":3
+   },
+   {
+      "fields":{
+         "description":"Methodology changed"
+      },
+      "model":"issuer.eventtype",
+      "pk":4
+   },
+   {
+      "fields":{
+         "description":"Rating recommended to credit rating committee"
+      },
+      "model":"issuer.eventtype",
+      "pk":5
+   },
+   {
+      "fields":{
+         "description":"Rating decision postponed"
+      },
+      "model":"issuer.eventtype",
+      "pk":6
+   },
+   {
+      "fields":{
+         "description":"Rating decision rejected"
+      },
+      "model":"issuer.eventtype",
+      "pk":7
+   },
+   {
+      "fields":{
+         "description":"Rating approved by credit rating committee chair"
+      },
+      "model":"issuer.eventtype",
+      "pk":8
+   },
+   {
+      "fields":{
+         "description":"Rating report sent to editor"
+      },
+      "model":"issuer.eventtype",
+      "pk":9
+   },
+   {
+      "fields":{
+         "description":"Rating report received from editor"
+      },
+      "model":"issuer.eventtype",
+      "pk":10
+   },
+   {
+      "fields":{
+         "description":"Rating report sent to issuer"
+      },
+      "model":"issuer.eventtype",
+      "pk":11
+   },
+   {
+      "fields":{
+         "description":"Confirmation of publication received from issuer"
+      },
+      "model":"issuer.eventtype",
+      "pk":12
+   },
+   {
+      "fields":{
+         "description":"Final confirmation of report received by chair"
+      },
+      "model":"issuer.eventtype",
+      "pk":13
+   },
+   {
+      "fields":{
+         "description":"Publication approval received by chair"
+      },
+      "model":"issuer.eventtype",
+      "pk":14
+   },
+   {
+      "fields":{
+         "description":"Report published on NCR website"
+      },
+      "model":"issuer.eventtype",
+      "pk":15
+   },
+   {
+      "fields":{
+         "description":"Rating withdrawn by issuer"
+      },
+      "model":"issuer.eventtype",
+      "pk":16
+   },
+   {
+      "fields":{
+         "description":"Analyst changed"
+      },
+      "model":"issuer.eventtype",
+      "pk":17
+   },
+   {
+      "fields":{
+         "description":"Analyst changed"
+      },
+      "model":"issuer.eventtype",
+      "pk":18
+   },
+   {
+      "fields":{
+         "description":"Changed relationship manager"
+      },
+      "model":"issuer.eventtype",
+      "pk":19
+   },
+   {
+      "fields":{
+         "description":"Added person to contact list"
+      },
+      "model":"issuer.eventtype",
+      "pk":20
+   },
+   {
+      "fields":{
+         "description":"Edited person on contact list"
+      },
+      "model":"issuer.eventtype",
+      "pk":21
+   },
+   {
+      "fields":{
+         "description":"Deleted person from contact list"
+      },
+      "model":"issuer.eventtype",
+      "pk":22
+   },
+   {
+      "fields":{
+         "description":"Changed GICS-code"
+      },
+      "model":"issuer.eventtype",
+      "pk":23
+   },
+   {
+      "fields":{
+         "description":"Started rating process"
+      },
+      "model":"issuer.eventtype",
+      "pk":24
+   },
+   {
+      "fields":{
+         "description":"Ended rating process"
+      },
+      "model":"issuer.eventtype",
+      "pk":25
+   },
+
+   {
+      "fields":{
+         "description":"Onboarding complete"
+      },
+      "model":"issuer.eventtype",
+      "pk":26
+   }
+]

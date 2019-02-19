@@ -1,0 +1,52 @@
+[
+   {
+    "pk":1,
+    "model":"issuer.issuer",
+      "fields":{
+        "lei":"549300AKJU6PA2I4JP55",
+        "legal_name": "Milles Rating and Dating AS",
+        "description": "This is a very good issuer.",
+        "relationship_manager_id": 5,
+        "issuer_type_id": 1,
+        "gics_sub_industry_id": 1
+      }
+   },
+   {
+    "pk":2,
+    "model":"issuer.issuer",
+      "fields":{
+         "lei":"529900O1DLZAEEEZJN84",
+        "legal_name": "Milles Rating and Dating Real Estate AS",
+        "description": "This is a very good real estate issuer.",
+        "relationship_manager_id": 5,
+        "issuer_type_id": 3,
+        "gics_sub_industry_id": 1
+      }
+   },
+   {
+    "pk":3,
+    "model":"issuer.issuer",
+      "fields":{
+         "lei":"54930011U6TQ5MJCDV15",
+        "legal_name": "Milles Rating and Dating Financial AS",
+        "description": "This is a very good financial issuer.",
+        "relationship_manager_id": 5,
+        "issuer_type_id": 2,
+        "gics_sub_industry_id": 1
+      }
+   },
+   {
+    "pk":4,
+    "model":"issuer.issuer",
+      "fields":{
+         "lei":"254900N8PIUJTEAZN886",
+        "legal_name": "Milles Rating and Dating Deleted AS",
+        "description": "This is a very good financial issuer.",
+        "relationship_manager_id": 5,
+        "issuer_type_id": 2,
+        "gics_sub_industry_id": 1,
+        "inactivated": "2018-08-20T15:56:11.011Z"
+      }
+   }
+
+]

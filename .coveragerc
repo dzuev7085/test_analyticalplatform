@@ -1,0 +1,54 @@
+[run]
+source =
+    ncr_website/a_helper
+    ncr_website/credit_assessment
+    ncr_website/document_export
+    ncr_website/financial_data
+    ncr_website/gui
+    ncr_website/issue
+    ncr_website/issuer
+    ncr_website/methodology
+    ncr_website/rating
+    ncr_website/rating_process
+    ncr_website/upload
+    ncr_website/user_profile
+
+omit =
+    *migrations*
+    *tests*
+    *venv*
+    *urls.py*
+    *apps.py*
+    *admin.py*
+    *const.py*
+    setup.py
+
+    # We don't need to test debug stuff
+    ncr_website/a_helper/dev_uat_tools/*
+
+    # Specific files
+    */pdfreactor.py
+
+    # Exclude for now
+    database/*
+
+    # Not relevant for tests
+    ncr_website/config/settings/base.py
+    ncr_website/config/celery.py
+
+[report]
+# Regexes for lines to exclude from consideration
+exclude_lines =
+    # Have to re-enable the standard pragma
+    pragma: no cover
+
+    # Don't complain about missing debug-only code:
+    def __repr__
+
+    # Don't complain if tests don't hit defensive assertion code:
+    raise AssertionError
+    raise NotImplementedError
+
+[html]
+directory = ncr_website/__docs/coverage_html_report
+title = Analytical platform

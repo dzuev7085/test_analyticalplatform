@@ -1,0 +1,16 @@
+[
+   {
+      "fields":{
+         "name":"Committee member"
+      },
+      "model":"rating_process.group",
+      "pk":1
+   },
+   {
+      "fields":{
+         "name":"Editor"
+      },
+      "model":"rating_process.group",
+      "pk":2
+   }
+]

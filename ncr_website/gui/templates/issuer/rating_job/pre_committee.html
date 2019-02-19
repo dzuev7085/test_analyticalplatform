@@ -1,0 +1,38 @@
+{% load template_tags %}
+
+
+<div class="row">
+    <div class="col-md-4 col-xs-6">
+      <!-- Column 1 -->
+
+      <div class="card-body">
+        <h5 class="card-title">
+          Committee date and time:
+        </h5>
+        <p class="card-text">
+          {{ data.issuer.rating_job.rating_decision.date_time_committee|date:'Y-m-d H:i'|default:'<em>No date suggested.</em>' }}
+        </p>
+
+        {% if allow_edit and auth.issuer.rating_job.edit %}
+          <a href="{% url 'rating_decision_update_field' rating_decision_pk=data.issuer.rating_job.rating_decision.id field='date_time_committee' %}"
+           class="fm-update"
+           data-fm-head="Edit committee date"
+           data-fm-callback="reload"
+           data-fm-target="#object-{{ data.issuer.rating_job.rating_decision.id }}">
+            Override proposed date and time
+
+            <i class="fas fa-edit"></i>
+          </a>
+        {% endif %}
+
+      </div>
+
+    </div>
+
+    <div class="col-md-4 col-xs-6">
+      <!-- Column 2 -->
+
+
+    </div>
+
+</div>

@@ -1,0 +1,54 @@
+{% load template_tags %}
+{% load humanize %}
+{% load financial_statement %}
+
+{% if is_blank %}
+
+  <tr><td colspan="100%">&nbsp;</td></tr>
+
+{% else %}
+
+  <tr class="{{ tr_class }}">
+    <td>{{ header }}</td>
+    {% for period in data.issuer.financial_statement.data %}
+
+      {% item_value period item_name as v %}
+
+      <td align="right">
+
+      {% if edit %}
+        <a href="{% url 'issuer_financials_edit' target_item=header issuer_id=issuer.id report_date_type='FY' currency=period.generic_information.currency statement_type=statement_type_name data_source=period.generic_information.data_source date=period.generic_information.report_date|date:'Y-m-d' %}"
+           class="fm-update card-link"
+           data-fm-head="Edit {{ header }} item(s)"
+           data-fm-callback="reload"
+           data-fm-target="#object-{{ header }}" style="display:block;">
+          {% if format_as == 'percent' %}
+            {{ v | format_percent }}
+          {% elif format_as == 'multiplier' %}
+            {{ v | floatformat:format_precision }}x
+          {% else %}
+            {{ v | format_mn | intcomma }}
+          {% endif %}
+        </a>
+
+      {% else %}
+
+        {% if format_as == 'percent' %}
+          {{ v | format_percent:format_precision }}
+        {% elif format_as == 'multiplier' %}
+          {{ v | floatformat:format_precision }}x
+        {% else %}
+          {{ v | format_mn | intcomma }}
+        {% endif %}
+
+      {% endif %}
+      </td>
+
+    {% endfor %}
+    <td align="right" class="chart_cell">
+      <a onclick="open_window('{% url 'peer_chart' item=item_name readable_name=header|escape_slash format_as=format_as issuer_id=issuer.id chart_type='grouped_bar_chart' %}');"><i class="fas fa-chart-bar"></i></a>
+    </td>
+  </tr>
+
+
+{% endif %}

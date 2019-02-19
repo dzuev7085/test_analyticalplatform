@@ -1,0 +1,214 @@
+{% load template_tags %}
+
+<div class="card-body">
+  <h5 class="card-title">
+    View and update documents:
+  </h5>
+  <p class="card-text">
+      <table border="0" cellpadding="0" cellspacing="0" class="card-body">
+
+      {% if auth.issuer.rating_job.edit and data.issuer.rating_job.rating_decision.process_step >= 7 %}
+
+        <tr>
+          <td>
+            External analysis that will be published
+          </td>
+
+          <td width="10">&nbsp;</td>
+
+          {% rating_process_document_id data.issuer.rating_job.rating_decision.id 15 as document_id %}
+
+          <td>
+            {% if document_id %}
+              <a href="{% url 'issuer_document_analytical_download' file_id=document_id %}" target="_blank">View file</a>
+            {% endif %}
+          </td>
+
+          <td width="10">&nbsp;</td>
+          <td>
+
+            {% if auth.issuer.rating_job.edit and data.issuer.rating_job.rating_decision.process_step >= 7 %}
+              <a href="{% url 'rating_decision_document_add' document_type_pk=15 rating_decision_pk=data.issuer.rating_job.rating_decision.id issuer_pk=issuer.id security_class=1 %}"
+                class="fm-create"
+                data-fm-head="Add report that will be published"
+                data-fm-callback="reload"
+                data-fm-target="#object-{{ data.issuer.rating_job.rating_decision.id }}">
+
+                <i class="fas fa-edit"></i>
+              </a>
+            {% endif %}
+
+          </td>
+        </tr>
+
+      {% endif %}
+
+      {% if auth.issuer.rating_job.edit and data.issuer.rating_job.rating_decision.process_step < 7 %}
+
+          <tr>
+            <td>
+              External analysis for committee and issuer
+            </td>
+
+            <td width="10">&nbsp;</td>
+
+            {% rating_process_document_id data.issuer.rating_job.rating_decision.id 10 as document_id %}
+
+            <td>
+              {% if document_id %}
+                <a href="{% url 'issuer_document_analytical_download' file_id=document_id %}" target="_blank">View file</a>
+              {% endif %}
+            </td>
+
+            <td width="10">&nbsp;</td>
+            <td>
+
+              {% if auth.issuer.rating_job.edit and data.issuer.rating_job.rating_decision.process_step <= 5 %}
+                <a href="{% url 'rating_decision_document_add' document_type_pk=10 rating_decision_pk=data.issuer.rating_job.rating_decision.id issuer_pk=issuer.id security_class=4 %}"
+                  class="fm-create"
+                  data-fm-head="Add external analysis"
+                  data-fm-callback="reload"
+                  data-fm-target="#object-{{ data.issuer.rating_job.rating_decision.id }}">
+
+                  <i class="fas fa-edit"></i>
+                </a>
+              {% endif %}
+
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              Internal analysis
+            </td>
+
+            <td width="10">&nbsp;</td>
+
+            {% rating_process_document_id data.issuer.rating_job.rating_decision.id 11 as document_id %}
+
+            <td>
+              {% if document_id %}
+                <a href="{% url 'issuer_document_analytical_download' file_id=document_id %}" target="_blank">View file</a>
+              {% endif %}
+            </td>
+
+            <td width="10">&nbsp;</td>
+            <td>
+
+              {% if auth.issuer.rating_job.edit and data.issuer.rating_job.rating_decision.process_step <= 4 %}
+                <a href="{% url 'rating_decision_document_add' document_type_pk=11 rating_decision_pk=data.issuer.rating_job.rating_decision.id issuer_pk=issuer.id security_class=4 %}"
+                  class="fm-create"
+                  data-fm-head="Add internal analysis"
+                  data-fm-callback="reload"
+                  data-fm-target="#object-{{ data.issuer.rating_job.rating_decision.id }}">
+
+                  <i class="fas fa-edit"></i>
+                </a>
+              {% endif %}
+
+            </td>
+
+          </tr>
+
+          <tr>
+            <td>
+              Extra attachment #1
+            </td>
+
+            <td width="10">&nbsp;</td>
+
+            {% rating_process_document_id data.issuer.rating_job.rating_decision.id 12 as document_id %}
+
+            <td>
+              {% if document_id %}
+                <a href="{% url 'issuer_document_analytical_download' file_id=document_id %}" target="_blank">View file</a>
+              {% endif %}
+            </td>
+
+            <td width="10">&nbsp;</td>
+            <td>
+
+              {% if auth.issuer.rating_job.edit and data.issuer.rating_job.rating_decision.process_step <= 4 %}
+                <a href="{% url 'rating_decision_document_add' document_type_pk=12 rating_decision_pk=data.issuer.rating_job.rating_decision.id issuer_pk=issuer.id security_class=4 %}"
+                  class="fm-create"
+                  data-fm-head="Add attachment #1"
+                  data-fm-callback="reload"
+                  data-fm-target="#object-{{ data.issuer.rating_job.rating_decision.id }}">
+
+                  <i class="fas fa-edit"></i>
+                </a>
+              {% endif %}
+
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              Extra attachment #2
+            </td>
+
+            <td width="10">&nbsp;</td>
+
+            {% rating_process_document_id data.issuer.rating_job.rating_decision.id 13 as document_id %}
+
+            <td>
+              {% if document_id %}
+                <a href="{% url 'issuer_document_analytical_download' file_id=document_id %}" target="_blank">View file</a>
+              {% endif %}
+            </td>
+
+            <td width="10">&nbsp;</td>
+            <td>
+
+              {% if auth.issuer.rating_job.edit and data.issuer.rating_job.rating_decision.process_step <= 4 %}
+                <a href="{% url 'rating_decision_document_add' document_type_pk=13 rating_decision_pk=data.issuer.rating_job.rating_decision.id issuer_pk=issuer.id security_class=4 %}"
+                  class="fm-create"
+                  data-fm-head="Add attachment #2"
+                  data-fm-callback="reload"
+                  data-fm-target="#object-{{ data.issuer.rating_job.rating_decision.id }}">
+
+                  <i class="fas fa-edit"></i>
+                </a>
+              {% endif %}
+
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              Extra attachment #3
+            </td>
+
+            <td width="10">&nbsp;</td>
+
+            {% rating_process_document_id data.issuer.rating_job.rating_decision.id 14 as document_id %}
+
+            <td>
+              {% if document_id %}
+                <a href="{% url 'issuer_document_analytical_download' file_id=document_id %}" target="_blank">View file</a>
+              {% endif %}
+            </td>
+
+            <td width="10">&nbsp;</td>
+            <td>
+
+              {% if auth.issuer.rating_job.edit and data.issuer.rating_job.rating_decision.process_step <= 4 %}
+                <a href="{% url 'rating_decision_document_add' document_type_pk=14 rating_decision_pk=data.issuer.rating_job.rating_decision.id issuer_pk=issuer.id security_class=4 %}"
+                  class="fm-create"
+                  data-fm-head="Add attachment #3"
+                  data-fm-callback="reload"
+                  data-fm-target="#object-{{ data.issuer.rating_job.rating_decision.id }}">
+
+                  <i class="fas fa-edit"></i>
+                </a>
+              {% endif %}
+
+            </td>
+          </tr>
+
+      {% endif %}
+
+    </table>
+
+  </p>
+</div>

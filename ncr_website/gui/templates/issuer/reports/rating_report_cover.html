@@ -1,0 +1,431 @@
+{% load staticfiles %}
+{% load template_tags %}
+<html lang="en-GB">
+<html>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+        <title>Nordic Credit Rating - []</title>
+
+        <style type="text/css">
+
+        /***********************************************************
+        * Fonts
+        ***********************************************************/
+
+        @font-face {
+          font-family: 'Activ Grotesk';
+          src: url("data:application/x-font-ttf;charset=utf-8;base64,{% static_file2base64 'font/aktiv_grotesk.ttf' %}");
+          font-weight: normal;
+          font-style: normal;
+        }
+
+        @font-face {
+          font-family: 'Header';
+          src: url("data:application/x-font-ttf;charset=utf-8;base64,{% static_file2base64 'font/aktiv_grotesk_bold.ttf' %}");
+          font-weight: 700;
+          font-style: normal;
+        }
+
+        @font-face {
+          font-family: 'Subheader';
+          src: url("data:application/x-font-ttf;charset=utf-8;base64,{% static_file2base64 'font/aktiv_grotesk_medium.ttf' %}");
+          font-weight: 700;
+          font-style: normal;
+        }
+
+        @font-face {
+          font-family: 'Body';
+          src: url("data:application/x-font-otf;charset=utf-8;base64,{% static_file2base64 'font/notoserif_regular.ttf' %}");
+          font-weight: normal;
+          font-style: normal;
+        }
+
+
+        /***********************************************************
+           * General Page Style
+         ***********************************************************/
+         @page {
+           size: A4 portrait;
+
+           margin: 0mm 0mm 0mm 0mm;
+
+           @bottom-right {
+             font-family: 'Body;
+             margin: 0 7mm 15mm 0;
+             content: counter(page) "/" counter(pages);
+             font-size: 9pt;
+             text-align: right;
+             color: #000000;
+             z-index: 10;
+           }
+
+         }
+
+          .blue_header {
+            position: relative;
+            top: 0;
+            left: 0;
+
+            background-color: #0D2E54;
+            height: 33mm;
+            width: 100%;
+          }
+
+          .blue_logo {
+            position: absolute;
+            top: 8mm;
+            left: 20mm;
+            z-index: 100;
+          }
+
+          .blue_header_2 {
+            position: absolute;
+            top: 10mm;
+            right: 20mm;
+            text-align: right;
+          }
+
+
+          .gray_header {
+            position: relative;
+
+            background-color: #eff0f1;
+            height: 24mm;
+            width: 100%;
+          }
+
+          .gray_footer {
+            position: absolute;
+
+            background-color: #eff0f1;
+            top: 278mm;
+            left: 0mm;
+            height: 19mm;
+            width: 100%;
+            z-index: -1;
+          }
+
+
+          .company_title {
+            position: absolute;
+            top: 6mm;
+            left: 7mm;
+            font-family: 'Activ Grotesk Bold';
+            color: #0D2E54;
+            font-size: 16pt;
+          }
+
+          .company_misc {
+            position: absolute;
+            top: 6mm;
+            right: 15mm;
+          }
+
+          .gray_sidebar{
+            position: absolute;
+            left: 0;
+            top: 65mm;
+
+            background-color: #eff0f1;
+            height: 145mm;
+            width: 54mm;
+          }
+
+          .gray_sidebar_header{
+            position: relative;
+            left: 5mm;
+            top: 5mm;
+            font-family: 'Header';
+            color: #0D2E54;
+            font-size: 8pt;
+            margin-bottom: .3em;
+            text-transform: uppercase;
+          }
+
+          .gray_sidebar_box_content{
+            position: relative;
+            left: 5mm;
+            top: 5mm;
+            height: 10mm;
+            width: 45mm;
+            color: white;
+            font-size: 14pt;
+            font-family: 'Header';
+            text-align: center;
+            vertical-align: middle;
+            line-height: 11mm;
+            background-color: #0D2E54;
+            margin-bottom: .8em;
+          }
+
+          .gray_sidebar_analyst_box_content{
+            position: relative;
+            left: 5mm;
+            top: 5mm;
+            height: 10mm;
+            width: 45mm;
+            color: #0D2E54;
+            font-size: 7pt;
+            font-family: 'Subheader';
+            text-align: left;
+            margin-bottom: .8em;
+            line-height: 2.5mm;
+          }
+
+          .gray_sidebar_analyst_box_content a:link{
+            color: #0D2E54;
+          }
+
+          .the_content{
+            position: absolute;
+            left: 58mm;
+            top: 65mm;
+            width: 145mm;
+            text-align:justify;
+            text-justify: inter-word;
+          }
+
+          .drivers{
+            position: relative;
+            left: 0mm;
+            top: 5mm;
+          }
+
+
+        /***********************************************************
+           * General Page Style
+         ***********************************************************/
+        header{
+          font-family: 'Header';
+          color: #0D2E54;
+          font-size: 16pt;
+          text-transform: uppercase;
+        }
+
+        subheader{
+          font-family: 'Subheader';
+          color: #0D2E54;
+          font-size: 10.5pt;
+          text-transform: uppercase;
+        }
+
+        subheader_drivers{
+          font-family: 'Subheader';
+          color: #0D2E54;
+          font-size: 9.5pt;
+          text-transform: uppercase;
+        }
+
+        other_blue{
+          font-family: 'Activ Grotesk';
+          color: #0D2E54;
+          font-size: 9pt;
+        }
+
+        other_white{
+          font-family: 'Activ Grotesk';
+          color: #FFFFFF;
+          font-size: 9pt;
+        }
+
+        p{
+          text-align: justify;
+          text-justify: inter-word;
+          font-family: 'Body';
+          display: block;
+          margin-top: 0.2em;
+          margin-bottom: 1.1em;
+          color: #0000000;
+          font-size: 10pt;
+        }
+
+        ul {
+          padding: 15px;
+          text-align: justify;
+          text-justify: inter-word;
+          font-family: 'Body';
+          margin-top: -1em;
+          margin-bottom: -0.2em;
+          color: #0000000;
+          font-size: 10pt;
+        }
+
+        </style>
+
+    </head>
+    <body>
+      <div class="blue_header">
+        <div class="blue_logo">
+          <img src="data:image/png;base64, {% static_file2base64 'image/ncr_logo_rgb_300ppi.png' %}" height="18mm" width="18mm">
+        </div>
+        <div class="blue_header_2">
+          <other_white style="text-transform: uppercase;">{{ data.issuer.rating_job.sector }}</other_white>
+        </div>
+      </div>
+
+      <div class="gray_header">
+        <div class="company_title">
+          <header>
+            {{ data.issuer.rating_job.data.issuer.legal_name }}
+          </header>
+        </div>
+        <div class="company_misc">
+          <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td>
+                <other_blue>
+                  {{ data.issuer.gleif.legal_address.country | country_name }}
+                </other_blue>
+              </td>
+              <td style="width: 15mm;">&nbsp;</td>
+              <td align="right">
+                <other_blue>
+                  {{ data.issuer.rating_job.publish_date }}
+                </other_blue>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <other_blue>
+                  {{ data.issuer.rating_job.sector }}
+                </other_blue>
+              </td>
+              <td>&nbsp;</td>
+              <td align="right"><other_blue>{{ data.issuer.rating_job.rating_type }}</other_blue></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="gray_sidebar">
+          <div class="gray_sidebar_header">
+            Long-term rating
+          </div>
+          <div class="gray_sidebar_box_content">
+            {{ data.issuer.rating_job.data.get_decided_lt_display }}
+          </div>
+          <div class="gray_sidebar_header">
+            Outlook
+          </div>
+          <div class="gray_sidebar_box_content">
+            {{ data.issuer.rating_job.data.get_decided_lt_outlook_display }}
+          </div>
+          <div class="gray_sidebar_header">
+            Short-term rating
+          </div>
+          <div class="gray_sidebar_box_content">
+            {{ data.issuer.rating_job.data.get_decided_st_display }}
+          </div>
+
+          <div class="gray_sidebar_header">
+            Primary analyst
+          </div>
+          <div class="gray_sidebar_analyst_box_content">
+            {{ data.issuer.rating_job.data.issuer.analyst.primary_analyst.get_full_name }}
+            <span style="font-family: 'Body'; font-size: 6pt">
+              <br>
+              {{ data.issuer.rating_job.data.issuer.analyst.primary_analyst.profile.phone_number }}
+              <br>
+              <a href="mailto:{{ data.issuer.rating_job.data.issuer.analyst.primary_analyst.email }}">{{ data.issuer.rating_job.data.issuer.analyst.primary_analyst.email }}</a>
+            </span>
+          </div>
+
+          <div class="gray_sidebar_header">
+            Secondary analyst
+          </div>
+          <div class="gray_sidebar_analyst_box_content">
+            {{ data.issuer.rating_job.data.issuer.analyst.secondary_analyst.get_full_name }}
+            <span style="font-family: 'Body'; font-size: 6pt">
+              <br>
+              {{ data.issuer.rating_job.data.issuer.analyst.secondary_analyst.profile.phone_number }}
+              <br>
+              <a href="mailto:{{ data.issuer.rating_job.data.issuer.analyst.secondary_analyst.email }}">{{ data.issuer.rating_job.data.issuer.analyst.secondary_analyst.email }}</a>
+            </span>
+          </div>
+
+          <div class="gray_sidebar_header" style="margin-top: 3em;">
+            Client services
+          </div>
+          <div class="gray_sidebar_analyst_box_content">
+            {{ data.issuer.rating_job.data.issuer.relationship_manager.get_full_name }}
+            <span style="font-family: 'Body'; font-size: 6pt">
+              <br>
+              {{ data.issuer.rating_job.data.issuer.relationship_manager.profile.phone_number }}
+              <br>
+              <a href="mailto:{{ data.issuer.rating_job.data.issuer.relationship_manager.email }}">{{ data.issuer.rating_job.data.issuer.relationship_manager.email }}</a>
+            </span>
+          </div>
+        </div>
+
+
+
+        </div>
+
+
+        <div class="the_content">
+          <subheader>Rating rationale</subheader>
+          <p>
+            Our 'BBB+' long-term issuer rating on Vacse AB ("Vacse") reflects the company's strong portfolio of modern, tailor-made properties leased on very long contracts (averaging around 11 years) to highly creditworthy public-sector authorities that are essential to Sweden's public security. The rating also reflects the company's 100% occupancy rate and strong operating margins. It is supported by Vacse's strong financial position of relatively moderate leverage, with loan to value (LTV) of 43%, excluding a shareholder loan; an interest coverage ratio of 4.0x; a low share of secured debt (12%) as of 30 Sep. 2018; and its strong ownership profile.
+            <p>
+            These strengths are somewhat offset by the company's limited number of properties (14). We believe this creates some, albeit low, risk at contract expiration as 8% of the total contract value expires within five years. In addition, the company has an increasing share of development properties, which are typically pre-let. Like most Swedish real-estate peers, the debt maturity profile is relatively short at 2.7 years, including a bond maturity of SEK 773m in June 2019, which weighs on the liquidity profile.
+          </p>
+
+          <subheader>Outlook</subheader>
+          <p>
+            The stable outlook reflects our expectation that Vacse will continue to focus on similar types of properties, with long lease contracts with public institutions. We expect Vacse to extend its relatively short debt maturity profile and proactively refinance the outstanding SEK 773m bond maturing in June 2019. We also see Vacse retaining moderate leverage (including LTV below 50%), while successfully completing its development projects. The stable outlook reflects our view of a stable economic outlook for Sweden, with slowly rising interest rates, and an unchanged ownership profile for the company.
+          </p>
+
+          <div class="drivers">
+            <table border="0" width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td width="47.5%">
+                  <subheader_drivers>
+                    Potential positive rating drivers:
+                  </subheader_drivers>
+                </td>
+                <td width="5%">&nbsp;</td>
+                <td width="47.5%">
+                  <subheader_drivers>
+                    Potential negative rating drivers:
+                  </subheader_drivers>
+                </td>
+              </tr>
+              <tr>
+                <td valign="top">
+                  <ul>
+                   <li>
+                     Significantly lower leverage on a sustainable basis, including LTV of less than 35% and an EBITDA/net interest ratio of more than 5.0x.
+                   </li>
+                   <li>
+                     Improvement in debt maturity profile.
+                   </li>
+                  </ul>
+                </td>
+                <td>&nbsp;</td>
+                <td valign="top">
+                  <ul><li>
+                      Increased leverage, including LTV of more than 50% over an extended period.
+                    </li><li>
+                      An inability to refinance forthcoming debt maturities.
+                    </li>
+                    <li>
+                      A significant increase in development projects.
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+
+        </div>
+
+      </div>
+      <div class="gray_footer"></div>
+
+
+    </body>
+</html>

@@ -1,0 +1,29 @@
+{% load template_tags %}
+{% load staticfiles %}
+
+
+<html>
+    <head>
+      {% include "page_head.html" %}
+
+      <style>
+        body {
+          overflow-x:hidden;
+          overflow-y:hidden;
+        }
+      </style>
+    </head>
+    <body>
+      <div id="preloader">
+        <div id="status" style="background-image: url({% static 'image/preloader.gif' %});">&nbsp;</div>
+      </div>
+
+      {% include "modal.html" %}
+
+      <div style="left: 13; top: 13; position: relative;">
+        {% block content %}
+        {% endblock %}
+      </div>
+
+    </body>
+</html>

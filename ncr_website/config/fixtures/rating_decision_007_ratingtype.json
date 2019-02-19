@@ -1,0 +1,23 @@
+[
+   {
+      "fields":{
+         "description":"Public"
+      },
+      "model":"rating_process.ratingtype",
+      "pk":1
+   },
+   {
+      "fields":{
+         "description":"Private"
+      },
+      "model":"rating_process.ratingtype",
+      "pk":2
+   },
+   {
+      "fields":{
+         "description":"Confidential"
+      },
+      "model":"rating_process.ratingtype",
+      "pk":3
+   }
+]

@@ -1,0 +1,69 @@
+{% load staticfiles %}
+{% load template_tags %}
+{% load humanize %}
+
+<link rel="stylesheet" href="{% static 'css/styleguide.css' %}">
+
+<script type="text/javascript">
+function open_window(url)
+{
+    w = window.open(url,'_blank','height=600,width=1250,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=yes');
+    w.moveTo(0, 0);
+}
+
+</script>
+
+<table border="0" class="ncrtable">
+  <thead>
+    <tr>
+      <th>&nbsp;</th>
+      {% for period in data.issuer.financial_statement.data %}
+        <th align="right" style="text-align: right;">
+          {{ period.generic_information.currency }} m
+        </th>
+      {% endfor %}
+      <th align="right">
+        &nbsp;
+      </th>
+    </tr>
+  </thead>
+
+  <thead>
+    <tr>
+      <th>Key financial metrics</th>
+      {% for period in data.issuer.financial_statement.data %}
+        <th align="right" style="text-align: right;">
+          {{ period.generic_information.report_date|date:'Y-m-d' }}
+        </th>
+      {% endfor %}
+      <th align="right">
+        &nbsp;
+      </th>
+    </tr>
+  </thead>
+
+  {% for row in data.issuer.financial_statement.key_financial_metrics %}
+    {% include "issuer/financials/statement_row.html" with header=row.header item_name=row.item_name edit=row.edit tr_class=row.tr_class format_as=row.format_as is_blank=row.is_blank statement_type_name=row.statement_type format_precision=row.format_precision %}
+  {% endfor %}
+
+  <thead>
+    <tr>
+      <th>Key credit metrics</th>
+      {% for period in data.issuer.financial_statement.data %}
+        <th align="right" style="text-align: right;">
+          {{ period.generic_information.report_date|date:'Y-m-d' }}
+        </th>
+      {% endfor %}
+      <th align="right">
+        &nbsp;
+      </th>
+    </tr>
+  </thead>
+
+  {% for row in data.issuer.financial_statement.key_credit_metrics %}
+    {% include "issuer/financials/statement_row.html" with header=row.header item_name=row.item_name edit=row.edit tr_class=row.tr_class format_as=row.format_as is_blank=row.is_blank statement_type_name=row.statement_type format_precision=row.format_precision %}
+  {% endfor %}
+
+</table>
+
+<br><br><br>

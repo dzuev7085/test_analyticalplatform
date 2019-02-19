@@ -1,0 +1,10 @@
+pytest
+coverage
+flake8
+pytest-timeout
+coveralls
+pytest-cov
+mock
+pylint
+pylint-django==2.0.4
+tblib==1.3.2

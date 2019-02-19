@@ -1,0 +1,52 @@
+[
+  {
+    "model": "static_database_table.ratingscope",
+    "pk": 1,
+    "fields": {
+      "time_horizon": 1,
+      "relevant_for_cerep_flag": true,
+      "rating_type": 1,
+      "rating_scale_scope": 2,
+      "end_date": "2099-12-31",
+      "rating_scale": 1,
+      "start_date": "2018-07-29"}
+  },
+  {
+    "model": "static_database_table.ratingscope",
+    "pk": 2,
+    "fields": {
+      "time_horizon": 2,
+      "relevant_for_cerep_flag": true,
+      "rating_type": 1,
+      "rating_scale_scope": 2,
+      "end_date": "2099-12-31",
+      "rating_scale": 2,
+      "start_date": "2018-07-29"
+    }
+  },
+  {
+    "model": "static_database_table.ratingscope",
+    "pk": 3,
+    "fields": {
+      "time_horizon": 1,
+      "relevant_for_cerep_flag": false,
+      "rating_type": 1,
+      "rating_scale_scope": 1,
+      "end_date": "2099-12-31",
+      "rating_scale": 3,
+      "start_date": "2018-07-29"}
+  },
+  {
+    "model": "static_database_table.ratingscope",
+    "pk": 4,
+    "fields": {
+      "time_horizon": 2,
+      "relevant_for_cerep_flag": false,
+      "rating_type": 1,
+      "rating_scale_scope": 1,
+      "end_date": "2099-12-31",
+      "rating_scale": 4,
+      "start_date": "2018-07-29"
+    }
+  }
+]

@@ -1,0 +1,316 @@
+{% load template_tags %}
+<!-- This page is also being used in the committee pack template. -->
+
+{% recommended_or_decided data.issuer.rating_job.rating_decision as is_recommended %}
+{% recommended_or_decided_outlook data.issuer.rating_job.rating_decision as is_recommended_outlook %}
+{% recommended_or_decided_st data.issuer.rating_job.rating_decision as is_recommended_st %}
+
+{% current_rating data.issuer.rating_job.rating_decision.issuer as existing_rating_data %}
+
+<table class="table table-striped table-sm pdf-table" border="0">
+  <thead>
+
+  {% if issuer.issuer_type.id == 2 %}
+
+      {% include "issuer/rating_job/financial_score_operating_environment.html" %}
+
+      <tr style="background: #FFFFFF"><td>&nbsp;</td></tr>
+
+      {% include "issuer/rating_job/financial_score_risk_appetite.html" %}
+
+      <tr style="background: #FFFFFF"><td>&nbsp;</td></tr>
+
+      {% include "issuer/rating_job/financial_score_competitive_position.html" %}
+
+      <tr style="background: #FFFFFF"><td>&nbsp;</td></tr>
+
+      {% include "issuer/rating_job/financial_score_performance_indicators.html" %}
+
+
+  {% else %}
+    <!-- Corporate and real estate -->
+    {% include "issuer/rating_job/corporate_score_business_risk.html" %}
+
+    <tr><td>&nbsp;</td></tr>
+
+    {% include "issuer/rating_job/corporate_score_financial_risk.html" %}
+
+  {% endif %}
+
+  <tr><td>&nbsp;</td></tr>
+
+  <!-- Indicative credit assessment -->
+  <tr class="tr-topline" style="background-color: #FFFFFF; border-top-style: solid;border-color:#000000; border-width: 2px;">
+    <td colspan="2">
+      Indicative credit assessment
+    </td>
+    <td align="right">
+      {{ data.issuer.rating_job.proposed_rating.weight|format_percent:"1" }}
+    </td>
+
+    <td align="right">
+      {% if data.issuer.rating_job.existing.calc_rating.indicative_credit_assessment %}
+        {{ data.issuer.rating_job.existing.calc_rating.indicative_credit_assessment }} ({{ data.issuer.rating_job.existing.calc_rating.indicative_credit_assessment_score|floatformat:2 }})
+      {% else %}
+        n/a
+      {% endif %}
+    </td>
+
+    <td align="right">
+      {{ data.issuer.rating_job.proposed_rating.indicative_credit_assessment|default:'n/a' }}
+          ({{ data.issuer.rating_job.proposed_rating.indicative_credit_assessment_score|floatformat:2|default:'n/a' }})
+    </td>
+
+    {% if show_final_score %}
+      <td align="right">
+        {{ data.issuer.rating_job.decided_rating.indicative_credit_assessment|default:'n/a' }}
+          ({{ data.issuer.rating_job.decided_rating.indicative_credit_assessment_score|floatformat:2|default:'n/a' }})
+      </td>
+    {% endif %}
+
+    {% if allow_edit and auth.issuer.rating_job.edit %}
+      <td>&nbsp;</td>
+    {% endif %}
+
+  </tr>
+
+  <tr><td>&nbsp;</td></tr>
+
+  {% include "issuer/rating_job/corporate_score_adjustment_factor.html" %}
+
+  <tr><td>&nbsp;</td></tr>
+
+  <!-- Stand-alone credit assessment -->
+  <tr class="tr-topline" style="background-color: #FFFFFF; border-top-style: solid;border-color:#000000; border-width: 2px;">
+    <td colspan="3">
+      Stand-alone credit assessment
+    </td>
+
+    <td align="right">
+      {% if data.issuer.rating_job.existing.calc_rating.stand_alone_credit_assessment %}
+        {{ data.issuer.rating_job.existing.calc_rating.stand_alone_credit_assessment }}  ({{ data.issuer.rating_job.existing.calc_rating.stand_alone_credit_assessment_score|floatformat:2  }})
+      {% else %}
+        n/a
+      {% endif %}
+    </td>
+
+    <td align="right">
+      {{ data.issuer.rating_job.proposed_rating.stand_alone_credit_assessment|default:'n/a' }}
+          ({{ data.issuer.rating_job.proposed_rating.stand_alone_credit_assessment_score|floatformat:2|default:'n/a' }})
+    </td>
+
+    {% if show_final_score %}
+      <td align="right">
+        {{ data.issuer.rating_job.decided_rating.stand_alone_credit_assessment|default:'n/a' }}
+          ({{ data.issuer.rating_job.decided_rating.stand_alone_credit_assessment_score|floatformat:2|default:'n/a' }})
+      </td>
+    {% endif %}
+
+    {% if allow_edit and auth.issuer.rating_job.edit %}
+      <td>&nbsp;</td>
+    {% endif %}
+
+  </tr>
+
+  <tr><td>&nbsp;</td></tr>
+
+  {% include "issuer/rating_job/corporate_score_support_factor.html" %}
+
+  <tr><td>&nbsp;</td></tr>
+
+  <!-- Issuer rating -->
+  <tr class="tr-topline" style="background-color: #FFFFFF; border-top-style: solid;border-color:#000000; border-width: 2px;">
+    <td colspan="3">
+      Long-term rating
+    </td>
+
+    <td align="right">
+      {% if data.issuer.rating_job.existing.calc_rating.issuer_rating %}
+        {{ data.issuer.rating_job.existing.calc_rating.issuer_rating }}
+
+        {% if data.issuer.rating_job.existing.decision.is_preliminary %}
+          (p)
+        {% endif %}
+      {% else %}
+        n/a
+      {% endif %}
+    </td>
+
+    <td align="right">
+      {{ data.issuer.rating_job.proposed_rating.issuer_rating|default:'n/a' }}
+
+      {% if data.issuer.rating_job.rating_decision.is_preliminary %}
+        (p)
+      {% endif %}
+
+    </td>
+
+    {% if show_final_score %}
+      <td align="right">
+        {{ data.issuer.rating_job.decided_rating.issuer_rating|default:'n/a' }}
+
+        {% if data.issuer.rating_job.rating_decision.is_preliminary %}
+          (p)
+        {% endif %}
+
+      </td>
+    {% endif %}
+
+    {% if allow_edit and auth.issuer.rating_job.edit %}
+      <td>&nbsp;</td>
+    {% endif %}
+
+  </tr>
+
+  <tr style="background-color: #FFFFFF;">
+    <td colspan="3">
+      Outlook
+    </td>
+    <td align="right">
+      {% if data.issuer.rating_job.existing.calc_rating.issuer_rating %}
+       {{ existing_rating_data.decided_lt_outlook|return_long_term_rating_outlook }}
+      {% else %}
+        n/a
+      {% endif %}
+    </td>
+    <td align="right">
+      {{ data.issuer.rating_job.rating_decision.get_proposed_lt_outlook_display|default:'<em>Not set.</em>' }}
+    </td>
+
+    {% if show_final_score %}
+      <td align="right">
+        {{ data.issuer.rating_job.rating_decision.get_decided_lt_outlook_display|default:'<em>Not set.</em>' }}
+      </td>
+    {% endif %}
+
+
+    {% if allow_edit and auth.issuer.rating_job.edit %}
+      <td align="right">
+          <a href="{% url 'rating_decision_update_field' rating_decision_pk=data.issuer.rating_job.rating_decision.id field=is_recommended_outlook %}"
+            class="fm-update"
+            data-fm-head="Edit outlook"
+            data-fm-callback="reload"
+            data-fm-target="#object-{{ data.issuer.rating_job.rating_decision }}">
+
+            <i class="fas fa-edit"></i>
+          </a>
+      </td>
+    {% endif %}
+
+  </tr>
+
+  <tr style="background-color: #FFFFFF;">
+    <td colspan="3">
+      Short-term rating
+    </td>
+    <td align="right">
+      {% if data.issuer.rating_job.existing.calc_rating.issuer_rating %}
+        {{ existing_rating_data.decided_st|return_short_term_rating }}
+      {% else %}
+        n/a
+      {% endif %}
+    </td>
+
+    <td align="right">
+      {{ data.issuer.rating_job.rating_decision.get_proposed_st_display|default:'<em>Not set.</em>' }}
+    </td>
+
+    {% if show_final_score %}
+      <td align="right">
+        {{ data.issuer.rating_job.rating_decision.get_decided_st_display|default:'<em>Not set.</em>' }}
+      </td>
+    {% endif %}
+
+
+    {% if allow_edit and auth.issuer.rating_job.edit %}
+
+      <td align="right">
+
+
+          <a href="{% url 'rating_decision_update_field' rating_decision_pk=data.issuer.rating_job.rating_decision.id field=is_recommended_st %}"
+            class="fm-update"
+            data-fm-head="Edit decided short-term rating"
+            data-fm-callback="reload"
+            data-fm-target="#object-{{ data.issuer.rating_job.rating_decision.id }}">
+
+            <i class="fas fa-edit"></i>
+          </a>
+
+      </td>
+
+    {% endif %}
+
+  </tr>
+
+  <tr style="background-color: #FFFFFF;">
+    <td>&nbsp;</td>
+  </tr>
+
+  <tr style="background-color: #FFFFFF;;border-bottom-style: solid;border-color:#000000; border-width: 1px;">
+    <th colspan="100%" align="left">Issue rating</th>
+  </tr>
+
+  {% if allow_edit and auth.issuer.rating_job.edit and data.issuer.rating_job.rating_decision.get_process_step_display == 'analytical_phase' %}
+    <tr>
+      <td align="right" colspan="100%">
+          <a href="{% url 'rating_issue_add' rating_decision_pk=data.issuer.rating_job.rating_decision.id %}"
+             class="fm-create"
+             data-fm-head="Add seniority level"
+             data-fm-callback="reload">
+             <i class="fas fa-plus"></i>
+            Add seniority level
+          </a>
+      </th>
+    </tr>
+  {% endif %}
+
+  {% for issue in data.issuer.rating_job.subscores.issue %}
+
+    {% existing_issue_rating issue.seniority data.issuer.rating_job.rating_decision.previous_rating as existing_issue_rating %}
+
+      <tr style="background-color: #FFFFFF">
+        <td colspan="3">
+          {{ issue.seniority }}
+        </td>
+        <td align="right">
+          {{ existing_issue_rating.get_decided_lt_display | default:'n/a' }}
+        </td>
+
+        <td align="right">
+          {{ issue.proposed_lt|return_long_term_rating }}
+        </td>
+
+        {% if show_final_score %}
+          <td align="right">
+            {{ issue.decided_lt|return_long_term_rating }}
+          </td>
+        {% endif %}
+
+        {% if allow_edit and auth.issuer.rating_job.edit %}
+          <td align="right">
+
+              <a href="{% url 'rating_issue_edit' rating_decision_issue_pk=issue.id decided=is_recommended %}"
+                 class="fm-update"
+                 data-fm-head="Edit {{ issue.seniority }}"
+                 data-fm-callback="reload"
+                 data-fm-target="#object-{{ issue.id }}">
+
+                <i class="fas fa-edit"></i>
+              </a>
+
+          </td>
+        {% endif %}
+      </tr>
+
+  {% empty %}
+
+    <tr>
+      <td colspan="100%"><em>No seniority levels added.</em></td>
+    </tr>
+
+  {% endfor %}
+
+
+</table>
+
+<br><br>

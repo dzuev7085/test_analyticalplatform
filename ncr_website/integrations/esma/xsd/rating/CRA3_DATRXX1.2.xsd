@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dr="urn:publicid:ESMA:CRA3:DATRXX:V1.2" xmlns:dtypes="urn:publicid:ESMA:CRA3:DATATYPES:V1.2" targetNamespace="urn:publicid:ESMA:CRA3:DATRXX:V1.2" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:annotation>
+		<xs:documentation>CRA3 Qualitative Data Reports : DATRXX v1.2</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="urn:publicid:ESMA:CRA3:DATATYPES:V1.2" schemaLocation="CRA3_DataTypes1.2.xsd"/>
+	<!-- ========================================================================
+					RatingDataReport 
+	  ======================================================================== -->
+	<xs:element name="RatingDataReport">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RatingActionCancellationData" type="dr:RatingActionCancellationDataType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="RatingCompleteCancellationData" type="dr:RatingCompleteCancellationDataType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="RatingCreateData" type="dtypes:ComplexRatingActionType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="RatingUpdateData" type="dr:RatingUpdateDataType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="RatingActionCorrectionData" type="dr:RatingActionCorrectionDataType" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="ESMACRACode" type="dtypes:AlphaNumeric5Type" use="required"/>
+			<xs:attribute name="ReportingCRALEI" type="dtypes:LEICodeType" use="required"/>
+			<xs:attribute name="Version" type="dtypes:VersionType" use="required"/>
+			<xs:attribute name="CreationDateAndTime" type="xs:dateTime" use="required">
+				<xs:annotation>
+					<xs:documentation>"Creation date" : The date at which the file was created, ISO 8601 standard.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<!-- ========================================================================
+					RatingUpdateType Definition
+	  ======================================================================== -->
+	<xs:complexType name="RatingUpdateDataType">
+		<xs:sequence>
+			<xs:element name="UpdateRating" type="dtypes:ComplexUpdateRatingType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ========================================================================
+					CompleteCancellationratingType Definition
+	  ======================================================================== -->
+	<xs:complexType name="RatingCompleteCancellationDataType">
+		<xs:sequence>
+			<xs:element name="CompleteCancellationRating" type="dtypes:ComplexCompleteCancellationRatingType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ========================================================================
+					CancellationratingActionType Definition
+	  ======================================================================== -->
+	<xs:complexType name="RatingActionCancellationDataType">
+		<xs:sequence>
+			<xs:element name="CancellationRatingAction" type="dtypes:ComplexCancellationRatingActionType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ========================================================================
+					RatingActionCorrectionType Definition
+	  ======================================================================== -->
+	<xs:complexType name="RatingActionCorrectionDataType">
+		<xs:sequence>
+			<xs:element name="CorrectionRatingAction" type="dtypes:ComplexCorrectionRatingActionType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

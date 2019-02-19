@@ -1,0 +1,102 @@
+{% load template_tags %}
+
+<!-- Operating environment -->
+<tr>
+  <th width="180px" align="left">{{ data.issuer.rating_job.subscores.competitive_position.0.subfactor.factor }}</th>
+  <th align="left">Subfactor</th>
+  <th class="table-th-right" align="right">Weight</th>
+  <th class="table-th-right" align="right">Existing</th>
+  <th class="table-th-right" align="right">Recommended</th>
+
+  {% if show_final_score %}
+    <th class="table-th-right" align="right">Final</th>
+  {% endif %}
+
+  {% if allow_edit and auth.issuer.rating_job.edit %}
+    <th align="right">&nbsp;</th>
+  {% endif %}
+
+</tr>
+</thead>
+
+{% for object in data.issuer.rating_job.subscores.competitive_position %}
+<tr>
+  <td>
+    &nbsp;
+  </td>
+  <td>
+    {{ object.subfactor.name }}
+  </td>
+  <td align="right">
+    {{ object.weight|format_percent:"1"|default:'No impact' }}
+  </td>
+
+  <td align="right">
+    {% get_subscore data.issuer.rating_job.existing.scores object.subfactor.id 'decided_score' as score %}
+    {{ score }}
+  </td>
+
+  <td align="right">
+    {{ object.get_proposed_score_display|lower|default:'n/a' }}
+    ({{ object.proposed_score|default:'n/a' }})
+  </td>
+
+  {% if show_final_score %}
+    <td align="right">
+      {{ object.get_decided_score_display|lower|default:'n/a' }}
+      ({{ object.decided_score|default:'n/a' }})
+    </td>
+  {% endif %}
+
+
+  {% if allow_edit and auth.issuer.rating_job.edit %}
+
+    <td align="right">
+
+      <a href="{% url 'rating_score_subfactor_update' subscore_pk=object.id decided=is_recommended edit_weight=0 %}"
+         class="fm-update"
+         data-fm-head="Edit {{ object.subfactor.name }}"
+         data-fm-callback="reload"
+         data-fm-target="#object-{{ object.id }}">
+        <i class="fas fa-edit"></i>
+      </a>
+
+    </td>
+  {% endif %}
+
+</tr>
+{% endfor %}
+
+
+
+<tr class="tr-topline" style="background-color: #FFFFFF; border-top-style: solid;border-color:#000000; border-width: 1px;">
+  <td colspan="2">Indicative competitive position assessment</td>
+  <td align="right">
+    {{ data.issuer.rating_job.proposed_rating.rating.competitive_position.weight|format_percent:"1" }}
+  </td>
+
+  <td align="right">
+    {% if data.issuer.rating_job.existing.calc_rating.rating.competitive_position.ira %}
+      {{ data.issuer.rating_job.existing.calc_rating.rating.competitive_position.ira }} ({{ data.issuer.rating_job.existing.calc_rating.rating.competitive_position.weighted_score|floatformat:2 }})</td>
+    {% else %}
+      n/a
+    {% endif %}
+  </td>
+
+  <td align="right">
+    {{ data.issuer.rating_job.proposed_rating.rating.competitive_position.ira|default:'n/a' }}
+    ({{ data.issuer.rating_job.proposed_rating.rating.competitive_position.weighted_score|floatformat:2|default:'n/a' }})
+  </td>
+
+  {% if show_final_score %}
+    <td align="right">
+      {{ data.issuer.rating_job.decided_rating.rating.competitive_position.ira|default:'n/a' }}
+      ({{ data.issuer.rating_job.decided_rating.rating.competitive_position.weighted_score|floatformat:2|default:'n/a' }})
+    </td>
+  {% endif %}
+
+  {% if allow_edit and auth.issuer.rating_job.edit %}
+    <td>&nbsp;</td>
+  {% endif %}
+
+</tr>

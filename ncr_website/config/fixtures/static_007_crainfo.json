@@ -1,0 +1,17 @@
+[
+  {
+    "model":"static_database_table.crainfo",
+    "fields":{
+      "cra_name": "Nordic Credit Rating AS",
+      "cra_description": "Nordic Credit Rating is a credit rating agency headquartered in Oslo with a branch in Stockholm. We provide credit ratings to issuers of bonds in the Nordic region based on independent and objective analysis with local insights. Ratings will only be submitted to RADAR from the Norweigan entity.",
+      "cra_methodology": "We assign long- and short-term ratings on corporates and financial institutions. Ratings are assigned to issuers and issues. The rating scale is the same for both type of issuers.",
+      "cra_methodology_webpage_link": "nordiccreditrating.com/governance/methodologies",
+      "solicited_unsolicited_rating_policy_description": "Nordic Credit Rating AS does not assign unsolicited ratings.",
+      "subsidiary_rating_policy": "Nordic Credit Rating AS does rate subsidiaries.",
+      "global_reporting_scope_flag": 1,
+      "definition_default": "Following the failure to make principal or interest payments in accordance with the contractual terms of a rated financial instrument (after a contractual grace period, if applicable); upon bankruptcy filing or similar action; and upon completion of a distressed exchange, whereby existing debt obligations are replaced with a new obligation that is less than the original commitment (such as a swap of debt with lower coupon or face value, lower seniority, or with longer maturity) or the exchange is carried out in order to avoid a near-term default of the issuer.",
+      "cra_website_link": "nordiccreditrating.com"
+    },
+    "pk":1
+  }
+]

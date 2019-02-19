@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load template_tags %}
+
+{% block content %}
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>
+          Suggested final version
+        </th>
+        <th>&nbsp;</th>
+        <th>
+          Track changes
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td>
+          <strong>Issuer</strong>
+          <br>
+          {{ issuer.finale | safe }}
+        </td>
+        <td>&nbsp;</td>
+        <td>
+          <strong>Issuer</strong>
+          <br>
+          {{ issuer.diff | safe }}
+        </td>
+      </tr>
+
+      <tr><td>&nbsp;</td></tr>
+
+      <tr>
+        <td>
+          <strong>Rating rationale</strong>
+          <br>
+          {{ rating_rationale.finale | safe }}
+        </td>
+        <td>&nbsp;</td>
+        <td>
+          <strong>Rating rationale</strong>
+          <br>
+          {{ rating_rationale.diff | safe }}
+        </td>
+      </tr>
+
+      <tr><td>&nbsp;</td></tr>
+
+      <tr>
+        <td>
+          <strong>Outlook</strong>
+          <br>
+          {{ outlook.finale | safe }}
+        </td>
+        <td>&nbsp;</td>
+        <td>
+          <strong>Outlook</strong>
+          <br>
+          {{ outlook.diff | safe }}
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <strong>Positive drivers</strong>
+          <br>
+          {{ positive_drivers.finale | safe }}
+        </td>
+        <td>&nbsp;</td>
+        <td>
+          <strong>Rating rationale</strong>
+          <br>
+          {{ positive_drivers.diff | safe }}
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <strong>Negative drivers</strong>
+          <br>
+          {{ negative_drivers.finale | safe }}
+        </td>
+        <td>&nbsp;</td>
+        <td>
+          <strong>Negative rationale</strong>
+          <br>
+          {{ negative_drivers.diff | safe }}
+        </td>
+      </tr>
+
+
+    </tbody>
+  </table>
+
+  {% if request.user|has_group:"Editor" %}
+  {% endif %}
+
+{% endblock %}

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dq="urn:publicid:ESMA:CRA3:DATFQL:V1.0" xmlns:dtypes="urn:publicid:ESMA:CRA3:DATATYPES:V1.0" targetNamespace="urn:publicid:ESMA:CRA3:DATFQL:V1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation></xs:documentation>
+	</xs:annotation>
+	<!--===== Imports =====-->
+	<xs:import namespace="urn:publicid:ESMA:CRA3:DATATYPES:V1.0" schemaLocation="CRA3_FeesDataTypes1.0.xsd"/>
+	<!-- ========================================================================
+					Fees Qualitative Data 
+	  ======================================================================== -->
+	<xs:element name="FeesQualDataReport">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="QualitativeDataReportInfo" type="dq:QualitativeDataReportInfoType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="PricingPoliciesCancellation" type="dq:PricingPoliciesCancellationType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="FeeSchedulesCancellation" type="dq:FeeSchedulesCancellationType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="FeeProgrammesCancellation" type="dq:FeeProgramsCancellationType" minOccurs="0" maxOccurs="1"/>				
+				<xs:element name="PricingProceduresCancellation" type="dq:PricingProceduresCancellationType" minOccurs="0" maxOccurs="1"/>
+			</xs:sequence>
+			<xs:attribute name="ESMACRACode" type="dtypes:AlphaNumeric5Type" use="required"/>
+			<xs:attribute name="ReportingCRALEI" type="dtypes:LEICodeType" use="required"/>
+			<xs:attribute name="Version" type="dtypes:VersionType" use="required"/>
+			<xs:attribute name="CreationDateAndTime" type="xs:dateTime" use="required">
+				<xs:annotation>
+					<xs:documentation>"Creation date" : The date at which the file was created, ISO 8601 standard.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	
+	<!-- ========================================================================
+	              Definitions 
+	  ======================================================================== -->
+	<xs:complexType name="QualitativeDataReportInfoType">
+		<xs:sequence>			
+			<xs:element name="PricingPoliciesList" type="dtypes:PricingPoliciesListType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="FeeSchedulesList" type="dtypes:FeeSchedulesListType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="FeeProgrammesList" type="dtypes:FeeProgrammesListType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="PricingProceduresList" type="dtypes:PricingProceduresListType" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="PricingPoliciesCancellationType">
+		<xs:sequence>
+			<xs:element name="PricingPolicyCancellation" type="dtypes:ComplexPricingPolicyCancellationType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="FeeSchedulesCancellationType">
+		<xs:sequence>
+			<xs:element name="FeeScheduleCancellation" type="dtypes:ComplexFeeScheduleCancellationType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>	
+	
+	<xs:complexType name="FeeProgramsCancellationType">
+		<xs:sequence>
+			<xs:element name="FeeProgramCancellation" type="dtypes:ComplexFeeProgrammeCancellationType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="PricingProceduresCancellationType">
+		<xs:sequence>
+			<xs:element name="PricingProcedureCancellation" type="dtypes:ComplexPricingProcedureCancellationType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

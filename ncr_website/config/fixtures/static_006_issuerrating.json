@@ -1,0 +1,24 @@
+[
+   {
+      "model":"static_database_table.issuerrating",
+      "fields":{
+         "name":"Issuer Financial Strength",
+         "description":"Assessment on the financial strength of a corporation.",
+         "standard":1,
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+      },
+      "pk":1
+   },
+   {
+      "model":"static_database_table.issuerrating",
+      "fields":{
+         "name":"Issue Financial Strength",
+         "description":"Assessment on the financial strength of a corporation's issued debt.",
+         "standard":2,
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+      },
+      "pk":2
+   }
+]

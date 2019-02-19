@@ -1,0 +1,35 @@
+{% if global_variables.environment == "DEV" %}
+  <div class="dev-environment">
+    Development Environment,
+    v{{ global_variables.version.code }}
+
+    |
+    <a style="color: white" href="{% url 'dev_uat_switch_user' %}?username=analyst1">Analyst #1</a> |
+    <a style="color: white" href="{% url 'dev_uat_switch_user' %}?username=analyst2">Analyst #2</a> |
+    <a style="color: white" href="{% url 'dev_uat_switch_user' %}?username=senioranalyst1">Senior analyst #1</a> |
+    <a style="color: white" href="{% url 'dev_uat_switch_user' %}?username=senioranalyst2">Senior analyst #2</a> |
+    <a style="color: white" href="{% url 'dev_uat_switch_user' %}?username=commercial">Commercial</a> |
+    <a style="color: white" href="{% url 'dev_uat_switch_user' %}?username=editor">Editor</a> |
+    <a style="color: white" href="{% url 'dev_uat_switch_user' %}?username=review">Reviewer</a> |
+    <a style="color: white" href="{% url 'dev_uat_switch_user' %}?username=compliance">Compliance</a> |
+    <a style="color: white" href="{% url 'dev_uat_switch_user' %}?username=cro">CRO</a>
+
+  </div>
+{% elif global_variables.environment == "UAT" %}
+  <div class="uat-environment">
+    User Acceptance Test Environment,
+    v{{ global_variables.version.code }}
+
+    |
+    <a style="color: white" href="{% url 'dev_uat_switch_user' %}?username=analyst1">Analyst #1</a> |
+    <a style="color: white" href="{% url 'dev_uat_switch_user' %}?username=analyst2">Analyst #2</a> |
+    <a style="color: white" href="{% url 'dev_uat_switch_user' %}?username=senioranalyst1">Senior analyst #1</a> |
+    <a style="color: white" href="{% url 'dev_uat_switch_user' %}?username=senioranalyst2">Senior analyst #2</a> |
+    <a style="color: white" href="{% url 'dev_uat_switch_user' %}?username=commercial">Commercial</a>|
+    <a style="color: white" href="{% url 'dev_uat_switch_user' %}?username=editor">Editor</a> |
+    <a style="color: white" href="{% url 'dev_uat_switch_user' %}?username=review">Reviewer</a> |
+    <a style="color: white" href="{% url 'dev_uat_switch_user' %}?username=compliance">Compliance</a> |
+    <a style="color: white" href="{% url 'dev_uat_switch_user' %}?username=cro">CRO</a>
+
+  </div>
+{% endif %}

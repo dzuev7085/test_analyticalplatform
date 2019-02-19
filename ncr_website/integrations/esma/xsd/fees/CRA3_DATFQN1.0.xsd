@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dr="urn:publicid:ESMA:CRA3:DATFQN:V1.0" xmlns:dtypes="urn:publicid:ESMA:CRA3:DATATYPES:V1.0" targetNamespace="urn:publicid:ESMA:CRA3:DATFQN:V1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation></xs:documentation>
+	</xs:annotation>
+	<!--===== Imports =====-->
+	<xs:import namespace="urn:publicid:ESMA:CRA3:DATATYPES:V1.0" schemaLocation="CRA3_FeesDataTypes1.0.xsd"/>
+	<!-- ========================================================================
+					FeesDataReport 
+	  ======================================================================== -->
+	<xs:element name="FeesDataReport">
+		<xs:complexType>
+			<xs:sequence>				
+				<xs:element name="FeesClientSummaryUnderIssuerPaysModelList" type="dtypes:FeesClientSummaryUnderIssuerPaysModelListType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="FeesIndividualCreditRatingsUnderIssuerPaysModelList" type="dtypes:FeesIndividualCreditRatingsUnderIssuerPaysModelListType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="FeesClientSummaryUnderSubscriptionOrInvestorsPaysModelList" type="dtypes:FeesClientSummaryUnderSubscriptionOrInvestorsPaysModelListType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="FeesClientSummaryUnderIssuerPaysModelCancellation" type="dr:FeesClientSummaryUnderIssuerPaysModelCancellationType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="FeesIndividualCreditRatingsUnderIssuerPaysModelCancellation" type="dr:FeesIndividualCreditRatingsUnderIssuerPaysModelCancellationType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="FeesClientSummaryUnderSubscriptionOrInvestorsPaysModelCancellation" type="dr:FeesClientSummaryUnderSubscriptionOrInvestorsPaysModelCancellationType" minOccurs="0" maxOccurs="1"/>				
+			</xs:sequence>
+			<xs:attribute name="ESMACRACode" type="dtypes:AlphaNumeric5Type" use="required"/>		
+			<xs:attribute name="ReportingCRALEI" type="dtypes:LEICodeType" use="required"/>			
+			<xs:attribute name="Version" type="dtypes:VersionType" use="required"/>
+			<xs:attribute name="CreationDateAndTime" type="xs:dateTime" use="required">
+				<xs:annotation>
+					<xs:documentation>"Creation date" : The date at which the file was created, ISO 8601 standard.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	
+	<!-- ========================================================================
+	              Definitions 
+	  ======================================================================== -->
+	
+	<xs:complexType name="FeesClientSummaryUnderIssuerPaysModelCancellationType">
+		<xs:sequence>
+			<xs:element name="FeesClientSummaryUnderIssuerPaysModelCancellation" type="dtypes:ComplexFeesClientSummaryUnderIssuerPaysModelCancellationType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="FeesIndividualCreditRatingsUnderIssuerPaysModelCancellationType">
+		<xs:sequence>
+			<xs:element name="FeesIndividualCreditRatingsUnderIssuerPaysModelCancellation" type="dtypes:ComplexFeesIndividualCreditRatingsUnderIssuerPaysModelCancellationType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="FeesClientSummaryUnderSubscriptionOrInvestorsPaysModelCancellationType">
+		<xs:sequence>
+			<xs:element name="FeesClientSummaryUnderSubscriptionOrInvestorsPaysModelCancellation" type="dtypes:ComplexFeesClientSummaryUnderSubscriptionOrInvestorsPaysModelCancellationType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+		
+	
+</xs:schema>

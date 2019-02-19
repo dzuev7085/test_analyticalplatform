@@ -1,0 +1,28 @@
+<style>
+  div.footer {
+    display: block;
+    position: running(footer);
+
+    background-color: #eff0f1;
+    bottom: 0mm;
+    left: 0mm;
+    height: 19mm;
+    width: 100%;
+    z-index: -1;
+  }
+
+  .custom-footer-page-number:after {
+    position: relative;
+    top: 15px;
+    left: 736px;
+    font-size: 9pt;
+    text-align: right;
+    font-family: 'Body';
+    content: counter(page) "/" counter(pages);
+    color: #000000;
+  }
+</style>
+
+<div class='footer'>
+  <div class="custom-footer-page-number"></div>
+</div>

@@ -1,0 +1,88 @@
+{% load staticfiles %}
+{% load template_tags %}
+<html lang="en-GB">
+<html>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <head>
+        <title>Nordic Credit Rating - {{ header }}</title>
+
+        <style type="text/css">
+
+        /***********************************************************
+        * Fonts
+        ***********************************************************/
+
+         @page {
+           size: A4 portrait;
+
+          @frame {
+           margin: 20mm 20mm 20mm 20mm;
+           }
+
+         }
+
+          .blue_header {
+            position: relative;
+            top: 0;
+            left: 0;
+
+            background-color: #0D2E54;
+            height: 60mm;
+            width: 100%;
+          }
+
+          .blue_logo {
+            position: absolute;
+            top: 8mm;
+            left: 20mm;
+            z-index: 100;
+          }
+
+
+          .the_content{
+            position: absolute;
+            margin-left: 12mm;
+            margin-top: 8mm;
+            text-align:justify;
+            text-justify: inter-word;
+          }
+
+
+
+        p{
+          text-align: justify;
+          text-justify: inter-word;
+          font-family: 'Body';
+          display: block;
+          margin-top: 0.2em;
+          margin-bottom: 1.1em;
+          color: #000000;
+          font-size: 10pt;
+        }
+
+        ul {
+          text-align: justify;
+          text-justify: inter-word;
+          margin-top: -1em;
+          margin-bottom: -0.2em;
+          color: #000000;
+          font-size: 10pt;
+        }
+
+        </style>
+
+    </head>
+    <body>
+
+      Nordic Credit Rating AS - PRESS RELEASE, Oslo {{ validity_date|date:'Y-m-d' }}
+
+      <h1>
+        {{ header|safe }}
+      </h1>
+
+      {{ pre_amble|safe }}
+
+      {{ body|safe }}
+
+    </body>
+</html>

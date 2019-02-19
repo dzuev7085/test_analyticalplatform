@@ -1,0 +1,58 @@
+[
+   {
+      "fields":{
+         "name":"Senior Unsecured",
+         "description": "Standard senior debt instruments without security.",
+         "seniority_level_id": 1,
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+      },
+      "model":"issue.seniority",
+      "pk":1
+   },
+   {
+      "fields":{
+         "name":"Covered",
+         "description": "Senior debt instrument secured primarily with mortgage loans or other tangible assets that remain on the balance sheet of the issuer.",
+         "seniority_level_id": 2,
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+      },
+      "model":"issue.seniority",
+      "pk":2
+   },
+   {
+      "fields":{
+         "name":"Additional Tier 1",
+         "description": "Junior subordinated capital instrument issued primarily by financial institutions as an equity-like complement to their capital base.",
+         "seniority_level_id": 3,
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+      },
+      "model":"issue.seniority",
+      "pk":3
+   },
+   {
+      "fields":{
+         "name":"Subordinated",
+         "description": "Subordinated capital instruments issued primarily by financial institutions as a complement to their capital base.",
+         "seniority_level_id": 3,
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+
+      },
+      "model":"issue.seniority",
+      "pk":4
+   },
+   {
+      "fields":{
+         "name":"Senior non-preferred",
+         "description": "Senior debt instruments that are junior to senior unsecured debt and senior to Tier 2 subordinated capital instruments.",
+         "seniority_level_id": 3,
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+      },
+      "model":"issue.seniority",
+      "pk":5
+   }
+]

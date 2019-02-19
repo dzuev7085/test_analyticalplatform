@@ -1,0 +1,185 @@
+{% load template_tags %}
+
+<table class="ncrtable" style="font-size: 12px;">
+    <thead>
+        <tr>
+            <th style="">&nbsp;</th>
+            <th style="">&nbsp;</th>
+            <th style="">&nbsp;</th>
+            <th style="">&nbsp;</th>
+            <th style="">&nbsp;</th>
+            <th style="">&nbsp;</th>
+            <th style="">&nbsp;</th>
+            <th style="">&nbsp;</th>
+            <th style=" vertical-align: bottom; text-align:center; border-bottom: 1.5px solid white;" colspan="4">Competitive position</th>
+            <th>&nbsp;</th>
+            <th style=" vertical-align: bottom; text-align:center; border-bottom: 1.5px solid white;">Financial risk<br>assessment</th>
+
+            <th style="">&nbsp;</th>
+
+            <th style=" vertical-align: bottom; text-align:center; border-bottom: 1.5px solid white;" colspan="3">Adjustment factors</th>
+
+            <th style=" vertical-align: bottom; text-align:right;">&nbsp;</th>
+
+            <th style=" vertical-align: bottom; text-align:right; border-bottom: 1.5px solid white;">Support</th>
+
+        </tr>
+
+        <tr>
+            <th style=" vertical-align: bottom;">Sector</th>
+            <th style=" vertical-align: bottom;">Country</th>
+            <th style=" vertical-align: bottom;">Company</th>
+            <th style=" vertical-align: bottom;">Type</th>
+            <th style="vertical-align: bottom; text-align:right;">Rating</th>
+            <th style=" vertical-align: bottom;">Outlook</th>
+            <th style="vertical-align: bottom; text-align:right;">Assessment</th>
+            <th style=" vertical-align: bottom; text-align:right;">Published</th>
+            <th style=" vertical-align: bottom; text-align:right;">Operating<br>environment</th>
+            <th style=" vertical-align: bottom; text-align:right;">Market pos,<br>size, div</th>
+            <th style=" vertical-align: bottom; text-align:right;">Portfolio<br>assessment</th>
+            <th style=" vertical-align: bottom; text-align:right;">Operating<br>efficiency</th>
+            <th>&nbsp;</th>
+            <th style=" vertical-align: bottom; text-align:right;">Total</th>
+
+            <th style=" vertical-align: bottom; text-align:right;">ICA</th>
+
+            <th style=" vertical-align: bottom; text-align:right;">Liquidity</th>
+            <th style=" vertical-align: bottom; text-align:right;">Peer<br>comparison</th>
+            <th style=" vertical-align: bottom; text-align:right;">ESG</th>
+
+            <th style=" vertical-align: bottom; text-align:right;">SACA</th>
+
+            <th style=" vertical-align: bottom; text-align:right;">Total</th>
+
+        </tr>
+
+        <tr style="font-size: 9px;">
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            <th style=" vertical-align: bottom; text-align:right;">20%</th>
+            <th style=" vertical-align: bottom; text-align:right;">12.5%</th>
+            <th style=" vertical-align: bottom; text-align:right;">12.5%</th>
+            <th style=" vertical-align: bottom; text-align:right;">5%</th>
+            <th>&nbsp;</th>
+            <th style=" vertical-align: bottom; text-align:right;">50%</th>
+
+            <th>&nbsp;</th>
+
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+
+            <th>&nbsp;</th>
+
+            <th>&nbsp;</th>
+
+        </tr>
+
+    </thead>
+    <tbody>
+        {% for d in issuer_list %}
+
+          <tr style="white-space: nowrap;">
+            <td>
+              {{ d.issuer.gics_sub_industry.industry.industry_group.sector.name }}
+            </td>
+
+            <td>
+              {{ d.issuer.address.country.name }}
+            </td>
+
+            <td>
+                <a href="{% url 'issuer_view' pk=d.issuer.id %}">{{ d.issuer.legal_name }}</a>
+            </td>
+
+            <td>
+              {{ d.current_rating.data.rating_type }} rating
+            </td>
+
+            <td align="right">
+              {{ d.current_rating.data.get_decided_lt_display }}
+            </td>
+
+            <td align="right">
+              {{ d.current_rating.data.get_decided_lt_outlook_display }}
+            </td>
+
+            <td align="right">
+              -
+            </td>
+
+            <td align="right">
+              {{ d.current_rating.data.date_time_published|date:'Y-m-d' }}
+            </td>
+
+            <td align="right">
+              {% get_subscore d.current_rating 'score_data' 'Operating environment' as x %}
+              {{ x.score_display }} ({{ x.score_value }})
+            </td>
+
+            <td align="right">
+              {% get_subscore d.current_rating 'score_data' 'Market position, size and diversification' as x %}
+              {{ x.score_display }} ({{ x.score_value }})
+            </td>
+
+            <td align="right">
+              {% get_subscore d.current_rating 'score_data' 'Portfolio assessment' as x %}
+              {{ x.score_display }} ({{ x.score_value }})
+            </td>
+
+            <td align="right">
+              {% get_subscore d.current_rating 'score_data' 'Operating efficiency' as x %}
+              {{ x.score_display }} ({{ x.score_value }})
+            </td>
+
+            <td></td>
+
+            <td align="right">
+              {% get_subscore d.current_rating 'score_data' 'Financial risk assessment' as x %}
+              {{ x.score_display }} ({{ x.score_value }})
+            </td>
+
+            <td align="right">
+              {{ d.current_rating.calculated_rating.indicative_credit_assessment }}
+            </td>
+
+            <td align="right">
+              {% get_subscore d.current_rating 'score_data' 'Liquidity' as x %}
+              {{ x.adjustment_value|format_plus_minus }}
+            </td>
+
+            <td align="right">
+              {% get_subscore d.current_rating 'score_data' 'Peer comparison' as x %}
+              {{ x.adjustment_value|format_plus_minus }}
+            </td>
+
+            <td align="right">
+              {% get_subscore d.current_rating 'score_data' 'ESG' as x %}
+              {{ x.adjustment_value|format_plus_minus }}
+            </td>
+
+            <td align="right">
+              {{ d.current_rating.calculated_rating.stand_alone_credit_assessment }}
+            </td>
+
+            <td align="right">
+              {% get_subscore d.current_rating 'score_data' 'Ownership support' as x %}
+              {{ x.adjustment_value|format_plus_minus }}
+            </td>
+
+          </tr>
+        {% empty %}
+          <tr>
+            <td colspan="100%">No issuers on list</td>
+          </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<br><br><br><br>

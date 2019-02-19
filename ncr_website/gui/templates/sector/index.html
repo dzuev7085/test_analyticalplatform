@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load template_tags %}
+{% load financial_statement %}
+{% load humanize %}
+
+{% block content %}
+
+  {% if issuer_type == '1' %}
+    {% include 'sector/corporate.html' %}
+  {% elif issuer_type == '2' %}
+    {% include 'sector/financial.html' %}
+  {% elif issuer_type == '3' %}
+    {% include 'sector/real_estate.html' %}
+  {% endif %}
+
+{% endblock %}

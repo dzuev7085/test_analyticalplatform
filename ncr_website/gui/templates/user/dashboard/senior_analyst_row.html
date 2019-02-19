@@ -1,0 +1,80 @@
+{% load template_tags %}
+
+
+<div class="row">
+  <div class="col">
+    <!-- Column 1 -->
+
+    <div class="card-body">
+      <h5 class="card-title subheader">
+        Proposed decisions for issues:
+      </h5>
+
+      <p class="card-text">
+
+        <table border="0" cellpadding="0" cellspacing="0" class="ncrtable">
+          <thead>
+            <tr>
+              <th>
+                Issuer
+              </th>
+              <th>
+                ISIN
+              </th>
+              <th>
+                Program
+              </th>
+              <th class="table-th-right" align="right">
+                Proposed rating
+              </th>
+              <th>&nbsp;</th>
+            <tr>
+          </thead>
+          {% for d in pending_issue_decision %}
+            <tr>
+              <td valign="top" style="vertical-align: top;">
+                {{ d.issue.issuer.legal_name }}
+              </td>
+              <td valign="top" style="vertical-align: top;">
+                {{ d.issue.isin }}
+              </td>
+              <td valign="top" style="vertical-align: top;">
+                {{ d.issue.program }}
+              </td>
+              <td valign="top" style="vertical-align: top;">
+                {{ d.get_decided_lt_display }}
+              </td>
+              <td align="right" valign="top" style="vertical-align: top;">
+                  <a href="{% url 'issuer_rating_job_edit_issue_decision' issue_decision_pk=d.id %}"
+                     class="fm-update"
+                     data-fm-head="Final review of proposed issue rating"
+                     data-fm-callback="reload"
+                     data-fm-target="#object-{{ d.id }}">
+
+                    Open
+                  </a>
+              </td>
+            </tr>
+          {% empty %}
+            <tr>
+              <td colspan="100%">
+                <em>There are no proposed decisions.</em>
+              </td>
+            </tr>
+          {% endfor %}
+        </table>
+
+      </p>
+
+    </div>
+
+
+  </div>
+
+  <div class="col">
+    <!-- Column 2 -->
+
+  </div>
+
+</div>
+

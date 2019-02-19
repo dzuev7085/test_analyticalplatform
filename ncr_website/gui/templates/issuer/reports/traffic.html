@@ -1,0 +1,88 @@
+{% extends 'report_cover_v1.html' %}
+{% load template_tags %}
+{% block content %}
+
+
+<br><br>
+
+<div style="width: 90%; margin: auto;">
+  <div class="subheader">
+    Chart 1: Visitor's geographical location
+  </div>
+  <div class="body">
+    The chart displays visitors of nordiccreditrating.com that have either visited a page relating to the issuer, or downloaded a report relating to the issuer.
+  </div>
+
+  <img src="{{ content.charts.world_map }}"/>
+</div>
+
+<br><br>
+
+<div style="border: solid black 0px; width: 90%; margin: auto;">
+  <div class="subheader">
+    Chart 2: Page views and number of report downloads
+  </div>
+  <div class="body">
+    The chart displays the number of times visitors of nordiccreditrating.com have visited a page relating to the issuer and downloaded a report relating to the issuer. In this report, a reload of a specific page is counted only once.
+  </div>
+
+  <img src="{{ content.charts.pageviews_users }}"/>
+
+</div>
+
+<div class="pageBreak"></div>
+
+<div style="width: 90%; margin: auto;">
+
+  <div class="subheader">
+    Table 1: newsletters
+  </div>
+  <div class="body" >
+    The table displays all sent newsletters relating to the issuer, including the number of recipients, number of opens and number of clicks. The rates are the number of opens and clicks in relation to the total number of recipients.
+  </div>
+
+  <table border="0" cellpadding="0" cellspacing="0" class="ncrtable">
+    <thead style="text-transform: uppercase; font-size:8pt;">
+      <tr>
+        <th style="text-align: left;">Sent</th>
+        <th style="text-align: left;">Subject</th>
+        <th class="table-th-right" align="right"># recipients</th>
+        <th class="table-th-right" align="right">Opens (rate)</th>
+        <th class="table-th-right" align="right">Clicks (rate)</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      {% for d in content.campaigns %}
+        <tr>
+          <td valign="top">
+            {{ d.report_summary.send_time|date:'Y-m-d' }}
+          </td>
+          <td valign="top">
+            {{ d.settings.subject_line }}
+          </td>
+          <td valign="top" align="right">
+            {{ d.report_summary.emails_sent }}
+          </td>
+          <td align="right" valign="top">
+            {{ d.report_summary.unique_opens }} ({{ d.report_summary.open_rate|format_percent }})
+          </td>
+          <td align="right" valign="top">
+            {{ d.report_summary.clicks }} ({{ d.report_summary.click_rate|format_percent }})
+          </td>
+
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="100%">
+            No newsletters sent.
+          </td>
+        </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
+</div>
+
+
+{% endblock %}

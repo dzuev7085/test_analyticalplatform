@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% load template_tags %}
+{% load financial_statement %}
+{% load humanize %}
+
+{% block content %}
+
+<table class="ncrtable" style="font-size: 12px;">
+    <thead>
+        <tr>
+            <th style=" vertical-align: bottom;">Sector</th>
+            <th style=" vertical-align: bottom;">Company</th>
+            <th style="text-align: right; vertical-align: bottom;">Currency</th>
+            <th style="text-align: right; vertical-align: bottom;">Report<br>date</th>
+            <th style="text-align: right; vertical-align: bottom;">Revenue</th>
+            <th style="text-align: right; vertical-align: bottom;">Total assets</th>
+            <th style="text-align: right; vertical-align: bottom;">Debt</th>
+            <th style="text-align: right; vertical-align: bottom;">EBITDA</th>
+            <th style="text-align: right; vertical-align: bottom;">FFO</th>
+            <th style="text-align: right; vertical-align: bottom;">FOCF</th>
+            <th style="text-align: right; vertical-align: bottom;">FFO/<br>debt</th>
+            <th style="text-align: right; vertical-align: bottom;">Debt/<br>EBITDA</th>
+            <th style="text-align: right; vertical-align: bottom;">FOCF/<br>debt</th>
+            <th style="text-align: right; vertical-align: bottom;">DCF/<br>debt</th>
+            <th style="text-align: right; vertical-align: bottom;">EBITDA/<br>interest</th>
+            <th style="text-align: right; vertical-align: bottom;">LTV</th>
+            <th style="text-align: right; vertical-align: bottom;">Debt /<br>(debt+equity)</th>
+        </tr>
+        <tr>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            <th style="text-align: right;">million</th>
+            <th style="text-align: right;">million</th>
+            <th style="text-align: right;">million</th>
+            <th style="text-align: right;">million</th>
+            <th style="text-align: right;">million</th>
+            <th style="text-align: right;">million</th>
+            <th style="text-align: right;">&nbsp;</th>
+            <th style="text-align: right;">&nbsp;</th>
+            <th style="text-align: right;">&nbsp;</th>
+            <th style="text-align: right;">&nbsp;</th>
+            <th style="text-align: right;">&nbsp;</th>
+            <th style="text-align: right;">&nbsp;</th>
+            <th style="text-align: right;">&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>&nbsp;</td></tr>
+
+        {% for object in object_list %}
+
+          {% item_value financials|get_item:object.lei 'generic_information.report_date' as date %}
+          {% item_value financials|get_item:object.lei 'generic_information.currency' as currency %}
+          {% item_value financials|get_item:object.lei 'income_statement.revenue' as revenue %}
+          {% item_value financials|get_item:object.lei 'balance_sheet.total_assets' as ta %}
+          {% item_value financials|get_item:object.lei 'calculation_adjustment.adjusted_debt' as debt %}
+          {% item_value financials|get_item:object.lei 'income_statement.ebitda' as ebitda %}
+          {% item_value financials|get_item:object.lei 'calculation_adjustment.adjusted_ffo' as ffo %}
+          {% item_value financials|get_item:object.lei 'calculation_adjustment.adjusted_focf' as focf %}
+          {% item_value financials|get_item:object.lei 'ratios.ffo_debt' as ffo_debt %}
+          {% item_value financials|get_item:object.lei 'ratios.debt_ebitda' as debt_ebitda %}
+          {% item_value financials|get_item:object.lei 'ratios.focf_debt' as focf_debt %}
+          {% item_value financials|get_item:object.lei 'ratios.dcf_debt' as dcf_debt %}
+          {% item_value financials|get_item:object.lei 'ratios.ebitda_interest' as ebitda_interest %}
+          {% item_value financials|get_item:object.lei 'ratios.ltv' as ltv %}
+          {% item_value financials|get_item:object.lei 'ratios.debt_debt_equity' as debt_debt_equity %}
+
+          {% ifchanged object.peer_sector %}
+            {% if forloop.counter > 1 %}
+              <tr><td>&nbsp;</td></tr>
+            {% endif %}
+          {% endifchanged %}
+
+          <tr style="white-space: nowrap;">
+            <td style="vertical-align: top;">
+              {% ifchanged %}{{ object.peer_sector|default:'Not assigned' }}{% endifchanged %}
+            </td>
+            <td style="vertical-align: top;">
+              <a href="{% url 'issuer_view' pk=object.id %}">{{ object.short_name|default:object.legal_name }}</a>
+            </td>
+            <td align="right" style="text-align: right; vertical-align: top;">
+                {{ currency|default:'' }}
+            </td>
+            <td style="vertical-align: top;">
+              {{ date|date:'Y-m-d' }}
+            </td>
+            <td align="right" style="text-align: right; vertical-align: top;">
+              <a onclick="open_window('{% url 'peer_chart' item='income_statement.revenue' readable_name='Revenue'|escape_slash format_as='' issuer_id=object.id chart_type='horizontal_bar' %}');">
+                {{ revenue | format_mn | intcomma }}
+              </a>
+            </td>
+            <td align="right" style="text-align: right; vertical-align: top;">
+              <a onclick="open_window('{% url 'peer_chart' item='balance_sheet.total_assets' readable_name='Total assets'|escape_slash format_as='' issuer_id=object.id chart_type='horizontal_bar' %}');">
+                {{ ta | format_mn | intcomma }}
+              </a>
+            </td>
+            <td align="right" style="text-align: right; vertical-align: top;">
+              <a onclick="open_window('{% url 'peer_chart' item='calculation_adjustment.adjusted_debt' readable_name='Debt'|escape_slash format_as='' issuer_id=object.id chart_type='horizontal_bar' %}');">
+                {{ debt | format_mn | intcomma }}
+              </a>
+            </td>
+            <td align="right" style="text-align: right; vertical-align: top;">
+              <a onclick="open_window('{% url 'peer_chart' item='income_statement.ebitda' readable_name='EBITDA'|escape_slash format_as='' issuer_id=object.id chart_type='horizontal_bar' %}');">
+                {{ ebitda | format_mn | intcomma }}
+              </a>
+            </td>
+            <td align="right" style="text-align: right; vertical-align: top;">
+              <a onclick="open_window('{% url 'peer_chart' item='calculation_adjustment.adjusted_ffo' readable_name='FFO'|escape_slash format_as='' issuer_id=object.id chart_type='horizontal_bar' %}');">
+                {{ ffo | format_mn | intcomma }}
+              </a>
+            </td>
+            <td align="right" style="text-align: right; vertical-align: top;">
+              <a onclick="open_window('{% url 'peer_chart' item='calculation_adjustment.adjusted_focf' readable_name='FOCF'|escape_slash format_as='' issuer_id=object.id chart_type='horizontal_bar' %}');">
+                {{ focf | format_mn | intcomma }}
+              </a>
+            </td>
+            <td align="right" style="text-align: right; vertical-align: top;">
+              <a onclick="open_window('{% url 'peer_chart' item='ratios.ffo_debt' readable_name='FFO/debt'|escape_slash format_as='percent' issuer_id=object.id chart_type='horizontal_bar' %}');">
+                {{ ffo_debt | format_percent:'0'|default:'' }}
+              </a>
+            </td>
+            <td align="right" style="text-align: right; vertical-align: top;">
+              {% if ebitda_interest %}
+                <a onclick="open_window('{% url 'peer_chart' item='ratios.debt_ebitda' readable_name='Debt/EBITDA'|escape_slash format_as='multiplier' issuer_id=object.id chart_type='horizontal_bar' %}');">
+                  {{ debt_ebitda | floatformat:'1' }}x
+                </a>
+              {% endif %}
+            </td>
+            <td align="right" style="text-align: right; vertical-align: top;">
+              <a onclick="open_window('{% url 'peer_chart' item='ratios.focf_debt' readable_name='FOCF/debt'|escape_slash format_as='percent' issuer_id=object.id chart_type='horizontal_bar' %}');">
+                {{ focf_debt | format_percent:'0'|default:'' }}
+              </a>
+            </td>
+            <td align="right" style="text-align: right; vertical-align: top;">
+              <a onclick="open_window('{% url 'peer_chart' item='ratios.dcf_debt' readable_name='DCF/debt'|escape_slash format_as='percent' issuer_id=object.id chart_type='horizontal_bar' %}');">
+                {{ dcf_debt | format_percent:'0'|default:'' }}
+              </a>
+            </td>
+            <td align="right" style="text-align: right; vertical-align: top;">
+              {% if ebitda_interest %}
+                <a onclick="open_window('{% url 'peer_chart' item='ratios.ebitda_interest' readable_name='EBITDA/interest'|escape_slash format_as='multiplier' issuer_id=object.id chart_type='horizontal_bar' %}');">
+                  {{ ebitda_interest | floatformat:'1' }}x
+                </a>
+              {% endif %}
+            </td>
+            <td align="right" style="text-align: right; vertical-align: top;">
+              <a onclick="open_window('{% url 'peer_chart' item='ratios.ltv' readable_name='LTV'|escape_slash format_as='percent' issuer_id=object.id chart_type='horizontal_bar' %}');">
+                {{ ltv | format_percent:'0'|default:'' }}
+              </a>
+            </td>
+            <td align="right" style="text-align: right; vertical-align: top;">
+              <a onclick="open_window('{% url 'peer_chart' item='ratios.debt_debt_equity' readable_name='Debt/(debt + equity)'|escape_slash format_as='percent' issuer_id=object.id chart_type='horizontal_bar' %}');">
+                {{ debt_debt_equity | format_percent:'0'|default:'' }}
+              </a>
+            </td>
+          </tr>
+
+        {% empty %}
+          <tr>
+            <td colspan="100%">No issuers added</td>
+          </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<br><br>
+
+{% endblock %}

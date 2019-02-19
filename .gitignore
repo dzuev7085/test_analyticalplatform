@@ -1,0 +1,43 @@
+.pypirc
+pip-selfcheck.json
+# Python stuff
+*.py[cod]
+
+# IDE stuff
+.idea/
+*.iml
+
+# Office
+*.xlsx
+
+# Python venv stuff
+bin
+lib
+pyvenv.cfg
+venv
+
+# Folders
+dist/
+
+*coverage_html_report*
+
+# Python setuptools
+.cache
+*.egg-info
+
+# Unit test / coverage reports
+.coverage
+.tox
+
+# Password files
+*.env
+*/*.google_auth.json
+
+www/*
+
+*/*/*.log
+*/*/*.xml
+*/*/*.csv
+*.pid
+
+celerybeat-schedule

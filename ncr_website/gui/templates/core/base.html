@@ -1,0 +1,71 @@
+{% load template_tags %}
+{% load staticfiles %}
+
+{% url 'issuers_list' as issuers_list_url %}
+{% url 'issuers_create' as issuers_create_url %}
+{% url 'issuers_insider_create' as issuers_insider_create_url %}
+{% url 'issuer_pending_engagement_list' as issuer_pending_engagement_list_url %}
+{% url 'issuer_pending_analyst_appointment_list' as issuer_pending_analyst_appointment_list_url %}
+{% url 'issuer_pending_rating_proposal_list' as issuer_pending_rating_proposal_list_url %}
+
+{% url 'my_portfolio' as my_portfolio_url %}
+{% url 'profile' as profile %}
+{% url 'rating_committee_scheduled_list' as rating_committee_scheduled_list_url %}
+{% url 'rating_committee_agenda' as rating_committee_agenda_url %}
+{% url 'rating_decision_drafts' as rating_decision_drafts_url %}
+
+{% url 'rating_decision_unconfirmed_dates' as rating_decision_unconfirmed_dates_url %}
+{% url 'rating_decision_agenda' as rating_decision_agenda_url %}
+{% url 'rating_decision_chair_approve' as rating_decision_chair_approve_url %}
+{% url 'toolkit_pdf2excel_view' as toolkit_pdf2excel_view_url %}
+
+{% url 'rating_committee_pending' as rating_committee_pending_url %}
+
+
+
+
+
+<html>
+    <head>
+      {% include "page_head.html" %}
+    </head>
+    <body>
+      <div id="preloader">
+        <div id="status" style="background-image: url({% static 'image/preloader.gif' %});">&nbsp;</div>
+      </div>
+
+      {% include "modal.html" %}
+
+      <div class="container-fluid">
+        <div class="row">
+
+          <div class="sidebar-container" id="sidebar-container">
+            {% include "sidebar.html" %}
+          </div>
+
+          <div class="contentbox-container">
+
+            <div class="topnav-container fixed-top">
+              {% include "header.html" %}
+            </div>
+
+            {% include "messages.html" %}
+            {% include "issuer/rating_status.html" %}
+            {% include "issuer/rating_job/progress_bar.html" %}
+
+            <div class="content-container">
+              {% block content %}
+              {% endblock %}
+            </div>
+          </div>
+
+        </div>
+
+        <footer class="footer-container fixed-bottom">
+        {% include "footer.html" %}
+        </footer>
+
+        </div>
+
+    </body>
+</html>

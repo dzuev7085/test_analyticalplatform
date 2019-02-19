@@ -1,0 +1,418 @@
+{% extends 'base.html' %}
+{% load template_tags %}
+{% block content %}
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+     $('.confirm_analyst').click(function() {
+       return confirm('By clicking OK you confirm that neither you or any relevant close associates have any conflicts of interest relating to the analytical assignment relating to, but not limited to, personal investments, outside business interests, personal relationships, gifts from third parties, or similar.');
+     });
+
+  });
+
+</script>
+
+
+
+
+<div class="row">
+
+
+  <div class="col">
+    <!-- Column 1 -->
+
+
+    <div class="card-body">
+
+      <h5 class="card-title subheader">
+        Ratings:
+      </h5>
+
+      <p class="card-text">
+        We currently have {{ stats.no_rating }} rated entities and {{ stats.no_issue_rating }} rated issues.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="col">
+    <!-- Column 2-->
+
+    <div class="card-body">
+
+      <h5 class="card-title subheader">
+        Corporate and real estate assessments:
+      </h5>
+
+      <p class="card-text">
+        We currently have {{ stats.no_corporate_assessment }} assessed entities.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="col" style="align: right;">
+    <!-- Column 2-->
+
+    <div class="card-body">
+
+      <h5 class="card-title subheader">
+        Financial institutions assessments:
+      </h5>
+
+      <p class="card-text">
+        We currently have {{ stats.no_fi_assessment }} assessed entities.
+      </p>
+
+    </div>
+
+  </div>
+
+
+</div>
+
+
+
+
+<div class="row">
+  <div class="col">
+    <!-- Column 1 -->
+
+    <div class="card-body">
+      <h5 class="card-title subheader">
+        Your issuers:
+      </h5>
+
+      <p class="card-text">
+
+        <table border="0" cellpadding="0" cellspacing="0" class="ncrtable">
+          <thead>
+            <tr>
+              <th>
+                Issuer
+              </th>
+              <th class="table-th-right" align="right">
+                Rating
+              </th>
+              <th class="table-th-right" align="right">
+                Outlook
+              </th>
+              <th>
+                Status
+              </th>
+            </tr>
+          </thead>
+
+          {% for issuer in issuers %}
+            {% current_rating issuer as current_rating %}
+            {% rating_process_phase issuer as process_step %}
+
+            <tr>
+              <td>
+                <a href="{% url 'issuer_view' pk=issuer.id %}" data-toggle="tooltip" title="{{ issuer.gics_sub_industry.sub_industry|gics_sector }}">{{ issuer.legal_name }}</a>
+              </td>
+              <td class="table-th-right">
+                '{{ current_rating.decided_lt | return_long_term_rating }}'
+              </td>
+              <td class="table-th-right">
+                {{ current_rating.decided_lt_outlook | return_long_term_rating_outlook }}
+              </td>
+              <td>
+                {{ process_step }}
+              </td>
+            </tr>
+          {% empty %}
+            <tr>
+              <td colspan="100%">
+                <em>You are not appointed as analyst for any issuer.</em>
+              </td>
+            </tr>
+          {% endfor %}
+        </table>
+
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="col">
+    <!-- Column 2 -->
+
+    <div class="card-body">
+      <h5 class="card-title subheader">
+        Your upcoming committees:
+      </h5>
+
+      <p class="card-text">
+
+        <table border="0" cellpadding="0" cellspacing="0" class="ncrtable">
+          <thead>
+            <tr>
+              <th>
+                Issuer
+              </th>
+              <th class="table-th-right" align="right">
+                Role
+              </th>
+              <th class="table-th-right" align="right">
+                Committee date
+              </th>
+              <th class="table-th-right" align="right">
+                Committee time
+              </th>
+              <th class="table-th-right" align="right">
+                Committee pack
+              </th>
+            </tr>
+          </thead>
+
+
+          {% for issue in my_committee %}
+
+            {% rating_job_role issue request.user.id as role %}
+
+            <tr>
+              <td>
+                {{ issue.issuer.legal_name }}
+              </td>
+              <td align="right">
+                {{ role }}
+              </td>
+              <td align="right">
+                {{ issue.date_time_committee|date:'Y-m-d' }}
+              </td>
+              <td align="right">
+                {{ issue.date_time_committee|date:'H:i' }}
+              </td>
+              <td align="right">
+                <a href="{% url 'issuer_rating_job_committee_package' rating_decision_id=issue.id %}" role="tab" data-toggle="tooltip" title="Committee Package" target="_blank">
+                  <i class="fas fa-book"></i>
+                </a>
+              </td>
+            </tr>
+          {% empty %}
+            <tr>
+              <td colspan="100%">
+                <em>You are not a member of any upcoming committees.</em>
+              </td>
+            </tr>
+          {% endfor %}
+        </table>
+
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col">
+    <!-- Column 1 -->
+
+    <div class="card-body">
+      <h5 class="card-title subheader">
+        Confirm committee membership:
+      </h5>
+
+      <p class="card-text">
+
+        <table border="0" cellpadding="0" cellspacing="0" class="ncrtable">
+          <thead>
+            <tr>
+              <th>
+                Issuer
+              </th>
+              <th class="table-th-right" align="right">
+                Committee date
+              </th>
+              <th class="table-th-right" align="right">
+                Role
+              </th>
+              <th class="table-th-right" align="right">
+                Confirm membership
+              </th>
+            </tr>
+          </thead>
+
+          {% for member in unconfirmed_members %}
+
+            <tr>
+              <td>
+                {{ member.rating_decision.issuer }}
+              </td>
+              <td class="table-th-right">
+                {{ member.rating_decision.date_time_committee|date:'Y-m-d' }}
+              </td>
+              <td class="table-th-right">
+                {{ member.rating_decision.role }}
+              </td>
+              <td class="table-th-right">
+                <a href="{% url 'rating_decision_confirm_parameter' pk=member.id %}?action=member" class="confirm_analyst">
+
+                  <i class="fas fa-thumbs-up"></i>
+                </a>
+              </td>
+            </tr>
+          {% empty %}
+            <tr>
+              <td colspan="100%">
+                <em>You are currently not proposed for any committees.</em>
+              </td>
+            </tr>
+          {% endfor %}
+        </table>
+
+      </p>
+
+    </div>
+
+
+  </div>
+
+  <div class="col">
+    <!-- Column 2 -->
+
+    <div class="card-body">
+      <h5 class="card-title subheader">
+        Action required with you as chair:
+      </h5>
+
+      <p class="card-text">
+
+        <table border="0" cellpadding="0" cellspacing="0" class="ncrtable">
+          <thead>
+            <tr>
+              <th>
+                Issuer
+              </th>
+              <th class="table-th-right" align="right">
+                Committee date
+              </th>
+              <th class="table-th-right" align="right">
+                Current stage
+              </th>
+            </tr>
+          </thead>
+
+
+          {% for decision in chair_attention_required %}
+            {% rating_process_phase decision.issuer as process_step %}
+
+            <tr>
+              <td>
+                {% if process_step == 'Pre committee' %}
+                  <a href="{% url 'issuer_view' pk=decision.issuer.id %}#setup_step_2" data-toggle="tooltip" title="{{ decision.issuer.gics_sub_industry.sub_industry|gics_sector }}">{{ decision.issuer.legal_name }}</a>
+                {% else %}
+                  <a href="{% url 'issuer_view' pk=decision.issuer.id %}#setup_step_8" data-toggle="tooltip" title="{{ decision.issuer.gics_sub_industry.sub_industry|gics_sector }}">{{ decision.issuer.legal_name }}</a>
+                {% endif %}
+              </td>
+              <td class="table-th-right">
+                {{ decision.date_time_committee|date:'Y-m-d' }}
+              </td>
+              <td class="table-th-right">
+                {{ process_step }}
+              </td>
+            </tr>
+          {% empty %}
+            <tr>
+              <td>
+                <em>There are no pending tasks for you as a chair.</em>
+              </td>
+            </tr>
+          {% endfor %}
+        </table>
+
+      </p>
+
+    </div>
+  </div>
+</div>
+
+{% if request.user|has_group:"Chief rating officer" or request.user|has_group:"Compliance" %}
+  {% include 'user/dashboard/cro_row.html' %}
+{% endif %}
+
+{% if request.user|has_group:"Senior level analyst" or request.user|has_group:"Compliance" %}
+  {% include 'user/dashboard/senior_analyst_row.html' %}
+{% endif %}
+
+
+<div class="row">
+
+  <div class="col">
+  <!-- Column 1 -->
+
+  <div class="card-body">
+    <h5 class="card-title subheader">
+      Next ten maturing issues:
+    </h5>
+
+    <p class="card-text">
+
+      <table border="0" cellpadding="0" cellspacing="0" class="ncrtable">
+        <thead>
+          <tr>
+            <th>
+              Issuer
+            </th>
+            <th class="table-th-right" align="right">
+              Maturity date
+            </th>
+            <th class="table-th-right" align="right">
+              Currency
+            </th>
+            <th class="table-th-right" align="right">
+              Amount (nominal m)
+            </th>
+            <th class="table-th-right" align="right">
+              Seniority
+            </th>
+          </tr>
+        </thead>
+
+        {% for issue in issues %}
+
+          <tr>
+            <td>
+              {{ issue.issuer }}
+            </td>
+            <td class="table-th-right">
+              {{ issue.maturity|date:'Y-m-d' }}
+            </td>
+            <td class="table-th-right">
+              {{ issue.currency.currency_code_alpha_3 }}
+            </td>
+            <td class="table-th-right">
+              {{ issue.amount|format_mn }}
+            </td>
+            <td class="table-th-right">
+              {{ issue.seniority }}
+            </td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td colspan="100%">
+              <em>There are no issues in the system.</em>
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+
+    </p>
+
+  </div>
+
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% load template_tags %}
+
+<table class="table table-striped table-sm">
+  <thead>
+    <tr>
+      <th align='left'>Type</th>
+      <th>Security class</th>
+      <th>File</th>
+      <th>Part of rating job</th>
+      <th>Uploaded at</th>
+      <th>Uploaded by</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for document in analytical_documents %}
+      <tr>
+        <td align='left'>
+          {% ifchanged %}{{ document.document_type }}{% endifchanged %}
+        </td>
+        <td>
+          {% ifchanged %}{{ document.security_class }}{% endifchanged %}
+        </td>
+        <td><a href="{% url 'issuer_document_analytical_download' file_id=document.id %}" target="_blank">{{ document.filename }}</a></td>
+        <td>{{ document.rating_decision.identifier|default:'' }}</td>
+        <td>{{ document.uploaded_at|date:"Y-m-d" }}</td>
+        <td>{{ document.uploaded_by.get_full_name }}</td>
+        <td>
+            {% if not document.rating_decision and global_variables.auth.groups|in_list:"Analyst" %}
+
+              <a href="{% url 'issuer_document_analytical_edit' file_id=document.id document_type_id=document.document_type.id %}"
+                 class="fm-update"
+                 data-fm-head="Edit uploaded file"
+                 data-fm-callback="reload"
+                 data-fm-target="#object-{{ document.id }}">
+                <i class="fas fa-edit"></i>
+                Edit
+              </a>
+          {% endif %}
+        </td>
+        <td>
+            {% if not document.rating_decision and global_variables.auth.groups|in_list:"Analyst" %}
+              <a href="{% url 'issuer_document_analytical_delete' file_id=document.id %}">
+                <i class="fas fa-trash-alt"></i>
+                  Delete
+              </a>
+            {% endif %}
+        </td>
+      </tr>
+    {% empty %}
+      <tr>
+        <td colspan="8">No files uploaded for this issuer.</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% if global_variables.auth.groups|in_list:"Analyst" %}
+
+  <br><br>
+
+  {% load crispy_forms_tags %}
+  {% crispy analytical_document_upload_form %}
+
+{% endif %}

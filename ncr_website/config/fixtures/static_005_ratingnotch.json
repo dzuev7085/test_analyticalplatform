@@ -1,0 +1,542 @@
+[
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":1,
+         "description":"Highest Credit Quality: 'AAA' ratings denote the lowest expectation of default risk.",
+         "label":"AAA",
+         "rating_category":1
+      },
+      "pk":1
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":1,
+         "description":"Highest Credit Quality: 'AAA' (p) ratings denote the lowest expectation of default risk.",
+         "label":"AAA (p)",
+         "rating_category":2
+      },
+      "pk":2
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":2,
+         "description":"'AA' rated entities and instruments demonstrate very high credit quality with a very low default risk. 'AA+' indicates the highest position within the 'AA' rating category.",
+         "label":"AA+",
+         "rating_category":3
+      },
+      "pk":3
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":2,
+         "description":"'AA' (preliminary) rated entities and instruments demonstrate very high credit quality with a very low default risk. 'AA+' (p) indicates the highest position within the 'AA' (preliminary) rating category.",
+         "label":"AA+ (p)",
+         "rating_category":4
+      },
+      "pk":4
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":3,
+         "description":"'AA' rated entities and instruments demonstrate very high credit quality with a very low default risk. 'AA' indicates the middle position within the 'AA' rating category.",
+         "label":"AA",
+         "rating_category":3
+      },
+      "pk":5
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":3,
+         "description":"'AA' (preliminary) rated entities and instruments demonstrate very high credit quality with a very low default risk. 'AA' (p) indicates the middle position within the 'AA' (preliminary) rating category.",
+         "label":"AA (p)",
+         "rating_category":4
+      },
+      "pk":6
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":4,
+         "description":"'AA' rated entities and instruments demonstrate very high credit quality with a very low default risk. 'AA-' indicates the lowest position within the 'AA' rating category.",
+         "label":"AA-",
+         "rating_category":3
+      },
+      "pk":7
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":4,
+         "description":"'AA' (preliminary) rated entities and instruments demonstrate very high credit quality with a very low default risk. 'AA-' (p) indicates the lowest position within the 'AA' (preliminary) rating category.",
+         "label":"AA- (p)",
+         "rating_category":4
+      },
+      "pk":8
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":5,
+         "description":"'A' rated entities and instruments demonstrate high credit quality with a low default risk. 'A+' indicates the highest position within the 'A' rating category.",
+         "label":"A+",
+         "rating_category":5
+      },
+      "pk":9
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":5,
+         "description":"'A' (preliminary) rated entities and instruments demonstrate high credit quality with a low default risk. 'A+' (p) indicates the highest position within the 'A' (preliminary) rating category.",
+         "label":"A+ (p)",
+         "rating_category":6
+      },
+      "pk":10
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":6,
+         "description":"'A' rated entities and instruments demonstrate high credit quality with a low default risk. 'A' indicates the middle position within the 'A' rating category.",
+         "label":"A",
+         "rating_category":5
+      },
+      "pk":11
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":6,
+         "description":"'A' (preliminary) rated entities and instruments demonstrate high credit quality with a low default risk. 'A' (p) indicates the middle position within the 'A' (preliminary) rating category.",
+         "label":"A (p)",
+         "rating_category":6
+      },
+      "pk":12
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":7,
+         "description":"'A' rated entities and instruments demonstrate high credit quality with a low default risk. 'A-' indicates the lowest position within the 'A' rating category.",
+         "label":"A-",
+         "rating_category":5
+      },
+      "pk":13
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":7,
+         "description":"'A' (preliminary) rated entities and instruments demonstrate high credit quality with a low default risk. 'A-' (p) indicates the lowest position within the 'A' (preliminary) rating category.",
+         "label":"A- (p)",
+         "rating_category":6
+      },
+      "pk":14
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":8,
+         "description":"'BBB' rated entities and instruments demonstrate medium credit quality with a moderate default risk. 'BBB+' indicates the highest position within the 'BBB' rating category.",
+         "label":"BBB+",
+         "rating_category":7
+      },
+      "pk":15
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":8,
+         "description":"'BBB' (preliminary) rated entities and instruments demonstrate medium credit quality with a moderate default risk. 'BBB+' (p) indicates the highest position within the 'BBB' (preliminary) rating category.",
+         "label":"BBB+ (p)",
+         "rating_category":8
+      },
+      "pk":16
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":9,
+         "description":"'BBB' rated entities and instruments demonstrate medium credit quality with a moderate default risk. 'BBB' indicates the middle position within the 'BBB' rating category.",
+         "label":"BBB",
+         "rating_category":7
+      },
+      "pk":17
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":9,
+         "description":"'BBB' (preliminary) rated entities and instruments demonstrate medium credit quality with a moderate default risk. 'BBB' (p) indicates the middle position within the 'BBB' (preliminary) rating category.",
+         "label":"BBB (p)",
+         "rating_category":8
+      },
+      "pk":18
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":10,
+         "description":"'BBB' rated entities and instruments demonstrate medium credit quality with a moderate default risk. 'BBB-' indicates the lowest position within the 'BBB' rating category.",
+         "label":"BBB-",
+         "rating_category":7
+      },
+      "pk":19
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":10,
+         "description":"'BBB' (preliminary) rated entities and instruments demonstrate medium credit quality with a moderate default risk. 'BBB-' (p) indicates the lowest position within the 'BBB' (preliminary) rating category.",
+         "label":"BBB- (p)",
+         "rating_category":8
+      },
+      "pk":20
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":11,
+         "description":"'BB' rated entities and instruments demonstrate speculative credit quality with a slightly increased default risk. 'BB+' indicates the highest position within the 'BB' rating category.",
+         "label":"BB+",
+         "rating_category":9
+      },
+      "pk":21
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":11,
+         "description":"'BB' (preliminary) rated entities and instruments demonstrate speculative credit quality with a slightly increased default risk. 'BB+' (p) indicates the highest position within the 'BB' (preliminary) rating category.",
+         "label":"BB+ (p)",
+         "rating_category":10
+      },
+      "pk":22
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":12,
+         "description":"'BB' rated entities and instruments demonstrate speculative credit quality with a slightly increased default risk. 'BB' indicates the middle position within the 'BB' rating category.",
+         "label":"BB",
+         "rating_category":9
+      },
+      "pk":23
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":12,
+         "description":"'BB' (preliminary) rated entities and instruments demonstrate speculative credit quality with a slightly increased default risk. 'BB' (preliminary) indicates the middle position within the 'BB' (p) rating category.",
+         "label":"BB (p)",
+         "rating_category":10
+      },
+      "pk":24
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":13,
+         "description":"'BB' rated entities and instruments demonstrate speculative credit quality with a slightly increased default risk. 'BB-' indicates the lowest position within the 'BB' rating category.",
+         "label":"BB-",
+         "rating_category":9
+      },
+      "pk":25
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":13,
+         "description":"'BB' (preliminary) rated entities and instruments demonstrate speculative credit quality with a slightly increased default risk. 'BB-' (p) indicates the lowest position within the 'BB' (preliminary) rating category.",
+         "label":"BB- (p)",
+         "rating_category":10
+      },
+      "pk":26
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":14,
+         "description":"'B' rated entities and instruments demonstrate highly speculative credit quality with an increased default risk. 'B+' indicates the highest position within the 'B' rating category.",
+         "label":"B+",
+         "rating_category":11
+      },
+      "pk":27
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":14,
+         "description":"'B' (preliminary) rated entities and instruments demonstrate highly speculative credit quality with an increased default risk. 'B+' (p) indicates the highest position within the 'B' (preliminary) rating category.",
+         "label":"B+ (p)",
+         "rating_category":12
+      },
+      "pk":28
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":15,
+         "description":"'B' rated entities and instruments demonstrate highly speculative credit quality with an increased default risk. 'B' indicates the middle position within the 'B' rating category.",
+         "label":"B",
+         "rating_category":11
+      },
+      "pk":29
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":15,
+         "description":"'B' (preliminary) rated entities and instruments demonstrate highly speculative credit quality with an increased default risk. 'B' (p) indicates the middle position within the 'B' (preliminary) rating category.",
+         "label":"B (p)",
+         "rating_category":12
+      },
+      "pk":30
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":16,
+         "description":"'B' rated entities and instruments demonstrate highly speculative credit quality with an increased default risk. 'B-' indicates the lowest position within the 'B' rating category.",
+         "label":"B-",
+         "rating_category":11
+      },
+      "pk":31
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":16,
+         "description":"'B' (preliminary) rated entities and instruments demonstrate highly speculative credit quality with an increased default risk. 'B-' (p) indicates the lowest position within the 'B' (preliminary) rating category.",
+         "label":"B- (p)",
+         "rating_category":12
+      },
+      "pk":32
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":17,
+         "description":"'CCC' entities and instruments demonstrate very low credit quality with a high default risk.",
+         "label":"CCC",
+         "rating_category":13
+      },
+      "pk":33
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":17,
+         "description":"'CCC' (preliminary) entities and instruments demonstrate very low credit quality with a high default risk.",
+         "label":"CCC (p)",
+         "rating_category":14
+      },
+      "pk":34
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":18,
+         "description":"'CC' rated entities and instruments demonstrate very low credit quality and an event of default is very likely.",
+         "label":"CC",
+         "rating_category":15
+      },
+      "pk":35
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":18,
+         "description":"'CC' (preliminary) rated entities and instruments demonstrate very low credit quality and an event of default is very likely.",
+         "label":"CC (p)",
+         "rating_category":16
+      },
+      "pk":36
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":19,
+         "description":"'C' rated entities and instruments demonstrate the lowest credit quality and an event of default is imminent.",
+         "label":"C",
+         "rating_category":17
+      },
+      "pk":37
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":19,
+         "description":"'C' (preliminary) rated entities and instruments demonstrate the lowest credit quality and an event of default is imminent.",
+         "label":"C (p)",
+         "rating_category":18
+      },
+      "pk":38
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":20,
+         "description":"'D' rated entities and instruments have defaulted, as defined by NCR.",
+         "label":"D",
+         "rating_category":19
+      },
+      "pk":39
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":21,
+         "description": "'SD' (selective default) rated entities have only defaulted on certain debt obligations.",
+         "label":"SD",
+         "rating_category":20
+      },
+      "pk":40
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":1,
+         "description": "The issuer has the highest capacity for the payment of short-term debt obligations and maintains the lowest risk.",
+         "label":"N-1+",
+         "rating_category":21
+      },
+      "pk":41
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":1,
+         "description": "The issuer has the highest capacity for the payment of short-term debt obligations and maintains the lowest risk.",
+         "label":"N-1+",
+         "rating_category":22
+      },
+      "pk":42
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":2,
+         "description": "The issuer has high capacity for the payment of short-term debt obligations.",
+         "label":"N-1",
+         "rating_category":21
+      },
+      "pk":43
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":2,
+         "description": "The issuer has high capacity for the payment of short-term debt obligations.",
+         "label":"N-1",
+         "rating_category":22
+      },
+      "pk":44
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":3,
+         "description": "The issuer has satisfactory capacity for the payment of short-term debt obligations.",
+         "label":"N-2",
+         "rating_category":23
+      },
+      "pk":45
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":3,
+         "description": "The issuer has satisfactory capacity for the payment of short-term debt obligations.",
+         "label":"N-2",
+         "rating_category":24
+      },
+      "pk":46
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":4,
+         "description": "The issuer has moderate capacity for the payment of short-term debt obligations.",
+         "label":"N-3",
+         "rating_category":25
+      },
+      "pk":47
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":4,
+         "description": "The issuer has moderate capacity for the payment of short-term debt obligations.",
+         "label":"N-3",
+         "rating_category":26
+      },
+      "pk":48
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":5,
+         "description": "The issuer has weak capacity for the timely payment of short-term debt obligations and maintains an increased risk compared with higher-rated instruments.",
+         "label":"N-4",
+         "rating_category":27
+      },
+      "pk":49
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":5,
+         "description": "The issuer has weak capacity for the timely payment of short-term debt obligations and maintains an increased risk compared with higher-rated instruments.",
+         "label":"N-4",
+         "rating_category":28
+      },
+      "pk":50
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":6,
+         "description": "'D' rated entities and instruments have defaulted, as defined by NCR",
+         "label":"D",
+         "rating_category":29
+      },
+      "pk":51
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":6,
+         "description": "'D' rated entities and instruments have defaulted, as defined by NCR",
+         "label":"D",
+         "rating_category":30
+      },
+      "pk":52
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":7,
+         "description": "'SD' (selective default) rated entities have only defaulted on certain debt obligations.",
+         "label":"SD",
+         "rating_category":31
+      },
+      "pk":53
+   },
+   {
+      "model":"static_database_table.ratingnotch",
+      "fields":{
+         "value":7,
+         "description": "'SD' (selective default) rated entities have only defaulted on certain debt obligations.",
+         "label":"SD",
+         "rating_category":32
+      },
+      "pk":54
+   }
+]

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="FileErrorCompleteDescriptionType">
+		<xs:sequence>
+			<xs:element name="FileError" type="FileErrorType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FileErrorType">
+		<xs:sequence>
+			<xs:element name="FileErrorReference" type="FileErrorReferenceType"/>
+			<xs:element name="FileErrorMessage" type="ErrorMessageType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="FileErrorReferenceType">
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:pattern value="FIL-0[0-9][0-9]"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ErrorMessageType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="999"/>
+			<xs:whiteSpace value="collapse"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NoErrorType">
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:pattern value="OK"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

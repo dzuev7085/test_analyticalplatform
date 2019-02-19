@@ -1,0 +1,323 @@
+[
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 1,
+    "fields": {
+      "description": "'AAA' rated entities and instruments demonstrate the highest credit quality and lowest expectation of default risk.",
+      "rating_scale": 1,
+      "value": 1,
+      "label": "AAA"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 2,
+    "fields": {
+      "description": "'AAA' (preliminary) rated entities and instruments demonstrate the highest credit quality and lowest expectation of default risk.",
+      "rating_scale": 3,
+      "value": 1,
+      "label": "AAA (p)"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 3,
+    "fields": {
+      "description": "'AA' rated entities and instruments demonstrate very high credit quality with a very low default risk.",
+      "rating_scale": 1,
+      "value": 2,
+      "label": "AA"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 4,
+    "fields": {
+      "description": "'AA' (preliminary) rated entities and instruments demonstrate very high credit quality with a very low default risk.",
+      "rating_scale": 3,
+      "value": 2,
+      "label": "AA (p)"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 5,
+    "fields": {
+      "description": "'A' rated entities and instruments demonstrate high credit quality with a low default risk.",
+      "rating_scale": 1,
+      "value": 3,
+      "label": "A"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 6,
+    "fields": {
+      "description": "'A' (preliminary) rated entities and instruments demonstrate high credit quality with a low default risk.",
+      "rating_scale": 3,
+      "value": 3,
+      "label": "A (p)"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 7,
+    "fields": {
+      "description": "'BBB' rated entities and instruments demonstrate medium credit quality with a moderate default risk.",
+      "rating_scale": 1,
+      "value": 4,
+      "label": "BBB"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 8,
+    "fields": {
+      "description": "'BBB' (preliminary) rated entities and instruments demonstrate medium credit quality with a moderate default risk.",
+      "rating_scale": 3,
+      "value": 4,
+      "label": "BBB (p)"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 9,
+    "fields": {
+      "description": "'BB' rated entities and instruments demonstrate speculative credit quality with a slightly increased default risk.",
+      "rating_scale": 1,
+      "value": 5,
+      "label": "BB"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 10,
+    "fields": {
+      "description": "'BB' (preliminary) rated entities and instruments demonstrate speculative credit quality with a slightly increased default risk.",
+      "rating_scale": 3,
+      "value": 5,
+      "label": "BB (p)"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 11,
+    "fields": {
+      "description": "'B' rated entities and instruments demonstrate highly speculative credit quality with an increased default risk.",
+      "rating_scale": 1,
+      "value": 6,
+      "label": "B"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 12,
+    "fields": {
+      "description": "'B' (preliminary) rated entities and instruments demonstrate highly speculative credit quality with an increased default risk.",
+      "rating_scale": 3,
+      "value": 6,
+      "label": "B (p)"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 13,
+    "fields": {
+      "description": "'CCC' entities and instruments demonstrate very low credit quality with a high default risk.",
+      "rating_scale": 1,
+      "value": 7,
+      "label": "CCC"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 14,
+    "fields": {
+      "description": "'CCC' (preliminary) entities and instruments demonstrate very low credit quality with a high default risk.",
+      "rating_scale": 3,
+      "value": 7,
+      "label": "CCC (p)"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 15,
+    "fields": {
+      "description": "'CC' rated entities and instruments demonstrate very low credit quality and an event of default is very likely.",
+      "rating_scale": 1,
+      "value": 8,
+      "label": "CC"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 16,
+    "fields": {
+      "description": "'CC' (preliminary) rated entities and instruments demonstrate very low credit quality and an event of default is very likely.",
+      "rating_scale": 3,
+      "value": 8,
+      "label": "CC (p)"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 17,
+    "fields": {
+      "description": "'C' rated entities and instruments demonstrate the lowest credit quality and an event of default is imminent.",
+      "rating_scale": 1,
+      "value": 9,
+      "label": "C"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 18,
+    "fields": {
+      "description": "'C' (preliminary) rated entities and instruments demonstrate the lowest credit quality and an event of default is imminent.",
+      "rating_scale": 3,
+      "value": 9,
+      "label": "C (p)"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 19,
+    "fields": {
+      "description": "'D' rated entities and instruments have defaulted, as defined by NCR.",
+      "rating_scale": 1,
+      "value": 10,
+      "label": "D"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 20,
+    "fields": {
+      "description": "'SD' (selective default) rated entities have only defaulted on certain debt obligations.",
+      "rating_scale": 1,
+      "value": 11,
+      "label": "SD"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 21,
+    "fields": {
+      "description": "The issuer has high capacity for the payment of short-term debt obligations.",
+      "rating_scale": 2,
+      "value": 1,
+      "label": "N-1"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 22,
+    "fields": {
+      "description": "The issuer has high capacity for the payment of short-term debt obligations.",
+      "rating_scale": 4,
+      "value": 1,
+      "label": "N-1"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 23,
+    "fields": {
+      "description": "The issuer has satisfactory capacity for the payment of short-term debt obligations.",
+      "rating_scale": 2,
+      "value": 2,
+      "label": "N-2"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 24,
+    "fields": {
+      "description": "The issuer has satisfactory capacity for the payment of short-term debt obligations.",
+      "rating_scale": 4,
+      "value": 2,
+      "label": "N-2"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 25,
+    "fields": {
+      "description": "The issuer has moderate capacity for the payment of short-term debt obligations.",
+      "rating_scale": 2,
+      "value": 3,
+      "label": "N-3"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 26,
+    "fields": {
+      "description": "The issuer has moderate capacity for the payment of short-term debt obligations.",
+      "rating_scale": 4,
+      "value": 3,
+      "label": "N-3"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 27,
+    "fields": {
+      "description": "The issuer has weak capacity for the timely payment of short-term debt obligations and maintains an increased risk compared with higher-rated instruments.",
+      "rating_scale": 2,
+      "value": 4,
+      "label": "N-4"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 28,
+    "fields": {
+      "description": "The issuer has weak capacity for the timely payment of short-term debt obligations and maintains an increased risk compared with higher-rated instruments.",
+      "rating_scale": 4,
+      "value": 4,
+      "label": "N-4"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 29,
+    "fields": {
+      "description": "'D' rated entities and instruments have defaulted, as defined by NCR",
+      "rating_scale": 2,
+      "value": 5,
+      "label": "D"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 30,
+    "fields": {
+      "description": "'D' rated entities and instruments have defaulted, as defined by NCR",
+      "rating_scale": 4,
+      "value": 5,
+      "label": "D"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 31,
+    "fields": {
+      "description": "'SD' (selective default) rated entities have only defaulted on certain debt obligations.",
+      "rating_scale": 2,
+      "value": 6,
+      "label": "SD"
+    }
+  },
+  {
+    "model": "static_database_table.ratingcategory",
+    "pk": 32,
+    "fields": {
+      "description": "'SD' (selective default) rated entities have only defaulted on certain debt obligations.",
+      "rating_scale": 4,
+      "value": 6,
+      "label": "SD"
+    }
+  }
+
+]

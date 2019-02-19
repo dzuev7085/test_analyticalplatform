@@ -1,0 +1,29 @@
+[
+   {
+      "fields":{
+         "last_updated":"2018-03-24T17:17:27.218Z",
+         "description":1,
+         "date_added":"2018-03-24T17:17:27.218Z"
+      },
+      "model":"issuer.issuertype",
+      "pk":1
+   },
+   {
+      "fields":{
+         "last_updated":"2018-03-24T17:17:30.822Z",
+         "description":2,
+         "date_added":"2018-03-24T17:17:30.821Z"
+      },
+      "model":"issuer.issuertype",
+      "pk":2
+   },
+   {
+      "fields":{
+         "last_updated":"2018-03-24T17:17:34.381Z",
+         "description":3,
+         "date_added":"2018-03-24T17:17:34.381Z"
+      },
+      "model":"issuer.issuertype",
+      "pk":3
+   }
+]

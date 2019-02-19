@@ -1,0 +1,102 @@
+{% load staticfiles %}
+{% load template_tags %}
+
+<html lang="en-GB">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <head>
+      <title>
+        {% if environment == 'DEV' or environment == 'UAT' %}
+          ***TEST***
+        {% endif %}
+        Nordic Credit Rating - {{ content.report_title }}
+      </title>
+
+      {% include "page_head_font.html" %}
+
+    </head>
+    <style type="text/css">
+
+        /***********************************************************
+           * Nordic Credit Rating Style Guide
+         ***********************************************************/
+        {% static_file2string 'css/styleguide.css' %}
+
+        /***********************************************************
+           * General Page Style
+         ***********************************************************/
+        @page {
+          size: A4 portrait;
+
+          margin-top: 0;
+          margin-left: 0;
+          margin-right: 0;
+          margin-bottom: 1;
+        }
+
+        @page {
+            @top-center {
+                content: element(headerIdentifier);
+            }
+
+           @bottom-right {
+             content: element(footer);
+           }
+
+        }
+
+        /* Start content after header */
+		    body{
+          padding-left: 7mm;
+          padding-right: 42px;
+          padding-bottom: 42px;
+          text-align: justify;
+          text-justify: inter-word;
+        }
+
+        /* Debug page breaks */
+        h1 {
+          page-break-after: always;
+        }
+
+        /* Flow contents */
+        article {
+          -ro-flow-into: article-flow;
+        }
+
+        #cover_page {
+          position: relative;
+          -ro-flow-from: article-flow;
+          top: 230px;
+          height: 810px;
+        }
+        #remainder {
+          position: relative;
+          -ro-flow-from: article-flow;
+          top: 60px;
+          height: auto;
+        }
+
+        /*https://webplatform.github.io/docs/tutorials/css-regions/*/
+
+      </style>
+    <body>
+      {% include "report_cover_v1_headers.html" %}
+      {% include "report_cover_v1_footer.html" %}
+
+      <style>
+
+      </style>
+
+      <div class="content">
+       <div id="cover_page"></div>
+       <div id="remainder"></div>
+
+        <article>
+          {% block content %}
+          {% endblock %}
+        </article>
+
+      </div>
+
+    </body>
+</html>

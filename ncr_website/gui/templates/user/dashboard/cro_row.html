@@ -1,0 +1,106 @@
+{% load template_tags %}
+
+
+<div class="row">
+  <div class="col">
+    <!-- Column 1 -->
+
+    <!--
+    <div class="card-body">
+      <h5 class="card-title">
+        All issuers:
+      </h5>
+
+      <p class="card-text">
+
+        <table border="0" cellpadding="0" cellspacing="0" class="card-body table-striped">
+          {% for issuer in cro.issuers %}
+            {% current_rating issuer as current_rating %}
+            {% rating_process_phase issuer as process_step %}
+
+            <tr>
+              <td>
+                <a href="{% url 'issuer_view' pk=issuer.id %}" data-toggle="tooltip" title="{{ issuer.gics_sub_industry.sub_industry|gics_sector }}">{{ issuer.legal_name }}</a>
+              </td>
+              <td width="10">&nbsp;</td>
+              <td>
+                {{ issuer.analyst.primary_analyst }}
+              </td>
+              <td width="10">&nbsp;</td>
+              <td>
+                {{ issuer.analyst.secondary_analyst }}
+              </td>
+              <td width="10">&nbsp;</td>
+              <td>
+                {{ process_step }}
+              </td>
+            </tr>
+          {% empty %}
+            <tr>
+              <td>
+                <em>There are no issuers in the system.</em>
+              </td>
+            </tr>
+          {% endfor %}
+        </table>
+
+      </p>
+
+    </div>
+    -->
+
+  </div>
+
+  <div class="col">
+    <!-- Column 2 -->
+
+    <div class="card-body">
+      <h5 class="card-title subheader">
+        All upcoming issuer rating decisions:
+      </h5>
+
+      <p class="card-text">
+
+        <table border="0" cellpadding="0" cellspacing="0" class="card-body table-striped">
+          {% for issue in cro.in_committe %}
+
+            <tr>
+              <td>
+                {{ issue.issuer.legal_name }}
+              </td>
+              <td width="10">&nbsp;</td>
+              <td>
+                {{ issue.chair }}
+              </td>
+              <td width="10">&nbsp;</td>
+              <td>
+                {{ issue.date_time_committee|date:'Y-m-d' }}
+              </td>
+              <td width="10">&nbsp;</td>
+              <td>
+                {{ issue.date_time_committee|date:'H:i' }}
+              </td>
+              <td width="10">&nbsp;</td>
+              <td>
+                <a href="{% url 'issuer_rating_job_committee_package' rating_decision_id=issue.id %}" role="tab" data-toggle="tooltip" title="Committee Package" target="_blank">
+                  <i class="fas fa-book"></i>
+                </a>
+              </td>
+            </tr>
+          {% empty %}
+            <tr>
+              <td>
+                <em>There are no upcoming committees.</em>
+              </td>
+            </tr>
+          {% endfor %}
+        </table>
+
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+

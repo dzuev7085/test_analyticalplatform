@@ -1,0 +1,99 @@
+{% load template_tags %}
+
+
+<div class="row">
+    <div class="col-md-4 col-xs-6">
+      <!-- Column 1 -->
+
+
+      <div class="card-body">
+        <h5 class="card-title">
+          The rating will be:
+        </h5>
+        <p class="card-text">
+
+          {% if data.issuer.rating_job.rating_decision.rating_type.id == 1 %}
+            <ul class="list-group">
+              <li class="list-group-item">Published on <a href="https://nordiccreditrating.com">nordiccreditrating.com</a></li>
+              <li class="list-group-item">Sent as a press release to media outlets</li>
+              <li class="list-group-item">Publicly disclosed on the <a href="https://registers.esma.europa.eu/publication/searchRegister?core=esma_registers_radar">European Rating Platform</a></li>
+              <li class="list-group-item">Published on Bloomberg terminals</li>
+            </ul>
+          {% else %}
+            Sent confidentially to ESMA for regulatory purposes.
+          {% endif %}
+
+        </p>
+      </div>
+
+
+    </div>
+
+    <div class="col-md-4 col-xs-6">
+      <!-- Column 2 -->
+
+      {% if data.issuer.rating_job.preview.external_pdf %}
+
+        {% rating_process_document_id data.issuer.rating_job.rating_decision.id 15 as document_id %}
+
+        <div class="card-body">
+          <h5 class="card-title">
+            External report preview
+         </h5>
+          <p class="card-text">
+            This is a preview of the document that will stored as the final rating report and, if this is not a confidential or private rating, published externally. Click the image if you want to see the whole report.
+
+            <p>
+
+            <a href="{% url 'issuer_document_analytical_download' file_id=document_id %}" target="_blank">
+             <img src="data:image/png;base64,{% static_file2base64 data.issuer.rating_job.preview.external_pdf True %}" alt="External report preview" width="357" height="505" style="padding:1px; border:1px solid #021a40;" />
+            </a>
+          </p>
+
+        </div>
+
+      {% endif %}
+
+    </div>
+
+    <div class="col-md-4 col-xs-6">
+      <!-- Column 3 -->
+
+      <div class="card-body">
+        <h5 class="card-title">
+          Questions:
+        </h5>
+        <p class="card-text">
+          <table border="0" cellpadding="0" cellspacing="0" class="card-body">
+
+            {% for question in data.issuer.rating_job.control_questions.publishing %}
+
+              <tr>
+                <td valign="top">
+                  {{ forloop.counter }}
+                </td>
+                <td width="10">&nbsp;</td>
+                <td valign="top">
+                  {{ question.question.question }}
+                </td>
+                <td width="10">&nbsp;</td>
+                <td valign="top">
+                  {% if question.answer_correct %}
+                    Yes
+                  {% elif allow_edit and auth.issuer.rating_job.edit %}
+                    <a href="{% url 'answer_question' control_question_pk=question.id step=9 %}">
+                      <i class="fas fa-check"></i>
+                    </a>
+                  {% else %}
+                    <i class="fas fa-times"></i>
+                  {% endif %}
+                </td>
+              </tr>
+
+            {% endfor %}
+          </table>
+
+        </p>
+      </div>
+    </div>
+</div>

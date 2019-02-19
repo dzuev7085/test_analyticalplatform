@@ -1,0 +1,73 @@
+[
+   {
+      "pk":1,
+      "fields":{
+         "name":"Commercial",
+         "permissions":[
+            4,
+            5
+         ]
+      },
+      "model":"auth.group"
+   },
+   {
+      "pk":2,
+      "fields":{
+         "name":"Compliance",
+         "permissions":[
+
+         ]
+      },
+      "model":"auth.group"
+   },
+   {
+      "pk":3,
+      "fields":{
+         "name":"Analyst",
+         "permissions":[
+
+         ]
+      },
+      "model":"auth.group"
+   },
+   {
+      "pk":4,
+      "fields":{
+         "name":"Editor",
+         "permissions":[
+
+         ]
+      },
+      "model":"auth.group"
+   },
+   {
+      "pk":5,
+      "fields":{
+         "name":"Review",
+         "permissions":[
+
+         ]
+      },
+      "model":"auth.group"
+   },
+   {
+      "pk":6,
+      "fields":{
+         "name":"Senior level analyst",
+         "permissions":[
+
+         ]
+      },
+      "model":"auth.group"
+   },
+   {
+      "pk":7,
+      "fields":{
+         "name":"Chief rating officer",
+         "permissions":[
+
+         ]
+      },
+      "model":"auth.group"
+   }
+]

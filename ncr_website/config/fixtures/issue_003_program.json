@@ -1,0 +1,223 @@
+[
+   {
+      "fields":{
+         "name":"Global MTN programme",
+         "description": "Medium Term Note programme",
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+      },
+      "model":"issue.program",
+      "pk":1
+   },
+   {
+      "fields":{
+         "name":"US MTN programme (144a / Reg S)",
+         "description": "Medium Term Note programme",
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+      },
+      "model":"issue.program",
+      "pk":2
+   },
+   {
+      "fields":{
+         "name":"Euro MTN programme",
+         "description": "Medium Term Note programme",
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+      },
+      "model":"issue.program",
+      "pk":3
+   },
+   {
+      "fields":{
+         "name":"Domestic MTN programme",
+         "description": "Medium Term Note programme",
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+      },
+      "model":"issue.program",
+      "pk":4
+   },
+   {
+      "fields":{
+         "name":"Global Covered Bond programme",
+         "description": "Covered Bond programme",
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+      },
+      "model":"issue.program",
+      "pk":5
+   },
+   {
+      "fields":{
+         "name":"MTN Covered Bond programme",
+         "description": "Covered Bond programme",
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+      },
+      "model":"issue.program",
+      "pk":6
+   },
+   {
+      "fields":{
+         "name":"Euro Covered Bond programme",
+         "description": "Covered Bond programme",
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+      },
+      "model":"issue.program",
+      "pk":7
+   },
+   {
+      "fields":{
+         "name":"USD Covered Bond programme (144a/ Reg S)",
+         "description": "Covered Bond programme",
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+      },
+      "model":"issue.program",
+      "pk":8
+   },
+   {
+      "fields":{
+         "name":"Swedish Covered Bond programme",
+         "description": "Covered Bond programme",
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+      },
+      "model":"issue.program",
+      "pk":9
+   },
+   {
+      "fields":{
+         "name":"Norwegian Covered Bond programme",
+         "description": "Covered Bond programme",
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+      },
+      "model":"issue.program",
+      "pk":10
+   },
+   {
+      "fields":{
+         "name":"Finnish Covered Bond programme",
+         "description": "Covered Bond programme",
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+      },
+      "model":"issue.program",
+      "pk":11
+   },
+   {
+      "fields":{
+         "name":"Danish Covered Bond programme",
+         "description": "Covered Bond programme",
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+      },
+      "model":"issue.program",
+      "pk":12
+   },
+
+   {
+      "fields":{
+         "name":"Global CP programme",
+         "description": "Commercial paper programme",
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+      },
+      "model":"issue.program",
+      "pk":13
+   },
+   {
+      "fields":{
+         "name":"Euro CP Programme",
+         "description": "Commercial paper programme",
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+      },
+      "model":"issue.program",
+      "pk":14
+   },
+   {
+      "fields":{
+         "name":"French CP Programme",
+         "description": "Commercial paper programme",
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+      },
+      "model":"issue.program",
+      "pk":15
+   },
+   {
+      "fields":{
+         "name":"US CP Programme",
+         "description": "Commercial paper programme",
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+      },
+      "model":"issue.program",
+      "pk":16
+   },
+   {
+      "fields":{
+         "name":"Domestic CP Programme",
+         "description": "Commercial paper programme",
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+      },
+      "model":"issue.program",
+      "pk":17
+   },
+   {
+      "fields":{
+         "name":"US CD Programme",
+         "description": "Commercial paper programme",
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+      },
+      "model":"issue.program",
+      "pk":18
+   },
+   {
+      "fields":{
+         "name":"Euro CD Programme",
+         "description": "Commercial paper programme",
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+      },
+      "model":"issue.program",
+      "pk":19
+   },
+   {
+      "fields":{
+         "name":"UK CD Programme",
+         "description": "Commercial paper programme",
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+      },
+      "model":"issue.program",
+      "pk":20
+   },
+   {
+      "fields":{
+         "name":"Structured Note and Certificate Programme",
+         "description": "Structured note programme",
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+      },
+      "model":"issue.program",
+      "pk":21
+   },
+   {
+      "fields":{
+         "name":"Issue outside of program",
+         "description": "An issue that is not linked to a specific program.",
+         "start_date": "2018-07-29",
+         "end_date": "2099-12-31"
+      },
+      "model":"issue.program",
+      "pk":22
+   }
+]

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dq="urn:publicid:ESMA:CRA3:DATQXX:V1.2" xmlns:dtypes="urn:publicid:ESMA:CRA3:DATATYPES:V1.2" targetNamespace="urn:publicid:ESMA:CRA3:DATQXX:V1.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.2">
+	<xs:annotation>
+		<xs:documentation>CRA3 Rating Data Reports : DATQXX v1.2</xs:documentation>
+	</xs:annotation>
+	<!--===== Imports =====-->
+	<xs:import namespace="urn:publicid:ESMA:CRA3:DATATYPES:V1.2" schemaLocation="CRA3_DataTypes1.2.xsd"/>
+	<!-- ========================================================================
+					RatingDataReport 
+	  ======================================================================== -->
+	<xs:element name="RatingDataReport">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="QualitativeDataReportInfo" type="dq:QualitativeDataReportInfoType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="IssuerRatedDebtClassificationCancellationData" type="dq:IssuerRatedDebtClassificationCancellationDataType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="IssuerRatingCancellationData" type="dq:IssuerRatingCancellationDataType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="IssueProgramCancellationData" type="dq:IssueProgramCancellationDataType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="LeadAnalystCancellationData" type="dq:LeadAnalystCancellationDataType" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="RatingScaleCancellationData" type="dq:RatingScaleCancellationDataType" minOccurs="0" maxOccurs="1"/>
+			</xs:sequence>
+			<xs:attribute name="ESMACRACode" type="dtypes:AlphaNumeric5Type" use="required"/>
+			<xs:attribute name="ReportingCRALEI" type="dtypes:LEICodeType" use="required"/>
+			<xs:attribute name="Version" type="dtypes:VersionType" use="required"/>
+			<xs:attribute name="CreationDateAndTime" type="xs:dateTime" use="required">
+				<xs:annotation>
+					<xs:documentation>"Creation date" : The date at which the file was created, ISO 8601 standard.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="QualitativeDataReportInfoType">
+		<xs:sequence>
+			<xs:element name="CRAInfo" type="dtypes:ComplexCRAInfoType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="IssuerRatingList" type="dtypes:IssuerRatingListType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="IssuerRatedDebtClassificationList" type="dtypes:IssuerRatedDebtClassificationListType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="IssueProgramList" type="dtypes:IssueProgramListType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="LeadAnalystList" type="dtypes:LeadAnalystListType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="RatingScaleList" type="dtypes:RatingScaleListType" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ========================================================================
+					IssuerRatingCancellationData Definition
+	  ======================================================================== -->
+	<xs:complexType name="IssuerRatingCancellationDataType">
+		<xs:sequence>
+			<xs:element name="CancellationIssuerRating" type="dtypes:ComplexIssuerRatingCancellationType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ========================================================================
+					IssuerRatedDebtClassificationCancellationData Definition
+	  ======================================================================== -->
+	<xs:complexType name="IssuerRatedDebtClassificationCancellationDataType">
+		<xs:sequence>
+			<xs:element name="CancellationIssuerRatedDebtClassification" type="dtypes:ComplexIssuerRatedDebtClassificationCancellationType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ========================================================================
+					LeadAnalystCancellationData Definition
+	  ======================================================================== -->
+	<xs:complexType name="LeadAnalystCancellationDataType">
+		<xs:sequence>
+			<xs:element name="CancellationLeadAnalyst" type="dtypes:ComplexCancellationLeadAnalystType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ========================================================================
+					IssueProgramCancellationData Definition
+	  ======================================================================== -->
+	<xs:complexType name="IssueProgramCancellationDataType">
+		<xs:sequence>
+			<xs:element name="CancellationIssueProgram" type="dtypes:ComplexCancellationIssueProgramType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ========================================================================
+					RatingScaleCancellationData Definition
+	  ======================================================================== -->
+	<xs:complexType name="RatingScaleCancellationDataType">
+		<xs:sequence>
+			<xs:element name="CancellationRatingScale" type="dtypes:ComplexCancellationRatingScaleType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

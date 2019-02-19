@@ -1,0 +1,303 @@
+{% load template_tags %}
+
+<div class="row">
+    <div class="col-md-4 col-xs-6">
+      <!-- Column 1 -->
+
+      <div class="card-body">
+        <h5 class="card-title">
+          Client services
+
+          {% if global_variables.auth.groups|in_list:"Commercial" %}
+            <a href="{% url 'issuer_client_services_update' issuer_pk=issuer.pk %}"
+               class="fm-update card-link"
+               data-fm-head="Edit client services"
+               data-fm-callback="reload"
+               data-fm-target="#object-{{ issuer.pk }}">
+              <i class="far fa-edit"></i>
+            </a>
+          {% endif %}
+
+        </h5>
+        <p class="card-text">
+          {{ issuer.relationship_manager.get_full_name }}
+        </p>
+      </div>
+
+
+      <div class="card-body">
+        <h5 class="card-title">
+          Primary analyst
+
+        {% if global_variables.auth.groups|in_list:"Chief rating officer" %}
+          <a href="{% url 'issuer_primary_analyst_update' analyst_pk=issuer.analyst.pk %}"
+              class="fm-update card-link"
+              data-fm-head="Edit analysts"
+              data-fm-callback="reload"
+              data-fm-target="#object-{{ issuer.analyst.pk }}">
+            <i class="far fa-edit"></i>
+          </a>
+        {% endif %}
+
+       </h5>
+        <p class="card-text">
+          {{ issuer.analyst.primary_analyst.get_full_name }}
+        </p>
+      </div>
+
+      <div class="card-body">
+        <h5 class="card-title">
+          Secondary analyst
+
+        {% if global_variables.auth.groups|in_list:"Chief rating officer" %}
+          <a href="{% url 'issuer_primary_analyst_update' analyst_pk=issuer.analyst.pk %}"
+              class="fm-update card-link"
+              data-fm-head="Edit analysts"
+              data-fm-callback="reload"
+              data-fm-target="#object-{{ issuer.analyst.pk }}">
+            <i class="far fa-edit"></i>
+          </a>
+        {% endif %}
+
+       </h5>
+        <p class="card-text">
+          {{ issuer.analyst.secondary_analyst.get_full_name|default:'None appointed.' }}
+        </p>
+
+      </div>
+
+
+    </div>
+
+    <div class="col-md-4 col-xs-6">
+      <!-- Column 2 -->
+
+      <div class="card-body">
+        <h5 class="card-title">
+          Issuer description
+
+          {% if global_variables.auth.groups|in_list:"Analyst" %}
+            <a href="{% url 'issuer_description_update' issuer_pk=issuer.id %}"
+               class="fm-update card-link"
+               data-fm-head="Edit issuer description"
+               data-fm-callback="reload"
+               data-fm-target="#object-{{ issuer.id }}">
+              <i class="far fa-edit"></i>
+            </a>
+          {% endif %}
+
+        </h5>
+        <p class="card-text">
+          <div style="text-align:justify; text-justify: inter-word;">
+            {{ issuer.description|default:'<em>No description provided</em>.' | safe }}
+          </div>
+        </p>
+      </div>
+
+      <div class="card-body">
+        <h5 class="card-title">
+          Sector
+
+          {% if global_variables.auth.groups|in_list:"Analyst" %}
+            <a href="{% url 'issuer_gics_update' issuer_pk=issuer.pk %}"
+               class="fm-update"
+               data-fm-head="Edit GICS subindustry"
+               data-fm-callback="reload"
+               data-fm-target="#object-{{ issuer.pk }}">
+              <i class="far fa-edit"></i>
+            </a>
+          {% endif %}
+
+        </h5>
+        <p class="card-text">
+          <a href="#" data-toggle="tooltip" title="{{ issuer.gics_sub_industry.code }} / {{ issuer.gics_sub_industry.name }}
+({{ issuer.gics_sub_industry.description }}">{{ issuer.gics_sub_industry.industry.industry_group.sector.name }}</a>
+        </p>
+      </div>
+
+
+    </div>
+
+    <div class="col-md-4 col-xs-6">
+      <!-- Column 3 -->
+
+      <div class="card-body">
+        <h5 class="card-title">
+          Administrative data
+       </h5>
+        <p class="card-text">
+          <table border="0" cellpadding="0" cellspacing="0" class="card-body">
+
+            <tr>
+              <td>
+                Methodology:
+              </td>
+              <td width="10">&nbsp;</td>
+              <td>
+                {{ issuer.issuer_type }}
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                NCR reference ID:
+              </td>
+              <td width="10">&nbsp;</td>
+              <td>
+                {% format_reference_number number=issuer.id object_type='issuer'  %}
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                LEI code:
+              </td>
+              <td>&nbsp;</td>
+              <td>
+                {{ issuer.lei }}
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                NCR peer group:
+              </td>
+              <td width="10">&nbsp;</td>
+              <td>
+                {% if global_variables.auth.groups|in_list:"Analyst" %}
+                  <a href="{% url 'issuer_peer_free_text_update' classification_id=data.issuer.data.classification.id %}"
+                     class="fm-update card-link"
+                     data-fm-head="Edit NCR peer group"
+                     data-fm-callback="reload"
+                     data-fm-target="#object-{{ data.issuer.data.classification.id }}">
+                    {{ issuer.classification.internal_peer|default:'Peer group not assigned' }}
+                  </a>
+                {% else %}
+                  {{ issuer.classification.internal_peer|default:'Peer group not assigned' }}
+                {% endif %}
+
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                Direct parent company:
+              </td>
+              <td>&nbsp;</td>
+              <td>
+                {% if global_variables.auth.groups|in_list:"Analyst" %}
+                  <a href="{% url 'issuer_parent_company_update' issuer_pk=issuer.id %}"
+                     class="fm-update card-link"
+                     data-fm-head="Edit direct parent company"
+                     data-fm-callback="reload"
+                     data-fm-target="#object-{{ issuer.id }}">
+                    {{ issuer.parent_company|default:'No parent set' }}
+                  </a>
+                {% else %}
+                  {{ issuer.parent_company|default:'No parent set' }}
+                {% endif %}
+              </td>
+            </tr>
+
+
+            <tr>
+              <td>
+                Legal name:
+              </td>
+              <td>&nbsp;</td>
+              <td>
+                {% if global_variables.auth.groups|in_list:"Analyst" %}
+                  <a href="{% url 'issuer_legal_name_update' issuer_pk=issuer.id %}"
+                     class="fm-update card-link"
+                     data-fm-head="Edit legal name"
+                     data-fm-callback="reload"
+                     data-fm-target="#object-{{ issuer.id }}">
+                    {{ issuer.legal_name }}
+                  </a>
+                {% else %}
+                  {{ issuer.legal_name }}
+                {% endif %}
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <a title="This name is used in peer analysis charts">Short name:</a>
+              </td>
+              <td>&nbsp;</td>
+              <td>
+                {% if global_variables.auth.groups|in_list:"Analyst" %}
+                  <a href="{% url 'issuer_short_name_update' issuer_pk=issuer.id %}"
+                     class="fm-update card-link"
+                     data-fm-head="Edit short name used in peer analysis"
+                     data-fm-callback="reload"
+                     data-fm-target="#object-{{ issuer.id }}">
+                    {{ issuer.short_name|default:'<em>Not set</em>' }}
+                  </a>
+                {% else %}
+                  {{ issuer.short_name|default:'<em>Not set</em>' }}
+                {% endif %}
+              </td>
+            </tr>
+
+
+            <tr>
+              <td>
+                Legal form:
+              </td>
+              <td>&nbsp;</td>
+              <td>
+                {{ gleif.entity.legalform|default:'<em>GLEIF data not available</em>' }}
+              </td>
+            </tr>
+
+            <tr>
+              <td valign="top">
+                Headquarter address:
+              </td>
+              <td>&nbsp;</td>
+              <td valign="top">
+                {{ gleif.legal_address.line1 }}, {{ gleif.legal_address.postalcode }}, {{ gleif.legal_address.city }}
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                Country:
+              </td>
+              <td>&nbsp;</td>
+              <td>
+                {% if global_variables.auth.groups|in_list:"Analyst" %}
+                  <a href="{% url 'issuer_country_update' address_id=data.issuer.data.address.id %}"
+                     class="fm-update card-link"
+                     data-fm-head="Edit country"
+                     data-fm-callback="reload"
+                     data-fm-target="#object-{{ issuer.address.id }}">
+                    {{ data.issuer.data.address.country|default:'Not set' }}
+                  </a>
+                {% else %}
+                  {{ data.issuer.data.address.country.name|default:'Not set' }}
+                {% endif %}
+
+              </td>
+            </tr>
+
+            <tr>
+              <td valign="top">
+                Corporate registration id:
+              </td>
+              <td>&nbsp;</td>
+              <td valign="top">
+                {{ data.issuer.data.identifier.corporate_registration_id|default:'Not set' }}
+              </td>
+            </tr>
+
+
+          </table>
+        </p>
+
+      </div>
+
+    </div>
+
+</div>

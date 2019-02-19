@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dtypes="urn:publicid:ESMA:CRA3:DATATYPES:V1.0" xmlns:fdb="urn:publicid:ESMA:CRA3:FDBFQL:V1.0" targetNamespace="urn:publicid:ESMA:CRA3:FDBFQL:V1.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	
+	<!--===== Imports =====-->
+	<xs:import namespace="urn:publicid:ESMA:CRA3:DATATYPES:V1.0" schemaLocation="CRA3_FeesDataTypes1.0.xsd"/>
+	
+	<xs:element name="FeedBackFileInfo">
+		<xs:annotation>
+			<xs:documentation>Feedback file are generated for three reasons: File errors ; Content errors and Warnings.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="OriginalFileName" type="dtypes:FileNameType"/>
+				<xs:choice>
+					<xs:element name="NoErrors" type="dtypes:NoErrorType"/>
+					<xs:element name="ErrorsInfo" type="fdb:ErrorInfoCompleteDescriptionType"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="ESMACRACode" type="dtypes:AlphaNumeric5Type" use="required"/>
+			<xs:attribute name="Version" type="dtypes:VersionType" use="required"/>
+			<xs:attribute name="CreationDateAndTime" type="xs:dateTime" use="required">
+				<xs:annotation>
+					<xs:documentation>"Creation date" : The date and time at which the file was created, ISO 8601 standard.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ErrorInfoCompleteDescriptionType">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+		<xs:choice>			
+			<xs:element name="ContentQualitativeRecords" type="fdb:ComplexQualitativeDescriptionType"/>
+			<xs:element name="FileErrorRecords" type="dtypes:FileErrorCompleteDescriptionType"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="ComplexQualitativeDescriptionType">
+		<xs:sequence>
+			<xs:element name="ContentQualitativeErrorWarning" type="dtypes:ComplexQualitativeErrorWarningType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>	
+</xs:schema>

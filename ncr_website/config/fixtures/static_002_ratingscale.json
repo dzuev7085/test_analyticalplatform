@@ -1,0 +1,38 @@
+[
+   {
+      "pk":1,
+      "model":"static_database_table.ratingscale",
+      "fields":{
+         "start_date":"2018-07-29",
+         "end_date":"2099-12-31",
+         "description":"Rating scale for corporates and financial institutions. Used for long-term final ratings."
+      }
+   },
+   {
+      "pk":2,
+      "model":"static_database_table.ratingscale",
+      "fields":{
+         "start_date":"2018-07-29",
+         "end_date":"2099-12-31",
+         "description":"Rating scale for corporates and financial institutions. Used for short-term final ratings."
+      }
+   },
+   {
+      "pk":3,
+      "model":"static_database_table.ratingscale",
+      "fields":{
+         "start_date":"2018-07-29",
+         "end_date":"2099-12-31",
+         "description":"Rating scale for corporates and financial institutions. Used for long-term preliminary ratings."
+      }
+   },
+   {
+      "pk":4,
+      "model":"static_database_table.ratingscale",
+      "fields":{
+         "start_date":"2018-07-29",
+         "end_date":"2099-12-31",
+         "description":"Rating scale for corporates and financial institutions. Used for short-term preliminary ratings."
+      }
+   }
+]

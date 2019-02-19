@@ -1,0 +1,1564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dtypes="urn:publicid:ESMA:CRA3:DATATYPES:V1.2" targetNamespace="urn:publicid:ESMA:CRA3:DATATYPES:V1.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.2">
+	<xs:include schemaLocation="StandardDataTypes1.0.xsd"/>
+	<xs:include schemaLocation="CommonErrorDataTypes1.0.xsd"/>
+	<xs:annotation>
+		<xs:documentation>This document provides the types that the RADAR system uses for DATQXX and DATRXX XML files. v1.2.
+									  It extends from StandardDataTypes and CommonErrorDataTypes which are files common to all the ESMA messages.
+		</xs:documentation>
+	</xs:annotation>
+	<!-- ========================================================================
+					Global Types can be assigned to any elements with the same Type profile
+	  ======================================================================== -->
+	<xs:simpleType name="StringRestricted1Type">
+		<xs:annotation>
+			<xs:documentation> Global String Restricted to 1 digit. </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:length value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StringRestricted3Type">
+		<xs:annotation>
+			<xs:documentation> Global String Restricted to 3 digit. </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:maxLength value="3"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StringRestricted10Type">
+		<xs:annotation>
+			<xs:documentation> Global String Restricted to 10 digits.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:maxLength value="10"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StringRestricted11Type">
+		<xs:annotation>
+			<xs:documentation> Global String Restricted to 11 digits.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:maxLength value="11"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StringRestricted20Type">
+		<xs:annotation>
+			<xs:documentation> Global String Restricted to 20 digits.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:maxLength value="20"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StringRestricted40Type">
+		<xs:annotation>
+			<xs:documentation>Global String Restricted to 40 digits.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:maxLength value="40"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StringRestricted50Type">
+		<xs:annotation>
+			<xs:documentation>Global String Restricted to 50 digits.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:maxLength value="50"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StringRestricted140Type">
+		<xs:annotation>
+			<xs:documentation>Global String Restricted to 140 digits.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:maxLength value="140"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StringRestricted2000Type">
+		<xs:annotation>
+			<xs:documentation>Global String Restricted to 2000 digits.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:maxLength value="2000"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StringRestricted4000Type">
+		<xs:annotation>
+			<xs:documentation>Global String Restricted to 4000 digits.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:maxLength value="4000"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AlphaNumeric1Type">
+		<xs:annotation>
+			<xs:documentation>Global Alpha Numeric Type Restricted to 1 digit.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:AlphanumericType">
+			<xs:whiteSpace value="collapse"/>
+			<xs:length value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AlphaNumeric2Type">
+		<xs:annotation>
+			<xs:documentation>Global Alpha Numeric Type Restricted to 2 digits.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:AlphanumericType">
+			<xs:whiteSpace value="collapse"/>
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AlphaNumeric3Type">
+		<xs:annotation>
+			<xs:documentation>Global Alpha Numeric Type Restricted to 3 digits.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:AlphanumericType">
+			<xs:whiteSpace value="collapse"/>
+			<xs:length value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AlphaNumeric4Type">
+		<xs:annotation>
+			<xs:documentation>Global Alpha Numeric Type Restricted to 4 digits.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:AlphanumericType">
+			<xs:whiteSpace value="collapse"/>
+			<xs:length value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AlphaNumeric5Type">
+		<xs:annotation>
+			<xs:documentation>Global Alpha Numeric Type Restricted to 5 digits.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:AlphanumericType">
+			<xs:whiteSpace value="collapse"/>
+			<xs:maxLength value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AlphaNumeric10Type">
+		<xs:annotation>
+			<xs:documentation>Global Alpha Numeric Type Restricted to 10 digits.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:AlphanumericType">
+			<xs:whiteSpace value="collapse"/>
+			<xs:length value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AlphaNumeric11Type">
+		<xs:annotation>
+			<xs:documentation>Global Alpha Numeric Type Restricted to 11 digits.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:AlphanumericType">
+			<xs:whiteSpace value="collapse"/>
+			<xs:length value="11"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AlphaNumeric20Type">
+		<xs:annotation>
+			<xs:documentation>Global Alpha Numeric Type Restricted to 20 digits.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:AlphanumericType">
+			<xs:whiteSpace value="collapse"/>
+			<xs:length value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AlphaNumeric30Type">
+		<xs:annotation>
+			<xs:documentation>Global Alpha Numeric Type Restricted to 30 digits.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:AlphanumericType">
+			<xs:whiteSpace value="collapse"/>
+			<xs:length value="30"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AlphaNumeric40Type">
+		<xs:annotation>
+			<xs:documentation>Global Alpha Numeric Type Restricted to 40 digits.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:AlphanumericType">
+			<xs:whiteSpace value="collapse"/>
+			<xs:length value="40"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AlphaNumeric90Type">
+		<xs:annotation>
+			<xs:documentation>Global Alpha Numeric Type Restricted to 90 digits.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:AlphanumericType">
+			<xs:whiteSpace value="collapse"/>
+			<xs:length value="90"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AlphaNumeric300Type">
+		<xs:annotation>
+			<xs:documentation>Global Alpha Numeric Type Restricted to 300 digits.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:AlphanumericType">
+			<xs:whiteSpace value="collapse"/>
+			<xs:length value="300"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Integer1to1Type">
+		<xs:annotation>
+			<xs:documentation>"Integer minimum value 1 and maximum value 1.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Integer1to99Type">
+		<xs:annotation>
+			<xs:documentation>"Integer minimum value 1 and maximum value 99.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="99"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Integer1to20Type">
+		<xs:annotation>
+			<xs:documentation>"Integer minimum value 1 and maximum value 20.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="IntegerRestrictedType">
+		<xs:annotation>
+			<xs:documentation>Integer.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:whiteSpace value="collapse"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BooleanYNType">
+		<xs:annotation>
+			<xs:documentation>"Boolean Y or N Type..</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:UpperAlphaType">
+			<xs:length value="1"/>
+			<xs:enumeration value="Y"/>
+			<xs:enumeration value="N"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="HyperlinkType">
+		<xs:annotation>
+			<xs:documentation>URL of an hyperlink to a published physical document</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="2047"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- ========================================================================
+					Qualitative Data - CRA and methodology description 
+	  ======================================================================== -->
+	<xs:simpleType name="ReportingTypeType">
+		<xs:annotation>
+			<xs:documentation>"Reporting type" : Establishes if the reporting represents new information, change (update/correction) or deletion.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:UpperAlphaType">
+			<xs:length value="3"/>
+			<xs:enumeration value="NEW"/>
+			<xs:enumeration value="CHG"/>
+			<xs:enumeration value="DEL"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RestrictiveReportingTypeType">
+		<xs:annotation>
+			<xs:documentation>"Reporting type" : Establishes if the reporting represents new information or change (update/correction).</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:UpperAlphaType">
+			<xs:length value="3"/>
+			<xs:enumeration value="NEW"/>
+			<xs:enumeration value="CHG"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ChangeReasonType">
+		<xs:annotation>
+			<xs:documentation>"Change reason" : The change to reported data can be due to incorrect data (correction) or due to real changes in time of the information (updates). The correction will replace the piece of information while the update is available only from the 'Update date' (the previous value being kept in the historical data).</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:UpperAlphaType">
+			<xs:length value="1"/>
+			<xs:enumeration value="U"/>
+			<xs:enumeration value="C"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ComplexReportingTypeInfoType">
+		<xs:sequence>
+			<xs:element name="ReportingType" type="dtypes:RestrictiveReportingTypeType"/>
+			<xs:element name="ChangeReason" type="dtypes:ChangeReasonType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="ReportingReason" type="dtypes:StringRestricted300Type" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="UpdateDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexCRAInfoType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"CRA Info" : Informations on the CRA.</xs:documentation>
+			</xs:annotation>
+			<xs:element name="ReportingTypeInfo" type="dtypes:ComplexReportingTypeInfoType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="CRAName" type="dtypes:StringRestricted90Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="CRADescription" type="dtypes:StringRestricted500Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="CRAMethodology" type="dtypes:StringRestricted4000Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="CRAMethodologyWebPageLink" type="dtypes:StringRestricted300Type" minOccurs="1"/>
+			<xs:element name="SolicitedUnsolicitedRatingPolicyDescription" type="dtypes:StringRestricted500Type" minOccurs="0"/>
+			<xs:element name="SubsidiaryRatingPolicy" type="dtypes:StringRestricted500Type" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="GeographicalReportingScope" type="dtypes:GeographicalReportingScopeType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="DefinitionDefault" type="dtypes:StringRestricted2000Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="CRAWebsiteLink" type="dtypes:StringRestricted40Type" minOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GeographicalReportingScopeType">
+		<xs:annotation>
+			<xs:documentation>"Geographical reporting scope" : In the case of a CRA part of a group, they should mention whether they report all the ratings issued by the group (global scope) or not (only the EU and endorsed ratings). If the coverage is not global, the credit rating agency shall explain why not. For all other CRAs it should be reported as "global"</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="GlobalReportingScopeFlag" type="dtypes:BooleanType"/>
+			<xs:element name="ReasonNonGlobal" type="dtypes:StringRestricted500Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ========================================================================
+					Qualitative Data - Issuer Debt classification
+	  ======================================================================== -->
+	<xs:simpleType name="SeniorityType">
+		<xs:annotation>
+			<xs:documentation>"Seniority Type" .</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:UpperAlphaType">
+			<xs:maxLength value="3"/>
+			<xs:enumeration value="SEU"/>
+			<xs:enumeration value="SEO"/>
+			<xs:enumeration value="SB"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ComplexDebtClassificationType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"Issuer debt classification" : Description of the issuer debt classification used by the CRA.</xs:documentation>
+			</xs:annotation>
+			<xs:element name="ReportingTypeInfo" type="dtypes:ComplexReportingTypeInfoType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="DebtClassificationCode" type="dtypes:StringRestricted40Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="DebtClassificationName" type="dtypes:StringRestricted90Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="DebtClassificationDescription" type="dtypes:StringRestricted500Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Seniority" type="dtypes:SeniorityType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="DebtClassificationStartDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="DebtClassificationEndDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="IssuerRatedDebtClassificationListType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"Classification of issuer rated Debt"</xs:documentation>
+			</xs:annotation>
+			<xs:element name="RatedDebtClassification" type="dtypes:ComplexDebtClassificationType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="IssuerRatingListType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"IssuerRatingInfo"</xs:documentation>
+			</xs:annotation>
+			<xs:element name="IssuerRatingInfo" type="dtypes:ComplexIssuerRatingInfoType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="IssuerRatingTypeStandardType">
+		<xs:annotation>
+			<xs:documentation>"Issuer Rating Type Standard Type. This should distinguish the types of issuer ratings in: the main/global issuer credit rating, the debt rating type and all other issuer debt ratings.
+			IR – Main issuer rating
+            DT - Debt rating
+            OT - Other" .</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:UpperAlphaType">
+			<xs:length value="2"/>
+			<xs:enumeration value="IR"/>
+			<xs:enumeration value="DT"/>
+			<xs:enumeration value="OT"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ComplexIssuerRatingInfoType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"Issuer debt classification" : Description of the issuer rating used by the CRA.</xs:documentation>
+			</xs:annotation>
+			<xs:element name="ReportingTypeInfo" type="dtypes:ComplexReportingTypeInfoType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IssuerRatingTypeCode" type="dtypes:StringRestricted40Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IssuerRatingTypeName" type="dtypes:StringRestricted90Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IssuerRatingTypeDescription" type="dtypes:StringRestricted500Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IssuerRatingTypeStandard" type="dtypes:IssuerRatingTypeStandardType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IssuerRatingTypeStartDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IssuerRatingTypeEndDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ========================================================================
+					Qualitative Data - Issue/program types
+	  ======================================================================== -->
+	<xs:complexType name="ComplexIssueProgramType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"Issuer/program types.</xs:documentation>
+			</xs:annotation>
+			<xs:element name="ReportingTypeInfo" type="dtypes:ComplexReportingTypeInfoType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IssueProgramCode" type="dtypes:StringRestricted40Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IssueProgramName" type="dtypes:StringRestricted90Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IssueProgramDescription" type="dtypes:StringRestricted500Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IssueProgramStartDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IssueProgramEndDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="IssueProgramListType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"List of issue/program"</xs:documentation>
+			</xs:annotation>
+			<xs:element name="IssueProgram" type="dtypes:ComplexIssueProgramType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ========================================================================
+					Qualitative Data - Lead Analyst list
+	  ======================================================================== -->
+	<xs:complexType name="ComplexLeadAnalystType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"Lead analyst identification (id and name) and validity dates (valid Start and valid End)"</xs:documentation>
+			</xs:annotation>
+			<xs:element name="ReportingTypeInfo" type="dtypes:ComplexReportingTypeInfoType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="LeadAnalystCode" type="dtypes:StringRestricted40Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="LeadAnalystName" type="dtypes:StringRestricted90Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="LeadAnalystStartDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="LeadAnalystEndDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="LeadAnalystListType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"List of Lead analyst identification (id and name) and validity dates (valid Start and valid End)"</xs:documentation>
+			</xs:annotation>
+			<xs:element name="LeadAnalyst" type="dtypes:ComplexLeadAnalystType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ========================================================================
+					Qualitative Data - Rating Scale
+	  ======================================================================== -->
+	<xs:simpleType name="TimeHorizonType">
+		<xs:annotation>
+			<xs:documentation>"TimeHorizonType" Identifies the applicability of the rating scale based on the time horizon. 
+			L - applicable to long term ratings
+            S – applicable to short term ratings" .</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:UpperAlphaType">
+			<xs:length value="1"/>
+			<xs:enumeration value="L"/>
+			<xs:enumeration value="S"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RatingTypeType">
+		<xs:annotation>
+			<xs:documentation>"RatingTypeType": C - corporate ratings, S - Sovereign and public finance ratings, T - Structured finance ratings
+O – Other financial instruments .</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:AlphanumericType">
+			<xs:length value="1"/>
+			<xs:enumeration value="C"/>
+			<xs:enumeration value="S"/>
+			<xs:enumeration value="T"/>
+			<xs:enumeration value="O"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RatingScaleScopeType">
+		<xs:annotation>
+			<xs:documentation>"PR - rating scale is used for issuing preliminary ratings only
+FR - rating scale is used for issuing final ratings only
+BT - rating scale is used for issuing preliminary and final ratings.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:UpperAlphaType">
+			<xs:length value="2"/>
+			<xs:enumeration value="PR"/>
+			<xs:enumeration value="FR"/>
+			<xs:enumeration value="BT"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ComplexScopeListType">
+		<xs:annotation>
+			<xs:documentation>"Scope of the rating scale". If the rating scale identifier is populated, then the scope is mandatory.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Scope" type="dtypes:ComplexScopeType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexScopeType">
+		<xs:annotation>
+			<xs:documentation>"Scope of the rating scale". If the rating scale identifier is populated, then the scope is mandatory.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="TimeHorizon" type="dtypes:TimeHorizonType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RatingType" type="dtypes:RatingTypeType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RatingScaleScope" type="dtypes:RatingScaleScopeType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RelevantForCEREPFlag" type="dtypes:BooleanYNType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ScopeStartDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ScopeEndDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexNotchType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"Notch type" : Each rating category might contains max 20 notches, at least 1 notch must exist for 1 category. For ALL the categories, a maximum of 99 notches are permitted. .</xs:documentation>
+			</xs:annotation>
+			<xs:element name="NotchValue" type="dtypes:Integer1to99Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="NotchLabel" type="dtypes:StringRestricted10Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="NotchDescription" type="dtypes:StringRestricted500Type" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexCategoryType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"Rating category" : The rating scales contain an undetermined number of categories (rating categories) that might contain an undetermined number of notches. For each rating category, at least 1 notch must exist. For ALL the rating scales a maximum of 20 categories is permitted.</xs:documentation>
+			</xs:annotation>
+			<xs:element name="CategoryValue" type="dtypes:Integer1to20Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="CategoryLabel" type="dtypes:StringRestricted10Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="CategoryDescription" type="dtypes:StringRestricted500Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Notch" type="dtypes:ComplexNotchType" maxOccurs="99"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexRatingScaleType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"Rating scale" : Main element for the definition of a rating scale. A CRA might use different rating scales. .</xs:documentation>
+			</xs:annotation>
+			<xs:element name="ReportingTypeInfo" type="dtypes:ComplexReportingTypeInfoType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RatingScaleCode" type="dtypes:StringRestricted10Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RatingScaleStartDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RatingScaleEndDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RatingScaleDescription" type="dtypes:StringRestricted500Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ScopeList" type="dtypes:ComplexScopeListType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Category" type="dtypes:ComplexCategoryType" maxOccurs="20"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RatingScaleListType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"List of RatingScale"</xs:documentation>
+			</xs:annotation>
+			<xs:element name="RatingScale" type="dtypes:ComplexRatingScaleType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ==========================CANCELLATIONS==============================================-->
+	<!-- ========================================================================
+					Qualitative Data: Cancellation Issuer Rated Debt Classification List
+	  ======================================================================== -->
+	<xs:complexType name="ComplexIssuerRatedDebtClassificationCancellationType">
+		<xs:sequence>
+			<xs:element name="ReportingType" type="dtypes:ReportingTypeType" fixed="DEL" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ReportingReason" type="dtypes:StringRestricted300Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="DebtClassificationCode" type="dtypes:StringRestricted40Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="DebtClassificationStartDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ==========================CANCELLATIONS==============================================-->
+	<!-- ========================================================================
+					Qualitative Data: Cancellation Issuer Ratings List
+	  ======================================================================== -->
+	<xs:complexType name="ComplexIssuerRatingCancellationType">
+		<xs:sequence>
+			<xs:element name="ReportingType" type="dtypes:ReportingTypeType" fixed="DEL" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ReportingReason" type="dtypes:StringRestricted300Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IssuerRatingTypeCode" type="dtypes:StringRestricted40Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IssuerRatingTypeStartDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ==================================================RatingDataReportInfo======================
+					Qualitative Data: Cancellation IssuerRatedDebtClassificationList
+	  ======================================================================== -->
+	<xs:complexType name="ComplexDebtClassificationCancellationType">
+		<xs:sequence>
+			<xs:element name="ReportingType" type="dtypes:ReportingTypeType" fixed="DEL" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ReportingReason" type="dtypes:StringRestricted300Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="DebtClassificationCode" type="dtypes:StringRestricted40Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="DebtClassificationStartDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ========================================================================
+					Qualitative Data: Cancellation IssueProgramList
+	  ======================================================================== -->
+	<xs:complexType name="ComplexCancellationIssueProgramType">
+		<xs:sequence>
+			<xs:element name="ReportingType" type="dtypes:ReportingTypeType" fixed="DEL" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ReportingReason" type="dtypes:StringRestricted300Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IssueProgramCode" type="dtypes:StringRestricted40Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IssueProgramStartDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ========================================================================
+					Qualitative Data: Cancellation LeadAnalystList
+	  ======================================================================== -->
+	<xs:complexType name="ComplexCancellationLeadAnalystType">
+		<xs:sequence>
+			<xs:element name="ReportingType" type="dtypes:ReportingTypeType" fixed="DEL" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ReportingReason" type="dtypes:StringRestricted300Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="LeadAnalystCode" type="dtypes:StringRestricted40Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="LeadAnalystStartDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ========================================================================
+					Qualitative Data: Cancellation RatingScaleList
+	  ======================================================================== -->
+	<xs:complexType name="ComplexCancellationRatingScaleType">
+		<xs:sequence>
+			<xs:element name="ReportingType" type="dtypes:ReportingTypeType" fixed="DEL" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ReportingReason" type="dtypes:StringRestricted300Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RatingScaleCode" type="dtypes:StringRestricted10Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RatingScaleStartDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ======================QUANTITATIVE DATA================================= -->
+	<!-- ========================================================================
+					Quantitative types - Rating information
+	  ======================================================================== -->
+	<xs:simpleType name="IndustryType">
+		<xs:annotation>
+			<xs:documentation>"Industry enumerated list FI - for financial institution rating including banks, brokers and dealers,
+IN - for insurance institution rating, CO - for corporate institution rating that are not included in ‘FI’ or ‘IN’" .</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:UpperAlphaType">
+			<xs:length value="2"/>
+			<xs:enumeration value="FI"/>
+			<xs:enumeration value="IN"/>
+			<xs:enumeration value="CO"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SectorType">
+		<xs:annotation>
+			<xs:documentation>"SV – for State rating, SM – for regional or local-authority rating, IF – for international financial institution rating, SO – for supranational organizations rating other than 'IF', PE – for public entities rating." .</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:UpperAlphaType">
+			<xs:length value="2"/>
+			<xs:enumeration value="SV"/>
+			<xs:enumeration value="SM"/>
+			<xs:enumeration value="IF"/>
+			<xs:enumeration value="SO"/>
+			<xs:enumeration value="PE"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AssetClassType">
+		<xs:annotation>
+			<xs:documentation>"ABS -  for ABS rating, RMBS -  for RMBS rating, CMBS -  for CMBS rating, CDO -  for CDO rating, ABCP -  for ABCP  rating, OTH -  for Other." .</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:UpperAlphaType">
+			<xs:maxLength value="4"/>
+			<xs:enumeration value="ABS"/>
+			<xs:enumeration value="RMBS"/>
+			<xs:enumeration value="CMBS"/>
+			<xs:enumeration value="CDO"/>
+			<xs:enumeration value="ABCP"/>
+			<xs:enumeration value="OTH"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SubAssetType">
+		<xs:annotation>
+			<xs:documentation>"CCS - If ABS: Credit card receivable backed securities
+ALB - If ABS: Auto loan backed securities
+CNS - If ABS: Consumer loan backed security
+SME - If ABS: Small and medium sized enterprises loan backed securities
+LES - If ABS: Leases to individual or business backed security
+HEL - If RMBS: Home equity loans
+PRR - If RMBS: Prime RMBS,
+NPR - If RMBS: Non-prime RMBS
+CFH - If CDO: Cash flow and hybrid CDOs/CLOs
+SDO - If CDO: Synthetic CDOs/CLOs
+MVO - If CDO: Market value CDOs
+SIV - If OTH: structured investment vehicles
+ILS - If OTH: insurance-linked securities
+DPC - If OTH: derivative product companies
+SCB - If OTH: structured covered bonds
+OTH – Other." .</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:UpperAlphaType">
+			<xs:length value="3"/>
+			<xs:enumeration value="CCS"/>
+			<xs:enumeration value="ALB"/>
+			<xs:enumeration value="CNS"/>
+			<xs:enumeration value="SME"/>
+			<xs:enumeration value="LES"/>
+			<xs:enumeration value="HEL"/>
+			<xs:enumeration value="PRR"/>
+			<xs:enumeration value="NPR"/>
+			<xs:enumeration value="CFH"/>
+			<xs:enumeration value="SDO"/>
+			<xs:enumeration value="MVO"/>
+			<xs:enumeration value="SIV"/>
+			<xs:enumeration value="ILS"/>
+			<xs:enumeration value="DPC"/>
+			<xs:enumeration value="SCB"/>
+			<xs:enumeration value="OTH"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CorporateIssueClassificationType">
+		<xs:annotation>
+			<xs:documentation>"BND –bonds
+CBR- covered bonds that fall under the requirements referred to in Article 129 of Regulation (EU) No 575/2013 and Article 52(4) of Directive 2009/65/EC
+OCB - other types of covered bonds, for which the credit rating agency has used specific covered bonds methodologies, models or key rating assumptions for issuing the credit rating and does not fall under the requirements of point (b)
+OTH - other types of corporate issues that cannot be classified in one of the preceding types." .</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:UpperAlphaType">
+			<xs:length value="3"/>
+			<xs:enumeration value="BND"/>
+			<xs:enumeration value="CBR"/>
+			<xs:enumeration value="OCB"/>
+			<xs:enumeration value="OTH"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ComplexPrecedingPreliminaryRatingInfoType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"Preceding Rating" : Informations on the preceding rating</xs:documentation>
+			</xs:annotation>
+			<xs:element name="PrecedingPreliminaryRatingFlag" type="dtypes:BooleanYNType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="PrecedingPreliminaryRatingIdentifier" type="dtypes:StringRestricted40Type" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexRatingInfoType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"Rating Info" : Informations on the rating including the rated entity</xs:documentation>
+			</xs:annotation>
+			<xs:element name="ResponsibleCRALEI" type="dtypes:LEICodeType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IssuerCRALEI" type="dtypes:LEICodeType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RatingType" type="dtypes:RatingTypeType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="OtherRatingType" type="dtypes:StringRestricted300Type" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="RatedObject" type="dtypes:RatedObjectType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="TimeHorizon" type="dtypes:TimeHorizonType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Country" type="dtypes:CountryCodeType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="LocalForeignCurrency" type="dtypes:LocalForeignCurrencyType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="IssuerInfo" type="dtypes:ComplexIssuerInfoType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="InstrumentInfo" type="dtypes:ComplexInstrumentInfoType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="IssuerRatingTypeCode" type="dtypes:StringRestricted40Type" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="DebtClassificationCode" type="dtypes:StringRestricted40Type" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Industry" type="dtypes:IndustryType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Sector" type="dtypes:SectorType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="AssetClass" type="dtypes:AssetClassType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="SubAsset" type="dtypes:SubAssetType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="OtherSubAsset" type="dtypes:StringRestricted40Type" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="TypeOfRatingForERP" type="dtypes:TypeOfRatingForERPType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RelevantForCEREPFlag" type="dtypes:BooleanYNType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="PrecedingPreliminaryRatingInfo" type="dtypes:ComplexPrecedingPreliminaryRatingInfoType" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexUpdateRatingInfoType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"Rating Info" : Informations on the rating including the rated entity</xs:documentation>
+			</xs:annotation>
+			<xs:element name="ResponsibleCRALEI" type="dtypes:LEICodeType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IssuerCRALEI" type="dtypes:LEICodeType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RatingType" type="dtypes:RatingTypeType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="OtherRatingType" type="dtypes:StringRestricted300Type" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="RatedObject" type="dtypes:RatedObjectType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="TimeHorizon" type="dtypes:TimeHorizonType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Country" type="dtypes:CountryCodeType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="LocalForeignCurrency" type="dtypes:LocalForeignCurrencyType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="IssuerInfo" type="dtypes:ComplexIssuerInfoType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="InstrumentInfo" type="dtypes:ComplexInstrumentInfoType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="IssuerRatingTypeCode" type="dtypes:StringRestricted40Type" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="DebtClassificationCode" type="dtypes:StringRestricted40Type" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Industry" type="dtypes:IndustryType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Sector" type="dtypes:SectorType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="AssetClass" type="dtypes:AssetClassType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="SubAsset" type="dtypes:SubAssetType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="OtherSubAsset" type="dtypes:StringRestricted40Type" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="TypeOfRatingForERP" type="dtypes:TypeOfRatingForERPType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RelevantForCEREPFlag" type="dtypes:BooleanYNType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="PrecedingPreliminaryRatingInfo" type="dtypes:ComplexPrecedingPreliminaryRatingInfoType" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="RatedObjectType">
+		<xs:annotation>
+			<xs:documentation>"Specifies if the rating refers to an entity / issuer of debt, a debt of an entity or an issue of a rated entity/ financial instrument."</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:UpperAlphaType">
+			<xs:length value="3"/>
+			<xs:enumeration value="ISR"/>
+			<xs:enumeration value="INT"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LocalForeignCurrencyType">
+		<xs:annotation>
+			<xs:documentation>"Identifies whether the rating is ex-pressed in respect of local or foreign currency."</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:UpperAlphaType">
+			<xs:length value="2"/>
+			<xs:enumeration value="LC"/>
+			<xs:enumeration value="FC"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ComplexIssuerInfoType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"Issuer information" : Informations on the issuer including internal id, LEI code, name, ...</xs:documentation>
+			</xs:annotation>
+			<xs:element name="IssuerLEICode" type="dtypes:LEICodeType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="IssuerInternalCode" type="dtypes:StringRestricted40Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IssuerVATCode" type="dtypes:StringRestricted40Type" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="IssuerNationalFiscalCode" type="dtypes:StringRestricted40Type" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="IssuerBICCode" type="dtypes:BICCodeType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="IssuerName" type="dtypes:StringRestricted90Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IssuerParentLEICode" type="dtypes:LEICodeType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="IssuerParentInternalCode" type="dtypes:StringRestricted40Type" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="SubSovereignCode" type="dtypes:ComplexSubSovereignCodeType" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexInstrumentInfoType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"Instrument information" : Informations on the instrument including internal id, ISIN code, name, ...</xs:documentation>
+			</xs:annotation>
+			<xs:element name="InstrumentISINCode" type="dtypes:ISINInstrumentIdentificationType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="InstrumentInternalCode" type="dtypes:StringRestricted40Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="InstrumentUniqueIdentifier" type="dtypes:InstrumentUniqueIdentifierType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="IssuanceDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="MaturityDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="OutstandingIssueVolume" type="dtypes:IntegerRestrictedType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="IssueVolumeCurrencyCode" type="dtypes:CurrencyCodeType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="ProgramDealIssuanceName" type="dtypes:StringRestricted140Type" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="CorporateIssueClassification" type="dtypes:CorporateIssueClassificationType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="OtherCorporateIssues" type="dtypes:StringRestricted50Type" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="IssueProgramCode" type="dtypes:StringRestricted40Type" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="TrancheClass" type="dtypes:TrancheClassType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="SerieProgramCode" type="dtypes:StringRestricted40Type" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="OriginatorInfoList" type="dtypes:OriginatorInfoListType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="ComplexityIndicator" type="dtypes:ComplexityIndicatorType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="StructuredFinanceTransactionType" type="dtypes:StructuredFinanceTransactionTypeType" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexSubSovereignCodeType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>Define the NUTS (level 1,2 or ) or LAU code for sub-sovereign ratings</xs:documentation>
+			</xs:annotation>
+			<xs:element name="SubSovereignCodeType" type="dtypes:StringRestricted10Type"/>
+			<xs:element name="SubSovereignCodeTypeVersion" type="dtypes:StringRestricted10Type"/>
+			<xs:element name="SubSovereignCode" type="dtypes:StringRestricted20Type"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="InstrumentUniqueIdentifierType">
+		<xs:annotation>
+			<xs:documentation>"Unique code to identify the financial instrument that is rated. It shall be maintained un-changed over time."</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:StringRestricted140Type"/>
+	</xs:simpleType>
+	<xs:simpleType name="TrancheClassType">
+		<xs:annotation>
+			<xs:documentation>"Tranche Class" : Class of the tranche</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ComplexityIndicatorType">
+		<xs:annotation>
+			<xs:documentation>"Complexity indicator" : It specifies the complexity grade assigned to the ratings considering the number of originators, counter parties, countries, the need to develop, complex colateral, etc.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:AlphanumericType">
+			<xs:maxLength value="1"/>
+			<xs:enumeration value="S"/>
+			<xs:enumeration value="C"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StructuredFinanceTransactionTypeType">
+		<xs:annotation>
+			<xs:documentation>"Structured Finance Transaction type" : Indicates whether the instrument refers to a Stand-alone or master-Trust</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:AlphanumericType">
+			<xs:maxLength value="1"/>
+			<xs:enumeration value="S"/>
+			<xs:enumeration value="M"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TypeOfRatingForERPType">
+		<xs:annotation>
+			<xs:documentation>"NXI – the rating is not exclusively produced for and disclosed to investors for a fee
+EXI -  the rating is exclusively produced for and disclosed to investors for a fee</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:AlphanumericType">
+			<xs:maxLength value="3"/>
+			<xs:enumeration value="NXI"/>
+			<xs:enumeration value="EXI"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- ========================================================================
+					Quantitative types - Originator's information
+	  ======================================================================== -->
+	<xs:complexType name="ComplexOriginatorInfoType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"Originator information" : Informations on the issuer including internal id, LEI code, name, ...</xs:documentation>
+			</xs:annotation>
+			<xs:element name="OriginatorBICCode" type="dtypes:BICCodeType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="OriginatorInternalCode" type="dtypes:StringRestricted40Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="OriginatorLEI" type="dtypes:LEICodeType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="OriginatorName" type="dtypes:StringRestricted90Type" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OriginatorInfoListType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"List of Originators"</xs:documentation>
+			</xs:annotation>
+			<xs:element name="OriginatorInfo" type="dtypes:ComplexOriginatorInfoType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ========================================================================
+					Quantitative types - rating action information
+	  ======================================================================== -->
+	<xs:complexType name="ComplexActionDateInfoType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"Action date " : Date related to the action.</xs:documentation>
+			</xs:annotation>
+			<xs:element name="ValidityDate" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="CommunicationDate" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="DecisionDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="ActionTypeType">
+		<xs:annotation>
+			<xs:documentation>"Flags that the rating has been generated for the first time during the reporting period. 
+			OR – in case of outstanding rating (only for first time reporting) 
+            PR - in case of preliminary rating
+            NW - in case the rating is issued for the first time
+            UP - in case the rating is upgraded
+            DG - in case the rating is downgraded
+            AF - in case the rating is affirmed
+            DF - in case a rated issuer or instrument is assigned to or removed from a default status and the default is not linked with another rating action
+            SP - in case the rating is suspended
+            WD - in case the rating is withdrawn
+            OT - in case the rating is placed to or removed from the outlook/trend status
+           WR - in case the rating is placed to or removed from the watch/review status"</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:UpperAlphaType">
+			<xs:length value="2"/>
+			<xs:enumeration value="OR"/>
+			<xs:enumeration value="PR"/>
+			<xs:enumeration value="NW"/>
+			<xs:enumeration value="UP"/>
+			<xs:enumeration value="AF"/>
+			<xs:enumeration value="OT"/>
+			<xs:enumeration value="WR"/>
+			<xs:enumeration value="DG"/>
+			<xs:enumeration value="DF"/>
+			<xs:enumeration value="SP"/>
+			<xs:enumeration value="WD"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="OutlookWatchSuspensionDefaultStatusType">
+		<xs:annotation>
+			<xs:documentation>"An outlook/Watch/Suspension/Default status is assigned, kept or removed by the CRA according to its relevant policy. 
+			P - status is placed
+            M - status is maintained
+            R - status is removed"</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:UpperAlphaType">
+			<xs:length value="1"/>
+			<xs:enumeration value="P"/>
+			<xs:enumeration value="M"/>
+			<xs:enumeration value="R"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="OutlookTrendType">
+		<xs:annotation>
+			<xs:documentation>"Identifies the outlook/trend assigned or removed to a rating by the CRA according to its relevant policy. 
+			POS - in case of a positive outlook
+            NEG - in case of a negative outlook
+            EVO - in case of an evolving  or developing outlook
+            STA - in case of a stable outlook"</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:UpperAlphaType">
+			<xs:length value="3"/>
+			<xs:enumeration value="POS"/>
+			<xs:enumeration value="NEG"/>
+			<xs:enumeration value="EVO"/>
+			<xs:enumeration value="STA"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="WatchReviewType">
+		<xs:annotation>
+			<xs:documentation>"Identifies the watch/review status assigned to or removed from a rating by the CRA according to its relevant policy.
+			POW - in case of a positive watch/review
+            NEW - in case of a negative watch/review
+            EVW - in case of an evolving or developing watch/review
+            UNW - in case of a watch/review with uncertain direction"</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:UpperAlphaType">
+			<xs:length value="3"/>
+			<xs:enumeration value="POW"/>
+			<xs:enumeration value="NEW"/>
+			<xs:enumeration value="EVW"/>
+			<xs:enumeration value="UNW"/>
+		</xs:restriction>
+	</xs:simpleType>
+    <xs:simpleType name="WatchReviewDeterminantType">
+                        <xs:annotation>
+<xs:documentation>" Identifies the reason for the watch/review status of a rating. Should be reported only for the ratings issued in the Union.
+1 — where the watch/review status is due to changes in methodologies, models or key rating assumptions
+2 — where the watch/review status is due to economic, financial or credit reasons
+3 — where the watch or review status is due to other reasons (e.g. departure of analysts, occurrence of conflicts of interests)"</xs:documentation>
+                 </xs:annotation>
+                 <xs:restriction base="xs:integer">
+                             <xs:whiteSpace value="collapse"/>
+                             <xs:enumeration value="1"/>
+                             <xs:enumeration value="2"/>
+                             <xs:enumeration value="3"/>
+                 </xs:restriction>
+    </xs:simpleType>
+	<xs:simpleType name="WithdrawalReasonType">
+		<xs:annotation>
+			<xs:documentation>"Identifies the reason of a withdrawal action.
+			1 - in case of incorrect or insufficient information on issuer/issue
+            2 - in case of bankruptcy of the rated entity or debt restructuring
+            3 - in case of reorganization of rated entity (including the merger or acquisition of the rated entity)
+            4 - in case of the end of maturity of the debt obligation, or  in case the debt is redeemed, called, prefunded, cancelled
+            5 - in case of automatic invalidity of rating due to business model of CRA (such as expiry of ratings valid for a predetermined period)
+            6 – in case of rating withdrawal due to other reasons
+            7 - in case the rating relates to 10% shareholder on an impacted entity (as set out in Annex I, Section B, Point 3 of the Regulation)
+            8 – in case of client’s request"</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="5"/>
+			<xs:enumeration value="6"/>
+			<xs:enumeration value="7"/>
+			<xs:enumeration value="8"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RatingIssuanceLocationType">
+		<xs:annotation>
+			<xs:documentation>"Specifies the location of the issuance of the credit ratings.
+			I - Issued in the Union
+            E - Endorsed
+            T - Issued in a third country by a certified CRA
+            O - Other (not-endorsed)
+            N - Not available (only valid before 01/01/2011)."</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:UpperAlphaType">
+			<xs:maxLength value="1"/>
+			<xs:enumeration value="I"/>
+			<xs:enumeration value="E"/>
+			<xs:enumeration value="T"/>
+			<xs:enumeration value="O"/>
+			<xs:enumeration value="N"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RatingDataSolicitedUnsolicitedType">
+		<xs:annotation>
+			<xs:documentation>"Solicited/Unsolicited" : Solicitation status of the rated entity / instrument, specifies if it is a solicited rating, unsolicited rating or unsolicited rating with participation.
+            S - if the rating is solicited,
+            U - if the rating is unsolicited without participation
+            P - if the rating is unsolicited with participation
+			N – in case of not endorsed ratings if the rating is unsolicited and the participation is unspecified."</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="dtypes:AlphanumericType">
+			<xs:whiteSpace value="collapse"/>
+			<xs:maxLength value="1"/>
+			<xs:enumeration value="S"/>
+			<xs:enumeration value="U"/>
+			<xs:enumeration value="P"/>
+			<xs:enumeration value="N"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ComplexLeadAnalystInfoType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"Lead analyst information" : Informations on the lead analyst</xs:documentation>
+			</xs:annotation>
+			<xs:element name="LeadAnalystCode" type="dtypes:StringRestricted40Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="LeadAnalystCountryCode" type="dtypes:CountryCodeType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="LanguageType">
+		<xs:annotation>
+			<xs:documentation>"Langage of the press release, ISO 639-1"</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:length value="2"/>
+			<xs:pattern value="[a-z]+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PressReleaseFileNameType">
+		<xs:annotation>
+			<xs:documentation>"Press release file name" in zip format.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ComplexPressReleaseType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>Press release information.</xs:documentation>
+			</xs:annotation>
+			<xs:element name="PressReleaseLanguage" type="dtypes:LanguageType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="PressReleaseFileName" type="dtypes:PressReleaseFileNameType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="LinkToRatingActionIdentifier" type="dtypes:StringRestricted40Type" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="ResearchReportFileNameType">
+		<xs:annotation>
+			<xs:documentation>"Research report name" in zip format.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ComplexResearchReportType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>" Research info".</xs:documentation>
+			</xs:annotation>
+			<xs:element name="ResearchReportLanguage" type="dtypes:LanguageType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ResearchReportFileName" type="dtypes:ResearchReportFileNameType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="LinkToRatingActionIdentifier" type="dtypes:StringRestricted40Type" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ========================================================================
+		Quantitative: RatingActionType Definition
+	  ======================================================================== -->
+	<xs:complexType name="ComplexRatingActionType">
+		<xs:sequence>
+			<xs:element name="ReportingType" type="dtypes:ReportingTypeType" fixed="NEW" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RatingIdentifier" type="dtypes:StringRestricted40Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RatingActionIdentifier" type="dtypes:StringRestricted40Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RatingActionInfo" type="dtypes:ComplexRatingActionInfoType" minOccurs="1" maxOccurs="1"/>
+			<xs:choice minOccurs="1" maxOccurs="1">
+				<xs:element name="PreliminaryRatingAction" type="dtypes:ComplexPreliminaryRatingActionType"/>
+				<xs:element name="OutstandingRating" type="dtypes:ComplexOutstandingRatingType"/>
+				<xs:element name="NewRatingAction" type="dtypes:ComplexNewRatingActionType"/>
+				<xs:element name="UpgradeAction" type="dtypes:ComplexUpgradeActionType"/>
+				<xs:element name="DowngradeAction" type="dtypes:ComplexDowngradeActionType"/>
+				<xs:element name="AffirmationAction" type="dtypes:ComplexAffirmationActionType"/>
+				<xs:element name="OutlookAction" type="dtypes:ComplexOutlookActionType"/>
+				<xs:element name="WatchReviewAction" type="dtypes:ComplexWatchReviewActionType"/>
+				<xs:element name="SuspensionAction" type="dtypes:ComplexSuspensionActionType"/>
+				<xs:element name="DefaultAction" type="dtypes:ComplexDefaultActionType"/>
+				<xs:element name="WithdrawalAction" type="dtypes:ComplexWithdrawalActionType"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexRatingActionInfoType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"Rating information" : Informations on the rating.</xs:documentation>
+			</xs:annotation>
+			<xs:element name="RatingIssuanceLocation" type="dtypes:RatingIssuanceLocationType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ActionDateInfo" type="dtypes:ComplexActionDateInfoType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="LeadAnalystInfo" type="dtypes:ComplexLeadAnalystInfoType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="RatingDataSolicitedUnsolicited" type="dtypes:RatingDataSolicitedUnsolicitedType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="PressReleaseFlag" type="dtypes:BooleanYNType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="PressRelease" type="dtypes:ComplexPressReleaseType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="ResearchReportFlag" type="dtypes:BooleanYNType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ResearchReport" type="dtypes:ComplexResearchReportType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ========================================================================
+					Quantitative: RatingAction Definition
+	  ======================================================================== -->
+	<xs:complexType name="ComplexRatingValueInfoType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"New rating Action" : Information on the new rating action.</xs:documentation>
+			</xs:annotation>
+			<xs:element name="RatingValue" type="dtypes:Integer1to99Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RatingScaleCode" type="dtypes:StringRestricted10Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="DefaultFlag" type="dtypes:BooleanYNType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexOutstandingRatingType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"Outstanding rating " : Information on the Outstanding Ratings.</xs:documentation>
+			</xs:annotation>
+			<xs:element name="ActionType" type="dtypes:ActionTypeType" fixed="OR" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RatingValueInfo" type="dtypes:ComplexRatingValueInfoType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="OutstandingRatingInfo" type="dtypes:ComplexRatingInfoType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="FirstIssuanceDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="OutlookInfo" type="dtypes:OutlookInfoType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="WatchInfo" type="dtypes:WatchInfoType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="SuspensionInfo" type="dtypes:SuspensionInfoType" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexPreliminaryRatingActionType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"Preliminary rating Action" : Information on the preliminary rating action.</xs:documentation>
+			</xs:annotation>
+			<xs:element name="ActionType" type="dtypes:ActionTypeType" fixed="PR" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RatingValueInfo" type="dtypes:ComplexRatingValueInfoType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="PreliminaryRatingInfo" type="dtypes:ComplexRatingInfoType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexNewRatingActionType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"New rating Action" : Information on the new rating action.</xs:documentation>
+			</xs:annotation>
+			<xs:element name="ActionType" type="dtypes:ActionTypeType" fixed="NW" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RatingValueInfo" type="dtypes:ComplexRatingValueInfoType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RatingInfo" type="dtypes:ComplexRatingInfoType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexUpgradeActionType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"Upgrade Action" : Information on the upgrade action.</xs:documentation>
+			</xs:annotation>
+			<xs:element name="ActionType" type="dtypes:ActionTypeType" fixed="UP" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RatingValueInfo" type="dtypes:ComplexRatingValueInfoType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexDowngradeActionType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"Downgrade Action" : Information on the downgrade action.</xs:documentation>
+			</xs:annotation>
+			<xs:element name="ActionType" type="dtypes:ActionTypeType" fixed="DG" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RatingValueInfo" type="dtypes:ComplexRatingValueInfoType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexAffirmationActionType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"Affirmation Action" : Information on the affirmation action.</xs:documentation>
+			</xs:annotation>
+			<xs:element name="ActionType" type="dtypes:ActionTypeType" fixed="AF" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RatingValueInfo" type="dtypes:ComplexRatingValueInfoType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexOutlookActionType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"Outlook Action" : Information on the Outlook action.</xs:documentation>
+			</xs:annotation>
+			<xs:element name="ActionType" type="dtypes:ActionTypeType" fixed="OT" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="OWSDStatus" type="dtypes:OutlookWatchSuspensionDefaultStatusType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="OutlookTrend" type="dtypes:OutlookTrendType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexWatchReviewActionType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"Watch/review Action" : Information on the Watch/review action.</xs:documentation>
+			</xs:annotation>
+			<xs:element name="ActionType" type="dtypes:ActionTypeType" fixed="WR" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="OWSDStatus" type="dtypes:OutlookWatchSuspensionDefaultStatusType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="WatchReview" type="dtypes:WatchReviewType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="WatchReviewDeterminant" type="dtypes:WatchReviewDeterminantType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexDefaultActionType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"Default Action" : Information on the default action.</xs:documentation>
+			</xs:annotation>
+			<xs:element name="ActionType" type="dtypes:ActionTypeType" fixed="DF" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="OWSDStatus" type="dtypes:OutlookWatchSuspensionDefaultStatusType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexWithdrawalActionType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"Withdrawal Action" : Information on the withdrawal action.</xs:documentation>
+			</xs:annotation>
+			<xs:element name="ActionType" type="dtypes:ActionTypeType" fixed="WD" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="WithdrawalReason" type="dtypes:WithdrawalReasonType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="OtherWithdrawalReason" type="dtypes:StringRestricted50Type" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexSuspensionActionType">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>"Suspension Action" : Information on the withdrawal action.</xs:documentation>
+			</xs:annotation>
+			<xs:element name="ActionType" type="dtypes:ActionTypeType" fixed="SP" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="OWSDStatus" type="dtypes:OutlookWatchSuspensionDefaultStatusType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="SuspensionReason" type="dtypes:StringRestricted300Type" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OutlookInfoType">
+		<xs:sequence>
+			<xs:element name="OWSDStatus" type="dtypes:OutlookWatchSuspensionDefaultStatusType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="OutlookTrend" type="dtypes:OutlookTrendType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="WatchInfoType">
+		<xs:sequence>
+			<xs:element name="OWSDStatus" type="dtypes:OutlookWatchSuspensionDefaultStatusType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="WatchReview" type="dtypes:WatchReviewType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="WatchReviewDeterminant" type="dtypes:WatchReviewDeterminantType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SuspensionInfoType">
+		<xs:sequence>
+			<xs:element name="OWSDStatus" type="dtypes:OutlookWatchSuspensionDefaultStatusType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="SuspensionReason" type="dtypes:StringRestricted300Type" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ========================================================================
+					Quantitative: Correction of Rating Action Definition
+	  ======================================================================== -->
+	<xs:complexType name="ComplexCorrectionRatingActionType">
+		<xs:sequence>
+			<xs:element name="ReportingType" type="dtypes:ReportingTypeType" fixed="CHG" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ReportingReason" type="dtypes:StringRestricted300Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ChangeReason" type="dtypes:ChangeReasonType" fixed="C" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RatingIdentifier" type="dtypes:StringRestricted40Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RatingActionIdentifier" type="dtypes:StringRestricted40Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RatingActionInfo" type="dtypes:ComplexRatingActionInfoType" minOccurs="1" maxOccurs="1"/>
+			<xs:choice minOccurs="1" maxOccurs="1">
+				<xs:element name="CorrectionPreliminaryRatingAction" type="dtypes:ComplexPreliminaryRatingActionType"/>
+				<xs:element name="CorrectionOutstandingRatingInfo" type="dtypes:ComplexOutstandingRatingType"/>
+				<xs:element name="CorrectionNewRatingAction" type="dtypes:ComplexNewRatingActionType"/>
+				<xs:element name="CorrectionUpgradeAction" type="dtypes:ComplexUpgradeActionType"/>
+				<xs:element name="CorrectionDowngradeAction" type="dtypes:ComplexDowngradeActionType"/>
+				<xs:element name="CorrectionAffirmationAction" type="dtypes:ComplexAffirmationActionType"/>
+				<xs:element name="CorrectionOutlookAction" type="dtypes:ComplexOutlookActionType"/>
+				<xs:element name="CorrectionWatchReviewAction" type="dtypes:ComplexWatchReviewActionType"/>
+				<xs:element name="CorrectionSuspensionAction" type="dtypes:ComplexSuspensionActionType"/>
+				<xs:element name="CorrectionDefaultAction" type="dtypes:ComplexDefaultActionType"/>
+				<xs:element name="CorrectionWithdrawalAction" type="dtypes:ComplexWithdrawalActionType"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ========================================================================
+					Quantitative: Update Rating Definition
+	  ======================================================================== -->
+	<xs:complexType name="ComplexUpdateRatingType">
+		<xs:sequence>
+			<xs:element name="ReportingType" type="dtypes:ReportingTypeType" fixed="CHG" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ReportingReason" type="dtypes:StringRestricted300Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ChangeReason" type="dtypes:ChangeReasonType" fixed="U" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="UpdateDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RatingIdentifier" type="dtypes:StringRestricted40Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="UpdateRatingInfo" type="dtypes:ComplexUpdateRatingInfoType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ========================================================================
+					Quantitative: Cancellation Rating Definition
+	  ======================================================================== -->
+	<xs:complexType name="ComplexCompleteCancellationRatingType">
+		<xs:sequence>
+			<xs:element name="ReportingType" type="dtypes:ReportingTypeType" fixed="DEL" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ReportingReason" type="dtypes:StringRestricted300Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RatingIdentifier" type="dtypes:StringRestricted40Type" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexCancellationRatingActionType">
+		<xs:sequence>
+			<xs:element name="ReportingType" type="dtypes:ReportingTypeType" fixed="DEL" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ReportingReason" type="dtypes:StringRestricted300Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RatingIdentifier" type="dtypes:StringRestricted40Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RatingActionIdentifier" type="dtypes:StringRestricted40Type" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ========================================================================
+					Technical fields
+	  ======================================================================== -->
+	<xs:simpleType name="VersionType">
+		<xs:annotation>
+			<xs:documentation>"Version" : The exact version of the XML Schema Definition (XSD) used to generate the file.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:pattern value="([0-9])+\.([0-9])+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StringRestricted300Type">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="300"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StringRestricted30Type">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="30"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StringRestricted90Type">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="90"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StringRestricted500Type">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="500"/>
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- ========================================================================
+                                                            Global Types for error messages
+              ======================================================================== -->
+	<xs:complexType name="ComplexQualitativeErrorWarningType">
+		<xs:annotation>
+			<xs:documentation>"Complex qualitative error" : contains "Error reference" and "Error message" and "Rating unique identifier".</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="RecordReportingType" type="dtypes:RecordReportingTypeType"/>
+			<xs:element name="WarningErrorType" type="dtypes:WarningErrorTypeType"/>
+			<xs:element name="QualitativeErrorWarningReference" type="dtypes:QualitativeErrorWarningReferenceType"/>
+			<xs:element name="ErrorMessage" type="dtypes:ErrorMessageType"/>
+			<xs:element name="QualitativeRecordIdentifier" type="dtypes:QualitativeRecordIdentifierType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexRatingErrorWarningType">
+		<xs:annotation>
+			<xs:documentation>"Complex rating error" : contains "Error reference" and "Error message" and "Rating unique identifier".</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="RecordReportingType" type="dtypes:RecordReportingTypeType"/>
+			<xs:element name="WarningErrorType" type="dtypes:WarningErrorTypeType"/>
+			<xs:element name="RatingErrorWarningReference" type="dtypes:RatingErrorWarningReferenceType"/>
+			<xs:element name="ErrorMessage" type="dtypes:ErrorMessageType"/>
+			<xs:element name="RatingRecordIdentifier" type="dtypes:RatingRecordIdentifierType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QualitativeRecordIdentifierType">
+		<xs:sequence>
+			<xs:choice minOccurs="1" maxOccurs="1">
+				<xs:element name="ESMACRACode" type="dtypes:AlphaNumeric5Type"/>
+				<xs:element name="IssuerRatingRecordIdentifier" type="dtypes:ComplexIssuerRatingRecordIdentifierType"/>
+				<xs:element name="DebtClassificationRecordIdentifier" type="dtypes:ComplexDebtClassificationRecordIdentifierType"/>
+				<xs:element name="IssueProgramRecordIdentifier" type="dtypes:ComplexIssueProgramRecordIdentifierType"/>
+				<xs:element name="LeadAnalystRecordIdentifier" type="dtypes:ComplexLeadAnalystRecordIdentifierType"/>
+				<xs:element name="RatingScaleRecordIdentifier" type="dtypes:ComplexRatingScaleRecordIdentifierType"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexRatingScaleRecordIdentifierType">
+		<xs:annotation>
+			<xs:documentation>Unique identifier for the rating scale record</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="RatingScaleCode" type="dtypes:StringRestricted10Type"/>
+			<xs:element name="RatingScaleStartDate" type="xs:date"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexLeadAnalystRecordIdentifierType">
+		<xs:annotation>
+			<xs:documentation>Unique identifier for the lead analyst record</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="LeadAnalystCode" type="dtypes:StringRestricted40Type"/>
+			<xs:element name="LeadAnalystStartDate" type="xs:date"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexIssueProgramRecordIdentifierType">
+		<xs:annotation>
+			<xs:documentation>Unique identifier for the Issue Program record</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="IssueProgramCode" type="dtypes:StringRestricted40Type"/>
+			<xs:element name="IssueProgramStartDate" type="xs:date"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexDebtClassificationRecordIdentifierType">
+		<xs:annotation>
+			<xs:documentation>Unique identifier for the Debt Classification record</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="DebtClassificationCode" type="dtypes:StringRestricted40Type"/>
+			<xs:element name="DebtClassificationStartDate" type="xs:date"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexIssuerRatingRecordIdentifierType">
+		<xs:annotation>
+			<xs:documentation>Unique identifier for the Issuer Rating record</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="IssuerRatingCode" type="dtypes:StringRestricted40Type"/>
+			<xs:element name="IssuerRatingStartDate" type="xs:date"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RatingRecordIdentifierType">
+		<xs:sequence>
+			<xs:choice minOccurs="1" maxOccurs="1">
+				<xs:element name="RatingIdentifier" type="dtypes:StringRestricted40Type"/>
+				<xs:element name="RatingActionRecordIdentifier" type="dtypes:ComplexRatingActionRecordIdentifierType"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplexRatingActionRecordIdentifierType">
+		<xs:annotation>
+			<xs:documentation>Unique identifier for the Issuer Rating record</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="RatingIdentifier" type="dtypes:StringRestricted40Type"/>
+			<xs:element name="RatingActionIdentifier" type="dtypes:StringRestricted40Type"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="RecordReportingTypeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="N"/>
+			<xs:enumeration value="U"/>
+			<xs:enumeration value="C"/>
+			<xs:enumeration value="D"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="WarningErrorTypeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="E"/>
+			<xs:enumeration value="W"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="QualitativeErrorWarningReferenceType">
+		<xs:annotation>
+			<xs:documentation>"Error message" : Reference error code corresponding to the qualitative data report error reference.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:pattern value="EQL-[0-9][0-9][0-9]"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RatingErrorWarningReferenceType">
+		<xs:annotation>
+			<xs:documentation>"Error message" : Reference error code corresponding to the rating data report error reference. </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:pattern value="EQU-[0-9][0-9][0-9]"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FileNameType">
+		<xs:annotation>
+			<xs:documentation>"File name" : Format: 5(a)_6(a)_5(a)_6(n)_2(n).3(a)</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:pattern value="[A-Z,0-9]{5}_[A-Z]{6}_[A-Z,0-9]{5}_[0-9]{6}_[0-9]{2}\.[a-z]{3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

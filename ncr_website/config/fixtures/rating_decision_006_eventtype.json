@@ -1,0 +1,26 @@
+[
+   {
+      "fields":{
+         "description":"Initial rating"
+      },
+      "model":"rating_process.eventtype",
+      "pk":1
+   },
+
+   {
+      "fields":{
+         "description":"Event driven review"
+      },
+      "model":"rating_process.eventtype",
+      "pk":2
+   },
+
+   {
+      "fields":{
+         "description":"Annual review"
+      },
+      "model":"rating_process.eventtype",
+      "pk":3
+   }
+
+]

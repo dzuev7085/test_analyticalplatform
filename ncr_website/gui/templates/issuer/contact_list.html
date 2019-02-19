@@ -1,0 +1,65 @@
+{% load template_tags %}
+
+  <table class="table table-striped table-sm">
+      <thead>
+          <tr>
+              <th>Type</th>
+              <th>Company (if other than issuer)</th>
+              <th>Name</th>
+              <th>Role</th>
+              <th>Phone</th>
+              <th>Added</th>
+              <th></th>
+              <th></th>
+          </tr>
+      </thead>
+      <tbody>
+          {% for row in insider_list %}
+              <tr>
+                  <td>{{ row.contact_type|default:'' }}</td>
+                  <td>{{ row.company }}</td>
+                  <td><a href="mailto:{{ row.email }}">{{ row.first_name }} {{ row.last_name }}</a></td>
+                  <td>{{ row.role }}</td>
+                  <td>{{ row.phone_number }}</td>
+                  <td>{{ row.date_creation|date:"Y-m-d" }}</td>
+                  <td>
+                    {% if row.allow_edit %}
+                      <a href="{% url 'issuers_insider_update' insider_id=row.id %}"
+                         class="fm-update"
+                         data-fm-head="Edit contact person"
+                         data-fm-callback="reload"
+                         data-fm-target="#object-{{ row.id }}">
+                        <i class="fas fa-edit"></i>
+                        Edit
+                      </a>
+                    {% endif %}
+                  </td>
+
+                  <td>
+                    {% if row.allow_edit %}
+                      <a href="{% url 'issuers_insider_delete' insider_id=row.id %}"
+                         class="fm-delete"
+                         data-fm-head="Delete contact person"
+                         data-fm-callback="reload"
+                         data-fm-target="#object-{{ row.id }}">
+                        <i class="fas fa-trash-alt"></i>
+                        Delete
+                      </a>
+                    {% endif %}
+                  </td>
+              </tr>
+          {% empty %}
+              <tr>
+                  <td colspan="8">There are no insiders linked to this issuer.</td>
+              </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+
+{% if global_variables.auth.groups|in_list:"Analyst" %}
+  <a href="{% url 'issuers_insider_create' issuer_pk=issuer.id %}" class="fm-create" data-fm-head="Add contact person" data-fm-callback="reload">
+    <i class="fas fa-plus"></i>
+    Add contact person
+  </a>
+{% endif %}
+

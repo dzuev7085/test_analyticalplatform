@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load template_tags %}
+
+{% block content %}
+
+<table class="ncrtable">
+    <thead>
+        <tr>
+            <th>Sector</th>
+            <th>Legal name</th>
+            <th>Methodology</th>
+            <th>Primary analyst</th>
+            <th>Secondary analyst</th>
+            <th>Client Manager</th>
+            <th align="right" style="text-align: right;">Current rating</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>&nbsp;</td></tr>
+
+        {% for object in object_list %}
+
+          {% ifchanged object.internal_peer %}
+            {% if forloop.counter > 1 %}
+              <tr><td>&nbsp;</td></tr>
+            {% endif %}
+          {% endifchanged %}
+
+          <tr>
+            <td>
+              {% ifchanged %}{{ object.internal_peer|default:'Not assigned' }}{% endifchanged %}
+            </td>
+            <td>
+              <a href="{% url 'issuer_view' pk=object.id %}">{{ object.legal_name }}</a>
+            </td>
+            <td>
+              {{ object.issuer_type_name }}
+            </td>
+            <td>
+              {{ object.p_analyst|default:'' }}
+            </td>
+            <td>
+              {{ object.s_analyst|default:'' }}
+            </td>
+            <td>
+              {{ object.c_manager|default:'' }}
+            </td>
+            <td align="right" style="text-align: right;">
+              {% if object.current_long_term %}
+                {{ object.current_long_term|return_long_term_rating }} / {{ object.current_outlook|return_long_term_rating_outlook }}
+              {% else %}
+                NR
+              {% endif %}
+            </td>
+            <td align="left" style="text-align: left;">
+              {% if object.status_text|length > 0 %}
+                <a href="#" class="tip">{{ object.status }}<span>Current step: {{ object.status_text|default:'' }}</span>
+              {% else %}
+
+                  {% if global_variables.auth.groups|in_list:"Commercial" and not object.engagement_letter_signed and object.status == 'Not Onboarded' %}
+                    <a href="{% url 'issuer_onboarding' issuer_pk=object.id %}"
+                       class="fm-update"
+                       data-fm-head="Onboarding of {{ object.legal_name }}"
+                       data-fm-callback="reload">{{ object.status }}</a>
+
+                  {% elif global_variables.auth.groups|in_list:"Chief rating officer" and object.engagement_letter_signed and object.status == 'Not Onboarded' %}
+
+                      <a href="{% url 'issuer_onboarding' issuer_pk=object.id %}"
+                         class="fm-update"
+                         data-fm-head="Onboarding of {{ object.legal_name }}"
+                         data-fm-callback="reload">{{ object.status }}</a>
+
+                  {% else %}
+                    {{ object.status }}
+                  {% endif %}
+              {% endif %}
+            </td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td colspan="100%">No issuers added</td>
+          </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

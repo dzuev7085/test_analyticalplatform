@@ -1,0 +1,105 @@
+{% load template_tags %}
+
+<div class="row">
+  <div class="col">
+    <!-- Column 1 -->
+
+    <div class="card-body">
+      <h5 class="card-title">
+        Draft report recipient list:
+     </h5>
+      <p class="card-text">
+        The people listed below will receive a pdf file containing the draft external report.
+
+        <p>
+
+        <table border="0" cellpadding="0" cellspacing="0" class="card-body">
+
+
+          {% for row in data.issuer.rating_job.rating_job_insiders %}
+            <tr>
+              <td valign="top">
+                <a href="mailto:{{ row.insider.email }}">{{ row.insider.first_name }} {{ row.insider.last_name }}</a>
+              </td>
+              <td width="10">&nbsp;</td>
+              <td valign="top">
+                {{ row.insider.get_contact_type_display|default:'' }}
+              </td>
+              <td width="10">&nbsp;</td>
+              <td valign="top">
+                {{ row.insider.company }}
+              </td>
+              <td width="10">&nbsp;</td>
+              <td valign="top">
+
+                {% if allow_edit and auth.issuer.rating_job.edit %}
+                  <a href="{% url 'issuer_rating_job_insider_delete' pk=row.id %}"
+                     class="fm-delete"
+                     data-fm-head="Delete insider person"
+                     data-fm-callback="reload"
+                     data-fm-target="#object-{{ row.id }}">
+
+                    <i class="fas fa-trash-alt"></i>
+                  </a>
+                {% endif %}
+
+              </td>
+            </tr>
+          {% endfor %}
+
+        </table>
+      </p>
+
+      {% if allow_edit and auth.issuer.rating_job.edit %}
+        <a href="{% url 'issuer_rating_job_insider_add' rating_decision_pk=data.issuer.rating_job.rating_decision.id %}"
+           class="fm-create"
+           data-fm-head="Add recipient"
+           data-fm-callback="reload">
+          <i class="fas fa-plus"></i>
+          Add recipient
+        </a>
+      {% endif %}
+
+    </div>
+
+  </div>
+
+  <div class="col">
+    <!-- Column 2 -->
+
+    {% if data.issuer.rating_job.preview.internal_external_pdf %}
+
+      {% rating_process_document_id data.issuer.rating_job.rating_decision.id 10 as document_id %}
+
+      <div class="card-body">
+        <h5 class="card-title">
+          External report preview
+       </h5>
+        <p class="card-text">
+          This is a preview of the document that will be sent to the issuer. Click the image if you want to see the whole report.
+
+          <p>
+
+          <a href="{% url 'issuer_document_analytical_download' file_id=document_id %}" target="_blank">
+           <img src="data:image/png;base64,{% static_file2base64 data.issuer.rating_job.preview.internal_external_pdf True %}" alt="External report preview" width="357" height="505" style="padding:1px; border:1px solid #021a40;" />
+          </a>
+        </p>
+
+      </div>
+
+    {% endif %}
+
+  </div>
+
+
+  <div class="col">
+    <!-- Column 3 -->
+
+    {% if data.issuer.rating_job.rating_decision.get_process_step_display == 'editor_phase' %}
+      {% include "issuer/rating_job/document_card.html" %}
+    {% endif %}
+
+  </div>
+</div>
+
+<br>
